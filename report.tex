@@ -1,12 +1,12 @@
 \documentclass[
     iai, % Saisir le nom de l'institut rattaché
-    eai, % Saisir le nom de l'orientation
+    il, % Saisir le nom de l'orientation
     %confidential, % Décommentez si le travail est confidentiel
 ]{heig-tb}
 
 \usepackage[nooldvoltagedirection,european,americaninductors]{circuitikz}
 
-\signature{mbernasconi.svg}
+\signature{signature_alec_berney.svg}
 
 \makenomenclature
 \makenoidxglossaries
@@ -55,17 +55,8 @@
 
 %% Contenu
 \mainmatter
-\chapter{Introduction}
-L'introduction est une section requise dans un rapport technique. Introduisez votre travail, l'idée de départ et les objectifs attendus. Un lecteur qui découvrirait votre projet au travers de cette introduction devrait ainsi être capable d'en comprendre le cadre, l'idée générale et les aboutissants du projet.
 
-\section{Contexte}
-Cette section \underline{n'est pas obligatoire}, mais elle est souvent présente dans un rapport technique pour compléter l'introduction et définir le contexte du travail \cad le cadre formel dans lequel le travail est mené.
-
-%%if
-\section{Citations et bibliographie}
-Citer vos sources est essentiel. Avec \texttt{biblatex} vous pouvez facilement citer des articles, des livres ou des sites internet. Toutes les citations dans le texte seront automatiquement regroupées en fin de document dans la section \guillemotleft Bibliographie\guillemotright. Par exemple, citons un article d'Einstein \cite{einstein} ou le livre de Dirac \cite{dirac}.
-
-Parfois il peut être utile d'utiliser un gestionnaire de bibliographie. La communauté académique recommande l'outil \href{https://www.zotero.org/}{Zotero} qui permet de gérer une bibliothèque numérique d'ouvrages et de références numériques. Il permet également de générer une bibliographie compatible avec \LaTeX.
+\chapter{Aides}
 
 \section{Exemple d'équation}
 L'une des principales forces de \LaTeX est la saisie d'équations. L'équation \ref{eq:1}, citée à titre d'exemple, représente la transformation de phase d'une lentille biconvexe. Pour rédiger une équation \LaTeX vous pouvez utiliser des outils en ligne tels que \href{https://www.latex4technics.com/}{latex4technics}.
@@ -200,6 +191,413 @@ La \Gls{heig-vd} membre de la \Gls{hes-so} propose ce modèle de document. Le fo
 
 Lorsque vous mentionnez des quantités, utilisez les unités du système international. \LaTeX~et le paquet \textsf{siunitx} permet la saisie de quantités. La commande suivante permet d'afficher \SI{42.12}{\kilo\gram\metre\per\square\second}.\par
 
+\chapter{Introduction}
+L'introduction est une section requise dans un rapport technique. Introduisez votre travail, l'idée de départ et les objectifs attendus. Un lecteur qui découvrirait votre projet au travers de cette introduction devrait ainsi être capable d'en comprendre le cadre, l'idée générale et les aboutissants du projet.
+
+\section{Contexte}
+Cette section \underline{n'est pas obligatoire}, mais elle est souvent présente dans un rapport technique pour compléter l'introduction et définir le contexte du travail \cad le cadre formel dans lequel le travail est mené.
+
+\section{Cahier des Charges}
+
+\subsection{Prologue}
+
+Le projet étant déjà existant, aucun cahier des charges n'était défini à
+l'origine. En effet, il était d'abord nécessaire de réaliser une analyse
+du projet afin de définir les points d'améliorations qu'allaient
+contenir le cahier des charges.
+
+\subsection{Objectifs}
+
+Les objectifs principaux du projet sont les suivants:
+\begin{itemize}
+    \item Mettre en place une infrastructure de développement professionnel,
+    \item Mettre en place les DevOps pour le projet existant,
+    \item Améliorer la conception de la base de données en ajoutant des données précieuses,
+    \item Améliorer le backend du projet existant.
+\end{itemize}
+
+Nous allons maintenant passer à la liste des tâches qui devront être
+effectuées durant le travail de bachelor.
+
+Pour les toutes les tâches qui seront listés plus bas, un code couleur a
+été établi pour définir le niveau de besoin de ces dernières, le voici:
+
+\begin{itemize}
+    \item Vert = doit être réaliser (MVP = Minimum Valuable Product),
+    \item Orange = serait réaliser dans l'idéal,
+    \item Rouge = pourrait potentiellement être réaliser.
+\end{itemize}
+
+Je m'engage à réaliser les tâches suivantes :
+
+\begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \item Créer une infrastructure de développement professionnel,
+    \item Mettre en place un pipeline DevOps complet en passant par les étapes suivantes:
+          \begin{enumerate}
+              \def\labelenumii{\alph{enumii}.}
+              \item Mettre en place un outil d'intégration continue (CI),
+              \item Mettre en place un outil de déploiement continue (CD),
+              \item Mettre en place une infrastructure de production accueillant le rendu du projet.
+          \end{enumerate}
+    \item Mettre à jour le projet existant vers les nouvelles versions des technologies utilisées
+    \item Reconcevoir la base de données pour qu'elle prenne en compte:
+          \begin{enumerate}
+              \def\labelenumii{\alph{enumii}.}
+              \item Les rôles des utilisateurs,
+              \item Les ressources liées aux machines industrielles utilisées dans l'application.
+          \end{enumerate}
+    \item
+          Améliorer le backend du projet en passant par les étapes suivantes:
+          \begin{enumerate}
+              \def\labelenumii{\alph{enumii}.}
+              \item Appliquer les standards de programmation web (REST),
+              \item Mettre en place une architecture de code cohérente,
+              \item Mettre en place une vérification des entrées utilisateurs,
+              \item Mettre en place l'authentification de l'utilisateur,
+              \item L'ajout des rôles des utilisateurs,
+              \item Ajouter la gestion des ressources liées aux machines industrielles utilisées dans l'application,
+              \item Améliorer le système de notifications pour le rendre plus sécurisé.
+          \end{enumerate}
+    \item
+          Mettre à jour le frontend pour qu'il intègre les changements du backend en passant par les étapes suivantes:
+          \begin{enumerate}
+              \def\labelenumii{\alph{enumii}.}
+              \item Mettre à jour le frontend pour coller aux modifications du backend,
+              \item Ajouter la gestion des ressources liées aux machines industrielles utilisées dans l'application,
+              \item Améliorer le système de notifications pour le rendre plus sécurisé.
+          \end{enumerate}
+    \item Tester l'application à l'aide de tests automatisés.
+\end{enumerate}
+
+\subsection{Déroulement global projet}
+
+Le projet se réalise durant le semestre de printemps. Le semestre possède 14 semaines de travail de 1 jour et demi de travail si on exclut la semaine du CRUNCH et celle des vacances.
+Il y a ensuite 6 semaines à temps pleins pour finaliser le travail de Bachelor.
+
+Une séance hebdomadaire est prévue avec le professeur responsable du travail, m. Chevallier.
+
+Le projet est réparti en 3 principales phases, qui s'effectueront dans l'ordre suivant:
+\begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \item L'analyse du projet:
+          \begin{enumerate}
+              \def\labelenumii{\alph{enumii}.}
+              \item L'étude du projet et de ses technologies,
+              \item Les choix technologiques et conceptuels.
+          \end{enumerate}
+    \item La conception et réalisation du projet, contenant principalement:
+          \begin{enumerate}
+              \def\labelenumii{\alph{enumii}.}
+              \item La mise en place des environnements de développement et de production,
+              \item La réalisation des DevOps,
+              \item L'amélioration du Backend et de la base de données,
+              \item La modification du Frontend.
+          \end{enumerate}
+    \item La préparation des livrables.
+\end{enumerate}
+
+La première phase d'analyse a pour objectif de définir tout le cadre théorique du projet et les divers choix à réaliser tout au long de ce dernier.
+Cette phase devrait se terminer à la fin de la semaine numéro 7 ou 8.
+Tout en sachant que cette phase contient l'écriture du cahier des charges et que ce dernier doit être rendu au plus tard 6 semaines après le début du travail de bachelor, c'est-à-dire, le 10.04.2022.
+
+La seconde phase, concernant la conception et la réalisation du projet est la plus conséquente.
+Cette dernière suivra la première et devrait se terminer lors de la 20ème semaine si tout se déroule comme prévu.
+
+La dernière phase, concernant la préparation des livrables, est une phase importante qui se réalisera tout au long du projet et se terminera la dernière semaine du travail de bachelor.
+
+Un rendu intermédiaire est également prévu après 150 heures de travail et possède comme date le 11.05.2022.
+
+\subsection{Résultats attendus}
+
+Les résultats attendus pour ce projet dépendent énormément des tâches établies définies dans la partie Objectif de ce document.
+En effet, chaque tâche définie est vérifiable et sera donc utilisée pour évaluer le résultat du projet.
+
+\section{Choix technologiques}
+
+Dans cette section, je vais énumérer tous les choix technologiques ou conceptuels liés au projet.
+Mais avant cela, il est nécessaire de définir précisément les besoins pour le projet afin de réaliser des choix cohérents en fonction de ces derniers.
+Pour chaque choix, technologiques ou conceptuels, une liste des possibilités réalisables sera énumérée et si possible représentée visuellement.
+Cette liste de possibilités sera accompagnées des avantages et inconvénients de chaque solution en s'inspirant des besoins du projet.
+
+\subsection{Besoins pour le projet}
+Je vais ici définir les besoins du projet et ceci en les séparant par parties distinctes.
+
+\subsubsection{Besoins pour l'infrastructure de développement}
+Avant de commencer, définissons l'infrastructure de développement.
+L'infrastructure de développement englobe tous les outils à installer et toutes les configurations à réaliser sur un pc vierge afin que le développeur puisse commencer à développer l'application.
+En général, ce qui est recherché, c'est la simplicité et la rapidité de configuration de cet environnement.
+Dans notre cas, pour que le développeur puisse commencer à développer, il doit principalement mettre en place les outils suivants:
+\begin{itemize}
+    \item un IDE (Integrated Development Environment), de préférence Visual Studio Code,
+    \item l'outil de versioning git,
+    \item un SGBD (Système de Gestion de Base de Données), https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es
+    \item le language PHP,
+    \item l'outil Composer,
+    \item le framework Laravel,
+    \item l'environement d'exécution (runtime environment) Node.js,
+    \item le framework Vue.js.
+\end{itemize}
+Comme vous pouvez le voir, la liste devient vite longue et certains des outils à installer prennent passablement de temps et possèdent des configuration spécifiques.
+Je parle notamment des outils suivants:
+\begin{itemize}
+    \item le SGBD (Système de Gestion de Base de Données), https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es
+    \item le language PHP, avec Composer et le framework Laravel,
+    \item l'environement d'exécution (runtime environment) Node.js et le framework Vue.js.
+\end{itemize}
+Ces outils n'étant pas triviaux à mettre en place et changeant pour chaque projet, il est préférable de simplifier le plus possible leur installation et configuration.
+
+Comme vous l'aurez compris, un des besoins le plus important pour le choix de cette infrastructure, est la simplicité de mise en place du projet.
+Il faut que cela soit facile à prendre en main et bien documenté.
+Un des autres points à prendre en compte, est la disponibilité des outils utilisés, dans le sens où des outils payants ne pourraient pas être accessibles pour certains développeur.
+Créer quelque chose de simple à prendre en main, c'est important, mais il faut aussi prendre en compte la difficulté nécessaire pour fournir les outils fini simplifiant cett étape.
+
+\subsubsection{Besoins pour l'infrastructure de production}
+Nous allons maintenant faire de même pour l'infrastructure de production.
+L'infrastructure de production englobe tous les outils à installer et toutes les configurations à réaliser sur un pc vierge afin que le programme final soit accessible est utilisable par n'importe quel utilisateur.
+En général, la simplicité de mise à jour du programme, la performance et la robustesse sont recherchés. 
+On peut aussi prendre en compte la flexibilité de la solution, dans le sens où il serait facile de déployer le programme final sur une autre machine de production.
+En effet, la première étape de configuration se réalise peu de fois et si cette dernière est un peu plus compliquée, cela n'est pas forcément un énorme désavantage.
+Dans notre cas, pour que le programme puisse fonctionner sur le serveur de production, il est nécessaire d'installer tous les outils suivants:
+\begin{itemize}
+    \item potentiellement l'outil de versioning git,
+    \item un SGBD (Système de Gestion de Base de Données), https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es
+    \item le language PHP,
+    \item l'outil Composer,
+    \item le framework Laravel,
+    \item Un serveur Apache,
+    \item Un proxy.
+\end{itemize}
+La liste des outils à installer et configurer, comme pour l'environnement de développement, est conséquente.
+Certains outils prennent passablement de temps et possèdent des configuration spécifique.
+Je parle notamment des outils suivants:
+\begin{itemize}
+    \item le SGBD (Système de Gestion de Base de Données), https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es
+    \item le language PHP, avec Composer et le framework Laravel,
+\end{itemize}
+Comme expliqué précédemment, une certaine flexibilité et simplicité est recherchée lors de la mise en place de l'infrastructure et c'est pour cela qu'il est préférable de simplifier le plus possible l'installation et la configuration des outils cités ci-dessus..
+
+Si nous résumons les critères qui influenceront notre décision, nous pouvons ressortir ces derniers:
+\begin{itemize}
+    \item la performance de l'infrastructure,
+    \item la simplicité de mise à jour du programme au sein de l'infrastructure,
+    \item la robustesse de l'infrastructure,
+    \item la flexibilité de l'infrastructure,
+    \item le framework Laravel.
+\end{itemize}
+
+\subsubsection{Besoins pour les DevOps}
+
+% dev
+\subsection{Infrastructures de développement}
+
+L'infrastructure que vous pouvez voir dans la figure ci-dessous et celle qui était utilisée lorsque j'ai reprise le projet.
+En résumé, tous les outils ont été installé sur la machine de développement sans virtualisation.
+%\figi{infrastructure_dev_actuelle.xml}{10cm}{Infrastructure de développement actuelle}
+%\fig{infrastructure_dev_actuelle.xml}{Infrastructure de développement actuelle}
+
+%\figi{infrastructure_dev_db_docker.xml}{10cm}{Infrastructure de développement avec une db end docker}
+%\fig{infrastructure_dev_db_docker.xml}{Infrastructure de développement avec une db end docker}
+
+%\figi{infrastructure_dev_db_laravel_docker.xml}{10cm}{Infrastructure de développement avec une db et laravel en docker}
+%\fig{infrastructure_dev_db_laravel_docker.xml}{Infrastructure de développement avec une db et laravel en docker}
+
+https://laravel.com/docs/9.x/sail
+https://blog.logrocket.com/laravel-and-docker-a-guide-to-using-laravel-sail/
+https://r00t4bl3.com/post/how-to-setup-docker-environment-for-laravel-development
+https://dockerize.io/guides/php-laravel-guide
+https://www.honeybadger.io/blog/laravel-docker-php/
+
+Les différentes infrastructures désormais présentées, il est nécessaire de les comparer en listant les pour et les contres de chaque changement en prenant comme référentielle l'infrastructure actuelle.
+Les 3 améliorations (combinées ou non) proposées sont les suivantes:
+\begin{itemize}
+    \item Passage du SGBD en machine Docker,
+    \item Passage du projet Laravel (et toutes ces technologies) en machine Docker,
+    \item Passage du projet Vue.js (et toutes ces technologies) en machine Docker.
+\end{itemize}
+
+%\begin{multicols}{2}
+%[
+
+Commençons par réfléchir sur le passage du SGBD en machine Docker.
+Pour ceci, nous allons énumérer les avantages et inconvénients d'installer le SGBD nativement.
+Avantages:
+\begin{itemize}
+    \item Gestion de la BD plus facile car le SGB est installé nativement,
+    \item Le SGBD peut-être déjà installé et peut être utilisée directement,
+    \item Ne nécessite pas Docker.
+\end{itemize}
+
+Inconvénients:
+\begin{itemize}
+    \item Prends beaucoup de temps à installer,
+    \item Coûte beaucoup en mémoire sur le pc,
+    \item Configuration à faire à la main,
+    \item Fort risque d'erreur lors de la configuration,
+    \item Installation différente pour chaque OS.
+\end{itemize}
+
+Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir le SGBD en machine Docker.
+Avantages:
+\begin{itemize}
+    \item Rapide à installer,
+    \item Coûte peu en mémoire sur le pc,
+    \item Configuration en gande partie déjà réalisée,
+    \item Compatible avec tous les OS.
+\end{itemize}
+
+Inconvénients:
+\begin{itemize}
+    \item Gestion de la BD potentiellement plus compliquée,
+    \item Nécessite Docker et les connaissances qui vont avec.
+\end{itemize}
+%]%\blindtext\blindtext
+%\end{multicols}
+
+%\begin{multicols}{2}[
+Finalement, parlons du passage de l'environnement Vue.js en machine Docker.
+Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet environnement.
+Avantages:
+\begin{itemize}
+    \item Meilleur performance,
+    \item Gestion totale de l'environnement.
+\end{itemize}
+
+Inconvénients:
+\begin{itemize}
+    \item Peut générer des conflits si plusieurs versions sont présentes,
+    \item Impossibilité d'avoir plusieurs versions différentes installées,
+    \item Demande du temps,
+    \item Configuration à faire à la main,
+    \item Fort risque d'erreur lors de la configuration,
+    \item Installation différente pour chaque OS.
+\end{itemize}
+
+Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement Laravel en machine Docker.
+Avantages:
+\begin{itemize}
+    \item Rapide à installer,
+    \item Configuration en gande partie déjà réalisée,
+    \item Compatible avec tous les OS,
+    \item Existance d'un outil conçu pour être utiliser avec Docker (sail)
+    \item Permet d'avoir plusieurs versions installées.
+\end{itemize}
+
+Inconvénients:
+\begin{itemize}
+    \item Nécessite Docker et les connaissances qui vont avec,
+    \item Peut-être compliqué à mettre en place,
+\end{itemize}
+%]%\blindtext\blindtext
+%\end{multicols}
+
+%\begin{multicols}{2}[
+Passons maintenant au passage de l'environnement Laravel en machine Docker.
+Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet environnement.
+Avantages:
+\begin{itemize}
+    \item Meilleur performance,
+    \item Gestion totale de l'environnement.
+\end{itemize}
+
+Inconvénients:
+\begin{itemize}
+    \item Peut générer des conflits si plusieurs versions sont présentes,
+    \item Impossibilité d'avoir plusieurs versions différentes installées,
+    \item Demande du temps,
+    \item Configuration à faire à la main,
+    \item Fort risque d'erreur lors de la configuration,
+    \item Installation différente pour chaque \Gls{os}.
+\end{itemize}
+
+Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement Laravel en machine Docker.
+Avantages:
+\begin{itemize}
+    \item Rapide à installer,
+    \item Configuration en gande partie déjà réalisée,
+    \item Compatible avec tous les OS,
+    \item Existance d'un outil conçu pour être utiliser avec Docker (sail)
+    \item Permet d'avoir plusieurs versions installées.
+\end{itemize}
+
+Inconvénients:
+\begin{itemize}
+    \item Nécessite Docker et les connaissances qui vont avec.
+\end{itemize}
+%]%\blindtext\blindtext
+%\end{multicols}
+
+%https://laravel.com/docs/9.x/sail
+
+% prod
+\subsection{Infrastructures de production}
+%\figi{infrastructure_prod_actuelle.xml}{10cm}{Infrastructure de production actuelle}
+%\fig{infrastructure_prod_actuelle.xml}{Infrastructure de production actuelle}
+
+%\figi{infrastructure_prod_db_docker.xml}{10cm}{Infrastructure de production avec une db en docker}
+%\fig{infrastructure_prod_db_docker.xml}{Infrastructure de production avec une db en docker}
+
+%\figi{infrastructure_prod_db_laravel_docker.xml}{10cm}{Infrastructure de production avec une db et laravel en docker}
+%\fig{infrastructure_prod_db_laravel_docker.xml}{Infrastructure de production avec une db et laravel en docker}
+
+docker en prod perf:
+%https://stackoverflow.com/questions/21691540/how-to-optimize-performance-for-a-docker-container/21707838#21707838
+%https://stackoverflow.com/questions/21889053/what-is-the-runtime-performance-cost-of-a-docker-container
+%https://dominoweb.draco.res.ibm.com/reports/rc25482.pdf
+%https://www.freecodecamp.org/news/7-cases-when-not-to-use-docker/
+
+% devops
+%https://blog.logrocket.com/how-to-create-a-ci-cd-for-a-laravel-application-using-github-actions/
+
+\subsection{DevOps}
+%\figi{devops_dockerhub.xml}{10cm}{DevOps via dockerhub}
+%\fig{devops_dockerhub.xml}{DevOps via dockerhub}
+
+%\figi{devops_heroku.xml}{10cm}{DevOps via heroku}
+%\fig{devops_heroku.xml}{DevOps via heroku}
+https://devcenter.heroku.com/articles/getting-started-with-laravel
+
+%\figi{devops_github.xml}{10cm}{DevOps via github}
+%\fig{devops_github.xml}{DevOps via github}
+
+% code
+\subsection{Architectures de code}
+%\figi{architecture_code_spring.xml}{10cm}{Architecture de code du framework Spring "classique"}
+%\fig{architecture_code_spring.xml}{Architecture de code du framework Spring "classique"}
+
+%\figi{architecture_code_laravel.xml}{10cm}{Architecture de code du framework Laravel "classique"}
+%\fig{architecture_code_laravel.xml}{Architecture de code du framework Laravel "classique"}
+
+\figi{architecture_code_laravel_proposee.xml}{16cm}{Architecture de code Laravel proposée}
+%\fig{architecture_code_laravel_proposee.xml}{Architecture de code Laravel proposée}
+%\fig{architecture_code_laravel_proposee.svg}{Architecture de code Laravel proposée}
+%\figi{architecture_code_laravel_proposee}{10cm}{Architecture}
+%\fig{architecture_code_laravel_proposee}{Architecture de code Laravel proposée}
+
+% postgre vs mysql
+%https://www.geeksforgeeks.org/difference-between-mysql-and-postgresql/
+%https://www.simplilearn.com/tutorials/sql-tutorial/postgresql-vs-mysql
+%https://www.ibm.com/cloud/blog/postgresql-vs-mysql-whats-the-difference
+
+% upgrade to laravel 9
+%https://laravel.com/docs/9.x/upgrade
+%https://github.com/laravel/vonage-notification-channel/blob/3.x/UPGRADE.md
+
+\chapter{Conception de la base de données}
+
+\chapter{Conception du Backend / de l'API}
+
+\chapter{Intégration continu (CI)}
+
+\chapter{Déploiement continu (CD)}
+
+%%if
+\section{Citations et bibliographie}
+Citer vos sources est essentiel. Avec \texttt{biblatex} vous pouvez facilement citer des articles, des livres ou des sites internet. Toutes les citations dans le texte seront automatiquement regroupées en fin de document dans la section \guillemotleft Bibliographie\guillemotright. Par exemple, citons un article d'Einstein \cite{einstein} ou le livre de Dirac \cite{dirac}.
+
+Parfois il peut être utile d'utiliser un gestionnaire de bibliographie. La communauté académique recommande l'outil \href{https://www.zotero.org/}{Zotero} qui permet de gérer une bibliothèque numérique d'ouvrages et de références numériques. Il permet également de générer une bibliographie compatible avec \LaTeX.
+
+
 \mintinline{latex}{\SI{42.12}{\kilo\gram\metre\per\square\second}}\par
 %%fi
 
@@ -214,10 +612,10 @@ Il est de coutume de signer la conclusion...
 \vfil
 \hspace{8cm}\makeatletter\@author\makeatother\par
 \hspace{8cm}\begin{minipage}{5cm}
-%%if
+    %%if
     % Place pour signature numérique
     \printsignature
-%%fi
+    %%fi
 \end{minipage}
 \clearpage
 
