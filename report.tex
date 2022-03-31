@@ -407,6 +407,7 @@ Pour pour pouvoir comparer les différentes infrastructures et faire des choix s
 \Gls{docker} est un outil permettant de gérer des containers.
 Qu'est-ce qu'un container? Un container est une sorte de machine virtuelle plus légère ayant pour but d'encapsuler une ou plusieurs applications / outils technologiques ainsi que toutes les dépendances que ces applications exigent pour leur bon fonctionnement.
 Il ne s'agit donc pas de virtualisation mais de "conteneurisation" ou "containerization" en anglais.
+Dans une "conteneurisation", seul l'OS et le software est virtualisé et non le hardware.
 Nous remarquons bien la différence avec la figure suivante:
 \begin{figure}
     %\href{https://www.docker.com/wp-content/uploads/2021/11/docker-containerized-and-vm-transparent-bg.png}
@@ -427,17 +428,54 @@ Voici un schéma démontrant la façon dont docker et des containers dockers son
 %https://www.docker.com/resources/what-container/
 %https://www.ibm.com/fr-fr/cloud/learn/docker
 %https://fr.wikipedia.org/wiki/Docker_(logiciel)
+%https://www.youtube.com/watch?v=Gjnup-PuquQ
 
-\subsubsection{Et Kubernetes?}
-Pourquoi utiliserions-nous forcément \Gls{docker} sans avoir réfléchi à la possibilité de Kubernetes?
+%virtual machine vs containers: https://www.youtube.com/watch?v=cjXI-yxqGTI
+%https://www.ibm.com/cloud/learn/containers?utm_medium=OSocial&utm_source=Youtube&utm_content=000023UA&utm_term=10010608&utm_id=YTDescription-101-Containers-vs-VMs-LH-Containers-Guide&cm_mmc=OSocial_Youtube-_-Cloud+and+Data+Platform_SFT+Cloud+Platform+Digital-_-WW_WW-_-YTDescription-101-Containers-vs-VMs-LH-Containers-Guide&cm_mmca1=000023UA&cm_mmca2=10010608
+%https://www.ibm.com/cloud/learn/virtual-machines?utm_medium=OSocial&utm_source=Youtube&utm_content=000005UJ&utm_term=10002434&utm_id=YTDescription-101-Containers-vs-VMs-LH-Virtual-Machines-Guide&cm_mmc=OSocial_Youtube-_-Cloud+and+Data+Platform_PLT+Cloud+Platform+F2F-_-WW_WW-_-YTDescription-101-Containers-vs-VMs-LH-Virtual-Machines-Guide&cm_mmca1=000005UJ&cm_mmca2=10002434
+
+
+\subsection{Performances de \Gls{docker}}
+\Gls{docker} est outil qui paraît très pratique, mais qu'en est-il de ses performances?
+Pour ceci, nous allons retracer quelques évalutations réalisées lors d'une étude de IBM \cite{felter2015updated}. Nous allons parcourir ces évalutations via des graphiques, tiré de l'étude, résumants bien les résultats.
+Commençant par la latence que peut apporter \Gls{docker}:
+%copier coller et dans la légende, source: x ou tiré de: x
+%todo ajouter figure
+Fig. 3. Network round-trip latency (µs)
+On constate que la latence double, mais nous parlons ici de microsecondes, et de 30 microsecondes supplémentaires, ce qui est en soit assez peu pour de petite infrastructure.
+
+%todo autres stats
+
+
+
+\subsubsection{Et \Gls{kubernetes}?}
+Pourquoi utiliserions-nous forcément \Gls{docker} sans avoir réfléchi à la possibilité de \Gls{kubernetes}?
+Pour commencer, comme indiquer sur le site officiel:
+"Kubernetes est un système open-source permettant d'automatiser le déploiement, la mise à l'échelle et la gestion des applications conteneurisées".
+\Gls{kubernetes} n'est donc pas vraiment une alternative à \Gls{docker}, mais peut être plutôt utiliser comme complément à ce dernier.
+Comme la partie principale de \Gls{kubernetes} est de gérer les applications conteneurisées et de simplifier le load balancing, par exemple, il n'est pas forcément utile pour nous d'approfondir les recherches sur le sujet.
+En effet, La charge attendu par l'application déployée ne devrait pas dépasser les 100 utilisateurs simultanés. La question du load-balancing est donc écartée, tout comme la mise en place d'un cluster \Gls{kubernetes}.
+
 
 % comment mettre en place -> voir avec monsieur Graf / regarder avec des profs
 % si question pointu, peuvent être transférer à m. chevallier
 
 %https://kubernetes.io/
+%https://www.youtube.com/watch?v=PziYflu8cB8
+%docker vs k8s, IBM: https://www.youtube.com/watch?v=2vMEQ5zs1ko
+%https://www.ibm.com/cloud/learn/kubernetes?cm_mmc=OSocial_Youtube-_-Hybrid+Cloud_Cloud+Platform+Digital-_-WW_WW-_-KubevsDockerYTDescription&cm_mmca1=000023UA&cm_mmca2=10010608#toc-what-is-ku-nVcfWlWE
+
+%https://stackshare.io/: outil très utile pour faire des comparaisons de technologies
+
+\subsubsection{Et les Linux Containers?}
+Pourquoi utiliserions-nous forcément \Gls{docker} sans avoir réfléchi à la possibilité de Kubernetes?
+%https://linuxcontainers.org/
 
 % dev
 \subsection{Infrastructures de développement}
+
+%https://stackshare.io/stackups/docker-vs-laravel-homestead
+
 
 L'infrastructure que vous pouvez voir dans la figure ci-dessous et celle qui était utilisée lorsque j'ai reprise le projet.
 En résumé, tous les outils ont été installé sur la machine de développement sans virtualisation.
@@ -583,6 +621,7 @@ Inconvénients:
 %\end{multicols}
 
 %https://laravel.com/docs/9.x/sail
+%https://laravel.com/docs/9.x/homestead
 
 \subsubsection{Analyse de risque}
 % comment protéger une infra en prod
@@ -616,6 +655,7 @@ docker en prod perf:
 \subsection{\Gls{devops}}
 Mais qu'est-ce que c'est les DevOps:
 %https://www.youtube.com/watch?v=scEDHsr3APg
+%https://www.padok.fr/blog/devops-tout-savoir
 
 %\figi{devops_dockerhub.xml}{16cm}{DevOps via dockerhub}
 %\fig{devops_dockerhub.xml}{DevOps via dockerhub}
@@ -627,9 +667,16 @@ Mais qu'est-ce que c'est les DevOps:
 %\figi{devops_github.xml}{16cm}{DevOps via github}
 %\fig{devops_github.xml}{DevOps via github}
 
+% Tous les outils CI / CD
+%https://katalon.com/resources-center/blog/ci-cd-tools#
+%https://www.lambdatest.com/blog/31-best-ci-cd-tools/
+%https://www.guru99.com/top-20-continuous-integration-tools.html
+
+%https://stackshare.io/stackups/github-actions-vs-gitlab-ci#pros
+
 \subsubsection{Pourquoi Github?}
 Dans tous les exemples ci-dessus, l'outil utilisé pour réaliser les \Gls{devops} est Github, mais pourquoi?
-Tout d'abord, il faut comprendre qu'il existe d'autres outil de "gestion" de \Gls{devops}, des services de CI ou Devops, voici une liste non exhaustive:
+Tout d'abord, il faut comprendre qu'il existe d'autres outil de "gestion" de \Gls{devops}, appelé aussi services de \Gls{ci} / \Gls{devops}, voici une liste non exhaustive:
 \begin{itemize}
     \item Jenkins, %https://www.jenkins.io/
     \item TeamCity, %https://www.jetbrains.com/teamcity/
@@ -641,16 +688,31 @@ Tout d'abord, il faut comprendre qu'il existe d'autres outil de "gestion" de \Gl
     \item Azure DevOps. %https://azure.microsoft.com/fr-fr/services/devops/
 \end{itemize}
 
-Tous ces outils, mise à part GitLab, doivent être installé et configurer pour le projet.
-
+Tous ces outils, mise à part GitLab, doivent être installé en plus et configurer pour le projet.
+Nous cherchons une solution "all in one" pour simplifier au maximum le projet au niveau des \Gls{devops}.
+Nous n'allons donc pas plonger dans les détails de chaque technologie cité plus haut.
+Il reste donc GitLab et Github, pour effectuer notre choix.
 % choix entre github et gitlab, ma décision
 
-% Tous les outils CI / CD
-%https://katalon.com/resources-center/blog/ci-cd-tools#
-%https://www.lambdatest.com/blog/31-best-ci-cd-tools/
-%https://www.guru99.com/top-20-continuous-integration-tools.html
+\subsection{\Gls{sgbd}}
+% postgre vs mysql
+%https://www.geeksforgeeks.org/difference-between-mysql-and-postgresql/
+%https://www.simplilearn.com/tutorials/sql-tutorial/postgresql-vs-mysql
+%https://www.ibm.com/cloud/blog/postgresql-vs-mysql-whats-the-difference
+%https://stackshare.io/stackups/mysql-vs-postgresql
 
-% code
+% upgrade to laravel 9
+%https://laravel.com/docs/9.x/upgrade
+%https://github.com/laravel/vonage-notification-channel/blob/3.x/UPGRADE.md
+
+\chapter{Conception de la base de données}
+%todo à rendre aussi pour le premier rendu
+%todo MLD
+%todo model de l'ORM
+
+\chapter{Conception du Backend / de l'API}
+%todo à rendre aussi pour le premier rendu
+%todo architecture de code
 \subsection{Architectures de code}
 \figi{architecture_code_spring.xml}{16cm}{Architecture de code du framework Spring "classique"}
 %\fig{architecture_code_spring.xml}{Architecture de code du framework Spring "classique"}
@@ -664,36 +726,19 @@ Tous ces outils, mise à part GitLab, doivent être installé et configurer pour
 %\figi{architecture_code_laravel_proposee}{10cm}{Architecture}
 %\fig{architecture_code_laravel_proposee}{Architecture de code Laravel proposée}
 
-% postgre vs mysql
-%https://www.geeksforgeeks.org/difference-between-mysql-and-postgresql/
-%https://www.simplilearn.com/tutorials/sql-tutorial/postgresql-vs-mysql
-%https://www.ibm.com/cloud/blog/postgresql-vs-mysql-whats-the-difference
-
-% upgrade to laravel 9
-%https://laravel.com/docs/9.x/upgrade
-%https://github.com/laravel/vonage-notification-channel/blob/3.x/UPGRADE.md
-
-\chapter{Conception de la base de données}
-% à rendre aussi pour le premier rendu
-% model de l'ORM
-
-\chapter{Conception du Backend / de l'API}
-% architecture de code
-
 % ensuite décrire ce qu'on a mis en place et indiquer s'il y a des failles
 
 % surtout indiquer tout ce qu'on a fait et tout ce que j'ai pas fait
 % et pourquoi je l'ai pas fait, pas compris qqch ou pas eu le temps, pas la priorité, pas de sources suffisantes
 
-dans le texte (Labrecque, 2018)
-\cite{labrecque}
+%dans le texte (Labrecque, 2018)
+%\cite{labrecque}
 
-suivantes:
-(Labrecque, 2018; x, yyyy;)
+%suivantes:
+%(Labrecque, 2018; x, yyyy;)
+%pour reformuler
 
-pour reformuler
-
-Labrecque M. (2018). Pros and cons of Docker. in \textit{Docker, planet drupal}. consulté à l'adresse: https://affinitybridge.com/blog/pros-and-cons-docker (consulté le 31.03.2022)
+%Labrecque M. (2018). Pros and cons of Docker. in \textit{Docker, planet drupal}. consulté à %l'adresse: https://affinitybridge.com/blog/pros-and-cons-docker (consulté le 31.03.2022)
 
 \chapter{Intégration continu (\Gls{ci})}
 
