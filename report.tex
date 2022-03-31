@@ -56,6 +56,7 @@
 %% Contenu
 \mainmatter
 
+\begin{comment}
 \chapter{Aides}
 
 \section{Exemple d'équation}
@@ -70,7 +71,7 @@ L'une des principales forces de \LaTeX est la saisie d'équations. L'équation \
 
 \section{Exemples de diagrammes}
 
-Les diagrammes de flux peuvent être réalisés en utilisant l'outil \href{https://app.diagrams.net/}{draw.io}. Une exportation en \texttt{.xml} (non compressé) permet de garder les sources de la figure. Le rendu en \texttt{.pdf} sera réalisé à la volée à la compilation. L'intérêt est double : n'avoir qu'une source de vérité \cad pas d'image intermédiaire à stocker, et réduire la quantité d'information stockée.
+Les diagrammes de flux peuvent être réalisés en utilisant l'outil \href{https://app.diagrams.net/}{draw.io}. Une exportation en \texttt{.xml} (non compressé) permet de garder les sources de la figure. Le rendu en \texttt{.pdf} sera réalisé à la volée à la compilation. L'intérêt est double : n'avoir qu'une source de vérité c'est à dire pas d'image intermédiaire à stocker, et réduire la quantité d'information stockée.
 
 Puisque la source est au format XML, les textes sont accessibles au correcteur orthographique et il vous est rendu possible les modifier sans avoir à éditer l'image. La figure \ref{euclide.xml} en est un exemple.
 
@@ -191,6 +192,8 @@ La \Gls{heig-vd} membre de la \Gls{hes-so} propose ce modèle de document. Le fo
 
 Lorsque vous mentionnez des quantités, utilisez les unités du système international. \LaTeX~et le paquet \textsf{siunitx} permet la saisie de quantités. La commande suivante permet d'afficher \SI{42.12}{\kilo\gram\metre\per\square\second}.\par
 
+\end{comment}
+
 \chapter{Introduction}
 L'introduction est une section requise dans un rapport technique. Introduisez votre travail, l'idée de départ et les objectifs attendus. Un lecteur qui découvrirait votre projet au travers de cette introduction devrait ainsi être capable d'en comprendre le cadre, l'idée générale et les aboutissants du projet.
 
@@ -230,45 +233,40 @@ Pour les toutes les tâches qui seront listés plus bas, un code couleur a
 
 Je m'engage à réaliser les tâches suivantes :
 
-\begin{enumerate}
-    \def\labelenumi{\arabic{enumi}.}
-    \item Créer une infrastructure de développement professionnel,
-    \item Mettre en place un pipeline DevOps complet en passant par les étapes suivantes:
-          \begin{enumerate}
-              \def\labelenumii{\alph{enumii}.}
-              \item Mettre en place un outil d'intégration continue (CI),
-              \item Mettre en place un outil de déploiement continue (CD),
-              \item Mettre en place une infrastructure de production accueillant le rendu du projet.
-          \end{enumerate}
-    \item Mettre à jour le projet existant vers les nouvelles versions des technologies utilisées
-    \item Reconcevoir la base de données pour qu'elle prenne en compte:
-          \begin{enumerate}
-              \def\labelenumii{\alph{enumii}.}
-              \item Les rôles des utilisateurs,
-              \item Les ressources liées aux machines industrielles utilisées dans l'application.
-          \end{enumerate}
-    \item
-          Améliorer le backend du projet en passant par les étapes suivantes:
-          \begin{enumerate}
-              \def\labelenumii{\alph{enumii}.}
-              \item Appliquer les standards de programmation web (REST),
-              \item Mettre en place une architecture de code cohérente,
-              \item Mettre en place une vérification des entrées utilisateurs,
-              \item Mettre en place l'authentification de l'utilisateur,
-              \item L'ajout des rôles des utilisateurs,
-              \item Ajouter la gestion des ressources liées aux machines industrielles utilisées dans l'application,
-              \item Améliorer le système de notifications pour le rendre plus sécurisé.
-          \end{enumerate}
-    \item
-          Mettre à jour le frontend pour qu'il intègre les changements du backend en passant par les étapes suivantes:
-          \begin{enumerate}
-              \def\labelenumii{\alph{enumii}.}
-              \item Mettre à jour le frontend pour coller aux modifications du backend,
-              \item Ajouter la gestion des ressources liées aux machines industrielles utilisées dans l'application,
-              \item Améliorer le système de notifications pour le rendre plus sécurisé.
-          \end{enumerate}
-    \item Tester l'application à l'aide de tests automatisés.
-\end{enumerate}
+\begin{table}[h]
+    \begin{center}
+        \caption{Liste des tâches / exigences à réaliser durant le projet \label{taches}}
+        \begin{tabular}{c|l|r}
+            #   & Tâche / Exigence                                                                                                       & Priorité      \\ \hline
+            1   & Créer une infrastructure de développement professionnel                                                                & Obligatoire   \\
+            2   & Mettre en place un pipeline DevOps complet en passant par les étapes suivantes                                         & Obligatoire   \\
+            2.a & Mettre en place un outil d’intégration continue (CI)                                                                   & Obligatoire   \\
+            2.b & Mettre en place un outil / pipeline de déploiement continue (CD)                                                       & Obligatoire   \\
+            2.c & Mettre en place une infrastructure de production accueillant le rendu du projet                                        & Obligatoire   \\
+            3   & Mettre à jour le projet existant vers les nouvelles versions des technologies utilisées                                & Obligatoire   \\
+            3.a & Mettre à jour le frontend existant vers les nouvelles versions des technologies utilisées                              & Obligatoire   \\
+            3.b & Mettre à jour le backend existant vers les nouvelles versions des technologies utilisées                               & Obligatoire   \\
+            4   & Reconcevoir la base de données pour qu’elle prenne en compte certains points supplémentaires                           & Obligatoire   \\
+            4.a & La base de données doit prendre en compte les rôles des utilisateurs                                                   & Obligatoire   \\
+            4.b & La base de données doit prendre en compte les ressources liées aux machines industrielles utilisées dans l’application & Obligatoire   \\
+            5   & Améliorer le backend du projet                                                                                         &               \\
+            5.a & Appliquer les standards de programmation web (REST)                                                                    & Obligatoire   \\
+            5.b & Mettre en place une architecture de code cohérente                                                                     & Obligatoire   \\
+            5.c & Mettre en place une vérification des entrées utilisateurs                                                              & Obligatoire   \\
+            5.d & Mettre en place l’authentification de l’utilisateur                                                                    & Obligatoire   \\
+            5.e & L’ajout des rôles des utilisateurs                                                                                     & Obligatoire   \\
+            5.f & Ajouter la gestion des ressources liées aux machines industrielles utilisées dans l’application                        & Intermédiaire \\
+            5.g & Améliorer le système de notifications pour le rendre plus sécurisé                                                     & Basse         \\
+            6   & Améliorer le frontend afin d’intégrer toutes les fonctionnalités du backend                                            &               \\
+            6.a & Mettre à jour le frontend pour coller aux modifications des routes du backend / de l'api                               & Obligatoire   \\
+            6.b & Ajouter la gestion des ressources liées aux machines industrielles utilisées dans l’application                        & Intermédiaire \\
+            6.c & Améliorer le système de notifications pour le rendre plus sécurisé                                                     & Basse         \\
+            7   & Tester l’application à l’aide de tests automatisés                                                                     & Obligatoire   \\
+            7.a & Réaliser des tests unitaires automatisés                                                                               & Obligatoire   \\
+            7.b & Réaliser des tests d’intégration automatisés                                                                           & Obligatoire   \\
+        \end{tabular}
+    \end{center}
+\end{table}
 
 \subsection{Déroulement global projet}
 
@@ -312,6 +310,7 @@ Un rendu intermédiaire est également prévu après 150 heures de travail et po
 
 Les résultats attendus pour ce projet dépendent énormément des tâches établies définies dans la partie Objectif de ce document.
 En effet, chaque tâche définie est vérifiable et sera donc utilisée pour évaluer le résultat du projet.
+\clearpage
 
 \section{Choix technologiques}
 
@@ -324,14 +323,14 @@ Cette liste de possibilités sera accompagnées des avantages et inconvénients 
 Je vais ici définir les besoins du projet et ceci en les séparant par parties distinctes.
 
 \subsubsection{Besoins pour l'infrastructure de développement}
-Avant de commencer, définissons l'infrastructure de développement.
+Pour commencer, définissons l'infrastructure de développement.
 L'infrastructure de développement englobe tous les outils à installer et toutes les configurations à réaliser sur un pc vierge afin que le développeur puisse commencer à développer l'application.
 En général, ce qui est recherché, c'est la simplicité et la rapidité de configuration de cet environnement.
 Dans notre cas, pour que le développeur puisse commencer à développer, il doit principalement mettre en place les outils suivants:
 \begin{itemize}
     \item un IDE (Integrated Development Environment), de préférence Visual Studio Code,
     \item l'outil de versioning git,
-    \item un SGBD (Système de Gestion de Base de Données), https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es
+    \item un SGBD (Système de Gestion de Base de Données), %https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es
     \item le language PHP,
     \item l'outil Composer,
     \item le framework Laravel,
@@ -341,7 +340,7 @@ Dans notre cas, pour que le développeur puisse commencer à développer, il doi
 Comme vous pouvez le voir, la liste devient vite longue et certains des outils à installer prennent passablement de temps et possèdent des configuration spécifiques.
 Je parle notamment des outils suivants:
 \begin{itemize}
-    \item le SGBD (Système de Gestion de Base de Données), https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es
+    \item le SGBD (Système de Gestion de Base de Données),
     \item le language PHP, avec Composer et le framework Laravel,
     \item l'environement d'exécution (runtime environment) Node.js et le framework Vue.js.
 \end{itemize}
@@ -351,17 +350,18 @@ Comme vous l'aurez compris, un des besoins le plus important pour le choix de ce
 Il faut que cela soit facile à prendre en main et bien documenté.
 Un des autres points à prendre en compte, est la disponibilité des outils utilisés, dans le sens où des outils payants ne pourraient pas être accessibles pour certains développeur.
 Créer quelque chose de simple à prendre en main, c'est important, mais il faut aussi prendre en compte la difficulté nécessaire pour fournir les outils fini simplifiant cett étape.
+% gros avantage, CI gratuit si on a tout gratuit à ajouter
 
 \subsubsection{Besoins pour l'infrastructure de production}
 Nous allons maintenant faire de même pour l'infrastructure de production.
 L'infrastructure de production englobe tous les outils à installer et toutes les configurations à réaliser sur un pc vierge afin que le programme final soit accessible est utilisable par n'importe quel utilisateur.
-En général, la simplicité de mise à jour du programme, la performance et la robustesse sont recherchés. 
+En général, la simplicité de mise à jour du programme, la performance et la robustesse sont recherchés.
 On peut aussi prendre en compte la flexibilité de la solution, dans le sens où il serait facile de déployer le programme final sur une autre machine de production.
 En effet, la première étape de configuration se réalise peu de fois et si cette dernière est un peu plus compliquée, cela n'est pas forcément un énorme désavantage.
 Dans notre cas, pour que le programme puisse fonctionner sur le serveur de production, il est nécessaire d'installer tous les outils suivants:
 \begin{itemize}
     \item potentiellement l'outil de versioning git,
-    \item un SGBD (Système de Gestion de Base de Données), https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es
+    \item un SGBD (Système de Gestion de Base de Données),
     \item le language PHP,
     \item l'outil Composer,
     \item le framework Laravel,
@@ -372,7 +372,7 @@ La liste des outils à installer et configurer, comme pour l'environnement de d�
 Certains outils prennent passablement de temps et possèdent des configuration spécifique.
 Je parle notamment des outils suivants:
 \begin{itemize}
-    \item le SGBD (Système de Gestion de Base de Données), https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es
+    \item le SGBD (Système de Gestion de Base de Données),
     \item le language PHP, avec Composer et le framework Laravel,
 \end{itemize}
 Comme expliqué précédemment, une certaine flexibilité et simplicité est recherchée lors de la mise en place de l'infrastructure et c'est pour cela qu'il est préférable de simplifier le plus possible l'installation et la configuration des outils cités ci-dessus..
@@ -386,27 +386,77 @@ Si nous résumons les critères qui influenceront notre décision, nous pouvons 
     \item le framework Laravel.
 \end{itemize}
 
-\subsubsection{Besoins pour les DevOps}
+\subsubsection{Besoins pour les \Gls{devops}}
+Pour finir, nous allons maintenant faire de même pour le pipeline \Gls{devops}.
+Le pipeline \Gls{devops} défini toutes les étapes réalisées et les outils utilisé pour parvenir à mettre en place une infrastructure de travail et de livraison de produit fonctionnel et automatisée au maximum.
+Le but des \Gls{devops} étant d'automatisé le plus de tâches possibles, on attend du donc du pipeline les critères suivants:
+\begin{itemize}
+    \item la performance de l'infrastructure (dans le sens de la rapidité),
+    \item la "simplicité" de mise en place du pipeline,
+    \item la simplicité de mise à jour du pipeline via une flexibilité maximum,
+    \item la robustesse du pipeline,
+    \item la possibilité d'ajouter des étapes intermédiaires de tests du produit entre l'infrastructure de développement et de prodution.
+\end{itemize}
+
+La flexibilité et simplicité ressort encore une fois dans les besoins de cette section.
+Mais un point important est la possibilité de tester manuellement son produit avant de le livrer en production.
+
+% docker
+\subsection{Introduction à \Gls{docker}}
+Pour pour pouvoir comparer les différentes infrastructures et faire des choix sur ces dernière, il est important d'introduire l'outil \Gls{docker}.
+\Gls{docker} est un outil permettant de gérer des containers.
+Qu'est-ce qu'un container? Un container est une sorte de machine virtuelle plus légère ayant pour but d'encapsuler une ou plusieurs applications / outils technologiques ainsi que toutes les dépendances que ces applications exigent pour leur bon fonctionnement.
+Il ne s'agit donc pas de virtualisation mais de "conteneurisation" ou "containerization" en anglais.
+Nous remarquons bien la différence avec la figure suivante:
+\begin{figure}
+    %\href{https://www.docker.com/wp-content/uploads/2021/11/docker-containerized-and-vm-transparent-bg.png}
+    %{\includegraphics[width=\textwidth]{picture}}
+    \caption{Comparaison entre conteneurs et machines virtuelles}
+\end{figure}
+Les containers sont facilement téléchargeables et transmissibles. Ils sont également relativement facile à mettre en place.
+Le principe est simple, nous avons une application et une certaine configuration qui fonctionne, nous pouvons facilement l'encapsuler dans un container et le transmettre à nos collègues ou le télécharger sur un autre pc.
+Un des principales avantages, est le fait que le container ne dépend pas de l'OS ou de l'état de la machine sur lequel il va être lancé.
+Le seul point requis, est de posséder docker sur la machine.
+Cette solution rend plus flexible et portable l'exécution d'application sur n'importe quelle machine.
+Voici un schéma démontrant la façon dont docker et des containers dockers sont mis en place sur une machine:
+\begin{figure}
+    %\href{https://www.docker.com/wp-content/uploads/2021/11/container-what-is-container.png}
+    %{\includegraphics[width=\textwidth]{picture}}
+    \caption{Conteneurisation d'applications}
+\end{figure}
+%https://www.docker.com/resources/what-container/
+%https://www.ibm.com/fr-fr/cloud/learn/docker
+%https://fr.wikipedia.org/wiki/Docker_(logiciel)
+
+\subsubsection{Et Kubernetes?}
+Pourquoi utiliserions-nous forcément \Gls{docker} sans avoir réfléchi à la possibilité de Kubernetes?
+
+% comment mettre en place -> voir avec monsieur Graf / regarder avec des profs
+% si question pointu, peuvent être transférer à m. chevallier
+
+%https://kubernetes.io/
 
 % dev
 \subsection{Infrastructures de développement}
 
 L'infrastructure que vous pouvez voir dans la figure ci-dessous et celle qui était utilisée lorsque j'ai reprise le projet.
 En résumé, tous les outils ont été installé sur la machine de développement sans virtualisation.
-%\figi{infrastructure_dev_actuelle.xml}{10cm}{Infrastructure de développement actuelle}
+\figi{infrastructure_dev_actuelle.xml}{16cm}{Infrastructure de développement actuelle}
+%\figi{infrastructure_dev_actuelle}{16cm}{Infrastructure de développement actuelle}
 %\fig{infrastructure_dev_actuelle.xml}{Infrastructure de développement actuelle}
 
-%\figi{infrastructure_dev_db_docker.xml}{10cm}{Infrastructure de développement avec une db end docker}
+\figi{infrastructure_dev_db_docker.xml}{16cm}{Infrastructure de développement avec une db end docker}
+%\fig{infrastructure_dev_db_docker}{Infrastructure de développement avec une db end docker}
 %\fig{infrastructure_dev_db_docker.xml}{Infrastructure de développement avec une db end docker}
 
-%\figi{infrastructure_dev_db_laravel_docker.xml}{10cm}{Infrastructure de développement avec une db et laravel en docker}
+\figi{infrastructure_dev_db_laravel_docker.xml}{16cm}{Infrastructure de développement avec une db et laravel en docker}
 %\fig{infrastructure_dev_db_laravel_docker.xml}{Infrastructure de développement avec une db et laravel en docker}
 
-https://laravel.com/docs/9.x/sail
-https://blog.logrocket.com/laravel-and-docker-a-guide-to-using-laravel-sail/
-https://r00t4bl3.com/post/how-to-setup-docker-environment-for-laravel-development
-https://dockerize.io/guides/php-laravel-guide
-https://www.honeybadger.io/blog/laravel-docker-php/
+%https://laravel.com/docs/9.x/sail
+%https://blog.logrocket.com/laravel-and-docker-a-guide-to-using-laravel-sail/
+%https://r00t4bl3.com/post/how-to-setup-docker-environment-for-laravel-development
+%https://dockerize.io/guides/php-laravel-guide
+%https://www.honeybadger.io/blog/laravel-docker-php/
 
 Les différentes infrastructures désormais présentées, il est nécessaire de les comparer en listant les pour et les contres de chaque changement en prenant comme référentielle l'infrastructure actuelle.
 Les 3 améliorations (combinées ou non) proposées sont les suivantes:
@@ -418,6 +468,11 @@ Les 3 améliorations (combinées ou non) proposées sont les suivantes:
 
 %\begin{multicols}{2}
 %[
+
+% vraiment bien se blinder au niveau des arguments via blog et études, sources écrites
+% si on a pas trouvé, on peut dire je ne sais pas, on DOIT dire -> joker ultime
+% toucher quelque chose en surface, si je ne connais pas, si point essentiel dans projet, faire un choix + essai -> prototype, démonstration sur expérience
+% aussi parlé des charges qui devront être supportées et si c'est possible, nb user final par ex
 
 Commençons par réfléchir sur le passage du SGBD en machine Docker.
 Pour ceci, nous allons énumérer les avantages et inconvénients d'installer le SGBD nativement.
@@ -516,7 +571,7 @@ Avantages:
     \item Rapide à installer,
     \item Configuration en gande partie déjà réalisée,
     \item Compatible avec tous les OS,
-    \item Existance d'un outil conçu pour être utiliser avec Docker (sail)
+    \item Existance d'un outil conçu pour être utiliser avec \Gls{docker} (sail)
     \item Permet d'avoir plusieurs versions installées.
 \end{itemize}
 
@@ -529,15 +584,22 @@ Inconvénients:
 
 %https://laravel.com/docs/9.x/sail
 
+\subsubsection{Analyse de risque}
+% comment protéger une infra en prod
+% contacter des profs de sécu
+% lister ce qu'on va mettre en place
+% on est resté en surface, il faudrait investir des experts pour évaluer. (audit par exemple)
+% sécurité pas prise en compte dans le projet car pas dans objectif, pas le luxe de rechercher car trop de temps, à mentionner dans le rapport.
+
 % prod
 \subsection{Infrastructures de production}
-%\figi{infrastructure_prod_actuelle.xml}{10cm}{Infrastructure de production actuelle}
+%\figi{infrastructure_prod_actuelle.xml}{16cm}{Infrastructure de production actuelle}
 %\fig{infrastructure_prod_actuelle.xml}{Infrastructure de production actuelle}
 
-%\figi{infrastructure_prod_db_docker.xml}{10cm}{Infrastructure de production avec une db en docker}
+%\figi{infrastructure_prod_db_docker.xml}{16cm}{Infrastructure de production avec une db en docker}
 %\fig{infrastructure_prod_db_docker.xml}{Infrastructure de production avec une db en docker}
 
-%\figi{infrastructure_prod_db_laravel_docker.xml}{10cm}{Infrastructure de production avec une db et laravel en docker}
+%\figi{infrastructure_prod_db_laravel_docker.xml}{16cm}{Infrastructure de production avec une db et laravel en docker}
 %\fig{infrastructure_prod_db_laravel_docker.xml}{Infrastructure de production avec une db et laravel en docker}
 
 docker en prod perf:
@@ -546,26 +608,54 @@ docker en prod perf:
 %https://dominoweb.draco.res.ibm.com/reports/rc25482.pdf
 %https://www.freecodecamp.org/news/7-cases-when-not-to-use-docker/
 
+% pour le déploiment, regarder pourquoi certains sont parti de docker
+
 % devops
 %https://blog.logrocket.com/how-to-create-a-ci-cd-for-a-laravel-application-using-github-actions/
 
-\subsection{DevOps}
-%\figi{devops_dockerhub.xml}{10cm}{DevOps via dockerhub}
+\subsection{\Gls{devops}}
+Mais qu'est-ce que c'est les DevOps:
+%https://www.youtube.com/watch?v=scEDHsr3APg
+
+%\figi{devops_dockerhub.xml}{16cm}{DevOps via dockerhub}
 %\fig{devops_dockerhub.xml}{DevOps via dockerhub}
 
-%\figi{devops_heroku.xml}{10cm}{DevOps via heroku}
+%\figi{devops_heroku.xml}{16cm}{DevOps via heroku}
 %\fig{devops_heroku.xml}{DevOps via heroku}
-https://devcenter.heroku.com/articles/getting-started-with-laravel
+%https://devcenter.heroku.com/articles/getting-started-with-laravel
 
-%\figi{devops_github.xml}{10cm}{DevOps via github}
+%\figi{devops_github.xml}{16cm}{DevOps via github}
 %\fig{devops_github.xml}{DevOps via github}
+
+\subsubsection{Pourquoi Github?}
+Dans tous les exemples ci-dessus, l'outil utilisé pour réaliser les \Gls{devops} est Github, mais pourquoi?
+Tout d'abord, il faut comprendre qu'il existe d'autres outil de "gestion" de \Gls{devops}, des services de CI ou Devops, voici une liste non exhaustive:
+\begin{itemize}
+    \item Jenkins, %https://www.jenkins.io/
+    \item TeamCity, %https://www.jetbrains.com/teamcity/
+    \item CircleCI, %https://www.guru99.com/top-20-continuous-integration-tools.html
+    \item Travis-CI, %https://www.travis-ci.com/
+    \item GitLab, %https://about.gitlab.com/
+    \item Bamboo, %https://www.atlassian.com/software/bamboo
+    \item GoCD, %https://www.gocd.org/
+    \item Azure DevOps. %https://azure.microsoft.com/fr-fr/services/devops/
+\end{itemize}
+
+Tous ces outils, mise à part GitLab, doivent être installé et configurer pour le projet.
+
+% choix entre github et gitlab, ma décision
+
+% Tous les outils CI / CD
+%https://katalon.com/resources-center/blog/ci-cd-tools#
+%https://www.lambdatest.com/blog/31-best-ci-cd-tools/
+%https://www.guru99.com/top-20-continuous-integration-tools.html
 
 % code
 \subsection{Architectures de code}
-%\figi{architecture_code_spring.xml}{10cm}{Architecture de code du framework Spring "classique"}
+\figi{architecture_code_spring.xml}{16cm}{Architecture de code du framework Spring "classique"}
 %\fig{architecture_code_spring.xml}{Architecture de code du framework Spring "classique"}
 
-%\figi{architecture_code_laravel.xml}{10cm}{Architecture de code du framework Laravel "classique"}
+\figi{architecture_code_laravel.xml}{16cm}{Architecture de code du framework Laravel "classique"}
 %\fig{architecture_code_laravel.xml}{Architecture de code du framework Laravel "classique"}
 
 \figi{architecture_code_laravel_proposee.xml}{16cm}{Architecture de code Laravel proposée}
@@ -584,12 +674,30 @@ https://devcenter.heroku.com/articles/getting-started-with-laravel
 %https://github.com/laravel/vonage-notification-channel/blob/3.x/UPGRADE.md
 
 \chapter{Conception de la base de données}
+% à rendre aussi pour le premier rendu
+% model de l'ORM
 
 \chapter{Conception du Backend / de l'API}
+% architecture de code
 
-\chapter{Intégration continu (CI)}
+% ensuite décrire ce qu'on a mis en place et indiquer s'il y a des failles
 
-\chapter{Déploiement continu (CD)}
+% surtout indiquer tout ce qu'on a fait et tout ce que j'ai pas fait
+% et pourquoi je l'ai pas fait, pas compris qqch ou pas eu le temps, pas la priorité, pas de sources suffisantes
+
+dans le texte (Labrecque, 2018)
+\cite{labrecque}
+
+suivantes:
+(Labrecque, 2018; x, yyyy;)
+
+pour reformuler
+
+Labrecque M. (2018). Pros and cons of Docker. in \textit{Docker, planet drupal}. consulté à l'adresse: https://affinitybridge.com/blog/pros-and-cons-docker (consulté le 31.03.2022)
+
+\chapter{Intégration continu (\Gls{ci})}
+
+\chapter{Déploiement continu (\Gls{cd})}
 
 %%if
 \section{Citations et bibliographie}
