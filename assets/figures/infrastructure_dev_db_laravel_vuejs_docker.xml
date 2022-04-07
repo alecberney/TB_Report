@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="Electron" modified="2022-04-07T06:24:30.912Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/17.2.4 Chrome/96.0.4664.174 Electron/16.1.0 Safari/537.36" etag="7pLY4HpueOA4-ZDfqlUj" version="17.2.4" type="device">
+  <diagram id="e5cUrdkydb-ngxUuPbP0" name="Infrastructure DB + Laravel Docker">
+    <mxGraphModel dx="1038" dy="641" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="ZVXx9Sijlcg7XHccWKAX-0" />
+        <mxCell id="ZVXx9Sijlcg7XHccWKAX-1" parent="ZVXx9Sijlcg7XHccWKAX-0" />
+        <mxCell id="zAes5nKSPiBuCzGRkJXu-0" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=2;" parent="ZVXx9Sijlcg7XHccWKAX-1" vertex="1">
+          <mxGeometry x="40" y="120" width="760" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="zAes5nKSPiBuCzGRkJXu-2" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=none;fontSize=14;" parent="ZVXx9Sijlcg7XHccWKAX-1" vertex="1">
+          <mxGeometry x="80" y="160" width="200" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="mXrcL0pbb7X1L77aamxD-0" value="&lt;span&gt;Projet Frontend (Vue.js)&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=none;fontSize=14;" vertex="1" parent="ZVXx9Sijlcg7XHccWKAX-1">
+          <mxGeometry x="100" y="230" width="160" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="b0WyCLxM9OWj5-0vAjJ--0" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;strokeWidth=2;fillColor=none;" parent="ZVXx9Sijlcg7XHccWKAX-1" vertex="1">
+          <mxGeometry x="320" y="160" width="200" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="ZVXx9Sijlcg7XHccWKAX-2" value="Infrastructure de développement avec la DB, Laravel et Vue.js en Docker" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" parent="ZVXx9Sijlcg7XHccWKAX-1" vertex="1">
+          <mxGeometry y="40" width="820" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zAes5nKSPiBuCzGRkJXu-1" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;Machine de développement&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" parent="ZVXx9Sijlcg7XHccWKAX-1" vertex="1">
+          <mxGeometry x="40" y="90" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zAes5nKSPiBuCzGRkJXu-3" value="Projet Backend / API (Laravel)" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=none;fontSize=14;" parent="ZVXx9Sijlcg7XHccWKAX-1" vertex="1">
+          <mxGeometry x="340" y="230" width="160" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="zAes5nKSPiBuCzGRkJXu-5" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn.freebiesupply.com/logos/large/2x/vue-9-logo-png-transparent.png;" parent="ZVXx9Sijlcg7XHccWKAX-1" vertex="1">
+          <mxGeometry x="144.73" y="359.55" width="70.53" height="60.9" as="geometry" />
+        </mxCell>
+        <mxCell id="zAes5nKSPiBuCzGRkJXu-6" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://logos-download.com/wp-content/uploads/2016/09/Node_logo_NodeJS.png;" parent="ZVXx9Sijlcg7XHccWKAX-1" vertex="1">
+          <mxGeometry x="122.76" y="235" width="114.47" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="zAes5nKSPiBuCzGRkJXu-7" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn.freelogovectors.net/svg05/laravel-logo.svg;" parent="ZVXx9Sijlcg7XHccWKAX-1" vertex="1">
+          <mxGeometry x="380" y="350" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zAes5nKSPiBuCzGRkJXu-8" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://pngimg.com/uploads/php/php_PNG43.png;" parent="ZVXx9Sijlcg7XHccWKAX-1" vertex="1">
+          <mxGeometry x="360" y="210" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="fnmC4cnMcTdG8ZlXIt8I-0" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;strokeWidth=2;fillColor=none;fontSize=14;" parent="ZVXx9Sijlcg7XHccWKAX-1" vertex="1">
+          <mxGeometry x="580" y="230" width="160" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="fnmC4cnMcTdG8ZlXIt8I-1" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn.freebiesupply.com/logos/large/2x/mysql-5-logo-png-transparent.png;" parent="ZVXx9Sijlcg7XHccWKAX-1" vertex="1">
+          <mxGeometry x="595" y="310" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="fnmC4cnMcTdG8ZlXIt8I-2" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;strokeWidth=2;fillColor=none;" parent="ZVXx9Sijlcg7XHccWKAX-1" vertex="1">
+          <mxGeometry x="560" y="160" width="200" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="fnmC4cnMcTdG8ZlXIt8I-3" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://1000marcas.net/wp-content/uploads/2020/02/Docker-Logo.png;" parent="ZVXx9Sijlcg7XHccWKAX-1" vertex="1">
+          <mxGeometry x="617.74" y="172.38" width="84.51" height="47.62" as="geometry" />
+        </mxCell>
+        <mxCell id="fnmC4cnMcTdG8ZlXIt8I-4" value="Base de données (MySQL)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" parent="ZVXx9Sijlcg7XHccWKAX-1" vertex="1">
+          <mxGeometry x="580" y="280" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="b0WyCLxM9OWj5-0vAjJ--1" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://1000marcas.net/wp-content/uploads/2020/02/Docker-Logo.png;" parent="ZVXx9Sijlcg7XHccWKAX-1" vertex="1">
+          <mxGeometry x="377.74" y="172.38" width="84.51" height="47.62" as="geometry" />
+        </mxCell>
+        <mxCell id="QVfMZUuJF2wB8pxnGt-1-0" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.altonline.no/images/easyblog_articles/668/laravel-logo.png;" parent="ZVXx9Sijlcg7XHccWKAX-1" vertex="1">
+          <mxGeometry x="383" y="353" width="74" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="mXrcL0pbb7X1L77aamxD-1" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://1000marcas.net/wp-content/uploads/2020/02/Docker-Logo.png;" vertex="1" parent="ZVXx9Sijlcg7XHccWKAX-1">
+          <mxGeometry x="137.74" y="172.38" width="84.51" height="47.62" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -198,7 +198,18 @@ Lorsque vous mentionnez des quantités, utilisez les unités du système interna
 L'introduction est une section requise dans un rapport technique. Introduisez votre travail, l'idée de départ et les objectifs attendus. Un lecteur qui découvrirait votre projet au travers de cette introduction devrait ainsi être capable d'en comprendre le cadre, l'idée générale et les aboutissants du projet.
 
 \section{Contexte}
-Cette section \underline{n'est pas obligatoire}, mais elle est souvent présente dans un rapport technique pour compléter l'introduction et définir le contexte du travail \cad le cadre formel dans lequel le travail est mené.
+Le FabLab est un laboratoire permettant de réaliser des travaux sur des machines de ce dernier. Actuellement, pour réaliser un travail sur une machine, il est nécessaire de réaliser une demande par email à l’un des techniciens ayant le droit d’usiner sur la machine souhaitée. Une fois la demande reçue, le technicien usine dès qu’il le peut et doit recontacter le mandataire pour lui donner son travail fini. Durant toute cette période, aucun retour n’a été donné au mandataire. En cas de problème avec un travail, le technicien doit également recontacter le client.
+Certains défauts majeurs peuvent être identifier avec la procédure actuelle, les voici :
+\begin{itemize}
+    \item Il n’y a aucun suivi des travaux pour le mandataire, \cite{lieberherr}
+    \item Les échanges liés aux travaux peuvent être réalisé via plusieurs canaux (email, Teams, vocal, etc.), \cite{lieberherr}
+    \item Risque de désorganisation, \cite{lieberherr}
+    \item Manque de clarté quant à la procédure, \cite{lieberherr}
+    \item Aucun historique des travaux réalisé,
+    \item Gestion problèmes survenus lors du travail compliqué.
+\end{itemize}
+Une première partie du projet a déjà été réalisée lors du travail de Bachelor de monsieur Tristan Lieberherr. De ce fait aucun cahier des charges n’était défini à l’origine, car il était d’abord nécessaire d’effectuer une analyse du projet afin de définir les points d’améliorations qu’allaient contenir le cahier des charges.
+
 
 \section{Cahier des Charges}
 
@@ -319,6 +330,19 @@ Mais avant cela, il est nécessaire de définir précisément les besoins pour l
 Pour chaque choix, technologiques ou conceptuels, une liste des possibilités réalisables sera énumérée et si possible représentée visuellement.
 Cette liste de possibilités sera accompagnées des avantages et inconvénients de chaque solution en s'inspirant des besoins du projet.
 
+\subsection{Rappel des choix technologiques déjà effectués}
+Dans cette section, je vais énumérer les choix technologiques déjà effectués par le premier étudiant ayant travaillé sur le projet.
+Considérant les choix de l'étudiant comme bon et bien argumenté, je ne vois aucune raison de les remettre en question, surtout qu'un travail conséquent a déjà été réalisé avec les technologies choisies. Pour plus de précisions sur ces choix technologiques, je vous invite à consulter son \href{TODO}{rapport}.
+Voici un résumé des décisions prises lors de la première phase du projet:
+\begin{itemize}
+    \item Backend: PHP avec le framework Laravel,
+    \item Frontend: Javascript avec Vue.js,
+    \item SGBD: MySQL,
+    \item Outil SSO: Shibboleth. %https://blog.miniorange.com/what-is-shibboleth/
+\end{itemize}
+
+%TODO: ajouter image stackshare.
+
 \subsection{Besoins pour le projet}
 Je vais ici définir les besoins du projet et ceci en les séparant par parties distinctes.
 
@@ -373,7 +397,7 @@ Certains outils prennent passablement de temps et possèdent des configuration s
 Je parle notamment des outils suivants:
 \begin{itemize}
     \item le SGBD (Système de Gestion de Base de Données),
-    \item le language PHP, avec Composer et le framework Laravel,
+    \item le language PHP, avec Composer et le framework Laravel.
 \end{itemize}
 Comme expliqué précédemment, une certaine flexibilité et simplicité est recherchée lors de la mise en place de l'infrastructure et c'est pour cela qu'il est préférable de simplifier le plus possible l'installation et la configuration des outils cités ci-dessus..
 
@@ -382,8 +406,7 @@ Si nous résumons les critères qui influenceront notre décision, nous pouvons 
     \item la performance de l'infrastructure,
     \item la simplicité de mise à jour du programme au sein de l'infrastructure,
     \item la robustesse de l'infrastructure,
-    \item la flexibilité de l'infrastructure,
-    \item le framework Laravel.
+    \item la flexibilité de l'infrastructure.
 \end{itemize}
 
 \subsubsection{Besoins pour les \Gls{devops}}
@@ -430,22 +453,33 @@ Voici un schéma démontrant la façon dont docker et des containers dockers son
 %https://fr.wikipedia.org/wiki/Docker_(logiciel)
 %https://www.youtube.com/watch?v=Gjnup-PuquQ
 
-%virtual machine vs containers: https://www.youtube.com/watch?v=cjXI-yxqGTI
+%virtual machine vs containers: 
+%https://www.youtube.com/watch?v=cjXI-yxqGTI
 %https://www.ibm.com/cloud/learn/containers?utm_medium=OSocial&utm_source=Youtube&utm_content=000023UA&utm_term=10010608&utm_id=YTDescription-101-Containers-vs-VMs-LH-Containers-Guide&cm_mmc=OSocial_Youtube-_-Cloud+and+Data+Platform_SFT+Cloud+Platform+Digital-_-WW_WW-_-YTDescription-101-Containers-vs-VMs-LH-Containers-Guide&cm_mmca1=000023UA&cm_mmca2=10010608
 %https://www.ibm.com/cloud/learn/virtual-machines?utm_medium=OSocial&utm_source=Youtube&utm_content=000005UJ&utm_term=10002434&utm_id=YTDescription-101-Containers-vs-VMs-LH-Virtual-Machines-Guide&cm_mmc=OSocial_Youtube-_-Cloud+and+Data+Platform_PLT+Cloud+Platform+F2F-_-WW_WW-_-YTDescription-101-Containers-vs-VMs-LH-Virtual-Machines-Guide&cm_mmca1=000005UJ&cm_mmca2=10002434
 
 
-\subsection{Performances de \Gls{docker}}
+\subsubsection{Performances de \Gls{docker}}
 \Gls{docker} est outil qui paraît très pratique, mais qu'en est-il de ses performances?
 Pour ceci, nous allons retracer quelques évalutations réalisées lors d'une étude de IBM \cite{felter2015updated}. Nous allons parcourir ces évalutations via des graphiques, tiré de l'étude, résumants bien les résultats.
 Commençant par la latence que peut apporter \Gls{docker}:
 %copier coller et dans la légende, source: x ou tiré de: x
 %todo ajouter figure
-Fig. 3. Network round-trip latency (µs)
+\begin{figure}
+    %\href{https://www.docker.com/wp-content/uploads/2021/11/container-what-is-container.png}
+    %{\includegraphics[width=\textwidth]{picture}}
+    \caption{Network round-trip latency (µs), \cite{rad2017introduction}}
+\end{figure}
+
 On constate que la latence double, mais nous parlons ici de microsecondes, et de 30 microsecondes supplémentaires, ce qui est en soit assez peu pour de petite infrastructure.
 
 %todo autres stats
 
+%docker en prod perf:
+%https://stackoverflow.com/questions/21691540/how-to-optimize-performance-for-a-docker-container/21707838#21707838
+%https://stackoverflow.com/questions/21889053/what-is-the-runtime-performance-cost-of-a-docker-container
+%https://dominoweb.draco.res.ibm.com/reports/rc25482.pdf
+%https://www.freecodecamp.org/news/7-cases-when-not-to-use-docker/
 
 
 \subsubsection{Et \Gls{kubernetes}?}
@@ -467,9 +501,17 @@ En effet, La charge attendu par l'application déployée ne devrait pas dépasse
 
 %https://stackshare.io/: outil très utile pour faire des comparaisons de technologies
 
-\subsubsection{Et les Linux Containers?}
-Pourquoi utiliserions-nous forcément \Gls{docker} sans avoir réfléchi à la possibilité de Kubernetes?
-%https://linuxcontainers.org/
+\subsubsection{Autres solutions de containers}
+Pourquoi utiliserions-nous forcément \Gls{docker}
+-> beaucoup moins utilisé
+
+\begin{itemize}
+    \item BSD Jails, %https://fr.wikipedia.org/wiki/BSD_Jail
+    \item LXD, %https://linuxcontainers.org/lxd/
+    \item LXC, %https://linuxcontainers.org/lxc/introduction/
+    \item Solaris Zones, %https://docs.oracle.com/cd/E18440_01/doc.111/e18415/chapter_zones.htm#OPCUG426
+    \item RKT. %https://www.redhat.com/en/topics/containers/what-is-rkt
+\end{itemize}
 
 % dev
 \subsection{Infrastructures de développement}
@@ -478,7 +520,7 @@ Pourquoi utiliserions-nous forcément \Gls{docker} sans avoir réfléchi à la p
 
 
 L'infrastructure que vous pouvez voir dans la figure ci-dessous et celle qui était utilisée lorsque j'ai reprise le projet.
-En résumé, tous les outils ont été installé sur la machine de développement sans virtualisation.
+En résumé, tous les outils ont été installés nativement sur la machine de développement sans virtualisation.
 \figi{infrastructure_dev_actuelle.xml}{16cm}{Infrastructure de développement actuelle}
 %\figi{infrastructure_dev_actuelle}{16cm}{Infrastructure de développement actuelle}
 %\fig{infrastructure_dev_actuelle.xml}{Infrastructure de développement actuelle}
@@ -487,8 +529,15 @@ En résumé, tous les outils ont été installé sur la machine de développemen
 %\fig{infrastructure_dev_db_docker}{Infrastructure de développement avec une db end docker}
 %\fig{infrastructure_dev_db_docker.xml}{Infrastructure de développement avec une db end docker}
 
-\figi{infrastructure_dev_db_laravel_docker.xml}{16cm}{Infrastructure de développement avec une db et laravel en docker}
+\figi{infrastructure_dev_db_laravel_docker.xml}{16cm}{Infrastructure de développement avec une db et Laravel en docker}
 %\fig{infrastructure_dev_db_laravel_docker.xml}{Infrastructure de développement avec une db et laravel en docker}
+
+Laravel \href{https://laravel.com/docs/9.x/homestead}{Homestead} est un environnement de développement virtualisé à l'aide d'une machine virtuelle \href{https://www.vagrantup.com/}{Vagrant}.
+Cette solution est considérée comme le prédecesseur à Laravel Sail qui est beaucoup plus léger.
+C'est pourquoi, cette solution ne fera pas parti des choix que nous allons argumenter, mais est présentée comme complément.
+\figi{infrastructure_dev_db_laravel_homestead.xml}{16cm}{Infrastructure de développement avec Laravel Homestead}
+
+\figi{infrastructure_dev_db_laravel_vuejs_docker.xml}{16cm}{Infrastructure de développement avec une db, Laravel et Vue.js en docker}
 
 %https://laravel.com/docs/9.x/sail
 %https://blog.logrocket.com/laravel-and-docker-a-guide-to-using-laravel-sail/
@@ -523,9 +572,8 @@ Avantages:
 
 Inconvénients:
 \begin{itemize}
-    \item Prends beaucoup de temps à installer,
-    \item Coûte beaucoup en mémoire sur le pc,
-    \item Configuration à faire à la main,
+    \item Demande du temps pour l'installation,
+    \item Configuration à réaliser à la main,
     \item Fort risque d'erreur lors de la configuration,
     \item Installation différente pour chaque OS.
 \end{itemize}
@@ -533,8 +581,9 @@ Inconvénients:
 Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir le SGBD en machine Docker.
 Avantages:
 \begin{itemize}
-    \item Rapide à installer,
-    \item Coûte peu en mémoire sur le pc,
+    \item Accélère l'installation de l'environnement de développement, \cite{labrecque}
+    \item Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe, \cite{labrecque}
+    \item Rend le debugging dû aux environnements de développement plus facile, \cite{labrecque}
     \item Configuration en gande partie déjà réalisée,
     \item Compatible avec tous les OS.
 \end{itemize}
@@ -542,54 +591,19 @@ Avantages:
 Inconvénients:
 \begin{itemize}
     \item Gestion de la BD potentiellement plus compliquée,
-    \item Nécessite Docker et les connaissances qui vont avec.
+    \item \Gls{docker} peut avoir des problèmes de performances, \cite{labrecque}
+    \item Nécessite Docker et les connaissances qui vont avec. \cite{labrecque}
 \end{itemize}
 %]%\blindtext\blindtext
 %\end{multicols}
-
-%\begin{multicols}{2}[
-Finalement, parlons du passage de l'environnement Vue.js en machine Docker.
-Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet environnement.
-Avantages:
-\begin{itemize}
-    \item Meilleur performance,
-    \item Gestion totale de l'environnement.
-\end{itemize}
-
-Inconvénients:
-\begin{itemize}
-    \item Peut générer des conflits si plusieurs versions sont présentes,
-    \item Impossibilité d'avoir plusieurs versions différentes installées,
-    \item Demande du temps,
-    \item Configuration à faire à la main,
-    \item Fort risque d'erreur lors de la configuration,
-    \item Installation différente pour chaque OS.
-\end{itemize}
-
-Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement Laravel en machine Docker.
-Avantages:
-\begin{itemize}
-    \item Rapide à installer,
-    \item Configuration en gande partie déjà réalisée,
-    \item Compatible avec tous les OS,
-    \item Existance d'un outil conçu pour être utiliser avec Docker (sail)
-    \item Permet d'avoir plusieurs versions installées.
-\end{itemize}
-
-Inconvénients:
-\begin{itemize}
-    \item Nécessite Docker et les connaissances qui vont avec,
-    \item Peut-être compliqué à mettre en place,
-\end{itemize}
-%]%\blindtext\blindtext
-%\end{multicols}
+% TODO reciter besoins et dire solution qui se rapproche le plus
 
 %\begin{multicols}{2}[
 Passons maintenant au passage de l'environnement Laravel en machine Docker.
 Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet environnement.
 Avantages:
 \begin{itemize}
-    \item Meilleur performance,
+    \item (Meilleur performance),
     \item Gestion totale de l'environnement.
 \end{itemize}
 
@@ -597,7 +611,7 @@ Inconvénients:
 \begin{itemize}
     \item Peut générer des conflits si plusieurs versions sont présentes,
     \item Impossibilité d'avoir plusieurs versions différentes installées,
-    \item Demande du temps,
+    \item L'installation demande du temps,
     \item Configuration à faire à la main,
     \item Fort risque d'erreur lors de la configuration,
     \item Installation différente pour chaque \Gls{os}.
@@ -606,56 +620,257 @@ Inconvénients:
 Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement Laravel en machine Docker.
 Avantages:
 \begin{itemize}
-    \item Rapide à installer,
+    \item Accélère l'installation de l'environnement de développement, \cite{labrecque}
+    \item Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe, \cite{labrecque}
+    \item Rend le debugging dû aux environnements de développement plus facile, \cite{labrecque}
     \item Configuration en gande partie déjà réalisée,
     \item Compatible avec tous les OS,
-    \item Existance d'un outil conçu pour être utiliser avec \Gls{docker} (sail)
+    \item Existance d'un outil donné par Laravel et conçu pour être utiliser avec \Gls{docker}, il s'agit de \href{https://laravel.com/docs/9.x/sail}{Sail},
     \item Permet d'avoir plusieurs versions installées.
 \end{itemize}
 
 Inconvénients:
 \begin{itemize}
-    \item Nécessite Docker et les connaissances qui vont avec.
+    \item \Gls{docker} peut avoir des problèmes de performances, \cite{labrecque}
+    \item Nécessite Docker et les connaissances qui vont avec. \cite{labrecque}
 \end{itemize}
 %]%\blindtext\blindtext
 %\end{multicols}
+% TODO reciter besoins et dire solution qui se rapproche le plus
 
 %https://laravel.com/docs/9.x/sail
 %https://laravel.com/docs/9.x/homestead
 
-\subsubsection{Analyse de risque}
+%\begin{multicols}{2}[
+Finalement, parlons du passage de l'environnement Vue.js en machine Docker.
+Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet environnement.
+Avantages:
+\begin{itemize}
+    \item (Meilleur performance),
+    \item Node.js possède un bon gestionnaire de version,
+    \item Compatible avec tous les OS,
+    \item Gestion totale de l'environnement.
+\end{itemize}
+
+Inconvénients:
+\begin{itemize}
+    \item Configuration à faire à la main,
+\end{itemize}
+
+Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement Laravel en machine Docker.
+Avantages:
+\begin{itemize}
+    \item Rapide à installer,
+    \item Configuration en gande partie déjà réalisée,
+    \item Compatible avec tous les OS.
+\end{itemize}
+
+Inconvénients:
+\begin{itemize}
+    \item Nécessite Docker et les connaissances qui vont avec,
+    \item Peut-être compliqué à mettre en place.
+\end{itemize}
+%]%\blindtext\blindtext
+%\end{multicols}
+% TODO reciter besoins et dire solution qui se rapproche le plus
+
+Suite à cette analyse des outils, la solution la plus adaptée semble être de mettre en place l'environement de développment suivant:
+
+\begin{table}[h]
+    \begin{center}
+        \caption{Environement de développment choisi \label{env_dev}}
+        \begin{tabular}{c|l|r}
+            Outil             & Technologie utilisée  \\ \hline
+            SGBD - MySQL      & Docker                \\
+            Frontend - Vue.js & Installation native   \\
+            Backend - Laravel & Laravel Sail (Docker) \\
+        \end{tabular}
+    \end{center}
+\end{table}
+
+
+Finalement cela correspond à la figure numéro %TODO \href{}{}.
+
+% prod
+\clearpage
+\subsection{Infrastructures de production}
+
+L'infrastructure de production que vous pouvez voir dans la figure ci-dessous et celle qui était utilisée lorsque j'ai reprise le projet.
+En résumé, tous les outils ont été installés nativement sur la machine de développement sans virtualisation.
+\figi{infrastructure_prod_actuelle.xml}{16cm}{Infrastructure de production actuelle}
+%\fig{infrastructure_prod_actuelle.xml}{Infrastructure de production actuelle}
+
+Cette figure-ci, montre la première amélioration possible, c'est à dire, de passer le SGBD en container docker.
+\figi{infrastructure_prod_db_docker.xml}{16cm}{Infrastructure de production avec une db en docker}
+%\fig{infrastructure_prod_db_docker.xml}{Infrastructure de production avec une db en docker}
+
+Cette figure-ci, montre la secondes amélioration possible (mais aussi la première), c'est à dire, de passer l'application web réalisée avec le framework Laravel en container docker.
+\figi{infrastructure_prod_db_laravel_docker.xml}{16cm}{Infrastructure de production avec une db et laravel en docker}
+%\fig{infrastructure_prod_db_laravel_docker.xml}{Infrastructure de production avec une db et laravel en docker}
+
+Les différentes infrastructures possibles désormais présentées, il est nécessaire de les comparer en listant les pour et les contres de chaque changement en prenant comme référentielle l'infrastructure actuelle.
+Les deux améliorations (combinées ou non) proposées sont les suivantes:
+\begin{itemize}
+    \item Passage du SGBD en machine Docker,
+    \item Passage du projet Laravel (et toutes ces technologies) en machine Docker.
+\end{itemize}
+
+%\begin{multicols}{2}
+%[
+
+Nous recommençons également par réfléchir sur le passage du SGBD en machine Docker.
+Pour ceci, nous allons énumérer les avantages et inconvénients d'installer le SGBD nativement.
+Certains peuvent être les mêmes qu'énumérer dans la partie "Infrastructure de développement". %\href TODO
+Avantages:
+\begin{itemize}
+    \item Gestion de la BD plus facile car le SGB est installé nativement,
+    \item Sauvegarde aisément réalisable,
+    \item Mise en place d'un service de façon trivialle,
+    \item Le SGBD peut-être déjà installé et peut être utilisée directement,
+    \item Ne nécessite pas Docker.
+\end{itemize}
+
+Inconvénients:
+\begin{itemize}
+    \item Demande du temps pour l'installation,
+    \item Configuration à réaliser à la main,
+    \item Fort risque d'erreur lors de la configuration,
+    \item Installation différente pour chaque OS.
+\end{itemize}
+
+Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir le SGBD en machine Docker.
+Avantages:
+\begin{itemize}
+    \item Accélère l'installation de l'environnement de production,
+    \item Facilite la mise à jour de l'environnement de production si l'environnement de développement intègre un containeur docker pour le SGBD,
+    \item Configuration en gande partie déjà réalisée,
+    \item Compatible avec tous les OS.
+\end{itemize}
+
+Inconvénients:
+\begin{itemize}
+    \item Gestion de la BD potentiellement plus compliquée,
+    \item Sauvegarde de la BD potentiellement plus compliquée,
+    \item Mise en place d'un service non trivial,
+    \item \Gls{docker} peut avoir des problèmes de performances, \cite{labrecque}
+    \item Nécessite Docker et les connaissances qui vont avec. \cite{labrecque}
+\end{itemize}
+%]%\blindtext\blindtext
+%\end{multicols}
+% TODO reciter besoins et dire solution qui se rapproche le plus
+
+%\begin{multicols}{2}[
+Passons maintenant au passage de l'environnement Laravel en machine Docker.
+Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet environnement.
+Avantages:
+\begin{itemize}
+    \item (Meilleur performance),
+    \item Gestion totale de l'environnement.
+\end{itemize}
+
+Inconvénients:
+\begin{itemize}
+    \item Mise à jour compliquée si un changement de version à lieu,
+    \item L'installation demande du temps,
+    \item Configuration à faire à la main,
+    \item Fort risque d'erreur lors de la configuration,
+    \item Installation différente pour chaque \Gls{os}.
+\end{itemize}
+
+Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement Laravel en machine Docker.
+Avantages:
+\begin{itemize}
+    \item Mise à jour du programme facilitée, dans tous les cas,
+    \item Accélère l'installation de l'environnement de production,
+    \item Configuration en gande partie déjà réalisée,
+    \item Offre une possibilité d'extensibilité horizontale,
+    \item Compatible avec tous les OS.
+\end{itemize}
+
+Inconvénients:
+\begin{itemize}
+    \item Peut laisser des failles de sécurité, suivant l'environnement mis en place,
+    \item \Gls{docker} peut avoir des problèmes de performances, \cite{labrecque}
+    \item Nécessite Docker et les connaissances qui vont avec. \cite{labrecque}
+\end{itemize}
+%]%\blindtext\blindtext
+%\end{multicols}
+
+% TODO reciter besoins et dire solution qui se rapproche le plus
+
+% TODO pour le déploiment, regarder pourquoi certains sont parti de docker
+
+
+Suite à cette analyse des outils, la solution la plus adaptée semble être de mettre en place l'environement de développment suivant:
+
+\begin{table}[h]
+    \begin{center}
+        \caption{Environement de développment choisi \label{env_prod}}
+        \begin{tabular}{c|l|r}
+            Outil             & Technologie utilisée \\ \hline
+            SGBD - MySQL      & Docker               \\
+            Backend - Laravel & Docker               \\
+        \end{tabular}
+    \end{center}
+\end{table}
+
+\subsubsection{Analyse de risques}
 % comment protéger une infra en prod
 % contacter des profs de sécu
 % lister ce qu'on va mettre en place
 % on est resté en surface, il faudrait investir des experts pour évaluer. (audit par exemple)
 % sécurité pas prise en compte dans le projet car pas dans objectif, pas le luxe de rechercher car trop de temps, à mentionner dans le rapport.
 
-% prod
-\subsection{Infrastructures de production}
-%\figi{infrastructure_prod_actuelle.xml}{16cm}{Infrastructure de production actuelle}
-%\fig{infrastructure_prod_actuelle.xml}{Infrastructure de production actuelle}
-
-%\figi{infrastructure_prod_db_docker.xml}{16cm}{Infrastructure de production avec une db en docker}
-%\fig{infrastructure_prod_db_docker.xml}{Infrastructure de production avec une db en docker}
-
-%\figi{infrastructure_prod_db_laravel_docker.xml}{16cm}{Infrastructure de production avec une db et laravel en docker}
-%\fig{infrastructure_prod_db_laravel_docker.xml}{Infrastructure de production avec une db et laravel en docker}
-
-docker en prod perf:
-%https://stackoverflow.com/questions/21691540/how-to-optimize-performance-for-a-docker-container/21707838#21707838
-%https://stackoverflow.com/questions/21889053/what-is-the-runtime-performance-cost-of-a-docker-container
-%https://dominoweb.draco.res.ibm.com/reports/rc25482.pdf
-%https://www.freecodecamp.org/news/7-cases-when-not-to-use-docker/
-
-% pour le déploiment, regarder pourquoi certains sont parti de docker
+L'analyse de risques de l'infrastructure de production est point très important lorsque que l'on publie un logiciel. Cette dernière peut être très complexe et nécessite énormément de connaissance.
+Une analyse de risque complète demande une quantité conséquent de travail. L'intervention d'expert dans le domaine, via par exemple, des audits serait une solution pour réaliser cette partie du projet
+L'analyse de risques ne pourra donc pas être réaliser lors de ce projet, pour toutes les raisons énumérées plus haut, mais aussi car ce n'est pas le but principal de ce dernier.
+J'ai donc décider d'appliquer tout ce que je connaissais et faire le meilleur travail possible sans aller en profondeur dans le sujet.
 
 % devops
 %https://blog.logrocket.com/how-to-create-a-ci-cd-for-a-laravel-application-using-github-actions/
 
-\subsection{\Gls{devops}}
-Mais qu'est-ce que c'est les DevOps:
+\clearpage
+\subsection{Pipeline DevOps}
+\subsubsection{Introduction aux \Gls{devops}}
 %https://www.youtube.com/watch?v=scEDHsr3APg
 %https://www.padok.fr/blog/devops-tout-savoir
+%https://azure.microsoft.com/en-us/overview/what-is-devops/#devops-overview
+%https://www.ibm.com/cloud/learn/devops-a-complete-guide
+Pour commencer, c'est quoi les DevOps?
+Les DevOps c'est un ensemble de processus qui permettent de gérer et faciliter le développement et le déploiement continu de l'application. Cela permet de garantir une meilleur qualité du code et de simplifier l'intégration de ce dernier. C'est-à-dire, si un collaborateur souhaite ajouter sa partie du code au projet, il doit d'abord passer par un système automatisé de contrôle et d'intégration de son code avant de pouvoir l'ajouter. Cette partie est appelée \Gls{ci}.
+Les DevOps intègre également tout ce qui est déployement continu et livraison continue (\Gls{cd}).
+En pratique, ils intègrent également d'autre aspect, comme la maintenance de l'infrastructure de production et développement, la sécurité des processus et beaucoup d'autres concepts.
+Au final c'est un cycle de vie visant à faciliter le développement d'applications en équipe.
+Ci-dessous, on peut observer un exemple de lifecycle fourni par IBM:
+\begin{figure}
+    %\href{https://www.docker.com/wp-content/uploads/2021/11/container-what-is-container.png}
+    %{\includegraphics[width=\textwidth]{picture}}
+    \caption{IBM lifecycle DevOps}
+\end{figure}
+
+
+Aucun Devops ou pipeline n'avait été réalisé lors du précédent projet.
+Nous avons donc que des propositions, sans solution existante (ce qui était le cas pour d'autres choix).
+Avant de présenter chacun des pipeline DevOps proposé, il est nécessaire d'expliquer pourquoi chacun de ces derniers passent par Github, et plus précisément, les Github Actions.
+
+\subsubsection{Pourquoi Github?}
+Tout d'abord, il faut comprendre qu'il existe d'autres outil de "gestion" de \Gls{devops}, appelé aussi services de \Gls{ci} / \Gls{devops}, en voici une liste non exhaustive:
+\begin{itemize}
+    \item Jenkins, %https://www.jenkins.io/
+    \item TeamCity, %https://www.jetbrains.com/teamcity/
+    \item CircleCI, %https://www.guru99.com/top-20-continuous-integration-tools.html
+    \item Travis-CI, %https://www.travis-ci.com/
+    \item GitLab, %https://about.gitlab.com/
+    \item Bamboo, %https://www.atlassian.com/software/bamboo
+    \item GoCD, %https://www.gocd.org/
+    \item Azure DevOps. %https://azure.microsoft.com/fr-fr/services/devops/
+\end{itemize}
+
+Tous ces outils, mise à part GitLab, doivent être installé en plus et configurer pour le projet.
+Comme il s'agit d'un projet assez restreint et n'impliquant que peu de personnes, nous cherchons à rester dans une solution simple et donc "all in one".
+Nous n'allons donc pas plonger dans les détails de chaque technologie citée plus haut.
+Parmi les solutions "all in one", c'est-à-dire qui propose des services de \Gls{ci} / \Gls{devops} et permette le versioning de code, il reste uniquement GitLab et Github comme choix.
+Ne souhaitant pas réaliser une profonde analyse sur ces 2 solutions, car les 2 étant souvent considérées comme équivalentes ou interchangeable, ma connaissance de la solution Github est un argument suffisant, selon moi, pour faire pencher la balance en sa faveur.
 
 %\figi{devops_dockerhub.xml}{16cm}{DevOps via dockerhub}
 %\fig{devops_dockerhub.xml}{DevOps via dockerhub}
@@ -674,26 +889,7 @@ Mais qu'est-ce que c'est les DevOps:
 
 %https://stackshare.io/stackups/github-actions-vs-gitlab-ci#pros
 
-\subsubsection{Pourquoi Github?}
-Dans tous les exemples ci-dessus, l'outil utilisé pour réaliser les \Gls{devops} est Github, mais pourquoi?
-Tout d'abord, il faut comprendre qu'il existe d'autres outil de "gestion" de \Gls{devops}, appelé aussi services de \Gls{ci} / \Gls{devops}, voici une liste non exhaustive:
-\begin{itemize}
-    \item Jenkins, %https://www.jenkins.io/
-    \item TeamCity, %https://www.jetbrains.com/teamcity/
-    \item CircleCI, %https://www.guru99.com/top-20-continuous-integration-tools.html
-    \item Travis-CI, %https://www.travis-ci.com/
-    \item GitLab, %https://about.gitlab.com/
-    \item Bamboo, %https://www.atlassian.com/software/bamboo
-    \item GoCD, %https://www.gocd.org/
-    \item Azure DevOps. %https://azure.microsoft.com/fr-fr/services/devops/
-\end{itemize}
-
-Tous ces outils, mise à part GitLab, doivent être installé en plus et configurer pour le projet.
-Nous cherchons une solution "all in one" pour simplifier au maximum le projet au niveau des \Gls{devops}.
-Nous n'allons donc pas plonger dans les détails de chaque technologie cité plus haut.
-Il reste donc GitLab et Github, pour effectuer notre choix.
-% choix entre github et gitlab, ma décision
-
+\clearpage
 \subsection{\Gls{sgbd}}
 % postgre vs mysql
 %https://www.geeksforgeeks.org/difference-between-mysql-and-postgresql/
@@ -742,9 +938,20 @@ Il reste donc GitLab et Github, pour effectuer notre choix.
 
 \chapter{Intégration continu (\Gls{ci})}
 
+%php unit
+
 \chapter{Déploiement continu (\Gls{cd})}
 
+\chapter{Reprise du projet}
+
+\section{Récupération du physique du projet}
+
+\section{Erreurs restantes}
+
+\section{Améliorations possibles}
+
 %%if
+\chapter{Bibliographie}
 \section{Citations et bibliographie}
 Citer vos sources est essentiel. Avec \texttt{biblatex} vous pouvez facilement citer des articles, des livres ou des sites internet. Toutes les citations dans le texte seront automatiquement regroupées en fin de document dans la section \guillemotleft Bibliographie\guillemotright. Par exemple, citons un article d'Einstein \cite{einstein} ou le livre de Dirac \cite{dirac}.
 
