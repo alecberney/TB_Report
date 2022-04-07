@@ -317,6 +317,36 @@ Voici un schéma démontrant la façon dont docker et des containers dockers son
 %https://fr.wikipedia.org/wiki/Docker_(logiciel)
 %https://www.youtube.com/watch?v=Gjnup-PuquQ
 
+Voici une liste des avantages généraux de Docker comparé à une VM:
+\begin{itemize}
+    \item Les containers sont petits comparé au VM, \cite{koukia}
+    \item Les containers utilisent moins de ressources, \cite{koukia}
+    \item Les containers démarrent plus rapidement, \cite{koukia}
+    \item Fonctionne bien avec les DevOps et les CI/CD, \cite{koukia,data-flair_pros_cons,data-flair_use_cases}
+    \item facilite l'extensibilité horizontale. \cite{data-flair_use_cases}
+\end{itemize}
+
+Voici une liste des inconvénients de Docker comparé à une VM:
+\begin{itemize}
+    \item La sécurité, \cite{koukia}
+    \item L'isolation non complète', \cite{koukia}
+    \item La gestion du réseau. \cite{koukia}
+\end{itemize}
+
+% Packaging software in a way that leverages the skills developers already have. \cite{kane2018docker}
+% Bundling application software and required OS filesystems together in a single standar‐dized image format. \cite{kane2018docker}
+% Using packaged artifacts to test and deliver the exact same artifact to all systems in all environments. \cite{kane2018docker}
+% Abstracting software applications from the hardware without sacrificing resources \cite{kane2018docker}
+
+% TODO ajouter image docker use cases
+\begin{figure}
+    %\href{https://data-flair.training/blogs/wp-content/uploads/sites/2/2018/10/Docker-Use-Cases-01.jpg}
+    %{\includegraphics[width=\textwidth]{picture}}
+    \caption{Comparaison entre conteneurs et machines virtuelles}
+\end{figure}
+
+% quand ne pas utiliser docker: Performance is critical to your application
+
 %virtual machine vs containers: 
 %https://www.youtube.com/watch?v=cjXI-yxqGTI
 %https://www.ibm.com/cloud/learn/containers?utm_medium=OSocial&utm_source=Youtube&utm_content=000023UA&utm_term=10010608&utm_id=YTDescription-101-Containers-vs-VMs-LH-Containers-Guide&cm_mmc=OSocial_Youtube-_-Cloud+and+Data+Platform_SFT+Cloud+Platform+Digital-_-WW_WW-_-YTDescription-101-Containers-vs-VMs-LH-Containers-Guide&cm_mmca1=000023UA&cm_mmca2=10010608
@@ -354,7 +384,6 @@ Pour commencer, comme indiquer sur le site officiel:
 Comme la partie principale de \Gls{kubernetes} est de gérer les applications conteneurisées et de simplifier le load balancing, par exemple, il n'est pas forcément utile pour nous d'approfondir les recherches sur le sujet.
 En effet, La charge attendu par l'application déployée ne devrait pas dépasser les 100 utilisateurs simultanés. La question du load-balancing est donc écartée, tout comme la mise en place d'un cluster \Gls{kubernetes}.
 
-
 % comment mettre en place -> voir avec monsieur Graf / regarder avec des profs
 % si question pointu, peuvent être transférer à m. chevallier
 
@@ -380,9 +409,7 @@ Pourquoi utiliserions-nous forcément \Gls{docker}
 % dev
 \subsection{Infrastructures de développement}
 
-%https://stackshare.io/stackups/docker-vs-laravel-homestead
-
-
+\subsubsection{Présentation des infrastructures de développement \Gls{devops} possibles}
 L'infrastructure que vous pouvez voir dans la figure ci-dessous et celle qui était utilisée lorsque j'ai reprise le projet.
 En résumé, tous les outils ont été installés nativement sur la machine de développement sans virtualisation.
 \figi{infrastructure_dev_actuelle.xml}{16cm}{Infrastructure de développement actuelle}
@@ -409,6 +436,7 @@ C'est pourquoi, cette solution ne fera pas parti des choix que nous allons argum
 %https://dockerize.io/guides/php-laravel-guide
 %https://www.honeybadger.io/blog/laravel-docker-php/
 
+\subsubsection{Comparaison des infrastructures de développement \Gls{devops} possibles}
 Les différentes infrastructures désormais présentées, il est nécessaire de les comparer en listant les pour et les contres de chaque changement en prenant comme référentielle l'infrastructure actuelle.
 Les 3 améliorations (combinées ou non) proposées sont les suivantes:
 \begin{itemize}
@@ -445,10 +473,10 @@ Inconvénients:
 Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir le SGBD en machine Docker.
 Avantages:
 \begin{itemize}
-    \item Accélère l'installation de l'environnement de développement, \cite{labrecque}
-    \item Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe, \cite{labrecque}
-    \item Rend le debugging dû aux environnements de développement plus facile, \cite{labrecque}
-    \item Configuration en gande partie déjà réalisée,
+    \item Accélère l'installation de l'environnement de développement, \cite{labrecque,flair_pros_cons}
+    \item Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe, \cite{labrecque, data-flair_use_cases}
+    \item Rend le debugging dû aux environnements de développement plus facile, \cite{labrecque,koukia}
+    \item Facilite la configuration, car elle est en gande partie déjà réalisée, \cite{data-flair_pros_cons}
     \item Compatible avec tous les OS.
 \end{itemize}
 
@@ -485,9 +513,9 @@ Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'en
 Avantages:
 \begin{itemize}
     \item Accélère l'installation de l'environnement de développement, \cite{labrecque}
-    \item Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe, \cite{labrecque}
-    \item Rend le debugging dû aux environnements de développement plus facile, \cite{labrecque}
-    \item Configuration en gande partie déjà réalisée,
+    \item Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe, \cite{labrecque, data-flair_use_cases}
+    \item Rend le debugging dû aux environnements de développement plus facile, \cite{labrecque,koukia}
+    \item Facilite la configuration, car elle est en gande partie déjà réalisée, \cite{data-flair_pros_cons}
     \item Compatible avec tous les OS,
     \item Existance d'un outil donné par Laravel et conçu pour être utiliser avec \Gls{docker}, il s'agit de \href{https://laravel.com/docs/9.x/sail}{Sail},
     \item Permet d'avoir plusieurs versions installées.
@@ -559,6 +587,7 @@ Finalement cela correspond à la figure numéro %TODO \href{}{}.
 \clearpage
 \subsection{Infrastructures de production}
 
+\subsubsection{Présentation des infrastructures de production \Gls{devops} possibles}
 L'infrastructure de production que vous pouvez voir dans la figure ci-dessous et celle qui était utilisée lorsque j'ai reprise le projet.
 En résumé, tous les outils ont été installés nativement sur la machine de développement sans virtualisation.
 \figi{infrastructure_prod_actuelle.xml}{16cm}{Infrastructure de production actuelle}
@@ -572,6 +601,7 @@ Cette figure-ci, montre la secondes amélioration possible (mais aussi la premi�
 \figi{infrastructure_prod_db_laravel_docker.xml}{16cm}{Infrastructure de production avec une db et laravel en docker}
 %\fig{infrastructure_prod_db_laravel_docker.xml}{Infrastructure de production avec une db et laravel en docker}
 
+\subsubsection{Comparaison des infrastructures de production \Gls{devops} possibles}
 Les différentes infrastructures possibles désormais présentées, il est nécessaire de les comparer en listant les pour et les contres de chaque changement en prenant comme référentielle l'infrastructure actuelle.
 Les deux améliorations (combinées ou non) proposées sont les suivantes:
 \begin{itemize}
@@ -735,23 +765,61 @@ Comme il s'agit d'un projet assez restreint et n'impliquant que peu de personnes
 Nous n'allons donc pas plonger dans les détails de chaque technologie citée plus haut.
 Parmi les solutions "all in one", c'est-à-dire qui propose des services de \Gls{ci} / \Gls{devops} et permette le versioning de code, il reste uniquement GitLab et Github comme choix.
 Ne souhaitant pas réaliser une profonde analyse sur ces 2 solutions, car les 2 étant souvent considérées comme équivalentes ou interchangeable, ma connaissance de la solution Github est un argument suffisant, selon moi, pour faire pencher la balance en sa faveur.
-
-%\figi{devops_dockerhub.xml}{16cm}{DevOps via dockerhub}
-%\fig{devops_dockerhub.xml}{DevOps via dockerhub}
-
-%\figi{devops_heroku.xml}{16cm}{DevOps via heroku}
-%\fig{devops_heroku.xml}{DevOps via heroku}
-%https://devcenter.heroku.com/articles/getting-started-with-laravel
-
-%\figi{devops_github.xml}{16cm}{DevOps via github}
-%\fig{devops_github.xml}{DevOps via github}
-
 % Tous les outils CI / CD
 %https://katalon.com/resources-center/blog/ci-cd-tools#
 %https://www.lambdatest.com/blog/31-best-ci-cd-tools/
 %https://www.guru99.com/top-20-continuous-integration-tools.html
-
 %https://stackshare.io/stackups/github-actions-vs-gitlab-ci#pros
+
+\subsubsection{Présentation des pipeline \Gls{devops} possibles}
+Ce premier pipeline possible possède uniquement un intérêt si l'infrastructure de production tourne à l'aide de conteneurs Docker. En effet, le but est de construire l' /les image(s) Docker contenant tout ce qui est nécessaire (configurations, programmes, etc.) au niveau de la machine de développement, puis d'envoyer cette / ces dernière(s) sur un repository d'image, en l'occurence, Dockerhub. Puis de récupérer cette / ces images sur la machine de production et les lancer simplement.
+\figi{devops_dockerhub.xml}{16cm}{DevOps via dockerhub}
+%\fig{devops_dockerhub.xml}{DevOps via dockerhub}
+
+Ce second pipeline, passerait par une plateforme appelée Heroku. Heroku permet de déployer son application sur l'un de leur serveur, puis le redéployer sur une machine de production finale.
+Cette approche est très intéressante car l'étape intermédiaire permet de tester l'application sur une autre machine que celle de développement et ceci avant de livrer en production.
+\figi{devops_heroku.xml}{16cm}{DevOps via heroku}
+%\fig{devops_heroku.xml}{DevOps via heroku}
+%https://devcenter.heroku.com/articles/getting-started-with-laravel
+
+Finalement, le pipeline passant uniquement par Github, est la solution la plus simpliste en terme du nombre de technologies utilisées. Cette dernière repose sur le fait de simplement pousser le code sur Github et de le mettre à jour sur la machine de production via un script qui récupère les données sur le Github.
+\figi{devops_github.xml}{16cm}{DevOps via github}
+%\fig{devops_github.xml}{DevOps via github}
+
+\subsubsection{Comparaison des pipeline \Gls{devops} possibles}
+Nous allons définir pour chacun des pipeline, les avantages et inconvénients de ces derniers.
+% pipeline docker
+Commençons par le pipeline Docker:
+\begin{itemize}
+    \item x
+\end{itemize}
+
+Inconvénients:
+\begin{itemize}
+    \item x
+\end{itemize}
+
+Continuons avec le pipeline Heroku:
+\begin{itemize}
+    \item x
+\end{itemize}
+
+Inconvénients:
+\begin{itemize}
+    \item x
+\end{itemize}
+
+Finissons avec le pipeline Github:
+\begin{itemize}
+    \item x
+\end{itemize}
+
+Inconvénients:
+\begin{itemize}
+    \item x
+\end{itemize}
+
+% TODO reciter besoins et dire solution qui se rapproche le plus
 
 \clearpage
 \subsection{\Gls{sgbd}}
