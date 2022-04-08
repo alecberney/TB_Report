@@ -199,13 +199,18 @@ Dans cette section, je vais énumérer les choix technologiques déjà effectué
 Considérant les choix de l'étudiant comme bon et bien argumenté, je ne vois aucune raison de les remettre en question, surtout qu'un travail conséquent a déjà été réalisé avec les technologies choisies. Pour plus de précisions sur ces choix technologiques, je vous invite à consulter son \href{TODO}{rapport}.
 Voici un résumé des décisions prises lors de la première phase du projet:
 \begin{itemize}
-    \item Backend: PHP avec le framework Laravel,
-    \item Frontend: Javascript avec Vue.js,
-    \item SGBD: MySQL,
+    \item Backend: PHP avec le framework Laravel, %https://laravel.com/
+    \item Frontend: Javascript avec Vue.js, %https://vuejs.org/
+    \item SGBD: MySQL, %https://www.mysql.com/
     \item Outil SSO: Shibboleth. %https://blog.miniorange.com/what-is-shibboleth/
 \end{itemize}
 
-%TODO: ajouter image stackshare.
+Au final, la "stack" de technologies utilisées ressemble à ceci:
+
+\begin{figure}
+    %TODO: ajouter image stackshare.
+    \caption{Stack de technologies utilisées via \href{https://stackshare.io/alecberney/bachelors-thesis}{stackshare}}
+\end{figure}
 
 \subsection{Besoins pour le projet}
 Je vais ici définir les besoins du projet et ceci en les séparant par parties distinctes.
@@ -237,8 +242,7 @@ Ces outils n'étant pas triviaux à mettre en place et changeant pour chaque pro
 Comme vous l'aurez compris, un des besoins le plus important pour le choix de cette infrastructure, est la simplicité de mise en place du projet.
 Il faut que cela soit facile à prendre en main et bien documenté.
 Un des autres points à prendre en compte, est la disponibilité des outils utilisés, dans le sens où des outils payants ne pourraient pas être accessibles pour certains développeur.
-Créer quelque chose de simple à prendre en main, c'est important, mais il faut aussi prendre en compte la difficulté nécessaire pour fournir les outils fini simplifiant cett étape.
-% gros avantage, CI gratuit si on a tout gratuit à ajouter
+Créer quelque chose de simple à prendre en main, c'est important, mais il faut aussi prendre en compte la difficulté nécessaire pour mettre en place les outils facilitant la prise en main, par exemple Docker.
 
 \subsubsection{Besoins pour l'infrastructure de production}
 Nous allons maintenant faire de même pour l'infrastructure de production.
@@ -287,6 +291,11 @@ Le but des \Gls{devops} étant d'automatisé le plus de tâches possibles, on at
 
 La flexibilité et simplicité ressort encore une fois dans les besoins de cette section.
 Mais un point important est la possibilité de tester manuellement son produit avant de le livrer en production.
+
+\subsubsection{Importance de l'open source et de la gratuité des outils}
+Pour tous les choix technologiques qui vont être réaliser, un besoin essentiel intervient.
+Plus nous utilisons d'outils open source ou gratuit, plus nous faciliterons l'intégration de n'importe quel développeur au projet, mais pas que.
+Utiliser des outils qui sont gratuits ou open source est un plus pour l'intégration aux DevOps car il facilitera de façon non négligeable la mise en place de ces derniers.
 
 % docker
 \subsection{Introduction à \Gls{docker}}
@@ -488,7 +497,15 @@ Inconvénients:
 \end{itemize}
 %]%\blindtext\blindtext
 %\end{multicols}
-% TODO reciter besoins et dire solution qui se rapproche le plus
+
+Si nous évaluons les deux solutions proposées selon les besoins suivants:
+\begin{itemize}
+    \item simplicité de mise en place du projet,
+    \item la disponibilité des outils utilisés,
+    \item la difficulté nécessaire pour mettre en place les outils facilitant la prise en main.
+\end{itemize}
+
+On se rend facilement compte que la solution avec Docker est celle qui se rapproche le plus de ces derniers.
 
 %\begin{multicols}{2}[
 Passons maintenant au passage de l'environnement Laravel en machine Docker.
@@ -528,7 +545,15 @@ Inconvénients:
 \end{itemize}
 %]%\blindtext\blindtext
 %\end{multicols}
-% TODO reciter besoins et dire solution qui se rapproche le plus
+
+Si nous évaluons les deux solutions proposées selon les besoins suivants:
+\begin{itemize}
+    \item simplicité de mise en place du projet,
+    \item la disponibilité des outils utilisés,
+    \item la difficulté nécessaire pour mettre en place les outils facilitant la prise en main.
+\end{itemize}
+
+On se rend facilement compte que la solution avec Laravel Sail est celle qui se rapproche le plus de ces derniers. Et que encore une fois, la solution contenant du Docker paraît assez adaptée.
 
 %https://laravel.com/docs/9.x/sail
 %https://laravel.com/docs/9.x/homestead
@@ -564,7 +589,16 @@ Inconvénients:
 \end{itemize}
 %]%\blindtext\blindtext
 %\end{multicols}
-% TODO reciter besoins et dire solution qui se rapproche le plus
+
+Si nous évaluons les deux solutions proposées selon les besoins, désormais bien connus et suivants:
+\begin{itemize}
+    \item simplicité de mise en place du projet,
+    \item la disponibilité des outils utilisés,
+    \item la difficulté nécessaire pour mettre en place les outils facilitant la prise en main.
+\end{itemize}
+
+On se rend compte que la solution avec Docker n'apporte pas forcément assez d'avanatages comparé à celle proposant l'installation native et cela est principalement dû au bon gestionnaire de paquets NPM de Javascript. C'est pourquoi, solution proposant l'installation native sera préférée.
+%https://www.npmjs.com/
 
 Suite à cette analyse des outils, la solution la plus adaptée semble être de mettre en place l'environement de développment suivant:
 
@@ -788,6 +822,9 @@ Finalement, le pipeline passant uniquement par Github, est la solution la plus s
 
 \subsubsection{Comparaison des pipeline \Gls{devops} possibles}
 Nous allons définir pour chacun des pipeline, les avantages et inconvénients de ces derniers.
+Mais pour réaliser cette section, certains prototypes doivent être réalisés, ainsi que des recherches appronfidie sur la mise en oeuvre des différents pipeline.
+En effet, n'étant pas expert dans le domaine, et n'ayant pas le temps de le devenir le temps de ce travail, l'un des critères / besoins importants et la facilité de mise ne place du pipeline.
+
 % pipeline docker
 Commençons par le pipeline Docker:
 \begin{itemize}
