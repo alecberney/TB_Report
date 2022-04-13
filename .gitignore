@@ -290,5 +290,7 @@ TSWLatexianTemp*
 *.drawio.pdf
 *.svg.pdf
 *.py.pdf
-
+report.pdf
 build/
+
+*Zone.Identifier

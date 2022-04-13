@@ -60,17 +60,17 @@
 L'introduction est une section requise dans un rapport technique. Introduisez votre travail, l'idée de départ et les objectifs attendus. Un lecteur qui découvrirait votre projet au travers de cette introduction devrait ainsi être capable d'en comprendre le cadre, l'idée générale et les aboutissants du projet.
 
 \section{Contexte}
-Le FabLab est un laboratoire permettant de réaliser des travaux sur des machines de ce dernier. Actuellement, pour réaliser un travail sur une machine, il est nécessaire de réaliser une demande par email à l’un des techniciens ayant le droit d’usiner sur la machine souhaitée. Une fois la demande reçue, le technicien usine dès qu’il le peut et doit recontacter le mandataire pour lui donner son travail fini. Durant toute cette période, aucun retour n’a été donné au mandataire. En cas de problème avec un travail, le technicien doit également recontacter le client.
+Le FabLab est un laboratoire permettant de réaliser des travaux sur des machines de ce dernier. Actuellement, pour réaliser un travail sur une machine, il est nécessaire de réaliser une demande par email à l'un des techniciens ayant le droit d'usiner sur la machine souhaitée. Une fois la demande reçue, le technicien usine dès qu'il le peut et doit recontacter le mandataire pour lui donner son travail fini. Durant toute cette période, aucun retour n'a été donné au mandataire. En cas de problème avec un travail, le technicien doit également recontacter le client.
 Certains défauts majeurs peuvent être identifier avec la procédure actuelle, les voici :
 \begin{itemize}
-    \item Il n’y a aucun suivi des travaux pour le mandataire, \cite{lieberherr}
+    \item Il n'y a aucun suivi des travaux pour le mandataire, \cite{lieberherr}
     \item Les échanges liés aux travaux peuvent être réalisé via plusieurs canaux (email, Teams, vocal, etc.), \cite{lieberherr}
     \item Risque de désorganisation, \cite{lieberherr}
     \item Manque de clarté quant à la procédure, \cite{lieberherr}
     \item Aucun historique des travaux réalisé,
     \item Gestion problèmes survenus lors du travail compliqué.
 \end{itemize}
-Une première partie du projet a déjà été réalisée lors du travail de Bachelor de monsieur Tristan Lieberherr. De ce fait aucun cahier des charges n’était défini à l’origine, car il était d’abord nécessaire d’effectuer une analyse du projet afin de définir les points d’améliorations qu’allaient contenir le cahier des charges.
+Une première partie du projet a déjà été réalisée lors du travail de Bachelor de monsieur Tristan Lieberherr. De ce fait aucun cahier des charges n'était défini à l'origine, car il était d'abord nécessaire d'effectuer une analyse du projet afin de définir les points d'améliorations qu'allaient contenir le cahier des charges.
 
 
 \section{Cahier des Charges}
@@ -113,30 +113,30 @@ Je m'engage à réaliser les tâches suivantes :
             #   & Tâche / Exigence                                                                                                       & Priorité      \\ \hline
             1   & Créer une infrastructure de développement professionnel                                                                & Obligatoire   \\
             2   & Mettre en place un pipeline DevOps complet en passant par les étapes suivantes                                         & Obligatoire   \\
-            2.a & Mettre en place un outil d’intégration continue (CI)                                                                   & Obligatoire   \\
+            2.a & Mettre en place un outil d'intégration continue (CI)                                                                   & Obligatoire   \\
             2.b & Mettre en place un outil / pipeline de déploiement continue (CD)                                                       & Obligatoire   \\
             2.c & Mettre en place une infrastructure de production accueillant le rendu du projet                                        & Obligatoire   \\
             3   & Mettre à jour le projet existant vers les nouvelles versions des technologies utilisées                                & Obligatoire   \\
             3.a & Mettre à jour le frontend existant vers les nouvelles versions des technologies utilisées                              & Obligatoire   \\
             3.b & Mettre à jour le backend existant vers les nouvelles versions des technologies utilisées                               & Obligatoire   \\
-            4   & Reconcevoir la base de données pour qu’elle prenne en compte certains points supplémentaires                           & Obligatoire   \\
+            4   & Reconcevoir la base de données pour qu'elle prenne en compte certains points supplémentaires                           & Obligatoire   \\
             4.a & La base de données doit prendre en compte les rôles des utilisateurs                                                   & Obligatoire   \\
-            4.b & La base de données doit prendre en compte les ressources liées aux machines industrielles utilisées dans l’application & Obligatoire   \\
+            4.b & La base de données doit prendre en compte les ressources liées aux machines industrielles utilisées dans l'application & Obligatoire   \\
             5   & Améliorer le backend du projet                                                                                         &               \\
             5.a & Appliquer les standards de programmation web (REST)                                                                    & Obligatoire   \\
             5.b & Mettre en place une architecture de code cohérente                                                                     & Obligatoire   \\
             5.c & Mettre en place une vérification des entrées utilisateurs                                                              & Obligatoire   \\
-            5.d & Mettre en place l’authentification de l’utilisateur                                                                    & Obligatoire   \\
-            5.e & L’ajout des rôles des utilisateurs                                                                                     & Obligatoire   \\
-            5.f & Ajouter la gestion des ressources liées aux machines industrielles utilisées dans l’application                        & Intermédiaire \\
+            5.d & Mettre en place l'authentification de l'utilisateur                                                                    & Obligatoire   \\
+            5.e & L'ajout des rôles des utilisateurs                                                                                     & Obligatoire   \\
+            5.f & Ajouter la gestion des ressources liées aux machines industrielles utilisées dans l'application                        & Intermédiaire \\
             5.g & Améliorer le système de notifications pour le rendre plus sécurisé                                                     & Basse         \\
-            6   & Améliorer le frontend afin d’intégrer toutes les fonctionnalités du backend                                            &               \\
+            6   & Améliorer le frontend afin d'intégrer toutes les fonctionnalités du backend                                            &               \\
             6.a & Mettre à jour le frontend pour coller aux modifications des routes du backend / de l'api                               & Obligatoire   \\
-            6.b & Ajouter la gestion des ressources liées aux machines industrielles utilisées dans l’application                        & Intermédiaire \\
+            6.b & Ajouter la gestion des ressources liées aux machines industrielles utilisées dans l'application                        & Intermédiaire \\
             6.c & Améliorer le système de notifications pour le rendre plus sécurisé                                                     & Basse         \\
-            7   & Tester l’application à l’aide de tests automatisés                                                                     & Obligatoire   \\
+            7   & Tester l'application à l'aide de tests automatisés                                                                     & Obligatoire   \\
             7.a & Réaliser des tests unitaires automatisés                                                                               & Obligatoire   \\
-            7.b & Réaliser des tests d’intégration automatisés                                                                           & Obligatoire   \\
+            7.b & Réaliser des tests d'intégration automatisés                                                                           & Obligatoire   \\
         \end{tabular}
     \end{center}
 \end{table}
@@ -298,7 +298,7 @@ Plus nous utilisons d'outils open source ou gratuit, plus nous faciliterons l'in
 Utiliser des outils qui sont gratuits ou open source est un plus pour l'intégration aux DevOps car il facilitera de façon non négligeable la mise en place de ces derniers.
 
 % docker
-\subsection{Introduction à \Gls{docker}}
+\subsection{Introduction à Docker}
 Pour pour pouvoir comparer les différentes infrastructures et faire des choix sur ces dernière, il est important d'introduire l'outil \Gls{docker}.
 \Gls{docker} est un outil permettant de gérer des containers.
 Qu'est-ce qu'un container? Un container est une sorte de machine virtuelle plus légère ayant pour but d'encapsuler une ou plusieurs applications / outils technologiques ainsi que toutes les dépendances que ces applications exigent pour leur bon fonctionnement.
@@ -356,7 +356,7 @@ Voici une liste des inconvénients de Docker comparé à une VM:
 
 % quand ne pas utiliser docker: Performance is critical to your application
 
-%virtual machine vs containers: 
+%virtual machine vs containers:
 %https://www.youtube.com/watch?v=cjXI-yxqGTI
 %https://www.ibm.com/cloud/learn/containers?utm_medium=OSocial&utm_source=Youtube&utm_content=000023UA&utm_term=10010608&utm_id=YTDescription-101-Containers-vs-VMs-LH-Containers-Guide&cm_mmc=OSocial_Youtube-_-Cloud+and+Data+Platform_SFT+Cloud+Platform+Digital-_-WW_WW-_-YTDescription-101-Containers-vs-VMs-LH-Containers-Guide&cm_mmca1=000023UA&cm_mmca2=10010608
 %https://www.ibm.com/cloud/learn/virtual-machines?utm_medium=OSocial&utm_source=Youtube&utm_content=000005UJ&utm_term=10002434&utm_id=YTDescription-101-Containers-vs-VMs-LH-Virtual-Machines-Guide&cm_mmc=OSocial_Youtube-_-Cloud+and+Data+Platform_PLT+Cloud+Platform+F2F-_-WW_WW-_-YTDescription-101-Containers-vs-VMs-LH-Virtual-Machines-Guide&cm_mmca1=000005UJ&cm_mmca2=10002434
@@ -364,7 +364,7 @@ Voici une liste des inconvénients de Docker comparé à une VM:
 
 \subsubsection{Performances de \Gls{docker}}
 \Gls{docker} est outil qui paraît très pratique, mais qu'en est-il de ses performances?
-Pour ceci, nous allons retracer quelques évalutations réalisées lors d'une étude de IBM \cite{felter2015updated}. Nous allons parcourir ces évalutations via des graphiques, tiré de l'étude, résumants bien les résultats.
+Pour ceci, nous allons retracer quelques évalutations réalisées lors d'une étude de IBM. Nous allons parcourir ces évalutations via des graphiques, tiré de l'étude, résumants bien les résultats.
 Commençant par la latence que peut apporter \Gls{docker}:
 %copier coller et dans la légende, source: x ou tiré de: x
 %todo ajouter figure
@@ -421,23 +421,21 @@ Pourquoi utiliserions-nous forcément \Gls{docker}
 \subsubsection{Présentation des infrastructures de développement \Gls{devops} possibles}
 L'infrastructure que vous pouvez voir dans la figure ci-dessous et celle qui était utilisée lorsque j'ai reprise le projet.
 En résumé, tous les outils ont été installés nativement sur la machine de développement sans virtualisation.
-\figi{infrastructure_dev_actuelle.xml}{16cm}{Infrastructure de développement actuelle}
-%\figi{infrastructure_dev_actuelle}{16cm}{Infrastructure de développement actuelle}
-%\fig{infrastructure_dev_actuelle.xml}{Infrastructure de développement actuelle}
+\figi{infrastructure_dev_actuelle.drawio}{16cm}{Infrastructure de développement actuelle}
 
-\figi{infrastructure_dev_db_docker.xml}{16cm}{Infrastructure de développement avec une db end docker}
+%\figi{infrastructure_dev_db_docker.drawio}{16cm}{Infrastructure de développement avec une db end docker}
 %\fig{infrastructure_dev_db_docker}{Infrastructure de développement avec une db end docker}
-%\fig{infrastructure_dev_db_docker.xml}{Infrastructure de développement avec une db end docker}
+%\fig{infrastructure_dev_db_docker.drawio}{Infrastructure de développement avec une db end docker}
 
-\figi{infrastructure_dev_db_laravel_docker.xml}{16cm}{Infrastructure de développement avec une db et Laravel en docker}
-%\fig{infrastructure_dev_db_laravel_docker.xml}{Infrastructure de développement avec une db et laravel en docker}
+%\figi{infrastructure_dev_db_laravel_docker.drawio}{16cm}{Infrastructure de développement avec une db et Laravel en docker}
+%\fig{infrastructure_dev_db_laravel_docker.drawio}{Infrastructure de développement avec une db et laravel en docker}
 
 Laravel \href{https://laravel.com/docs/9.x/homestead}{Homestead} est un environnement de développement virtualisé à l'aide d'une machine virtuelle \href{https://www.vagrantup.com/}{Vagrant}.
 Cette solution est considérée comme le prédecesseur à Laravel Sail qui est beaucoup plus léger.
 C'est pourquoi, cette solution ne fera pas parti des choix que nous allons argumenter, mais est présentée comme complément.
-\figi{infrastructure_dev_db_laravel_homestead.xml}{16cm}{Infrastructure de développement avec Laravel Homestead}
+%\figi{infrastructure_dev_db_laravel_homestead.drawio}{16cm}{Infrastructure de développement avec Laravel Homestead}
 
-\figi{infrastructure_dev_db_laravel_vuejs_docker.xml}{16cm}{Infrastructure de développement avec une db, Laravel et Vue.js en docker}
+%\figi{infrastructure_dev_db_laravel_vuejs_docker.drawio}{16cm}{Infrastructure de développement avec une db, Laravel et Vue.js en docker}
 
 %https://laravel.com/docs/9.x/sail
 %https://blog.logrocket.com/laravel-and-docker-a-guide-to-using-laravel-sail/
@@ -482,7 +480,7 @@ Inconvénients:
 Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir le SGBD en machine Docker.
 Avantages:
 \begin{itemize}
-    \item Accélère l'installation de l'environnement de développement, \cite{labrecque,flair_pros_cons}
+    \item Accélère l'installation de l'environnement de développement, \cite{labrecque,data-flair_pros_cons}
     \item Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe, \cite{labrecque, data-flair_use_cases}
     \item Rend le debugging dû aux environnements de développement plus facile, \cite{labrecque,koukia}
     \item Facilite la configuration, car elle est en gande partie déjà réalisée, \cite{data-flair_pros_cons}
@@ -624,16 +622,16 @@ Finalement cela correspond à la figure numéro %TODO \href{}{}.
 \subsubsection{Présentation des infrastructures de production \Gls{devops} possibles}
 L'infrastructure de production que vous pouvez voir dans la figure ci-dessous et celle qui était utilisée lorsque j'ai reprise le projet.
 En résumé, tous les outils ont été installés nativement sur la machine de développement sans virtualisation.
-\figi{infrastructure_prod_actuelle.xml}{16cm}{Infrastructure de production actuelle}
-%\fig{infrastructure_prod_actuelle.xml}{Infrastructure de production actuelle}
+%\figi{infrastructure_prod_actuelle.drawio}{16cm}{Infrastructure de production actuelle}
+%\fig{infrastructure_prod_actuelle.drawio}{Infrastructure de production actuelle}
 
 Cette figure-ci, montre la première amélioration possible, c'est à dire, de passer le SGBD en container docker.
-\figi{infrastructure_prod_db_docker.xml}{16cm}{Infrastructure de production avec une db en docker}
-%\fig{infrastructure_prod_db_docker.xml}{Infrastructure de production avec une db en docker}
+%\figi{infrastructure_prod_db_docker.drawio}{16cm}{Infrastructure de production avec une db en docker}
+%\fig{infrastructure_prod_db_docker.drawio}{Infrastructure de production avec une db en docker}
 
 Cette figure-ci, montre la secondes amélioration possible (mais aussi la première), c'est à dire, de passer l'application web réalisée avec le framework Laravel en container docker.
-\figi{infrastructure_prod_db_laravel_docker.xml}{16cm}{Infrastructure de production avec une db et laravel en docker}
-%\fig{infrastructure_prod_db_laravel_docker.xml}{Infrastructure de production avec une db et laravel en docker}
+%\figi{infrastructure_prod_db_laravel_docker.drawio}{16cm}{Infrastructure de production avec une db et laravel en docker}
+%\fig{infrastructure_prod_db_laravel_docker.drawio}{Infrastructure de production avec une db et laravel en docker}
 
 \subsubsection{Comparaison des infrastructures de production \Gls{devops} possibles}
 Les différentes infrastructures possibles désormais présentées, il est nécessaire de les comparer en listant les pour et les contres de chaque changement en prenant comme référentielle l'infrastructure actuelle.
@@ -749,7 +747,7 @@ Suite à cette analyse des outils, la solution la plus adaptée semble être de 
 % on est resté en surface, il faudrait investir des experts pour évaluer. (audit par exemple)
 % sécurité pas prise en compte dans le projet car pas dans objectif, pas le luxe de rechercher car trop de temps, à mentionner dans le rapport.
 
-L'analyse de risques de l'infrastructure de production est point très important lorsque que l'on publie un logiciel. Cette dernière peut être très complexe et nécessite énormément de connaissance.
+L'analyse de risques de l'infrastructure de production est point très important lorsque que l'on publie un logiciel. Cette dernière peut être très complexe et nécessite énormément de connaissances.
 Une analyse de risque complète demande une quantité conséquent de travail. L'intervention d'expert dans le domaine, via par exemple, des audits serait une solution pour réaliser cette partie du projet
 L'analyse de risques ne pourra donc pas être réaliser lors de ce projet, pour toutes les raisons énumérées plus haut, mais aussi car ce n'est pas le but principal de ce dernier.
 J'ai donc décider d'appliquer tout ce que je connaissais et faire le meilleur travail possible sans aller en profondeur dans le sujet.
@@ -807,18 +805,18 @@ Ne souhaitant pas réaliser une profonde analyse sur ces 2 solutions, car les 2 
 
 \subsubsection{Présentation des pipeline \Gls{devops} possibles}
 Ce premier pipeline possible possède uniquement un intérêt si l'infrastructure de production tourne à l'aide de conteneurs Docker. En effet, le but est de construire l' /les image(s) Docker contenant tout ce qui est nécessaire (configurations, programmes, etc.) au niveau de la machine de développement, puis d'envoyer cette / ces dernière(s) sur un repository d'image, en l'occurence, Dockerhub. Puis de récupérer cette / ces images sur la machine de production et les lancer simplement.
-\figi{devops_dockerhub.xml}{16cm}{DevOps via dockerhub}
-%\fig{devops_dockerhub.xml}{DevOps via dockerhub}
+%\figi{devops_dockerhub.drawio}{16cm}{DevOps via dockerhub}
+%\fig{devops_dockerhub.drawio}{DevOps via dockerhub}
 
 Ce second pipeline, passerait par une plateforme appelée Heroku. Heroku permet de déployer son application sur l'un de leur serveur, puis le redéployer sur une machine de production finale.
 Cette approche est très intéressante car l'étape intermédiaire permet de tester l'application sur une autre machine que celle de développement et ceci avant de livrer en production.
-\figi{devops_heroku.xml}{16cm}{DevOps via heroku}
-%\fig{devops_heroku.xml}{DevOps via heroku}
+%\figi{devops_heroku.drawio}{16cm}{DevOps via heroku}
+%\fig{devops_heroku.drawio}{DevOps via heroku}
 %https://devcenter.heroku.com/articles/getting-started-with-laravel
 
 Finalement, le pipeline passant uniquement par Github, est la solution la plus simpliste en terme du nombre de technologies utilisées. Cette dernière repose sur le fait de simplement pousser le code sur Github et de le mettre à jour sur la machine de production via un script qui récupère les données sur le Github.
-\figi{devops_github.xml}{16cm}{DevOps via github}
-%\fig{devops_github.xml}{DevOps via github}
+%\figi{devops_github.drawio}{16cm}{DevOps via github}
+%\fig{devops_github.drawio}{DevOps via github}
 
 \subsubsection{Comparaison des pipeline \Gls{devops} possibles}
 Nous allons définir pour chacun des pipeline, les avantages et inconvénients de ces derniers.
@@ -859,7 +857,7 @@ Inconvénients:
 % TODO reciter besoins et dire solution qui se rapproche le plus
 
 \clearpage
-\subsection{\Gls{sgbd}}
+\subsection{Système de gestion de base de données}
 % postgre vs mysql
 %https://www.geeksforgeeks.org/difference-between-mysql-and-postgresql/
 %https://www.simplilearn.com/tutorials/sql-tutorial/postgresql-vs-mysql
@@ -878,15 +876,15 @@ Inconvénients:
 \chapter{Conception et Réalisation du Backend / de l'API}
 %todo à rendre aussi pour le premier rendu
 %todo architecture de code
-\subsection{Architectures de code}
-\figi{architecture_code_spring.xml}{16cm}{Architecture de code du framework Spring "classique"}
-%\fig{architecture_code_spring.xml}{Architecture de code du framework Spring "classique"}
+\section{Architectures de code}
+\figi{architecture_code_spring.drawio}{16cm}{Architecture de code du framework Spring "classique"}
+%\fig{architecture_code_spring.drawio}{Architecture de code du framework Spring "classique"}
 
-\figi{architecture_code_laravel.xml}{16cm}{Architecture de code du framework Laravel "classique"}
-%\fig{architecture_code_laravel.xml}{Architecture de code du framework Laravel "classique"}
+\figi{architecture_code_laravel.drawio}{16cm}{Architecture de code du framework Laravel "classique"}
+%\fig{architecture_code_laravel.drawio}{Architecture de code du framework Laravel "classique"}
 
-\figi{architecture_code_laravel_proposee.xml}{16cm}{Architecture de code Laravel proposée}
-%\fig{architecture_code_laravel_proposee.xml}{Architecture de code Laravel proposée}
+\figi{architecture_code_laravel_proposee.drawio}{16cm}{Architecture de code Laravel proposée}
+%\fig{architecture_code_laravel_proposee.drawio}{Architecture de code Laravel proposée}
 %\fig{architecture_code_laravel_proposee.svg}{Architecture de code Laravel proposée}
 %\figi{architecture_code_laravel_proposee}{10cm}{Architecture}
 %\fig{architecture_code_laravel_proposee}{Architecture de code Laravel proposée}
@@ -905,11 +903,11 @@ Inconvénients:
 
 %Labrecque M. (2018). Pros and cons of Docker. in \textit{Docker, planet drupal}. consulté à %l'adresse: https://affinitybridge.com/blog/pros-and-cons-docker (consulté le 31.03.2022)
 
-\chapter{Intégration continu (\Gls{ci})}
+\chapter{Intégration continu}
 
 %php unit
 
-\chapter{Déploiement continu (\Gls{cd})}
+\chapter{Déploiement continu}
 
 \chapter{Reprise du projet}
 
@@ -979,22 +977,5 @@ Les annexes contiennent généralement :
 \printbibliography
 \label{index}
 \printindex
-
-%%if
-\clearpage
-\Large\textbf{Colophon :}\par\normalsize
-\thispagestyle{empty}
-La qualité de cet ouvrage repose que le moteur \LaTeX. La mise en page et le format sont inspirés d'ouvrages scientifiques tels que le modèle de thèse de l'EPFL et celui des publications O'Reilly.
-
-Les diagrammes et les illustrations sont édités depuis l'outil en ligne draw.io. Certaines illustrations ont été reprises dans Adobe Illustrator. Les représentations 3D sont exportées de SolidWorks et certains graphiques sont générés à la volée depuis un code source Python.
-
-L'auteur fictive de ce document \emph{Maria Bernasconi} est un nom emprunté, par amusement, aux spécimens publiés par Postfinance.
-
-Ce document a été compilé avec XeLaTeX.
-
-La famille de police de caractères utilisée est \emph{Computed Modern} créée par Donald Knuth avec son logiciel METAFONT.
-\vfil
-Le Colophon est le dernier élément d'un document qui contient des notes de l'auteur concernant la mise en page et l'édition du document : il est parfaitement optionnel.
-%%fi
 
 \end{document}

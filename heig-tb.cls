@@ -228,6 +228,7 @@
 \RequirePackage{siunitx}
 \RequirePackage{tabularx}
 \RequirePackage{tikz}
+\RequirePackage{bold-extra}
 \RequirePackage[outputdir=build,chapter]{minted}
 
 \RequirePackage[
@@ -373,7 +374,7 @@ Yverdon-les-Bains, le \@date
 \newcommand{\authentification}{
 \chapter*{\authenticiationname}
 \addcontentsline{toc}{chapter}{\authenticiationname}
-Je soussigné\ifx\@genre\female e\fi, \@author, atteste par la présente avoir réalisé seul\ifx\@genre\female e\fi~ce travail et n’avoir utilisé aucune autre source que celles expressément mentionnées.
+Je soussigné\ifx\@genre\female e\fi, \@author, atteste par la présente avoir réalisé seul\ifx\@genre\female e\fi~ce travail et n'avoir utilisé aucune autre source que celles expressément mentionnées.
 \vfil
 {\leftskip9cm\relax\@author\par
 \ifdefined\@signature
@@ -487,4 +488,3 @@ Yverdon-les-Bains, le \@date
 \def\pex{p.~ex.~}
 \def\cad{c.-à-d.~}
 \def\cf{cf.~}
-
