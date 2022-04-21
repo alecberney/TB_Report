@@ -5,7 +5,6 @@ ARG USERNAME=latex
 ARG WORKDIR=/latex
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
-ARG DRAWIO_VERSION=14.6.13
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update
@@ -16,6 +15,7 @@ RUN apt-get install -y texlive-xetex texlive-extra-utils \
     libsecret-1-0 libappindicator3-1 wget xvfb sudo locales
 
 # Draw.io for building figures
+ARG DRAWIO_VERSION=16.0.0
 RUN wget https://github.com/jgraph/drawio-desktop/releases/download/v${DRAWIO_VERSION}/drawio-amd64-${DRAWIO_VERSION}.deb
 RUN dpkg -i drawio-amd*
 
@@ -61,6 +61,14 @@ RUN apt-get clean -y &&\
 # USER $USERNAME
 # ENV USER=${USERNAME}
 WORKDIR /latex
+
+# Environment for Drawio
+ENV ELECTRON_DISABLE_SECURITY_WARNINGS "true"
+ENV DRAWIO_DISABLE_UPDATE "true"
+ENV DRAWIO_DESKTOP_COMMAND_TIMEOUT "10s"
+ENV DRAWIO_DESKTOP_EXECUTABLE_PATH "/opt/drawio/drawio"
+ENV XVFB_DISPLAY ":42"
+ENV XVFB_OPTIONS ""
 
 # Bind bashrc
 ADD .bashrc /root/.bashrc
