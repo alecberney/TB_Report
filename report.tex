@@ -5,6 +5,7 @@
 ]{heig-tb}
 
 \usepackage[nooldvoltagedirection,european,americaninductors]{circuitikz}
+%\usepackage{tabularx}
 
 \signature{signature_alec_berney.svg}
 
@@ -109,8 +110,12 @@ Je m'engage à réaliser les tâches suivantes :
 \begin{table}[h]
     \begin{center}
         \caption{Liste des tâches / exigences à réaliser durant le projet \label{taches}}
-        \begin{tabular}{c|l|r}
-            #   & Tâche / Exigence                                                                                                       & Priorité      \\ \hline
+        %\begin{tabularx}{0.8\textwidth} {
+        %| >{\centering\arraybackslash}X 
+        %| >{\centering\arraybackslash}X 
+        %| >{\centering\arraybackslash}X | }
+        \begin{tabular}{c|c|c}
+            \#  & Tâche / Exigence                                                                                                       & Priorité      \\ \hline
             1   & Créer une infrastructure de développement professionnel                                                                & Obligatoire   \\
             2   & Mettre en place un pipeline DevOps complet en passant par les étapes suivantes                                         & Obligatoire   \\
             2.a & Mettre en place un outil d'intégration continue (CI)                                                                   & Obligatoire   \\
@@ -196,7 +201,7 @@ Cette liste de possibilités sera accompagnées des avantages et inconvénients 
 
 \subsection{Rappel des choix technologiques déjà effectués}
 Dans cette section, je vais énumérer les choix technologiques déjà effectués par le premier étudiant ayant travaillé sur le projet.
-Considérant les choix de l'étudiant comme bon et bien argumenté, je ne vois aucune raison de les remettre en question, surtout qu'un travail conséquent a déjà été réalisé avec les technologies choisies. Pour plus de précisions sur ces choix technologiques, je vous invite à consulter son \href{TODO}{rapport}.
+Considérant les choix de l'étudiant comme bon et bien argumenté, je ne vois aucune raison de les remettre en question, surtout qu'un travail conséquent a déjà été réalisé avec les technologies choisies. Pour plus de précisions sur ces choix technologiques, je vous invite à consulter son %\href{TODO}{rapport}.
 Voici un résumé des décisions prises lors de la première phase du projet:
 \begin{itemize}
     \item Backend: PHP avec le framework Laravel, %https://laravel.com/
@@ -207,10 +212,10 @@ Voici un résumé des décisions prises lors de la première phase du projet:
 
 Au final, la "stack" de technologies utilisées ressemble à ceci:
 
-\begin{figure}
-    %TODO: ajouter image stackshare.
-    \caption{Stack de technologies utilisées via \href{https://stackshare.io/alecberney/bachelors-thesis}{stackshare}}
-\end{figure}
+%\begin{figure}
+%TODO: ajouter image stackshare.
+%\caption{Stack de technologies utilisées via \href{https://stackshare.io/alecberney/bachelors-thesis}{stackshare}}
+%\end{figure}
 
 \subsection{Besoins pour le projet}
 Je vais ici définir les besoins du projet et ceci en les séparant par parties distinctes.
@@ -277,7 +282,7 @@ Si nous résumons les critères qui influenceront notre décision, nous pouvons 
     \item la flexibilité de l'infrastructure.
 \end{itemize}
 
-\subsubsection{Besoins pour les \Gls{devops}}
+\subsubsection{Besoins pour les Devops}
 Pour finir, nous allons maintenant faire de même pour le pipeline \Gls{devops}.
 Le pipeline \Gls{devops} défini toutes les étapes réalisées et les outils utilisé pour parvenir à mettre en place une infrastructure de travail et de livraison de produit fonctionnel et automatisée au maximum.
 Le but des \Gls{devops} étant d'automatisé le plus de tâches possibles, on attend du donc du pipeline les critères suivants:
@@ -305,22 +310,22 @@ Qu'est-ce qu'un container? Un container est une sorte de machine virtuelle plus 
 Il ne s'agit donc pas de virtualisation mais de "conteneurisation" ou "containerization" en anglais.
 Dans une "conteneurisation", seul l'OS et le software est virtualisé et non le hardware.
 Nous remarquons bien la différence avec la figure suivante:
-\begin{figure}
-    %\href{https://www.docker.com/wp-content/uploads/2021/11/docker-containerized-and-vm-transparent-bg.png}
-    %{\includegraphics[width=\textwidth]{picture}}
-    \caption{Comparaison entre conteneurs et machines virtuelles}
-\end{figure}
+%\begin{figure}
+%\href{https://www.docker.com/wp-content/uploads/2021/11/docker-containerized-and-vm-transparent-bg.png}
+%{\includegraphics[width=\textwidth]{picture}}
+%\caption{Comparaison entre conteneurs et machines virtuelles}
+%\end{figure}
 Les containers sont facilement téléchargeables et transmissibles. Ils sont également relativement facile à mettre en place.
 Le principe est simple, nous avons une application et une certaine configuration qui fonctionne, nous pouvons facilement l'encapsuler dans un container et le transmettre à nos collègues ou le télécharger sur un autre pc.
 Un des principales avantages, est le fait que le container ne dépend pas de l'OS ou de l'état de la machine sur lequel il va être lancé.
 Le seul point requis, est de posséder docker sur la machine.
 Cette solution rend plus flexible et portable l'exécution d'application sur n'importe quelle machine.
 Voici un schéma démontrant la façon dont docker et des containers dockers sont mis en place sur une machine:
-\begin{figure}
-    %\href{https://www.docker.com/wp-content/uploads/2021/11/container-what-is-container.png}
-    %{\includegraphics[width=\textwidth]{picture}}
-    \caption{Conteneurisation d'applications}
-\end{figure}
+%\begin{figure}
+%\href{https://www.docker.com/wp-content/uploads/2021/11/container-what-is-container.png}
+%{\includegraphics[width=\textwidth]{picture}}
+%\caption{Conteneurisation d'applications}
+%\end{figure}
 %https://www.docker.com/resources/what-container/
 %https://www.ibm.com/fr-fr/cloud/learn/docker
 %https://fr.wikipedia.org/wiki/Docker_(logiciel)
@@ -331,8 +336,8 @@ Voici une liste des avantages généraux de Docker comparé à une VM:
     \item Les containers sont petits comparé au VM, \cite{koukia}
     \item Les containers utilisent moins de ressources, \cite{koukia}
     \item Les containers démarrent plus rapidement, \cite{koukia}
-    \item Fonctionne bien avec les DevOps et les CI/CD, \cite{koukia,data-flair_pros_cons,data-flair_use_cases}
-    \item facilite l'extensibilité horizontale. \cite{data-flair_use_cases}
+    \item Fonctionne bien avec les DevOps et les CI/CD, \cite{koukia,data-flair-pros-cons,data-flair-use-cases}
+    \item facilite l'extensibilité horizontale. \cite{data-flair-use-cases}
 \end{itemize}
 
 Voici une liste des inconvénients de Docker comparé à une VM:
@@ -348,11 +353,11 @@ Voici une liste des inconvénients de Docker comparé à une VM:
 % Abstracting software applications from the hardware without sacrificing resources \cite{kane2018docker}
 
 % TODO ajouter image docker use cases
-\begin{figure}
-    %\href{https://data-flair.training/blogs/wp-content/uploads/sites/2/2018/10/Docker-Use-Cases-01.jpg}
-    %{\includegraphics[width=\textwidth]{picture}}
-    \caption{Comparaison entre conteneurs et machines virtuelles}
-\end{figure}
+%\begin{figure}
+%\href{https://data-flair.training/blogs/wp-content/uploads/sites/2/2018/10/Docker-Use-Cases-01.jpg}
+%{\includegraphics[width=\textwidth]{picture}}
+%\caption{Comparaison entre conteneurs et machines virtuelles}
+%\end{figure}
 
 % quand ne pas utiliser docker: Performance is critical to your application
 
@@ -362,17 +367,17 @@ Voici une liste des inconvénients de Docker comparé à une VM:
 %https://www.ibm.com/cloud/learn/virtual-machines?utm_medium=OSocial&utm_source=Youtube&utm_content=000005UJ&utm_term=10002434&utm_id=YTDescription-101-Containers-vs-VMs-LH-Virtual-Machines-Guide&cm_mmc=OSocial_Youtube-_-Cloud+and+Data+Platform_PLT+Cloud+Platform+F2F-_-WW_WW-_-YTDescription-101-Containers-vs-VMs-LH-Virtual-Machines-Guide&cm_mmca1=000005UJ&cm_mmca2=10002434
 
 
-\subsubsection{Performances de \Gls{docker}}
+\subsubsection{Performances de Docker}
 \Gls{docker} est outil qui paraît très pratique, mais qu'en est-il de ses performances?
 Pour ceci, nous allons retracer quelques évalutations réalisées lors d'une étude de IBM. Nous allons parcourir ces évalutations via des graphiques, tiré de l'étude, résumants bien les résultats.
 Commençant par la latence que peut apporter \Gls{docker}:
 %copier coller et dans la légende, source: x ou tiré de: x
 %todo ajouter figure
-\begin{figure}
-    %\href{https://www.docker.com/wp-content/uploads/2021/11/container-what-is-container.png}
-    %{\includegraphics[width=\textwidth]{picture}}
-    \caption{Network round-trip latency (µs), \cite{rad2017introduction}}
-\end{figure}
+%\begin{figure}
+%\href{https://www.docker.com/wp-content/uploads/2021/11/container-what-is-container.png}
+%{\includegraphics[width=\textwidth]{picture}}
+%\caption{Network round-trip latency (µs), \cite{rad2017introduction}}
+%\end{figure}
 
 On constate que la latence double, mais nous parlons ici de microsecondes, et de 30 microsecondes supplémentaires, ce qui est en soit assez peu pour de petite infrastructure.
 
@@ -385,7 +390,7 @@ On constate que la latence double, mais nous parlons ici de microsecondes, et de
 %https://www.freecodecamp.org/news/7-cases-when-not-to-use-docker/
 
 
-\subsubsection{Et \Gls{kubernetes}?}
+\subsubsection{Et Kubernetes?}
 Pourquoi utiliserions-nous forcément \Gls{docker} sans avoir réfléchi à la possibilité de \Gls{kubernetes}?
 Pour commencer, comme indiquer sur le site officiel:
 "Kubernetes est un système open-source permettant d'automatiser le déploiement, la mise à l'échelle et la gestion des applications conteneurisées".
@@ -418,24 +423,21 @@ Pourquoi utiliserions-nous forcément \Gls{docker}
 % dev
 \subsection{Infrastructures de développement}
 
-\subsubsection{Présentation des infrastructures de développement \Gls{devops} possibles}
+\subsubsection{Présentation des infrastructures de développement Devops possibles}
 L'infrastructure que vous pouvez voir dans la figure ci-dessous et celle qui était utilisée lorsque j'ai reprise le projet.
 En résumé, tous les outils ont été installés nativement sur la machine de développement sans virtualisation.
-\figi{infrastructure_dev_actuelle.drawio}{16cm}{Infrastructure de développement actuelle}
+%\figi{infrastructure-dev-actuelle.drawio}{16cm}{Infrastructure de développement actuelle}
 
-%\figi{infrastructure_dev_db_docker.drawio}{16cm}{Infrastructure de développement avec une db end docker}
-%\fig{infrastructure_dev_db_docker}{Infrastructure de développement avec une db end docker}
-%\fig{infrastructure_dev_db_docker.drawio}{Infrastructure de développement avec une db end docker}
+%\figi{infrastructure-dev-db-docker.drawio}{16cm}{Infrastructure de développement avec une DB end docker}
 
-%\figi{infrastructure_dev_db_laravel_docker.drawio}{16cm}{Infrastructure de développement avec une db et Laravel en docker}
-%\fig{infrastructure_dev_db_laravel_docker.drawio}{Infrastructure de développement avec une db et laravel en docker}
+%\figi{infrastructure-dev-db-laravel-docker.drawio}{16cm}{Infrastructure de développement avec une DB et Laravel en docker}
 
 Laravel \href{https://laravel.com/docs/9.x/homestead}{Homestead} est un environnement de développement virtualisé à l'aide d'une machine virtuelle \href{https://www.vagrantup.com/}{Vagrant}.
 Cette solution est considérée comme le prédecesseur à Laravel Sail qui est beaucoup plus léger.
 C'est pourquoi, cette solution ne fera pas parti des choix que nous allons argumenter, mais est présentée comme complément.
-%\figi{infrastructure_dev_db_laravel_homestead.drawio}{16cm}{Infrastructure de développement avec Laravel Homestead}
+%\figi{infrastructure-dev-homestead.drawio}{16cm}{Infrastructure de développement avec Laravel Homestead}
 
-%\figi{infrastructure_dev_db_laravel_vuejs_docker.drawio}{16cm}{Infrastructure de développement avec une db, Laravel et Vue.js en docker}
+%\fig{infrastructure-dev-db-laravel-vuejs-docker.drawio}{Infrastructure de développement avec une DB, Laravel et Vue.js en docker}
 
 %https://laravel.com/docs/9.x/sail
 %https://blog.logrocket.com/laravel-and-docker-a-guide-to-using-laravel-sail/
@@ -443,7 +445,7 @@ C'est pourquoi, cette solution ne fera pas parti des choix que nous allons argum
 %https://dockerize.io/guides/php-laravel-guide
 %https://www.honeybadger.io/blog/laravel-docker-php/
 
-\subsubsection{Comparaison des infrastructures de développement \Gls{devops} possibles}
+\subsubsection{Comparaison des infrastructures de développement Devops possibles}
 Les différentes infrastructures désormais présentées, il est nécessaire de les comparer en listant les pour et les contres de chaque changement en prenant comme référentielle l'infrastructure actuelle.
 Les 3 améliorations (combinées ou non) proposées sont les suivantes:
 \begin{itemize}
@@ -480,10 +482,10 @@ Inconvénients:
 Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir le SGBD en machine Docker.
 Avantages:
 \begin{itemize}
-    \item Accélère l'installation de l'environnement de développement, \cite{labrecque,data-flair_pros_cons}
-    \item Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe, \cite{labrecque, data-flair_use_cases}
+    \item Accélère l'installation de l'environnement de développement, \cite{labrecque,data-flair-pros-cons}
+    \item Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe, \cite{labrecque, data-flair-use-cases}
     \item Rend le debugging dû aux environnements de développement plus facile, \cite{labrecque,koukia}
-    \item Facilite la configuration, car elle est en gande partie déjà réalisée, \cite{data-flair_pros_cons}
+    \item Facilite la configuration, car elle est en gande partie déjà réalisée, \cite{data-flair-pros-cons}
     \item Compatible avec tous les OS.
 \end{itemize}
 
@@ -528,9 +530,9 @@ Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'en
 Avantages:
 \begin{itemize}
     \item Accélère l'installation de l'environnement de développement, \cite{labrecque}
-    \item Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe, \cite{labrecque, data-flair_use_cases}
+    \item Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe, \cite{labrecque, data-flair-use-cases}
     \item Rend le debugging dû aux environnements de développement plus facile, \cite{labrecque,koukia}
-    \item Facilite la configuration, car elle est en gande partie déjà réalisée, \cite{data-flair_pros_cons}
+    \item Facilite la configuration, car elle est en gande partie déjà réalisée, \cite{data-flair-pros-cons}
     \item Compatible avec tous les OS,
     \item Existance d'un outil donné par Laravel et conçu pour être utiliser avec \Gls{docker}, il s'agit de \href{https://laravel.com/docs/9.x/sail}{Sail},
     \item Permet d'avoir plusieurs versions installées.
@@ -619,21 +621,18 @@ Finalement cela correspond à la figure numéro %TODO \href{}{}.
 \clearpage
 \subsection{Infrastructures de production}
 
-\subsubsection{Présentation des infrastructures de production \Gls{devops} possibles}
+\subsubsection{Présentation des infrastructures de production Devops possibles}
 L'infrastructure de production que vous pouvez voir dans la figure ci-dessous et celle qui était utilisée lorsque j'ai reprise le projet.
 En résumé, tous les outils ont été installés nativement sur la machine de développement sans virtualisation.
-%\figi{infrastructure_prod_actuelle.drawio}{16cm}{Infrastructure de production actuelle}
-%\fig{infrastructure_prod_actuelle.drawio}{Infrastructure de production actuelle}
+%\figi{infrastructure-prod-actuelle.drawio}{16cm}{Infrastructure de production actuelle}
 
 Cette figure-ci, montre la première amélioration possible, c'est à dire, de passer le SGBD en container docker.
-%\figi{infrastructure_prod_db_docker.drawio}{16cm}{Infrastructure de production avec une db en docker}
-%\fig{infrastructure_prod_db_docker.drawio}{Infrastructure de production avec une db en docker}
+%\figi{infrastructure-prod-db-docker.drawio}{16cm}{Infrastructure de production avec une db en docker}
 
 Cette figure-ci, montre la secondes amélioration possible (mais aussi la première), c'est à dire, de passer l'application web réalisée avec le framework Laravel en container docker.
-%\figi{infrastructure_prod_db_laravel_docker.drawio}{16cm}{Infrastructure de production avec une db et laravel en docker}
-%\fig{infrastructure_prod_db_laravel_docker.drawio}{Infrastructure de production avec une db et laravel en docker}
+%\figi{infrastructure-prod-db-laravel-docker.drawio}{16cm}{Infrastructure de production avec une db et laravel en docker}
 
-\subsubsection{Comparaison des infrastructures de production \Gls{devops} possibles}
+\subsubsection{Comparaison des infrastructures de production devops possibles}
 Les différentes infrastructures possibles désormais présentées, il est nécessaire de les comparer en listant les pour et les contres de chaque changement en prenant comme référentielle l'infrastructure actuelle.
 Les deux améliorations (combinées ou non) proposées sont les suivantes:
 \begin{itemize}
@@ -757,7 +756,7 @@ J'ai donc décider d'appliquer tout ce que je connaissais et faire le meilleur t
 
 \clearpage
 \subsection{Pipeline DevOps}
-\subsubsection{Introduction aux \Gls{devops}}
+\subsubsection{Introduction aux Devops}
 %https://www.youtube.com/watch?v=scEDHsr3APg
 %https://www.padok.fr/blog/devops-tout-savoir
 %https://azure.microsoft.com/en-us/overview/what-is-devops/#devops-overview
@@ -768,11 +767,11 @@ Les DevOps intègre également tout ce qui est déployement continu et livraison
 En pratique, ils intègrent également d'autre aspect, comme la maintenance de l'infrastructure de production et développement, la sécurité des processus et beaucoup d'autres concepts.
 Au final c'est un cycle de vie visant à faciliter le développement d'applications en équipe.
 Ci-dessous, on peut observer un exemple de lifecycle fourni par IBM:
-\begin{figure}
-    %\href{https://www.docker.com/wp-content/uploads/2021/11/container-what-is-container.png}
-    %{\includegraphics[width=\textwidth]{picture}}
-    \caption{IBM lifecycle DevOps}
-\end{figure}
+%\begin{figure}
+%\href{https://www.docker.com/wp-content/uploads/2021/11/container-what-is-container.png}
+%{\includegraphics[width=\textwidth]{picture}}
+%\caption{IBM lifecycle DevOps}
+%\end{figure}
 
 
 Aucun Devops ou pipeline n'avait été réalisé lors du précédent projet.
@@ -803,22 +802,19 @@ Ne souhaitant pas réaliser une profonde analyse sur ces 2 solutions, car les 2 
 %https://www.guru99.com/top-20-continuous-integration-tools.html
 %https://stackshare.io/stackups/github-actions-vs-gitlab-ci#pros
 
-\subsubsection{Présentation des pipeline \Gls{devops} possibles}
+\subsubsection{Présentation des pipeline Devops possibles}
 Ce premier pipeline possible possède uniquement un intérêt si l'infrastructure de production tourne à l'aide de conteneurs Docker. En effet, le but est de construire l' /les image(s) Docker contenant tout ce qui est nécessaire (configurations, programmes, etc.) au niveau de la machine de développement, puis d'envoyer cette / ces dernière(s) sur un repository d'image, en l'occurence, Dockerhub. Puis de récupérer cette / ces images sur la machine de production et les lancer simplement.
-%\figi{devops_dockerhub.drawio}{16cm}{DevOps via dockerhub}
-%\fig{devops_dockerhub.drawio}{DevOps via dockerhub}
+%\figi{devops-dockerhub.drawio}{16cm}{DevOps via dockerhub}
 
 Ce second pipeline, passerait par une plateforme appelée Heroku. Heroku permet de déployer son application sur l'un de leur serveur, puis le redéployer sur une machine de production finale.
 Cette approche est très intéressante car l'étape intermédiaire permet de tester l'application sur une autre machine que celle de développement et ceci avant de livrer en production.
-%\figi{devops_heroku.drawio}{16cm}{DevOps via heroku}
-%\fig{devops_heroku.drawio}{DevOps via heroku}
+%\figi{devops-heroku.drawio}{16cm}{DevOps via heroku}
 %https://devcenter.heroku.com/articles/getting-started-with-laravel
 
 Finalement, le pipeline passant uniquement par Github, est la solution la plus simpliste en terme du nombre de technologies utilisées. Cette dernière repose sur le fait de simplement pousser le code sur Github et de le mettre à jour sur la machine de production via un script qui récupère les données sur le Github.
-%\figi{devops_github.drawio}{16cm}{DevOps via github}
-%\fig{devops_github.drawio}{DevOps via github}
+%\figi{devops-github.drawio}{16cm}{DevOps via github}
 
-\subsubsection{Comparaison des pipeline \Gls{devops} possibles}
+\subsubsection{Comparaison des pipeline Devops possibles}
 Nous allons définir pour chacun des pipeline, les avantages et inconvénients de ces derniers.
 Mais pour réaliser cette section, certains prototypes doivent être réalisés, ainsi que des recherches appronfidie sur la mise en oeuvre des différents pipeline.
 En effet, n'étant pas expert dans le domaine, et n'ayant pas le temps de le devenir le temps de ce travail, l'un des critères / besoins importants et la facilité de mise ne place du pipeline.
@@ -877,17 +873,12 @@ Inconvénients:
 %todo à rendre aussi pour le premier rendu
 %todo architecture de code
 \section{Architectures de code}
-\figi{architecture_code_spring.drawio}{16cm}{Architecture de code du framework Spring "classique"}
-%\fig{architecture_code_spring.drawio}{Architecture de code du framework Spring "classique"}
 
-\figi{architecture_code_laravel.drawio}{16cm}{Architecture de code du framework Laravel "classique"}
-%\fig{architecture_code_laravel.drawio}{Architecture de code du framework Laravel "classique"}
+%\figi{architecture-code-spring.drawio}{16cm}{Architecture de code du framework Spring "classique"}
 
-\figi{architecture_code_laravel_proposee.drawio}{16cm}{Architecture de code Laravel proposée}
-%\fig{architecture_code_laravel_proposee.drawio}{Architecture de code Laravel proposée}
-%\fig{architecture_code_laravel_proposee.svg}{Architecture de code Laravel proposée}
-%\figi{architecture_code_laravel_proposee}{10cm}{Architecture}
-%\fig{architecture_code_laravel_proposee}{Architecture de code Laravel proposée}
+%\figi{architecture-code-laravel.drawio}{16cm}{Architecture de code du framework Laravel "classique"}
+
+%\figi{architecture-code-laravel-proposee.drawio}{16cm}{Architecture de code Laravel proposée}
 
 % ensuite décrire ce qu'on a mis en place et indiquer s'il y a des failles
 
