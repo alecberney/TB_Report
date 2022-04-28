@@ -5,7 +5,8 @@
 ]{heig-tb}
 
 \usepackage[nooldvoltagedirection,european,americaninductors]{circuitikz}
-%\usepackage{tabularx}
+\usepackage{tabularx}
+\usepackage{multicol}
 
 \signature{signature_alec_berney.svg}
 
@@ -426,18 +427,18 @@ Pourquoi utiliserions-nous forcément \Gls{docker}
 \subsubsection{Présentation des infrastructures de développement Devops possibles}
 L'infrastructure que vous pouvez voir dans la figure ci-dessous et celle qui était utilisée lorsque j'ai reprise le projet.
 En résumé, tous les outils ont été installés nativement sur la machine de développement sans virtualisation.
-%\figi{infrastructure-dev-actuelle.drawio}{16cm}{Infrastructure de développement actuelle}
+\figi{infrastructure-dev-actuelle.drawio}{16cm}{Infrastructure de développement actuelle}
 
-%\figi{infrastructure-dev-db-docker.drawio}{16cm}{Infrastructure de développement avec une DB end docker}
+\figi{infrastructure-dev-db-docker.drawio}{16cm}{Infrastructure de développement avec une DB en Docker}
 
-%\figi{infrastructure-dev-db-laravel-docker.drawio}{16cm}{Infrastructure de développement avec une DB et Laravel en docker}
+\figi{infrastructure-dev-db-laravel-docker.drawio}{16cm}{Infrastructure de développement avec une DB et Laravel en Docker}
 
 Laravel \href{https://laravel.com/docs/9.x/homestead}{Homestead} est un environnement de développement virtualisé à l'aide d'une machine virtuelle \href{https://www.vagrantup.com/}{Vagrant}.
 Cette solution est considérée comme le prédecesseur à Laravel Sail qui est beaucoup plus léger.
 C'est pourquoi, cette solution ne fera pas parti des choix que nous allons argumenter, mais est présentée comme complément.
-%\figi{infrastructure-dev-homestead.drawio}{16cm}{Infrastructure de développement avec Laravel Homestead}
+\figi{infrastructure-dev-laravel-homestead.drawio}{16cm}{Infrastructure de développement avec Laravel Homestead}
 
-%\fig{infrastructure-dev-db-laravel-vuejs-docker.drawio}{Infrastructure de développement avec une DB, Laravel et Vue.js en docker}
+\figi{infrastructure-dev-db-laravel-vuejs-docker.drawio}{16cm}{Infrastructure de développement avec une DB, Laravel et Vue.js en Docker}
 
 %https://laravel.com/docs/9.x/sail
 %https://blog.logrocket.com/laravel-and-docker-a-guide-to-using-laravel-sail/
@@ -624,13 +625,13 @@ Finalement cela correspond à la figure numéro %TODO \href{}{}.
 \subsubsection{Présentation des infrastructures de production Devops possibles}
 L'infrastructure de production que vous pouvez voir dans la figure ci-dessous et celle qui était utilisée lorsque j'ai reprise le projet.
 En résumé, tous les outils ont été installés nativement sur la machine de développement sans virtualisation.
-%\figi{infrastructure-prod-actuelle.drawio}{16cm}{Infrastructure de production actuelle}
+\figi{infrastructure-prod-actuelle.drawio}{16cm}{Infrastructure de production actuelle}
 
 Cette figure-ci, montre la première amélioration possible, c'est à dire, de passer le SGBD en container docker.
-%\figi{infrastructure-prod-db-docker.drawio}{16cm}{Infrastructure de production avec une db en docker}
+\figi{infrastructure-prod-db-docker.drawio}{16cm}{Infrastructure de production avec une db en docker}
 
 Cette figure-ci, montre la secondes amélioration possible (mais aussi la première), c'est à dire, de passer l'application web réalisée avec le framework Laravel en container docker.
-%\figi{infrastructure-prod-db-laravel-docker.drawio}{16cm}{Infrastructure de production avec une db et laravel en docker}
+\figi{infrastructure-prod-db-laravel-docker.drawio}{16cm}{Infrastructure de production avec une db et laravel en docker}
 
 \subsubsection{Comparaison des infrastructures de production devops possibles}
 Les différentes infrastructures possibles désormais présentées, il est nécessaire de les comparer en listant les pour et les contres de chaque changement en prenant comme référentielle l'infrastructure actuelle.
@@ -804,15 +805,15 @@ Ne souhaitant pas réaliser une profonde analyse sur ces 2 solutions, car les 2 
 
 \subsubsection{Présentation des pipeline Devops possibles}
 Ce premier pipeline possible possède uniquement un intérêt si l'infrastructure de production tourne à l'aide de conteneurs Docker. En effet, le but est de construire l' /les image(s) Docker contenant tout ce qui est nécessaire (configurations, programmes, etc.) au niveau de la machine de développement, puis d'envoyer cette / ces dernière(s) sur un repository d'image, en l'occurence, Dockerhub. Puis de récupérer cette / ces images sur la machine de production et les lancer simplement.
-%\figi{devops-dockerhub.drawio}{16cm}{DevOps via dockerhub}
+\figi{devops-dockerhub.drawio}{16cm}{DevOps via dockerhub}
 
 Ce second pipeline, passerait par une plateforme appelée Heroku. Heroku permet de déployer son application sur l'un de leur serveur, puis le redéployer sur une machine de production finale.
 Cette approche est très intéressante car l'étape intermédiaire permet de tester l'application sur une autre machine que celle de développement et ceci avant de livrer en production.
-%\figi{devops-heroku.drawio}{16cm}{DevOps via heroku}
+\figi{devops-heroku.drawio}{16cm}{DevOps via heroku}
 %https://devcenter.heroku.com/articles/getting-started-with-laravel
 
 Finalement, le pipeline passant uniquement par Github, est la solution la plus simpliste en terme du nombre de technologies utilisées. Cette dernière repose sur le fait de simplement pousser le code sur Github et de le mettre à jour sur la machine de production via un script qui récupère les données sur le Github.
-%\figi{devops-github.drawio}{16cm}{DevOps via github}
+\figi{devops-github.drawio}{16cm}{DevOps via github}
 
 \subsubsection{Comparaison des pipeline Devops possibles}
 Nous allons définir pour chacun des pipeline, les avantages et inconvénients de ces derniers.
@@ -876,9 +877,9 @@ Inconvénients:
 
 \figi{architecture-code-spring.drawio}{16cm}{Architecture de code du framework Spring "classique"}
 
-%\figi{architecture-code-laravel.drawio}{16cm}{Architecture de code du framework Laravel "classique"}
+\figi{architecture-code-laravel.drawio}{16cm}{Architecture de code du framework Laravel "classique"}
 
-%\figi{architecture-code-laravel-proposee.drawio}{16cm}{Architecture de code Laravel proposée}
+\figi{architecture-code-laravel-proposee.drawio}{16cm}{Architecture de code Laravel proposée}
 
 % ensuite décrire ce qu'on a mis en place et indiquer s'il y a des failles
 
