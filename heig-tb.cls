@@ -229,6 +229,7 @@
 \RequirePackage{tabularx}
 \RequirePackage{tikz}
 \RequirePackage{bold-extra}
+\RequirePackage{ifthen}
 \RequirePackage[outputdir=build,chapter]{minted}
 
 \RequirePackage[
@@ -429,12 +430,14 @@ Yverdon-les-Bains, le \@date
 }
 
 %% Figures macros
-\newcommand{\figi}[3]{
+\newcommand{\figi}[4][]{
    \begin{figure}[!ht]
    \begin{center}
-   \includegraphics[width=#2]{\assetsdir/#1.\graphicsExt}
+   \includegraphics[width=#3]{\assetsdir/#2.\graphicsExt}
    \end{center}
-   \caption{\label{#1}#3}
+   \ifthenelse { \equal{#1}{} }
+    {\caption{\label{#2}#4}}
+    {\caption[#1]{\label{#2}#4}}
    \end{figure}
 }
 
