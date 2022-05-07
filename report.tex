@@ -7,6 +7,7 @@
 \usepackage[nooldvoltagedirection,european,americaninductors]{circuitikz}
 \usepackage{tabularx}
 \usepackage{multicol}
+\usepackage{graphicx}
 
 \signature{signature_alec_berney.svg}
 
@@ -199,7 +200,8 @@ effectuées durant le travail de Bachelor.
 
 Pour les toutes les tâches qui seront listés plus bas, celles qui nécessitent une décomposition en plusieurs tâches voient le numéro de ses sous-tâches suivi d'une lettre. Les tâches possédant des sous-tâches des priorités différentes, n'auront aucune priorité globale.
 
-Je m'engage à réaliser les tâches suivantes :
+%Je m'engage à réaliser les tâches suivantes :
+Je m'engage à réaliser les tâches énumérées dans le tableau \ref{taches}
 
 % TODO: regarder avec prof
 \begin{table}[h]
@@ -311,12 +313,15 @@ Voici un résumé des décisions prises lors de la première phase du projet:
     \item Outil SSO: Shibboleth. %https://blog.miniorange.com/what-is-shibboleth/
 \end{itemize}
 
-Au final, la "stack" de technologies utilisées ressemble à ceci:
+Au final, la "stack" de technologies utilisées ressemble à celle de la figure \ref{stack-old-tb}
 
 %\begin{figure}
-%TODO: ajouter image stackshare.
 %\caption{Stack de technologies utilisées via \href{https://stackshare.io/alecberney/bachelors-thesis}{stackshare}}
+\fig{stack-old-tb}{Stack de technologies utilisées dans l'ancien travail}
+%\fig{stack-old-tb.png}{Stack de technologies utilisées dans l'ancien travail}
 %\end{figure}
+
+%\includegraphics{/assets/figures/stack-old-tb.png}
 
 \subsection{Besoins pour le projet}
 Je vais ici définir les besoins du projet et ceci en les séparant par parties distinctes.
@@ -406,26 +411,26 @@ Utiliser des outils qui sont gratuits ou open source est un plus pour l'intégra
 % docker
 \subsection{Introduction à Docker}
 Pour pour pouvoir comparer les différentes infrastructures et faire des choix sur ces dernière, il est important d'introduire l'outil \Gls{docker}.
-\Gls{docker} est un outil permettant de gérer des containers.
+Docker est un outil permettant de gérer des containers.
 Qu'est-ce qu'un container? Un container est une sorte de machine virtuelle plus légère ayant pour but d'encapsuler une ou plusieurs applications / outils technologiques ainsi que toutes les dépendances que ces applications exigent pour leur bon fonctionnement.
 Il ne s'agit donc pas de virtualisation mais de "conteneurisation" ou "containerization" en anglais.
 Dans une "conteneurisation", seul l'OS et le software est virtualisé et non le hardware.
-Nous remarquons bien la différence avec la figure suivante:
+Nous remarquons bien la différence avec la figure suivante: %\ref{}
 %\begin{figure}
-%\href{https://www.docker.com/wp-content/uploads/2021/11/docker-containerized-and-vm-transparent-bg.png}
-%{\includegraphics[width=\textwidth]{picture}}
+%\caption{\href{https://www.docker.com/wp-content/uploads/2021/11/}docker-containerized-and-vm-transparent-bg.png}
+%fig{docker-containerized-and-vm.png}{Comparaison entre containeurs docker et machines virtuelles}
 %\caption{Comparaison entre conteneurs et machines virtuelles}
 %\end{figure}
+
 Les containers sont facilement téléchargeables et transmissibles. Ils sont également relativement facile à mettre en place.
 Le principe est simple, nous avons une application et une certaine configuration qui fonctionne, nous pouvons facilement l'encapsuler dans un container et le transmettre à nos collègues ou le télécharger sur un autre pc.
 Un des principales avantages, est le fait que le container ne dépend pas de l'OS ou de l'état de la machine sur lequel il va être lancé.
 Le seul point requis, est de posséder docker sur la machine.
 Cette solution rend plus flexible et portable l'exécution d'application sur n'importe quelle machine.
-Voici un schéma démontrant la façon dont docker et des containers dockers sont mis en place sur une machine:
+Voici un schéma démontrant la façon dont docker et des containers dockers sont mis en place sur une machine: %\ref{}
 %\begin{figure}
-%\href{https://www.docker.com/wp-content/uploads/2021/11/container-what-is-container.png}
-%{\includegraphics[width=\textwidth]{picture}}
-%\caption{Conteneurisation d'applications}
+%\caption{Conteneurisation d'applications \href{https://www.docker.com/wp-content/uploads/2021/11/container-what-is-container.png}}
+%fig{docker-containerized-and-vm.png}{Comparaison entre containeurs docker et machines virtuelles}
 %\end{figure}
 %https://www.docker.com/resources/what-container/
 %https://www.ibm.com/fr-fr/cloud/learn/docker
@@ -453,11 +458,11 @@ Voici une liste des inconvénients de Docker comparé à une VM:
 % Using packaged artifacts to test and deliver the exact same artifact to all systems in all environments. \cite{kane2018docker}
 % Abstracting software applications from the hardware without sacrificing resources \cite{kane2018docker}
 
+On peut voir ici une liste des cas d'utilisations de docker \cite{data-flair-use-cases}: %\ref{}
 % TODO ajouter image docker use cases
 %\begin{figure}
-%\href{https://data-flair.training/blogs/wp-content/uploads/sites/2/2018/10/Docker-Use-Cases-01.jpg}
-%{\includegraphics[width=\textwidth]{picture}}
-%\caption{Comparaison entre conteneurs et machines virtuelles}
+%\caption{Cas d'utilisation de docker \href{https://data-flair.training/blogs/wp-content/uploads/sites/2/2018/10/}}
+%\fig{docker-use-cases.jpg}{Cas d'utilisation de docker}
 %\end{figure}
 
 % quand ne pas utiliser docker: Performance is critical to your application
@@ -471,18 +476,32 @@ Voici une liste des inconvénients de Docker comparé à une VM:
 \subsubsection{Performances de Docker}
 \Gls{docker} est outil qui paraît très pratique, mais qu'en est-il de ses performances?
 Pour ceci, nous allons retracer quelques évalutations réalisées lors d'une étude de IBM. Nous allons parcourir ces évalutations via des graphiques, tiré de l'étude, résumants bien les résultats.
-Commençant par la latence que peut apporter \Gls{docker}:
+Commençant par la latence que peut apporter \Gls{docker}: %\ref{}
 %copier coller et dans la légende, source: x ou tiré de: x
 %todo ajouter figure
 %\begin{figure}
-%\href{https://www.docker.com/wp-content/uploads/2021/11/container-what-is-container.png}
-%{\includegraphics[width=\textwidth]{picture}}
-%\caption{Network round-trip latency (µs), \cite{rad2017introduction}}
+%\caption{Network round-trip latency (µs) \cite{rad2017introduction}}
+%\fig{docker-perf-latency.png}{Latence aller-retour du réseau (µs)}
 %\end{figure}
 
 On constate que la latence double, mais nous parlons ici de microsecondes, et de 30 microsecondes supplémentaires, ce qui est en soit assez peu pour de petite infrastructure.
 
-%todo autres stats
+En ce qui concerne le transfert de grosses quantité de données via TCP, docker parvient à se rapprocher des performances d'une machine native, elles n'utilisent donc pas beaucoup plus de cycles: %\ref{}
+%\begin{figure}
+%\caption{TCP bulk transfer efficiency (CPU cycles/byte) \cite{rad2017introduction}}
+%\fig{docker-perf-transfer-efficiancy.png}{Efficacité du transfert de masse TCP (cycles CPU/octet)}
+%\end{figure}
+
+Au niveau des écritures, on remarque grâce aux deux graphiques suivants que les performances valent celles d'un système natif: %\ref{}
+%\begin{figure}
+%\caption{Sequential I/O throughput (MB/s) \cite{rad2017introduction}}
+%\fig{docker-perf-sequential-io.png}{Débit d'E/S séquentielles (Mo/s)}
+%\end{figure}
+
+%\begin{figure}
+%\caption{Random I/O throughput (IOPS) \cite{rad2017introduction}}
+%\fig{docker-perf-random-io.png}{Débit d'E/S aléatoires (IOPS)}
+%\end{figure}
 
 %docker en prod perf:
 %https://stackoverflow.com/questions/21691540/how-to-optimize-performance-for-a-docker-container/21707838#21707838
@@ -492,12 +511,12 @@ On constate que la latence double, mais nous parlons ici de microsecondes, et de
 
 
 \subsubsection{Et Kubernetes?}
-Pourquoi utiliserions-nous forcément \Gls{docker} sans avoir réfléchi à la possibilité de \Gls{kubernetes}?
+Pourquoi utiliserions-nous forcément docker sans avoir réfléchi à la possibilité de \Gls{kubernetes}?
 Pour commencer, comme indiquer sur le site officiel:
 "Kubernetes est un système open-source permettant d'automatiser le déploiement, la mise à l'échelle et la gestion des applications conteneurisées".
-\Gls{kubernetes} n'est donc pas vraiment une alternative à \Gls{docker}, mais peut être plutôt utiliser comme complément à ce dernier.
-Comme la partie principale de \Gls{kubernetes} est de gérer les applications conteneurisées et de simplifier le load balancing, par exemple, il n'est pas forcément utile pour nous d'approfondir les recherches sur le sujet.
-En effet, La charge attendu par l'application déployée ne devrait pas dépasser les 100 utilisateurs simultanés. La question du load-balancing est donc écartée, tout comme la mise en place d'un cluster \Gls{kubernetes}.
+Kubernetes n'est donc pas vraiment une alternative à docker, mais peut être plutôt utiliser comme complément à ce dernier.
+Comme la partie principale de Kubernetes est de gérer les applications conteneurisées et de simplifier le load balancing, par exemple, il n'est pas forcément utile pour nous d'approfondir les recherches sur le sujet.
+En effet, La charge attendu par l'application déployée ne devrait pas dépasser les 100 utilisateurs simultanés. La question du load-balancing est donc écartée, tout comme la mise en place d'un cluster Kubernetes.
 
 % comment mettre en place -> voir avec monsieur Graf / regarder avec des profs
 % si question pointu, peuvent être transférer à m. chevallier
@@ -510,6 +529,7 @@ En effet, La charge attendu par l'application déployée ne devrait pas dépasse
 %https://stackshare.io/: outil très utile pour faire des comparaisons de technologies
 
 \subsubsection{Autres solutions de containers}
+% TODO
 Pourquoi utiliserions-nous forcément \Gls{docker}
 -> beaucoup moins utilisé
 
@@ -524,7 +544,7 @@ Pourquoi utiliserions-nous forcément \Gls{docker}
 % dev
 \subsection{Infrastructures de développement}
 
-\subsubsection{Présentation des infrastructures de développement Devops possibles}
+\subsubsection{Présentation des infrastructures de développement possibles}
 L'infrastructure que vous pouvez voir dans la figure ci-dessous et celle qui était utilisée lorsque j'ai reprise le projet.
 En résumé, tous les outils ont été installés nativement sur la machine de développement sans virtualisation.
 \figi{infrastructure-dev-actuelle.drawio}{16cm}{Infrastructure de développement actuelle}
@@ -546,7 +566,9 @@ C'est pourquoi, cette solution ne fera pas parti des choix que nous allons argum
 %https://dockerize.io/guides/php-laravel-guide
 %https://www.honeybadger.io/blog/laravel-docker-php/
 
-\subsubsection{Comparaison des infrastructures de développement Devops possibles}
+\clearpage
+
+\subsubsection{Évolutions de l'infrastructure de développement possibles}
 Les différentes infrastructures désormais présentées, il est nécessaire de les comparer en listant les pour et les contres de chaque changement en prenant comme référentielle l'infrastructure actuelle.
 Les 3 améliorations (combinées ou non) proposées sont les suivantes:
 \begin{itemize}
@@ -555,7 +577,8 @@ Les 3 améliorations (combinées ou non) proposées sont les suivantes:
     \item Passage du projet Vue.js (et toutes ces technologies) en machine Docker.
 \end{itemize}
 
-\begin{multicols}{2}[Commençons par réfléchir sur le passage du SGBD en machine Docker.]
+\subsubsection{Passage du SGBD en conteneur Docker}
+\begin{multicols}{2}[Commençons par réfléchir sur le passage du SGBD en conteneur Docker.]
     % vraiment bien se blinder au niveau des arguments via blog et études, sources écrites
     % si on a pas trouvé, on peut dire je ne sais pas, on DOIT dire -> joker ultime
     % toucher quelque chose en surface, si je ne connais pas, si point essentiel dans projet, faire un choix + essai -> prototype, démonstration sur expérience
@@ -604,7 +627,8 @@ Si nous évaluons les deux solutions proposées selon les besoins suivants:
 
 On se rend facilement compte que la solution avec Docker est celle qui se rapproche le plus de ces derniers.
 
-\begin{multicols}{2}[Passons maintenant au passage de l'environnement Laravel en machine Docker.]
+\subsubsection{Passage de Laravel en conteneur Docker}
+\begin{multicols}{2}[Passons maintenant au passage de l'environnement Laravel en conteneur Docker.]
     Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet environnement.
     Avantages:
     \begin{itemize}
@@ -619,7 +643,7 @@ On se rend facilement compte que la solution avec Docker est celle qui se rappro
         \item L'installation demande du temps,
         \item Configuration à faire à la main,
         \item Fort risque d'erreur lors de la configuration,
-        \item Installation différente pour chaque \Gls{os}.
+        \item Installation différente pour chaque OS.
     \end{itemize}
 
     \columnbreak
@@ -654,7 +678,8 @@ On se rend facilement compte que la solution avec Laravel Sail est celle qui se 
 %https://laravel.com/docs/9.x/sail
 %https://laravel.com/docs/9.x/homestead
 
-\begin{multicols}{2}[Finalement, parlons du passage de l'environnement Vue.js en machine Docker.]
+\subsubsection{Passage de Vue.js en conteneur Docker}
+\begin{multicols}{2}[Finalement, parlons du passage de l'environnement Vue.js en conteneur Docker.]
     Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet environnement.
     Avantages:
     \begin{itemize}
@@ -695,6 +720,7 @@ Si nous évaluons les deux solutions proposées selon les besoins, désormais bi
 On se rend compte que la solution avec Docker n'apporte pas forcément assez d'avanatages comparé à celle proposant l'installation native et cela est principalement dû au bon gestionnaire de paquets NPM de Javascript. C'est pourquoi, solution proposant l'installation native sera préférée.
 %https://www.npmjs.com/
 
+\subsubsection{Résultat de l'analyse}
 Suite à cette analyse des outils, la solution la plus adaptée semble être de mettre en place l'environement de développment suivant:
 
 \begin{table}[h]
@@ -716,7 +742,7 @@ Finalement cela correspond à la figure numéro %TODO \href{}{}.
 \clearpage
 \subsection{Infrastructures de production}
 
-\subsubsection{Présentation des infrastructures de production Devops possibles}
+\subsubsection{Présentation des infrastructures de production possibles}
 L'infrastructure de production que vous pouvez voir dans la figure ci-dessous et celle qui était utilisée lorsque j'ai reprise le projet.
 En résumé, tous les outils ont été installés nativement sur la machine de développement sans virtualisation.
 \figi{infrastructure-prod-actuelle.drawio}{16cm}{Infrastructure de production actuelle}
@@ -727,7 +753,7 @@ Cette figure-ci, montre la première amélioration possible, c'est à dire, de p
 Cette figure-ci, montre la secondes amélioration possible (mais aussi la première), c'est à dire, de passer l'application web réalisée avec le framework Laravel en container docker.
 \figi{infrastructure-prod-db-laravel-docker.drawio}{16cm}{Infrastructure de production avec une db et laravel en docker}
 
-\subsubsection{Comparaison des infrastructures de production devops possibles}
+\subsubsection{Évolutions de l'infrastructure de production possibles}
 Les différentes infrastructures possibles désormais présentées, il est nécessaire de les comparer en listant les pour et les contres de chaque changement en prenant comme référentielle l'infrastructure actuelle.
 Les deux améliorations (combinées ou non) proposées sont les suivantes:
 \begin{itemize}
@@ -735,6 +761,7 @@ Les deux améliorations (combinées ou non) proposées sont les suivantes:
     \item Passage du projet Laravel (et toutes ces technologies) en machine Docker.
 \end{itemize}
 
+\subsubsection{Passage du SGBD en conteneur Docker}
 \begin{multicols}{2}[Nous recommençons également par réfléchir sur le passage du SGBD en machine Docker.]
     Pour ceci, nous allons énumérer les avantages et inconvénients d'installer le SGBD nativement.
     Certains peuvent être les mêmes qu'énumérer dans la partie "Infrastructure de développement". %\href TODO
@@ -776,7 +803,8 @@ Les deux améliorations (combinées ou non) proposées sont les suivantes:
 \end{multicols}
 % TODO reciter besoins et dire solution qui se rapproche le plus
 
-\begin{multicols}{2}[Passons maintenant au passage de l'environnement Laravel en machine Docker.]
+\subsubsection{Passage de Laravel en conteneur Docker}
+\begin{multicols}{2}[Passons maintenant au passage de l'environnement Laravel en conteneur Docker.]
     Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet environnement.
     Avantages:
     \begin{itemize}
@@ -790,7 +818,7 @@ Les deux améliorations (combinées ou non) proposées sont les suivantes:
         \item L'installation demande du temps,
         \item Configuration à faire à la main,
         \item Fort risque d'erreur lors de la configuration,
-        \item Installation différente pour chaque \Gls{os}.
+        \item Installation différente pour chaque OS.
     \end{itemize}
 
     \columnbreak
@@ -807,7 +835,7 @@ Les deux améliorations (combinées ou non) proposées sont les suivantes:
     Inconvénients:
     \begin{itemize}
         \item Peut laisser des failles de sécurité, suivant l'environnement mis en place,
-        \item \Gls{docker} peut avoir des problèmes de performances, \cite{labrecque}
+        \item Docker peut avoir des problèmes de performances, \cite{labrecque}
         \item Nécessite Docker et les connaissances qui vont avec. \cite{labrecque}
     \end{itemize}
 \end{multicols}
@@ -838,7 +866,7 @@ Suite à cette analyse des outils, la solution la plus adaptée semble être de 
 % sécurité pas prise en compte dans le projet car pas dans objectif, pas le luxe de rechercher car trop de temps, à mentionner dans le rapport.
 
 L'analyse de risques de l'infrastructure de production est point très important lorsque que l'on publie un logiciel. Cette dernière peut être très complexe et nécessite énormément de connaissances.
-Une analyse de risque complète demande une quantité conséquent de travail. L'intervention d'expert dans le domaine, via par exemple, des audits serait une solution pour réaliser cette partie du projet
+Une analyse de risque complète demande une quantité conséquent de travail. L'intervention d'expert dans le domaine, via par exemple, des audits serait une solution pour réaliser cette partie du projet. \newline
 L'analyse de risques ne pourra donc pas être réaliser lors de ce projet, pour toutes les raisons énumérées plus haut, mais aussi car ce n'est pas le but principal de ce dernier.
 J'ai donc décider d'appliquer tout ce que je connaissais et faire le meilleur travail possible sans aller en profondeur dans le sujet.
 
@@ -859,9 +887,8 @@ En pratique, ils intègrent également d'autre aspect, comme la maintenance de l
 Au final c'est un cycle de vie visant à faciliter le développement d'applications en équipe.
 Ci-dessous, on peut observer un exemple de lifecycle fourni par IBM:
 %\begin{figure}
-%\href{https://www.docker.com/wp-content/uploads/2021/11/container-what-is-container.png}
-%{\includegraphics[width=\textwidth]{picture}}
-%\caption{IBM lifecycle DevOps}
+%\caption{Cycle de vie de développement - IBM}
+%\fig{ibm-devops-lifecycle.png}{Cycle de vie de développement - IBM}
 %\end{figure}
 
 
@@ -872,14 +899,14 @@ Avant de présenter chacun des pipeline DevOps proposé, il est nécessaire d'ex
 \subsubsection{Pourquoi Github?}
 Tout d'abord, il faut comprendre qu'il existe d'autres outil de "gestion" de \Gls{devops}, appelé aussi services de \Gls{ci} / \Gls{devops}, en voici une liste non exhaustive:
 \begin{itemize}
-    \item Jenkins, %https://www.jenkins.io/
-    \item TeamCity, %https://www.jetbrains.com/teamcity/
-    \item CircleCI, %https://www.guru99.com/top-20-continuous-integration-tools.html
-    \item Travis-CI, %https://www.travis-ci.com/
-    \item GitLab, %https://about.gitlab.com/
-    \item Bamboo, %https://www.atlassian.com/software/bamboo
-    \item GoCD, %https://www.gocd.org/
-    \item Azure DevOps. %https://azure.microsoft.com/fr-fr/services/devops/
+    \item Jenkins \href{https://www.jenkins.io/},
+    \item TeamCity \href{https://www.jetbrains.com/teamcity/},
+    \item CircleCI \href{https://www.guru99.com/top-20-continuous-integration-tools.html},
+    \item Travis-CI \href{https://www.travis-ci.com/},
+    \item GitLab \href{https://about.gitlab.com/},
+    \item Bamboo \href{https://www.atlassian.com/software/bamboo},
+    \item GoCD \href{https://www.gocd.org/},
+    \item Azure DevOps \href{https://azure.microsoft.com/fr-fr/services/devops/}.
 \end{itemize}
 
 Tous ces outils, mise à part GitLab, doivent être installé en plus et configurer pour le projet.
@@ -943,8 +970,8 @@ Inconvénients:
 
 % TODO reciter besoins et dire solution qui se rapproche le plus
 
-\clearpage
-\subsection{Système de gestion de base de données}
+%\clearpage
+%\subsection{Système de gestion de base de données}
 % postgre vs mysql
 %https://www.geeksforgeeks.org/difference-between-mysql-and-postgresql/
 %https://www.simplilearn.com/tutorials/sql-tutorial/postgresql-vs-mysql
@@ -955,12 +982,180 @@ Inconvénients:
 %https://laravel.com/docs/9.x/upgrade
 %https://github.com/laravel/vonage-notification-channel/blob/3.x/UPGRADE.md
 
-\chapter{Conception et Réalisation de la base de données}
+%\begin{figure}
+%\caption{Stack de technologies utilisées via \href{https://stackshare.io/alecberney/bachelors-thesis}{stackshare}}
+%\fig{stack-tb.png}{Stack de technologies utilisées}
+%\end{figure}
+
+\chapter{Conception et Réalisation de la BD}
 %todo à rendre aussi pour le premier rendu
 %todo MLD
 %todo model de l'ORM
 
 % TODO before 12.05.2022
+
+Dans toutes les desciptions suivantes, les tirets du bas seront remplacé par des "-" à cause d'un problème de LaTex.
+
+\section{Modèle EA}
+Le modèle Entité-Associations est la première étape lors de la conception d'une base de données. Il se rapproche également d'un diagramme de classe classique utiliser pour la POO (programmation orienté objet). \newline
+Nous allons décrire chacune des entités et ses relations. \newline
+Mais avons ça, voici une légende:\newline
+Un rectangle représente une entité et possède son nom dans sa partie supérieur.\newline
+Les valeurs textuelles en dessous sont les champs de l'entité. Le champ souligné représente la clé primaire de l'entité, cette dernière doit être unique.\newline
+Les traits tiré entre deux entités sont des associations et peuvent se lire dans les deux sens. Les verbes écrits au dessus des traits servent à donner un sens à l'association. \newline
+Les symboles et numéros à chaque extrémités des entités indiquent respectivement:
+\begin{itemize}
+    \item 0 : zéro / aucun,
+    \item 1 : un,
+    \item 1..* : un ou plusieurs,
+    \item * : zéro ou plusieurs.
+\end{itemize}
+
+Par exemple, on peut lire l'association "user" - "message", comme ceci: \newline
+Un utilisateur peut envoyer zéro ou plusieurs messages. \newline
+Un message peut être envoyé que par un utilisateur.
+
+Finalement, certains peuvent être ajouté avec des rectangles pliés en haut à droite et relié avec des traits pointillés.
+
+\figi{ea}{16cm}{Modèle Entitié - Associations de la base de données}
+
+\subsection{Entité user}
+L'entité "user" représente un utilisateur de l'application, que ce soit un élève, un professeur ou un technicien.\newline
+Il possède des informations classiques le concernant, ainsi que le champ "switch-uuid" représentant l'identifiant unique fourni par le service Switch edu-id qui sera utilisé.\newline
+Les champs contenant le mot "notify" servent à stocker les préférences de l'utilisateur concernant les notifications de l'application.
+
+On voit au niveau des relations, que l'utilisateur peut envoyer et recevoir des messages.\newline
+Il peut posséder également plusieurs rôles mais doit en posséder au moins un, celui par défaut qui est le rôle "client".\newline
+L'utilisateur peut de toute façon faire une demande de travail (job). Cependant, seul les utilisateurs possédant le rôle "validator", en général, les professeurs pourront valider le travail.\newline
+Le travail validé, un "worker", en général un technicien, pourra réaliser le travail demander et en indiquer le suivi.
+
+\subsection{Entité job}
+L'entité "job" représente un travail demandé par un utilisateur de l'application.\newline
+Il possède un id (identifiant unique), une description du travail à réaliser, une date butoir (deadline), une évaluation que l'utilisateur / client peut attribuer au travail terminé et un status d'avancement du travail mis à jour par le travailleur.\newline
+Le status d'avancement d'un travail sera défini par un enum (liste exhaustive de valeurs), la voici:
+\begin{itemize}
+    \item new,
+    \item validated,
+    \item assigned,
+    \item ongoing,
+    \item on-hold,
+    \item completed.
+\end{itemize}
+
+On voit au niveau des relations, que le travail peut posséder des messages qui lui sont liés.\newline
+Il posséde également une catégorie de travail définissant ensuite quelles machines peuvent être utilisées pour le réaliser.\newline
+Le travail possédera également un utilisateur client, un validateur et un travailleur.\newline
+Il doit également contenir un ou plusieurs fichiers nécessaires pour réaliser le travail demandé.\newline
+Finalement, certains événements peuvent être lié au travail. On parle ici d'événement permettant de préfevenir l'utilisateur via des notifications ou email.
+
+\subsection{Entité role}
+L'entité "role" représente simplement un rôle que peut avoir un utilisateur au sein de l'application. Cette entité est nécessaire car un utilisateur peut posséder plusieurs rôles et ils doivent tous être défini la même chose.\newline
+Seul un id (identifiant unique) et un nom du rôle est nécessaire.\newline
+Voici la liste des rôles définis:
+\begin{itemize}
+    \item admin,
+    \item client,
+    \item worker,
+    \item validator.
+\end{itemize}
+
+\subsection{Entité message}
+L'entité "message" représente un message envoyé entre deux utilisateurs au sujet d'un travail demandé.\newline
+Il possède uniquement un id (identifiant unique) et un text.\newline
+Il est associé à deux utilisateurs, un représentant celui qui a envoyé le message et l'autre celui qu'il l'a reçu. Le message est également associé au travail dont il est le sujet.\newline
+Une aggrégation a été modélisé pour cette dernière association car on souhaite supprimé tous les messages liés à un travail, si ce dernier est supprimé.
+
+\subsection{Entité job-category}
+L'entité "job-category" représente une catégorie de travail pouvant être effecutée au fablab, pare exemple, une impression 3D ou une découpe laser.\newline
+La catégorie possède un id (identifiant unique), un acronyme et un nom.\newline
+Elle est associé à un travail car ce dernier est obligé d'avoir une catégorie.\newline
+Elle possède également une ou plusieurs machines (device) sur lesquels peuvent être réaliser les travaux.\newline
+Comme elle possède des machines, une liste de type de fichiers acceptés est nécessaire et est défini par l'association "job-category" - "file-type". Cela permettra de facilement vérifier si un fichier donné pour un travail peut être accepté pour la catégorie de ce dernier.
+
+\subsection{Entité device}
+L'entité "device" représente une machine / un outil utilisé pour réaliser un travail du fablab.\newline
+La machine possède un id (identifiant unique), un nom, une description plus précise et un chemin de fichier où est stocké son image (cette partie pourrait changer).\newline
+Comme expliqué précédement dans la catégorie, elle possède une ou plusieurs catégories sur lesquels elle peut être utilisée.\newline
+
+\subsection{Entité file-type}
+L'entité "file-type" représente un type de fichier que peut accepter une catégorie de travail du fablab.\newline
+Le type de fichier possède un id (identifiant unique), un nom et un mime-type \href{https://developer.mozilla.org/fr/docs/Web/HTTP/Basics_of_HTTP/MIME_Types} étant utiliser pour valider les fichiers télécharger.\newline
+Comme expliqué précédement dans la catégorie, un type de fichier possède une ou plusieurs catégories qui sont acceptées.\newline
+Le type de fichier peut également être associé à plusieurs fichiers.
+
+\subsection{Entité file}
+L'entité "file" représente un fichier fourni pour réaliser un travail du fablab.\newline
+Le fichier possède un id (identifiant unique), un nom et un hash de son contenu.\newline
+Il est associé à un type de fichier (file-type), ce qui est utile pour faire le lien avec la catégorie du travail.\newline
+Il possède évidemment un travail pour indiquer pour auquel il appartient.\newline
+Une aggrégation a été modélisé pour cette dernière association car on souhaite supprimé tous les fichiers liés à un travail, si ce dernier est supprimé.
+
+\subsection{Entité event}
+L'entité "event" représente un événement concernant un travail du fablab. Par exemple, un événement est généré si le status d'un travail a été modifié ou si un fichier a été ajouté.\newline
+L'événement possède un id (identifiant unique) et des données (data).\newline
+Il est associé à un travail comme expliqué plus précédement.\newline
+Une aggrégation a été modélisé pour cette dernière association car on souhaite supprimé tous les événements liés à un travail, si ce dernier est supprimé.
+
+\subsection{Entité tasks-queue et failed-tasks}
+Ces entités ont été modélisées pour effectuer les tâches en arrière plan du backend, comme l'envoi d'email retardé. Elle ne sont pas encore très développée par manque de connaissances de leur fonctionnement.
+
+\section{MLD}
+Le modèle logique des données n'est rien d'autre qu'une évolution du modèle EA.\newline
+Les entités deviennent des tables et les associations des relations, ce qui est presque la même chose.\newline
+Les tables ont pris un nom au pluriel pour respecter la philosophie de Laravel et de son ORM Eloquent.\newline
+Les champs obtiennent des types représentant la façon dont ils seront stockés.\newline
+Les clés étrangère issues des association s'ajoutent aux tables.\newline
+Les associations N à N du modèle EA voient naître une table intermédiaire. Voici celles qui ont été créées:
+\begin{itemize}
+    \item device-job-category,
+    \item file-type-job-category,
+    \item role-user.
+\end{itemize}
+
+\figi{mld}{16cm}{Modèle logique des données de la base de données}
+
+Sur le schéma, quelques nouveaux symboles apparaîssent, voici une légende:
+\begin{itemize}
+    \item Clé jaune : clé primaire de la ligne,
+    \item Losange bleu : la colonne ne peut pas valoir null,
+    \item Losange vide : la colonne peut valoir null,
+    \item Losange rouge : la colonne possède une clé étrangère.
+\end{itemize}
+
+Une clé étrangère étant le champ représantant une autre table dont une relation existe. La clé primaire représente la table en elle-même, elle est son identifiant.
+
+\subsection{Champs spéciaux}
+Quelques champs obtiennet des valeurs précises et méritent une explication.\newline
+Les champs switch-uuid et email, de la table "users" possèdent 320 charactères car ils sont tous des emails ou des dérivés et une email peut contenir au maximum 320 charactères.
+
+Le champ status de la table "job" est une enum comme expliqué précédement dans le modèle EA.
+
+\subsection{Remarques}
+% TODO
+Tous les autres champs n'ont pas encore fait l'objet de recherches ou de spécifications et ont donc souvent une valeur de 45 ou 50 charactères. Cela cera réalisé prochainement.
+
+Les entités concernant les tâches en arrière plan n'apparaîssent pas car elle ne sont pas encore assez connue.
+
+%Certaines colonnes sont communes à plusieurs des tables. C'est le cas de 'created_at',
+%qui indique l'heure de création de la ligne, et 'updated_at', qui indique l’heure à
+%laquelle la ligne à été modifiée pour la dernière fois.
+
+
+\section{Migrations Laravel}
+
+Les migrations du backend réalisées avec Laravel et l'ORM Eloquent se rapprochent le plus possibles du MLD présenté précédement.
+
+% TODO: insert code migrations
+
+\subsection{Champs possiblement nulles}
+
+\subsection{Champs timestamps}
+
+\subsection{Clés étrangères}
+
+\subsection{Options de suppression}
+
+\subsection{Indexes}
 
 \chapter{Conception et Réalisation du Backend / de l'API}
 %todo à rendre aussi pour le premier rendu
