@@ -75,16 +75,104 @@ Certains défauts majeurs peuvent être identifier avec la procédure actuelle, 
 Une première partie du projet a déjà été réalisée lors du travail de Bachelor de monsieur Tristan Lieberherr. De ce fait aucun cahier des charges n'était défini à l'origine, car il était d'abord nécessaire d'effectuer une analyse du projet afin de définir les points d'améliorations qu'allaient contenir le cahier des charges.
 
 \section{But du travail de Bachelor}
-% TODO before 12.05.2022
+Le but, plus global, de ce travail de Bachelor, est de fournir une application web au fablab afin de faciliter la gestion et le suivi des demandes de travaux pour leur laboratoire.
+
+Le but au niveau technique est de fournir une application déployée en production.
+Il est également important de significativement améliorer le travail déjà existant en ajoutant certaines fonctionnalités et améliorant la qualité du code. \newline
+Cette application devra reposer sur une base de données bien conçues et ayant déjà prévu certains améliorations possibles. Elle devra également posséder un backend propre permettant de reprendre et l'améliorer sans devoir tout repenser. \newline
+La qualité de l'environnement de travail et de production ne seront pas à négliger et devront être facilement repris en main par la futur équipe s'occupant du projet.
 
 \section{État de la situation}
-% TODO before 12.05.2022
+Cette section permet de définir ce qui a déjà été réalisé et de l'analyser. \newline
+Pour commencer, il faut savoir que le travail fourni est déjà fonctionnel et fait l'objet d'une documentation suffisante pour le reprendre en main.
+Le choix des technologies déjà utilisées sera abordé plus tard dans le document.
 
 \subsection{Analyse du système existant}
-% TODO before 12.05.2022
+Dans cette partie, nous allons énumérer tous les aspects de l'ancien travail fourni. Nous n'allons pas toucher le détail, car le but est de faire ressortir seulement les points essentiels.
+
+\subsubsection{Environement de développement}
+Pour commencer, parlons de l'environnement de travail. Il faut savoir que le projet a été transmi avec 2 dépôts Github au nom de l'ancien Bachelier et le rapport de l'ancien travail de Bachelor.
+
+Maintenant, voici les points qui ressortent de l'analyse concernant l'environnement de travail:
+\begin{itemize}
+    \item 2 dépôts (repository) Github à son nom sont fournis,
+    \item Les 2 dépôts ne contiennent que très peu d'information concernant le projet,
+    \item Le projet tourne sur d'anciennes technologies améliorées depuis,
+    \item Le projet n'est pas si aisé à reprendre en moins suite au manque d'informations concernant les technologies,
+    \item L'environnement de développement est difficilement transmissible à une tierce personne, il est compliqué de vite intégrer l'équipe de développement,
+    \item Aucun outil de collaboration n'est fourni, nous parlons ici de DevOps (CI et CD).
+\end{itemize}
+
+\subsubsection{Base de données}
+Cette partie défini tout ce qui touche à la base de données et influence également le Backend.\newline
+Les points ressortant de l'analyse de la base données sont les suivants:
+\begin{itemize}
+    \item La base de données contient les ressources principales (utilisateurs, travaux, messages, fichiers),
+    \item La base de données possèdent de la redondance paraîssant inutiles,
+    \item La base de données ne peut pas intégrer la gestion de plusieurs rôles,
+    \item La base de données n'intégrent pas la notion de machines et de catégories de travaux,
+    \item La gestion des types de fichiers acceptés pour les travaux n'est pas présente.
+\end{itemize}
+
+\subsubsection{Backend / API}
+Passons maintenant au Backend qui est la plus grosse partie du travail.\newline
+Il faut savoir que toute l'analyse de la base de donnée s'applique également pour une bonne partie du Backend et ne sera pas répétée.\newline
+Les points ressortant de l'analyse de ce dernier sont les suivants:
+\begin{itemize}
+    \item Le principe REST n'est pas respecté en ce qui concerne l'API,
+    \item Les entrées utilisateurs ne font l'objet d'aucune vérification syntaxique et sémantique,
+    \item L'architecture de code ne respecte pas totalement celle mise à disposition par Laravel,
+    \item Le code n'utilise pas toutes les possibilités utiles fournies par le framework,
+    \item Le contrôle de l'accès aux ressources via des rôles n'est pas mis en place,
+    \item Le système de stockage de fichier et fonctionnel,
+    \item Le système de notification via est fonctionnel, mais malheureusement non sécurisé,
+    \item Les travaux d'arrière plan envoyant des emails est fonctionnel,
+    \item Le Backend utilise une version antérieur du framework,
+    \item Le Backend est actuellement entièrement fonctionnel.
+\end{itemize}
+
+\subsubsection{Frontend}
+Finalementm, passons au frontend, ce dernier a été réalisé à l'aide d'un template. Il a été adapté aux besoins de l'application. Le but du projet n'étant pas concentrer sur le frontend, seul une analyse de surface a été réalisée.
+Les points ressortant de l'analyse de ce dernier sont les suivants:
+\begin{itemize}
+    \item Le frontend est totalement fonctionnel,
+    \item Les entrées utilisateurs ne font l'objet d'aucune vérification syntaxique et sémantique,
+    \item Le projet possède des dépendances obsolètes et non mise à jour,
+    \item Les valeurs textuelles sont toutes insérées directement dans le code et n'offre pas la possibilité de traduire facilement le site,
+    \item Les valeurs concernant les machines et les catégories de travaux sont "hardcodées" dans le frontend.
+\end{itemize}
 
 \subsection{Propositions d'améliorations}
-% TODO before 12.05.2022
+
+\subsubsection{Environement de développement}
+Concernant l'environnement de travail, il est important d'améliorer significativement la façon dont une personne s'intégrer au travail, à l'équipe de développement. \newline
+Pour commencer, il est nécessaire de créer une orgranisation github acceuillant les 2 dépôts Github. Chaque dépôt devra lister les technologies utilisées et indiquer comment les installer, ainsi que comment configurer facilement configurer son environnement de travail pour pariticiper au projet. \newline
+Il sera également nécessaire de réaliser un suivi du travail grâce aux outils fourni par Github (issues, kanban, milestones, etc.).  \newline
+Fournir un environement aisément configurable pour tout un chacun est également un point essentiel.
+Une CI devra impérativement être mise en place afin de faciliter le travail à plusieurs sur le projet. Il en va de même pour le CD, si l'on souhaite déployer aisément les différentes versions de l'application.
+
+\subsubsection{Base de données}
+La base de données fera l'objet d'une toute nouvelle conception pour améliorer tous les points énumérés précédement et intégrer les notions manquantes. Le Backend en sera fortement influencé.
+
+\subsubsection{Backend}
+Le Backend étant fortement influencé par la base de données, ce dernier se verra adminsitrer de gros changements.
+Les sujets sur lequel une amélioration devra être apportée sont les suivants:
+\begin{itemize}
+    \item Le principe REST devra être appliqué,
+    \item Les entrées utilisateurs devront au moins faire l'objet d'une vérification syntaxique et peut-être sémantique,
+    \item L'architecture de code se rapprochera le plus possible de ce qui est proposé par Laravel,
+    \item Le code utilisera le plus possible les outils fournis par le framework,
+    \item Le contrôle de l'accès aux ressources via des rôles sera mis en place,
+    \item Le système de notification pourra être sécurisé et fera appel à l'API,
+    \item Le Backend passera à la nouvelle version du framework.
+\end{itemize}
+
+Après avoir lister tous ces points, on se rend compte que le backend devra presque être réaliser de 0. Ce ne sera pas le cas, car l'ancien projet sera toujours présent comme référence en cas de questions.
+
+\subsubsection{Frontend}
+Les améliorations possibles concernant le frontend gravite essentiellement autour de la mise à jour des dépendances du projet et la façon dans les valeurs sont stockées. \newline
+Un système de gestion des langues (ii8n) pourraient être envisagé, ainsi que vérifier les entrées utilisateurs.\newline
+Le frontend sera surtout modifié pour être adapté aux changements du backend.
 
 \section{Cahier des Charges}
 
@@ -105,27 +193,23 @@ Les objectifs principaux du projet sont les suivants:
     \item Améliorer le backend du projet existant.
 \end{itemize}
 
+\newpage
 Nous allons maintenant passer à la liste des tâches qui devront être
-effectuées durant le travail de bachelor.
+effectuées durant le travail de Bachelor.
 
-Pour les toutes les tâches qui seront listés plus bas, un code couleur a
-été établi pour définir le niveau de besoin de ces dernières, le voici:
-
-\begin{itemize}
-    \item Vert = doit être réaliser (MVP = Minimum Valuable Product),
-    \item Orange = serait réaliser dans l'idéal,
-    \item Rouge = pourrait potentiellement être réaliser.
-\end{itemize}
+Pour les toutes les tâches qui seront listés plus bas, celles qui nécessitent une décomposition en plusieurs tâches voient le numéro de ses sous-tâches suivi d'une lettre. Les tâches possédant des sous-tâches des priorités différentes, n'auront aucune priorité globale.
 
 Je m'engage à réaliser les tâches suivantes :
 
+% TODO: regarder avec prof
 \begin{table}[h]
     \begin{center}
         \caption{Liste des tâches / exigences à réaliser durant le projet \label{taches}}
-        \begin{tabularx}{0.8\textwidth} {
+        \begin{tabularx}{1.0\textwidth} {
                 | >{\centering\arraybackslash}X
                 | >{\centering\arraybackslash}X
                 | >{\centering\arraybackslash}X |}
+            %%{{1.0\textwidth}{|>{\centering}p{0.1}>{\centering\arraybackslash}p{3cm}|}
             %\begin{tabular}{c|c|c}
             \#  & Tâche / Exigence                                                                                                       & Priorité      \\ \hline
             1   & Créer une infrastructure de développement professionnel                                                                & Obligatoire   \\
@@ -158,6 +242,7 @@ Je m'engage à réaliser les tâches suivantes :
     \end{center}
 \end{table}
 
+\newpage
 \subsection{Déroulement global projet}
 
 Le projet se réalise durant le semestre de printemps. Le semestre possède 14 semaines de travail de 1 jour et demi de travail si on exclut la semaine du CRUNCH et celle des vacances.
@@ -200,9 +285,13 @@ Un rendu intermédiaire est également prévu après 150 heures de travail et po
 
 Les résultats attendus pour ce projet dépendent énormément des tâches établies définies dans la partie Objectif de ce document.
 En effet, chaque tâche définie est vérifiable et sera donc utilisée pour évaluer le résultat du projet.
-\clearpage
+\newpage
 
 \chapter{Analyse}
+
+\section{Planning}
+Cette section a pour but d'apporter une discussion sur le planning et son évolution.
+Le planning est disponible en annexe.
 
 \section{Choix technologiques}
 
@@ -213,7 +302,7 @@ Cette liste de possibilités sera accompagnées des avantages et inconvénients 
 
 \subsection{Rappel des choix technologiques déjà effectués}
 Dans cette section, je vais énumérer les choix technologiques déjà effectués par le premier étudiant ayant travaillé sur le projet.
-Considérant les choix de l'étudiant comme bon et bien argumenté, je ne vois aucune raison de les remettre en question, surtout qu'un travail conséquent a déjà été réalisé avec les technologies choisies. Pour plus de précisions sur ces choix technologiques, je vous invite à consulter son %\href{TODO}{rapport}.
+Considérant les choix de l'étudiant comme bon et bien argumenté, je ne vois aucune raison de les remettre en question, surtout qu'un travail conséquent a déjà été réalisé avec les technologies choisies. Pour plus de précisions sur ces choix technologiques, je vous invite à consulter son %\href{TODO}{rapport}. //voir avec prof
 Voici un résumé des décisions prises lors de la première phase du projet:
 \begin{itemize}
     \item Backend: PHP avec le framework Laravel, %https://laravel.com/
@@ -466,48 +555,44 @@ Les 3 améliorations (combinées ou non) proposées sont les suivantes:
     \item Passage du projet Vue.js (et toutes ces technologies) en machine Docker.
 \end{itemize}
 
-\begin{multicols}{2}
-    [
-        % vraiment bien se blinder au niveau des arguments via blog et études, sources écrites
-        % si on a pas trouvé, on peut dire je ne sais pas, on DOIT dire -> joker ultime
-        % toucher quelque chose en surface, si je ne connais pas, si point essentiel dans projet, faire un choix + essai -> prototype, démonstration sur expérience
-        % aussi parlé des charges qui devront être supportées et si c'est possible, nb user final par ex
+\begin{multicols}{2}[Commençons par réfléchir sur le passage du SGBD en machine Docker.]
+    % vraiment bien se blinder au niveau des arguments via blog et études, sources écrites
+    % si on a pas trouvé, on peut dire je ne sais pas, on DOIT dire -> joker ultime
+    % toucher quelque chose en surface, si je ne connais pas, si point essentiel dans projet, faire un choix + essai -> prototype, démonstration sur expérience
+    % aussi parlé des charges qui devront être supportées et si c'est possible, nb user final par ex
+    Pour ceci, nous allons énumérer les avantages et inconvénients d'installer le SGBD nativement.
+    Avantages:
+    \begin{itemize}
+        \item Gestion de la BD plus facile car le SGB est installé nativement,
+        \item Le SGBD peut-être déjà installé et peut être utilisée directement,
+        \item Ne nécessite pas Docker.
+    \end{itemize}
 
-        Commençons par réfléchir sur le passage du SGBD en machine Docker.
-        Pour ceci, nous allons énumérer les avantages et inconvénients d'installer le SGBD nativement.
-        Avantages:
-        \begin{itemize}
-            \item Gestion de la BD plus facile car le SGB est installé nativement,
-            \item Le SGBD peut-être déjà installé et peut être utilisée directement,
-            \item Ne nécessite pas Docker.
-        \end{itemize}
+    Inconvénients:
+    \begin{itemize}
+        \item Demande du temps pour l'installation,
+        \item Configuration à réaliser à la main,
+        \item Fort risque d'erreur lors de la configuration,
+        \item Installation différente pour chaque OS.
+    \end{itemize}
 
-        Inconvénients:
-        \begin{itemize}
-            \item Demande du temps pour l'installation,
-            \item Configuration à réaliser à la main,
-            \item Fort risque d'erreur lors de la configuration,
-            \item Installation différente pour chaque OS.
-        \end{itemize}
+    \columnbreak
+    Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir le SGBD en machine Docker.
+    Avantages:
+    \begin{itemize}
+        \item Accélère l'installation de l'environnement de développement, \cite{labrecque,data-flair-pros-cons}
+        \item Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe, \cite{labrecque, data-flair-use-cases}
+        \item Rend le debugging dû aux environnements de développement plus facile, \cite{labrecque,koukia}
+        \item Facilite la configuration, car elle est en gande partie déjà réalisée, \cite{data-flair-pros-cons}
+        \item Compatible avec tous les OS.
+    \end{itemize}
 
-        Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir le SGBD en machine Docker.
-        Avantages:
-        \begin{itemize}
-            \item Accélère l'installation de l'environnement de développement, \cite{labrecque,data-flair-pros-cons}
-            \item Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe, \cite{labrecque, data-flair-use-cases}
-            \item Rend le debugging dû aux environnements de développement plus facile, \cite{labrecque,koukia}
-            \item Facilite la configuration, car elle est en gande partie déjà réalisée, \cite{data-flair-pros-cons}
-            \item Compatible avec tous les OS.
-        \end{itemize}
-
-        Inconvénients:
-        \begin{itemize}
-            \item Gestion de la BD potentiellement plus compliquée,
-            \item \Gls{docker} peut avoir des problèmes de performances, \cite{labrecque}
-            \item Nécessite Docker et les connaissances qui vont avec. \cite{labrecque}
-        \end{itemize}
-    ]
-    \blindtext\blindtext
+    Inconvénients:
+    \begin{itemize}
+        \item Gestion de la BD potentiellement plus compliquée,
+        \item \Gls{docker} peut avoir des problèmes de performances, \cite{labrecque}
+        \item Nécessite Docker et les connaissances qui vont avec. \cite{labrecque}
+    \end{itemize}
 \end{multicols}
 
 Si nous évaluons les deux solutions proposées selon les besoins suivants:
@@ -519,44 +604,42 @@ Si nous évaluons les deux solutions proposées selon les besoins suivants:
 
 On se rend facilement compte que la solution avec Docker est celle qui se rapproche le plus de ces derniers.
 
-\begin{multicols}{2}[
-        Passons maintenant au passage de l'environnement Laravel en machine Docker.
-        Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet environnement.
-        Avantages:
-        \begin{itemize}
-            \item (Meilleur performance),
-            \item Gestion totale de l'environnement.
-        \end{itemize}
+\begin{multicols}{2}[Passons maintenant au passage de l'environnement Laravel en machine Docker.]
+    Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet environnement.
+    Avantages:
+    \begin{itemize}
+        \item (Meilleur performance),
+        \item Gestion totale de l'environnement.
+    \end{itemize}
 
-        Inconvénients:
-        \begin{itemize}
-            \item Peut générer des conflits si plusieurs versions sont présentes,
-            \item Impossibilité d'avoir plusieurs versions différentes installées,
-            \item L'installation demande du temps,
-            \item Configuration à faire à la main,
-            \item Fort risque d'erreur lors de la configuration,
-            \item Installation différente pour chaque \Gls{os}.
-        \end{itemize}
+    Inconvénients:
+    \begin{itemize}
+        \item Peut générer des conflits si plusieurs versions sont présentes,
+        \item Impossibilité d'avoir plusieurs versions différentes installées,
+        \item L'installation demande du temps,
+        \item Configuration à faire à la main,
+        \item Fort risque d'erreur lors de la configuration,
+        \item Installation différente pour chaque \Gls{os}.
+    \end{itemize}
 
-        Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement Laravel en machine Docker.
-        Avantages:
-        \begin{itemize}
-            \item Accélère l'installation de l'environnement de développement, \cite{labrecque}
-            \item Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe, \cite{labrecque, data-flair-use-cases}
-            \item Rend le debugging dû aux environnements de développement plus facile, \cite{labrecque,koukia}
-            \item Facilite la configuration, car elle est en gande partie déjà réalisée, \cite{data-flair-pros-cons}
-            \item Compatible avec tous les OS,
-            \item Existance d'un outil donné par Laravel et conçu pour être utiliser avec \Gls{docker}, il s'agit de \href{https://laravel.com/docs/9.x/sail}{Sail},
-            \item Permet d'avoir plusieurs versions installées.
-        \end{itemize}
+    \columnbreak
+    Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement Laravel en machine Docker.
+    Avantages:
+    \begin{itemize}
+        \item Accélère l'installation de l'environnement de développement, \cite{labrecque}
+        \item Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe, \cite{labrecque, data-flair-use-cases}
+        \item Rend le debugging dû aux environnements de développement plus facile, \cite{labrecque,koukia}
+        \item Facilite la configuration, car elle est en gande partie déjà réalisée, \cite{data-flair-pros-cons}
+        \item Compatible avec tous les OS,
+        \item Existance d'un outil donné par Laravel et conçu pour être utiliser avec \Gls{docker}, il s'agit de \href{https://laravel.com/docs/9.x/sail}{Sail},
+        \item Permet d'avoir plusieurs versions installées.
+    \end{itemize}
 
-        Inconvénients:
-        \begin{itemize}
-            \item \Gls{docker} peut avoir des problèmes de performances, \cite{labrecque}
-            \item Nécessite Docker et les connaissances qui vont avec. \cite{labrecque}
-        \end{itemize}
-    ]
-    \blindtext\blindtext
+    Inconvénients:
+    \begin{itemize}
+        \item \Gls{docker} peut avoir des problèmes de performances, \cite{labrecque}
+        \item Nécessite Docker et les connaissances qui vont avec. \cite{labrecque}
+    \end{itemize}
 \end{multicols}
 
 Si nous évaluons les deux solutions proposées selon les besoins suivants:
@@ -571,37 +654,35 @@ On se rend facilement compte que la solution avec Laravel Sail est celle qui se 
 %https://laravel.com/docs/9.x/sail
 %https://laravel.com/docs/9.x/homestead
 
-\begin{multicols}{2}[
-        Finalement, parlons du passage de l'environnement Vue.js en machine Docker.
-        Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet environnement.
-        Avantages:
-        \begin{itemize}
-            \item (Meilleur performance),
-            \item Node.js possède un bon gestionnaire de version,
-            \item Compatible avec tous les OS,
-            \item Gestion totale de l'environnement.
-        \end{itemize}
+\begin{multicols}{2}[Finalement, parlons du passage de l'environnement Vue.js en machine Docker.]
+    Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet environnement.
+    Avantages:
+    \begin{itemize}
+        \item (Meilleur performance),
+        \item Node.js possède un bon gestionnaire de version,
+        \item Compatible avec tous les OS,
+        \item Gestion totale de l'environnement.
+    \end{itemize}
 
-        Inconvénients:
-        \begin{itemize}
-            \item Configuration à faire à la main,
-        \end{itemize}
+    Inconvénients:
+    \begin{itemize}
+        \item Configuration à faire à la main,
+    \end{itemize}
 
-        Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement Laravel en machine Docker.
-        Avantages:
-        \begin{itemize}
-            \item Rapide à installer,
-            \item Configuration en gande partie déjà réalisée,
-            \item Compatible avec tous les OS.
-        \end{itemize}
+    \columnbreak
+    Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement Laravel en machine Docker.
+    Avantages:
+    \begin{itemize}
+        \item Rapide à installer,
+        \item Configuration en gande partie déjà réalisée,
+        \item Compatible avec tous les OS.
+    \end{itemize}
 
-        Inconvénients:
-        \begin{itemize}
-            \item Nécessite Docker et les connaissances qui vont avec,
-            \item Peut-être compliqué à mettre en place.
-        \end{itemize}
-    ]
-    \blindtext\blindtext
+    Inconvénients:
+    \begin{itemize}
+        \item Nécessite Docker et les connaissances qui vont avec,
+        \item Peut-être compliqué à mettre en place.
+    \end{itemize}
 \end{multicols}
 
 Si nous évaluons les deux solutions proposées selon les besoins, désormais bien connus et suivants:
@@ -654,87 +735,81 @@ Les deux améliorations (combinées ou non) proposées sont les suivantes:
     \item Passage du projet Laravel (et toutes ces technologies) en machine Docker.
 \end{itemize}
 
-\begin{multicols}{2}
-    [
+\begin{multicols}{2}[Nous recommençons également par réfléchir sur le passage du SGBD en machine Docker.]
+    Pour ceci, nous allons énumérer les avantages et inconvénients d'installer le SGBD nativement.
+    Certains peuvent être les mêmes qu'énumérer dans la partie "Infrastructure de développement". %\href TODO
+    Avantages:
+    \begin{itemize}
+        \item Gestion de la BD plus facile car le SGB est installé nativement,
+        \item Sauvegarde aisément réalisable,
+        \item Mise en place d'un service de façon trivialle,
+        \item Le SGBD peut-être déjà installé et peut être utilisée directement,
+        \item Ne nécessite pas Docker.
+    \end{itemize}
 
-        Nous recommençons également par réfléchir sur le passage du SGBD en machine Docker.
-        Pour ceci, nous allons énumérer les avantages et inconvénients d'installer le SGBD nativement.
-        Certains peuvent être les mêmes qu'énumérer dans la partie "Infrastructure de développement". %\href TODO
-        Avantages:
-        \begin{itemize}
-            \item Gestion de la BD plus facile car le SGB est installé nativement,
-            \item Sauvegarde aisément réalisable,
-            \item Mise en place d'un service de façon trivialle,
-            \item Le SGBD peut-être déjà installé et peut être utilisée directement,
-            \item Ne nécessite pas Docker.
-        \end{itemize}
+    Inconvénients:
+    \begin{itemize}
+        \item Demande du temps pour l'installation,
+        \item Configuration à réaliser à la main,
+        \item Fort risque d'erreur lors de la configuration,
+        \item Installation différente pour chaque OS.
+    \end{itemize}
 
-        Inconvénients:
-        \begin{itemize}
-            \item Demande du temps pour l'installation,
-            \item Configuration à réaliser à la main,
-            \item Fort risque d'erreur lors de la configuration,
-            \item Installation différente pour chaque OS.
-        \end{itemize}
+    \columnbreak
+    Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir le SGBD en machine Docker.
+    Avantages:
+    \begin{itemize}
+        \item Accélère l'installation de l'environnement de production,
+        \item Facilite la mise à jour de l'environnement de production si l'environnement de développement intègre un containeur docker pour le SGBD,
+        \item Configuration en gande partie déjà réalisée,
+        \item Compatible avec tous les OS.
+    \end{itemize}
 
-        Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir le SGBD en machine Docker.
-        Avantages:
-        \begin{itemize}
-            \item Accélère l'installation de l'environnement de production,
-            \item Facilite la mise à jour de l'environnement de production si l'environnement de développement intègre un containeur docker pour le SGBD,
-            \item Configuration en gande partie déjà réalisée,
-            \item Compatible avec tous les OS.
-        \end{itemize}
-
-        Inconvénients:
-        \begin{itemize}
-            \item Gestion de la BD potentiellement plus compliquée,
-            \item Sauvegarde de la BD potentiellement plus compliquée,
-            \item Mise en place d'un service non trivial,
-            \item \Gls{docker} peut avoir des problèmes de performances, \cite{labrecque}
-            \item Nécessite Docker et les connaissances qui vont avec. \cite{labrecque}
-        \end{itemize}
-    ]
-    \blindtext\blindtext
+    Inconvénients:
+    \begin{itemize}
+        \item Gestion de la BD potentiellement plus compliquée,
+        \item Sauvegarde de la BD potentiellement plus compliquée,
+        \item Mise en place d'un service non trivial,
+        \item \Gls{docker} peut avoir des problèmes de performances, \cite{labrecque}
+        \item Nécessite Docker et les connaissances qui vont avec. \cite{labrecque}
+    \end{itemize}
 \end{multicols}
 % TODO reciter besoins et dire solution qui se rapproche le plus
 
-\begin{multicols}{2}[
-        Passons maintenant au passage de l'environnement Laravel en machine Docker.
-        Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet environnement.
-        Avantages:
-        \begin{itemize}
-            \item (Meilleur performance),
-            \item Gestion totale de l'environnement.
-        \end{itemize}
+\begin{multicols}{2}[Passons maintenant au passage de l'environnement Laravel en machine Docker.]
+    Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet environnement.
+    Avantages:
+    \begin{itemize}
+        \item (Meilleur performance),
+        \item Gestion totale de l'environnement.
+    \end{itemize}
 
-        Inconvénients:
-        \begin{itemize}
-            \item Mise à jour compliquée si un changement de version à lieu,
-            \item L'installation demande du temps,
-            \item Configuration à faire à la main,
-            \item Fort risque d'erreur lors de la configuration,
-            \item Installation différente pour chaque \Gls{os}.
-        \end{itemize}
+    Inconvénients:
+    \begin{itemize}
+        \item Mise à jour compliquée si un changement de version à lieu,
+        \item L'installation demande du temps,
+        \item Configuration à faire à la main,
+        \item Fort risque d'erreur lors de la configuration,
+        \item Installation différente pour chaque \Gls{os}.
+    \end{itemize}
 
-        Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement Laravel en machine Docker.
-        Avantages:
-        \begin{itemize}
-            \item Mise à jour du programme facilitée, dans tous les cas,
-            \item Accélère l'installation de l'environnement de production,
-            \item Configuration en gande partie déjà réalisée,
-            \item Offre une possibilité d'extensibilité horizontale,
-            \item Compatible avec tous les OS.
-        \end{itemize}
+    \columnbreak
+    Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement Laravel en machine Docker.
+    Avantages:
+    \begin{itemize}
+        \item Mise à jour du programme facilitée, dans tous les cas,
+        \item Accélère l'installation de l'environnement de production,
+        \item Configuration en gande partie déjà réalisée,
+        \item Offre une possibilité d'extensibilité horizontale,
+        \item Compatible avec tous les OS.
+    \end{itemize}
 
-        Inconvénients:
-        \begin{itemize}
-            \item Peut laisser des failles de sécurité, suivant l'environnement mis en place,
-            \item \Gls{docker} peut avoir des problèmes de performances, \cite{labrecque}
-            \item Nécessite Docker et les connaissances qui vont avec. \cite{labrecque}
-        \end{itemize}
-    ]
-    \blindtext\blindtext
+    Inconvénients:
+    \begin{itemize}
+        \item Peut laisser des failles de sécurité, suivant l'environnement mis en place,
+        \item \Gls{docker} peut avoir des problèmes de performances, \cite{labrecque}
+        \item Nécessite Docker et les connaissances qui vont avec. \cite{labrecque}
+    \end{itemize}
 \end{multicols}
 
 % TODO reciter besoins et dire solution qui se rapproche le plus
