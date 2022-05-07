@@ -200,20 +200,14 @@ effectuées durant le travail de Bachelor.
 
 Pour les toutes les tâches qui seront listés plus bas, celles qui nécessitent une décomposition en plusieurs tâches voient le numéro de ses sous-tâches suivi d'une lettre. Les tâches possédant des sous-tâches des priorités différentes, n'auront aucune priorité globale.
 
-%Je m'engage à réaliser les tâches suivantes :
 Je m'engage à réaliser les tâches énumérées dans le tableau \ref{taches}
 
 % TODO: regarder avec prof
 \begin{table}[h]
     \begin{center}
         \caption{Liste des tâches / exigences à réaliser durant le projet \label{taches}}
-        \begin{tabularx}{1.0\textwidth} {
-                | >{\centering\arraybackslash}X
-                | >{\centering\arraybackslash}X
-                | >{\centering\arraybackslash}X |}
-            %%{{1.0\textwidth}{|>{\centering}p{0.1}>{\centering\arraybackslash}p{3cm}|}
-            %\begin{tabular}{c|c|c}
-            \#  & Tâche / Exigence                                                                                                       & Priorité      \\ \hline
+        \begin{tabularx}{1.0\textwidth} {l|X|r}
+            No. & Tâche / Exigence                                                                                                       & Priorité      \\ \hline
             1   & Créer une infrastructure de développement professionnel                                                                & Obligatoire   \\
             2   & Mettre en place un pipeline DevOps complet en passant par les étapes suivantes                                         & Obligatoire   \\
             2.a & Mettre en place un outil d'intégration continue (CI)                                                                   & Obligatoire   \\
@@ -307,9 +301,9 @@ Dans cette section, je vais énumérer les choix technologiques déjà effectué
 Considérant les choix de l'étudiant comme bon et bien argumenté, je ne vois aucune raison de les remettre en question, surtout qu'un travail conséquent a déjà été réalisé avec les technologies choisies. Pour plus de précisions sur ces choix technologiques, je vous invite à consulter son %\href{TODO}{rapport}. //voir avec prof
 Voici un résumé des décisions prises lors de la première phase du projet:
 \begin{itemize}
-    \item Backend: PHP avec le framework Laravel, %https://laravel.com/
-    \item Frontend: Javascript avec Vue.js, %https://vuejs.org/
-    \item SGBD: MySQL, %https://www.mysql.com/
+    \item Backend: PHP avec le framework \href{https://laravel.com/}{Laravel},
+    \item Frontend: Javascript avec \href{https://vuejs.org/}{Vue.js},
+    \item SGBD: \href{https://www.mysql.com/}{MySQL},
     \item Outil SSO: Shibboleth. %https://blog.miniorange.com/what-is-shibboleth/
 \end{itemize}
 
@@ -549,7 +543,7 @@ L'infrastructure que vous pouvez voir dans la figure ci-dessous et celle qui ét
 En résumé, tous les outils ont été installés nativement sur la machine de développement sans virtualisation.
 \figi{infrastructure-dev-actuelle.drawio}{16cm}{Infrastructure de développement actuelle}
 
-\figi{infrastructure-dev-db-docker.drawio}{16cm}{Infrastructure de développement avec une DB en Docker}
+\figi[Intra. avec une DB en Docker]{infrastructure-dev-db-docker.drawio}{16cm}{Infrastructure de développement avec une DB en Docker}
 
 \figi{infrastructure-dev-db-laravel-docker.drawio}{16cm}{Infrastructure de développement avec une DB et Laravel en Docker}
 
@@ -558,7 +552,7 @@ Cette solution est considérée comme le prédecesseur à Laravel Sail qui est b
 C'est pourquoi, cette solution ne fera pas parti des choix que nous allons argumenter, mais est présentée comme complément.
 \figi{infrastructure-dev-laravel-homestead.drawio}{16cm}{Infrastructure de développement avec Laravel Homestead}
 
-\figi{infrastructure-dev-db-laravel-vuejs-docker.drawio}{16cm}{Infrastructure de développement avec une DB, Laravel et Vue.js en Docker}
+\figi[Intra. de dev avec DB + Laravel + Vue en Docker]{infrastructure-dev-db-laravel-vuejs-docker.drawio}{16cm}{Infrastructure de développement avec une DB, Laravel et Vue.js en Docker}
 
 %https://laravel.com/docs/9.x/sail
 %https://blog.logrocket.com/laravel-and-docker-a-guide-to-using-laravel-sail/
