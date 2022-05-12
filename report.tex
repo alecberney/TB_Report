@@ -1433,7 +1433,41 @@ Laravel s'occupera ensuite de gérer les cas de suppression lui-même.
 
 %Labrecque M. (2018). Pros and cons of Docker. in \textit{Docker, planet drupal}. consulté à %l'adresse: https://affinitybridge.com/blog/pros-and-cons-docker (consulté le 31.03.2022)
 
-\chapter{Intégration continu}
+\chapter{Intégration continue}
+L'intégration continue ou CI a fait l'objet d'un prototype afin de tester le bon fonctionnement
+avant de l'intégrer au projet final.\newline
+Ce prototype a subit plusieurs itérations, il a fallu partir d'une CI simple permettant de juste
+exécuter des tests sur un base de données SQLLite sans migration. Puis il a fallu ajouter une base
+de données MySQL pour reproduire le véritable environnement. Finalement il a fallu intégrer les
+migrations et les seeders afin de donner l'opportunité de tester au mieux l'application.\newline
+Ayant un dépôt Gitub pour le code, la CI a été réalisée avec Github Actions.\newline
+La CI est consultable sur la figure \ref{ci}
+
+\begin{listing}[h]
+    \inputminted{yml}{assets/code/ci.yml}
+    \caption{CI pour Laravel \label{ci}}
+\end{listing}
+
+\section{Déclenchement de la CI}
+La première partie après le mot clé "on", indique quand cette CI et donc cette Github Actions est
+déclanchée.\newline
+
+\section{Infrastructure et services}
+Ensuite, il est nécessaire d'indiquer sur quel type de machine on souhaite faire tourner notre
+installation et nos tests. Il faut également construire les services nécessaires au bon
+fonctionnement des tests. Ici nous construisons un SGBD MySQL, ainsi qu'une base de données.\newline
+
+\section{Étapes de configuration}
+
+À partir du mot clé "steps", une série d'étape de configuration a lieu.\newline
+Chaque étape est décrite après le mot clé "name"\newline
+Tout d'abord, on lance les Github Actions, puis on réalise une étape non obligatoire mais
+importante, on vérifie si la connexion à MySQL construit plus tôt fonctionne.\newline
+Il est notamment important d'installer tout l'environnement php.\newline
+Il faut ensuite générer les clés pour l'appluication, puis lancer les migrations et le
+seeding.\newline
+Il est ensuite important de changer les permissions pour le storage. Et finalement il est possible
+de lancer tous les tests de l'application avec phpunit.
 
 \chapter{Déploiement continu}
 
