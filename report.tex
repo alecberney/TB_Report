@@ -6,8 +6,10 @@
 
 \usepackage[nooldvoltagedirection,european,americaninductors]{circuitikz}
 \usepackage{tabularx}
-\usepackage{multicol}
 \usepackage{graphicx}
+\usepackage{comment}
+\usepackage{pdfpages}
+\usepackage{lscape}
 
 \signature{signature_alec_berney.svg}
 
@@ -63,11 +65,11 @@
 L'introduction est une section requise dans un rapport technique. Introduisez votre travail, l'idée de départ et les objectifs attendus. Un lecteur qui découvrirait votre projet au travers de cette introduction devrait ainsi être capable d'en comprendre le cadre, l'idée générale et les aboutissants du projet.
 
 \section{Contexte}
-Le FabLab est un laboratoire permettant de réaliser des travaux sur des machines de ce dernier. Actuellement, pour réaliser un travail sur une machine, il est nécessaire de réaliser une demande par email à l'un des techniciens ayant le droit d'usiner sur la machine souhaitée. Une fois la demande reçue, le technicien usine dès qu'il le peut et doit recontacter le mandataire pour lui donner son travail fini. Durant toute cette période, aucun retour n'a été donné au mandataire. En cas de problème avec un travail, le technicien doit également recontacter le client.\newline
+Le \Gls{fablab} est un laboratoire permettant de réaliser des travaux sur des machines de ce dernier. Actuellement, pour réaliser un travail sur une machine, il est nécessaire de réaliser une demande par email à l'un des techniciens ayant le droit d'usiner sur la machine souhaitée. Une fois la demande reçue, le technicien usine dès qu'il le peut et doit recontacter le mandataire pour lui donner son travail fini. Durant toute cette période, aucun retour n'a été donné au mandataire. En cas de problème avec un travail, le technicien doit également recontacter le client.\newline
 Certains défauts majeurs peuvent être identifier avec la procédure actuelle, les voici :
 \begin{itemize}
     \item Il n'y a aucun suivi des travaux pour le mandataire, \cite{lieberherr}
-    \item Les échanges liés aux travaux peuvent être réalisé via plusieurs canaux (email, Teams, vocal, etc.), \cite{lieberherr}
+    \item Les échanges liés aux travaux peuvent être réalisé via plusieurs canaux (email, \Gls{teams}, vocal, etc.), \cite{lieberherr}
     \item Risque de désorganisation, \cite{lieberherr}
     \item Manque de clarté quant à la procédure, \cite{lieberherr}
     \item Aucun historique des travaux réalisé,
@@ -92,20 +94,20 @@ Le choix des technologies déjà utilisées sera abordé plus tard dans le docum
 Dans cette partie, nous allons énumérer tous les aspects de l'ancien travail fourni. Nous n'allons pas toucher le détail, car le but est de faire ressortir seulement les points essentiels.
 
 \subsubsection{Environement de développement}
-Pour commencer, parlons de l'environnement de travail. Il faut savoir que le projet a été transmi avec 2 dépôts Github au nom de l'ancien Bachelier et le rapport de l'ancien travail de Bachelor.
+Pour commencer, parlons de l'environnement de travail. Il faut savoir que le projet a été transmi avec 2 dépôts \Gls{github} au nom de l'ancien Bachelier et le rapport de l'ancien travail de Bachelor.
 
 Maintenant, voici les points qui ressortent de l'analyse concernant l'environnement de travail:
 \begin{itemize}
-    \item 2 dépôts (repository) Github à son nom sont fournis,
+    \item 2 dépôts (repository) \Gls{github} à son nom sont fournis,
     \item Les 2 dépôts ne contiennent que très peu d'information concernant le projet,
     \item Le projet tourne sur d'anciennes technologies améliorées depuis,
     \item Le projet n'est pas si aisé à reprendre en moins suite au manque d'informations concernant les technologies,
     \item L'environnement de développement est difficilement transmissible à une tierce personne, il est compliqué de vite intégrer l'équipe de développement,
-    \item Aucun outil de collaboration n'est fourni, nous parlons ici de DevOps (CI et CD).
+    \item Aucun outil de collaboration n'est fourni, nous parlons ici de \Gls{devops} (\Gls{ci} et \Gls{cd}).
 \end{itemize}
 
 \subsubsection{Base de données}
-Cette partie défini tout ce qui touche à la base de données et influence également le Backend.\newline
+Cette partie défini tout ce qui touche à la base de données et influence également le \Gls{backend}.\newline
 Les points ressortant de l'analyse de la base données sont les suivants:
 \begin{itemize}
     \item La base de données contient les ressources principales (utilisateurs, travaux, messages, fichiers),
@@ -120,10 +122,10 @@ Passons maintenant au Backend qui est la plus grosse partie du travail.\newline
 Il faut savoir que toute l'analyse de la base de donnée s'applique également pour une bonne partie du Backend et ne sera pas répétée.\newline
 Les points ressortant de l'analyse de ce dernier sont les suivants:
 \begin{itemize}
-    \item Le principe REST n'est pas respecté en ce qui concerne l'API,
+    \item Le principe \Gls{rest} n'est pas respecté en ce qui concerne l'\Gls{api},
     \item Les entrées utilisateurs ne font l'objet d'aucune vérification syntaxique et sémantique,
-    \item L'architecture de code ne respecte pas totalement celle mise à disposition par Laravel,
-    \item Le code n'utilise pas toutes les possibilités utiles fournies par le framework,
+    \item L'architecture de code ne respecte pas totalement celle mise à disposition par \Gls{laravel},
+    \item Le code n'utilise pas toutes les possibilités utiles fournies par le \Gls{framework},
     \item Le contrôle de l'accès aux ressources via des rôles n'est pas mis en place,
     \item Le système de stockage de fichier et fonctionnel,
     \item Le système de notification via est fonctionnel, mais malheureusement non sécurisé,
@@ -133,7 +135,7 @@ Les points ressortant de l'analyse de ce dernier sont les suivants:
 \end{itemize}
 
 \subsubsection{Frontend}
-Finalementm, passons au frontend, ce dernier a été réalisé à l'aide d'un template. Il a été adapté aux besoins de l'application. Le but du projet n'étant pas concentrer sur le frontend, seul une analyse de surface a été réalisée.\newline
+Finalement, passons au frontend, ce dernier a été réalisé à l'aide d'un \Gls{template}. Il a été adapté aux besoins de l'application. Le but du projet n'étant pas concentrer sur le frontend, seul une analyse de surface a été réalisée.\newline
 Les points ressortant de l'analyse de ce dernier sont les suivants:
 \begin{itemize}
     \item Le frontend est totalement fonctionnel,
@@ -343,24 +345,24 @@ Cette liste de possibilités sera accompagnées des avantages et inconvénients 
 
 \subsection{Rappel des choix technologiques déjà effectués}
 Dans cette section, je vais énumérer les choix technologiques déjà effectués par le premier étudiant ayant travaillé sur le projet.\newline
-Considérant les choix de l'étudiant comme bon et bien argumenté, je ne vois aucune raison de les remettre en question, surtout qu'un travail conséquent a déjà été réalisé avec les technologies choisies. Pour plus de précisions sur ces choix technologiques, je vous invite à consulter son %\href{TODO}{rapport}. //voir avec prof
+Considérant les choix de l'étudiant comme bon et bien argumenté, je ne vois aucune raison de les remettre en question, surtout qu'un travail conséquent a déjà été réalisé avec les technologies choisies. Pour plus de précisions sur ces choix technologiques, je vous invite à consulter son %\href{TODO}{rapport}. //voir avec prof %mettre url tb.heig-vd.ch sur rapport dans biblio
 Voici un résumé des décisions prises lors de la première phase du projet:
 \begin{itemize}
     \item Backend: PHP avec le framework \href{https://laravel.com/}{Laravel},
-    \item Frontend: Javascript avec \href{https://vuejs.org/}{Vue.js},
+    \item Frontend: \Gls{javascript} avec \href{https://vuejs.org/}{Vue.js},
     \item SGBD: \href{https://www.mysql.com/}{MySQL},
     \item Outil SSO: Shibboleth. %https://blog.miniorange.com/what-is-shibboleth/
 \end{itemize}
 
 Au final, la "stack" de technologies utilisées ressemble à celle de la figure \ref{stack-old-tb}
 
-%\begin{figure}
-%\caption{Stack de technologies utilisées via \href{https://stackshare.io/alecberney/bachelors-thesis}{stackshare}}
-\fig{stack-old-tb}{Stack de technologies utilisées dans l'ancien travail }%\label{stack-old-tb}}
-%\fig{stack-old-tb.png}{Stack de technologies utilisées dans l'ancien travail}
-%\end{figure}
-
-%\includegraphics{/assets/figures/stack-old-tb.png}
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/stack-old-tb.png}
+        \caption[Stack de technologies]{Stack de technologies utilisées via
+            \href{https://stackshare.io/alecberney/bachelors-thesis}{stackshare} \label{stack-old-tb}}
+    \end{figure}
+\end{center}
 
 \subsection{Besoins pour le projet}
 Je vais ici définir les besoins du projet et ceci en les séparant par parties distinctes.
@@ -450,27 +452,38 @@ Mais utiliser des outils qui sont gratuits ou open source offre également un pl
 % docker
 \subsection{Introduction à Docker}
 Pour pour pouvoir comparer les différentes infrastructures et faire des choix sur ces dernière, il est important d'introduire l'outil \Gls{docker}.\newline
-Docker est un outil permettant de gérer des containers.\newline
-Qu'est-ce qu'un container? Un container est une sorte de machine virtuelle plus légère ayant pour but d'encapsuler une ou plusieurs applications / outils technologiques ainsi que toutes les dépendances que ces applications exigent pour leur bon fonctionnement.\newline
+Docker est un outil permettant de gérer des conteneurs.\newline
+Qu'est-ce qu'un conteneur? Un \Gls{conteneur} est une sorte de machine virtuelle plus légère ayant pour but d'encapsuler une ou plusieurs applications / outils technologiques ainsi que toutes les dépendances que ces applications exigent pour leur bon fonctionnement.\newline
 Il ne s'agit donc pas de virtualisation mais de "conteneurisation" ou "containerization" en anglais.
-Dans une "conteneurisation", seul l'OS et le software est virtualisé et non le hardware.\newline
-Nous remarquons bien la différence avec la figure suivante: %\ref{}
-%\begin{figure}
-%\caption{\href{https://www.docker.com/wp-content/uploads/2021/11/}docker-containerized-and-vm-transparent-bg.png}
-%fig{docker-containerized-and-vm.png}{Comparaison entre containeurs docker et machines virtuelles}
-%\caption{Comparaison entre conteneurs et machines virtuelles}
-%\end{figure}
+Dans une "conteneurisation", seul l'\Gls{os} et le software est virtualisé et non le hardware.\newline
+Nous remarquons bien la différence avec la figure suivante \ref{docker-compare}
+
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/docker-containerized-and-vm.png}
+        \caption[Comparaison Docker vs VM]{Comparaison entre containeurs docker et machines virtuelles
+            du \href{https://www.docker.com/wp-content/uploads/2021/11/}{site docker}
+            \label{docker-compare}}
+    \end{figure}
+\end{center}
 
 Les containers sont facilement téléchargeables et transmissibles. Ils sont également relativement facile à mettre en place.\newline
 Le principe est simple, nous avons une application et une certaine configuration qui fonctionne, nous pouvons facilement l'encapsuler dans un container et le transmettre à nos collègues ou le télécharger sur un autre pc.\newline
 Un des principales avantages, est le fait que le container ne dépend pas de l'OS ou de l'état de la machine sur lequel il va être lancé.\newline
 Le seul point requis, est de posséder docker sur la machine.\newline
 Cette solution rend plus flexible et portable l'exécution d'application sur n'importe quelle machine.\newline
-Voici un schéma démontrant la façon dont docker et des containers dockers sont mis en place sur une machine: %\ref{}
-%\begin{figure}
-%\caption{Conteneurisation d'applications \href{https://www.docker.com/wp-content/uploads/2021/11/container-what-is-container.png}}
-%fig{docker-containerized-and-vm.png}{Comparaison entre containeurs docker et machines virtuelles}
-%\end{figure}
+Voici un schéma démontrant la façon dont docker et des containers dockers sont mis en place sur une
+machine comme illustré sur la figure \ref{docker-container-app}.
+
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/container-what-is-container.png}
+        \caption[Conteneurisation d'applications]{Conteneurisation d'applications via
+            le \href{https://www.docker.com/wp-content/uploads/2021/11/container-what-is-container.png}{site docker}
+            \label{docker-container-app}}
+    \end{figure}
+\end{center}
+
 %https://www.docker.com/resources/what-container/
 %https://www.ibm.com/fr-fr/cloud/learn/docker
 %https://fr.wikipedia.org/wiki/Docker_(logiciel)
@@ -478,11 +491,15 @@ Voici un schéma démontrant la façon dont docker et des containers dockers son
 
 Voici une liste des avantages généraux de Docker comparé à une VM:
 \begin{itemize}
-    \item Les containers sont petits comparé au VM, \cite{koukia}
-    \item Les containers utilisent moins de ressources, \cite{koukia}
-    \item Les containers démarrent plus rapidement, \cite{koukia}
-    \item Fonctionne bien avec les DevOps et les CI/CD, \cite{koukia,data-flair-pros-cons,data-flair-use-cases}
-    \item facilite l'extensibilité horizontale. \cite{data-flair-use-cases}
+    \item Les containers sont petits comparé au VM \cite{koukia,nick}, %\char{2713}
+    \item Les containers utilisent moins de ressources \cite{koukia},
+    \item Les containers démarrent plus rapidement \cite{koukia},
+    \item Fonctionne bien avec les DevOps et les CI/CD \cite{koukia,data-flair-pros-cons,data-flair-use-cases},
+    \item Facilite l'extensibilité horizontale \cite{data-flair-use-cases},
+    \item Regroupe les applications et les fichiers système en une seule image standardisée \cite{kane2018docker},
+    \item Permet de tester et livrer l'exact même artefact à tous les systèmes et dans tous les
+          environnements \cite{kane2018docker,nick},
+    \item Créer une abstraction autour de l'application sans sacrifier trop de ressources \cite{kane2018docker}.
 \end{itemize}
 
 Voici une liste des inconvénients de Docker comparé à une VM:
@@ -492,16 +509,24 @@ Voici une liste des inconvénients de Docker comparé à une VM:
     \item La gestion du réseau. \cite{koukia}
 \end{itemize}
 
+\subsubsection{Docker point de vue sécurité}
+En ce qui concerne la sécurité de Docker, je ne me suis plongé assez dedans pour ressortir une
+analyse concrète et fiable mais j'ai trouvé un article qui en parle. \cite{combe}
+
 % Packaging software in a way that leverages the skills developers already have. \cite{kane2018docker}
 % Bundling application software and required OS filesystems together in a single standar‐dized image format. \cite{kane2018docker}
 % Using packaged artifacts to test and deliver the exact same artifact to all systems in all environments. \cite{kane2018docker}
 % Abstracting software applications from the hardware without sacrificing resources \cite{kane2018docker}
 
-On peut voir ici une liste des cas d'utilisations de docker \cite{data-flair-use-cases}: %\ref{}
-%\begin{figure}
-%\caption{Cas d'utilisation de docker \href{https://data-flair.training/blogs/wp-content/uploads/sites/2/2018/10/}}
-%\fig{docker-use-cases.jpg}{Cas d'utilisation de docker}
-%\end{figure}
+On peut voir sur la figure \ref{docker-use-cases} une liste des cas d'utilisations de docker \cite{data-flair-use-cases}.
+
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/docker-use-cases.jpg}
+        \caption[Cas d'utilisation de docker]{Cas d'utilisation de docker via \href{https://data-flair.training/blogs/wp-content/uploads/sites/2/2018/10/}{data falir}
+            \label{docker-use-cases}}
+    \end{figure}
+\end{center}
 
 % quand ne pas utiliser docker: Performance is critical to your application
 
@@ -514,32 +539,68 @@ On peut voir ici une liste des cas d'utilisations de docker \cite{data-flair-use
 \subsubsection{Performances de Docker}
 Docker est outil qui paraît très pratique, mais qu'en est-il de ses performances?
 Pour ceci, nous allons retracer quelques évalutations réalisées lors d'une étude de IBM. Nous allons parcourir ces évalutations via des graphiques, tiré de l'étude, résumants bien les résultats.
-Commençant par la latence que peut apporter Docker: %\ref{}
-%copier coller et dans la légende, source: x ou tiré de: x
-%todo ajouter figure
-%\begin{figure}
-%\caption{Network round-trip latency (µs) \cite{rad2017introduction}}
-%\fig{docker-perf-latency.png}{Latence aller-retour du réseau (µs)}
-%\end{figure}
+Commençant par la latence que peut apporter Docker indiquée sur la figure \ref{network-latency}.
+
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/docker-perf-latency.png}
+        \caption[Docker latence aller-retour du réseau]{Latence aller-retour du réseau (µs) \cite{rad2017introduction} \label{network-latency}}
+    \end{figure}
+\end{center}
 
 On constate que la latence double, mais nous parlons ici de microsecondes, et de 30 microsecondes supplémentaires, ce qui est en soit assez peu pour de petite infrastructure.
 
-En ce qui concerne le transfert de grosses quantité de données via TCP, docker parvient à se rapprocher des performances d'une machine native, elles n'utilisent donc pas beaucoup plus de cycles: %\ref{}
-%\begin{figure}
-%\caption{TCP bulk transfer efficiency (CPU cycles/byte) \cite{rad2017introduction}}
-%\fig{docker-perf-transfer-efficiancy.png}{Efficacité du transfert de masse TCP (cycles CPU/octet)}
-%\end{figure}
+En ce qui concerne le transfert de grosses quantité de données via \gls{tcp}, docker parvient à se
+rapprocher des performances d'une machine native, elles n'utilisent donc pas beaucoup plus de cycles
+comme illustré dans la figure \ref{tcp-transfer-latency}.
 
-Au niveau des écritures, on remarque grâce aux deux graphiques suivants que les performances valent celles d'un système natif: %\ref{}
-%\begin{figure}
-%\caption{Sequential I/O throughput (MB/s) \cite{rad2017introduction}}
-%\fig{docker-perf-sequential-io.png}{Débit d'E/S séquentielles (Mo/s)}
-%\end{figure}
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/docker-perf-transfer-efficiancy.png}
+        \caption[Docker efficacité du transfert de masse]{Efficacité du transfert de masse TCP (cycles CPU/octet) \cite{rad2017introduction} \label{tcp-transfer-latency}}
+    \end{figure}
+\end{center}
 
-%\begin{figure}
-%\caption{Random I/O throughput (IOPS) \cite{rad2017introduction}}
-%\fig{docker-perf-random-io.png}{Débit d'E/S aléatoires (IOPS)}
-%\end{figure}
+Au niveau des écritures, on remarque grâce aux deux graphiques suivants que les performances valent
+celles d'un système natif comme le montre les figures \ref{sequential-io} et \ref{random-io}
+
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/docker-perf-sequential-io.png}
+        \caption[Docker débit d'I/O séquentielles]{Débit d'Entrée/Sortie séquentielles (Mo/s) \cite{rad2017introduction} \label{sequential-io}}
+    \end{figure}
+\end{center}
+
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/docker-perf-random-io.png}
+        \caption[Débit d'I/O aléatoires]{Débit d'Entrée/Sortie aléatoires (IOPS) \cite{rad2017introduction} \label{random-io}}
+    \end{figure}
+\end{center}
+
+On peut également observer sur la figure \ref{docker-perf-mysql} des performances sur le SGBD MySQL
+que nous utilisons pour le projet.
+
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/docker-perf-mysql.png}
+        \caption[Comparaison des perf. Docker sur MySQ]{Comparaison des performances de Docker avec des
+            transactions sur MySQL \cite{felter} \label{docker-perf-mysql}}
+    \end{figure}
+\end{center}
+
+Beaucoup d'autres informations ressortent dans un article étudiant les performances de Docker pour
+des applications demandant une grande performance. \cite{chung}
+Un point intéressant ressort au niveau de la gestion de la mémoire vive qu'utilise Docker, illustré
+sur la figure \ref{docker-perf-ram}.
+
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/docker-perf-ram.png}
+        \caption[Comparaison des perf. Docker sur la RAM]{Comparaison des performances de Docker au
+            niveau de l'utilisation de la mémoire vive \cite{chung} \label{docker-perf-ram}}
+    \end{figure}
+\end{center}
 
 %docker en prod perf:
 %https://stackoverflow.com/questions/21691540/how-to-optimize-performance-for-a-docker-container/21707838#21707838
@@ -577,9 +638,15 @@ Pour commencer, voici une liste non exhaustive des solutions alternatives à Doc
     \item \href{https://www.redhat.com/en/topics/containers/what-is-rkt}{RKT}.
 \end{itemize}
 
-Le principal problème de ces solutions est le manque de popularité comme on peut le remarquer sur la figure %\ref{}
+Le principal problème de ces solutions est le manque de popularité comme on peut le remarquer sur la figure \ref{containers-trends}
 
-%\figi{google-trend-containers-2022.png}{16cm}{Tendances sur les différentes solutions de conteneurs depuis 2004}
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/google-trend-containers-2022.png}
+        \caption[Tendances solutions de conteneurs]{Tendances sur les différentes solutions de conteneurs depuis 2004} \label{containers-trends}
+    \end{figure}
+\end{center}
+
 
 représentant les recherches sur concernant les différents sujets via l'outil \href{https://trends.google.fr/trends}{Google trends}.\newline
 Le fait de ne pas être populaire est un gros désavantage pour ces solutions car très peu d'informations, de tutoriels et de documentations sont disponibles sur internet.\newline
@@ -592,18 +659,18 @@ N'ayant également pas le temps d'analyser chaque solution en profondeur dans ce
 \subsubsection{Présentation des infrastructures de développement possibles}
 L'infrastructure que vous pouvez voir dans la figure ci-dessous et celle qui était utilisée lorsque j'ai reprise le projet.\newline
 En résumé, tous les outils ont été installés nativement sur la machine de développement sans virtualisation. %\ref
-\figi{infrastructure-dev-actuelle.drawio}{16cm}{Infrastructure de développement actuelle}
+\figi[Infra. dev. actuelle]{infrastructure-dev-actuelle.drawio}{18cm}{Infrastructure de développement actuelle}
 
-\figi[Infra. avec une DB en Docker]{infrastructure-dev-db-docker.drawio}{16cm}{Infrastructure de développement avec une DB en Docker}
+\figi[Infra. dev. avec DB en Docker]{infrastructure-dev-db-docker.drawio}{16cm}{Infrastructure de développement avec une DB en Docker}
 
-\figi{infrastructure-dev-db-laravel-docker.drawio}{16cm}{Infrastructure de développement avec une DB et Laravel en Docker}
+\figi[Infra. dev. avec DB + Laravel en Docker]{infrastructure-dev-db-laravel-docker.drawio}{16cm}{Infrastructure de développement avec une DB et Laravel en Docker}
 
-Laravel \href{https://laravel.com/docs/9.x/homestead}{Homestead} est un environnement de développement virtualisé à l'aide d'une machine virtuelle \href{https://www.vagrantup.com/}{Vagrant}.
-Cette solution est considérée comme le prédecesseur à Laravel Sail qui est beaucoup plus léger.
+Laravel \href{https://laravel.com/docs/9.x/homestead}{Homestead} est un environnement de développement virtualisé à l'aide d'une machine virtuelle \href{https://www.vagrantup.com/}{Vagrant}.\newline
+Cette solution est considérée comme le prédecesseur à Laravel Sail qui est beaucoup plus léger.\newline
 C'est pourquoi, cette solution ne fera pas parti des choix que nous allons argumenter, mais est présentée comme complément.
-\figi{infrastructure-dev-laravel-homestead.drawio}{16cm}{Infrastructure de développement avec Laravel Homestead}
+\figi[Infra. dev. avec Homestead]{infrastructure-dev-laravel-homestead.drawio}{16cm}{Infrastructure de développement avec Laravel Homestead}
 
-\figi[Infra. de dev avec DB + Laravel + Vue en Docker]{infrastructure-dev-db-laravel-vuejs-docker.drawio}{16cm}{Infrastructure de développement avec une DB, Laravel et Vue.js en Docker}
+\figi[Infra. dev. avec DB + Laravel + Vue en Docker]{infrastructure-dev-db-laravel-vuejs-docker.drawio}{16cm}{Infrastructure de développement avec une DB, Laravel et Vue.js en Docker}
 
 %https://laravel.com/docs/9.x/sail
 %https://blog.logrocket.com/laravel-and-docker-a-guide-to-using-laravel-sail/
@@ -623,45 +690,48 @@ Les 3 améliorations (combinées ou non) proposées sont les suivantes:
 \end{itemize}
 
 \subsubsection{Passage du SGBD en conteneur Docker}
-\begin{multicols}{2}[Commençons par réfléchir sur le passage du SGBD en conteneur Docker.]
-    % vraiment bien se blinder au niveau des arguments via blog et études, sources écrites
-    % si on a pas trouvé, on peut dire je ne sais pas, on DOIT dire -> joker ultime
-    % toucher quelque chose en surface, si je ne connais pas, si point essentiel dans projet, faire un choix + essai -> prototype, démonstration sur expérience
-    % aussi parlé des charges qui devront être supportées et si c'est possible, nb user final par ex
-    Pour ceci, nous allons énumérer les avantages et inconvénients d'installer le SGBD nativement.
-    Avantages:
-    \begin{itemize}
-        \item Gestion de la BD plus facile car le SGB est installé nativement,
-        \item Le SGBD peut-être déjà installé et peut être utilisée directement,
-        \item Ne nécessite pas Docker.
-    \end{itemize}
+Commençons par réfléchir sur le passage du SGBD en conteneur Docker.
+% vraiment bien se blinder au niveau des arguments via blog et études, sources écrites
+% si on a pas trouvé, on peut dire je ne sais pas, on DOIT dire -> joker ultime
+% toucher quelque chose en surface, si je ne connais pas, si point essentiel dans projet, faire un choix + essai -> prototype, démonstration sur expérience
+% aussi parlé des charges qui devront être supportées et si c'est possible, nb user final par ex
+Pour ceci, nous allons énumérer les avantages et inconvénients d'installer le SGBD nativement.
+Ces derniers sont visible avec la table \ref{dev-sgbd-native}
 
-    Inconvénients:
-    \begin{itemize}
-        \item Demande du temps pour l'installation,
-        \item Configuration à réaliser à la main,
-        \item Fort risque d'erreur lors de la configuration,
-        \item Installation différente pour chaque OS.
-    \end{itemize}
+\begin{table}[h]
+    \begin{center}
+        \caption{SGBD natif \label{dev-sgbd-native}}
+        \begin{tabularx}{1.0\textwidth} {X|X}
+            Avantages                                                         & Inconvénients                                 \\ \hline
+            Gestion de la BD plus facile car le SGB est installé nativement   & Demande du temps pour l'installation          \\
+            Le SGBD peut-être déjà installé et peut être utilisée directement & Configuration à réaliser à la main            \\
+            Ne nécessite pas Docker                                           & Fort risque d'erreur lors de la configuration \\             & Installation différente pour chaque OS                                \\
+        \end{tabularx}
+    \end{center}
+\end{table}
 
-    \columnbreak
-    Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir le SGBD en machine Docker.\newline
-    Avantages:
-    \begin{itemize}
-        \item Accélère l'installation de l'environnement de développement, \cite{labrecque,data-flair-pros-cons}
-        \item Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe, \cite{labrecque, data-flair-use-cases}
-        \item Rend le debugging dû aux environnements de développement plus facile, \cite{labrecque,koukia}
-        \item Facilite la configuration, car elle est en gande partie déjà réalisée, \cite{data-flair-pros-cons}
-        \item Compatible avec tous les OS.
-    \end{itemize}
+Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir le SGBD en conteneur
+Docker. Ces derniers sont visible avec la table \ref{dev-sgbd-docker}
 
-    Inconvénients:
-    \begin{itemize}
-        \item Gestion de la BD potentiellement plus compliquée,
-        \item \Gls{docker} peut avoir des problèmes de performances, \cite{labrecque}
-        \item Nécessite Docker et les connaissances qui vont avec. \cite{labrecque}
-    \end{itemize}
-\end{multicols}
+\begin{table}[h]
+    \begin{center}
+        \caption{SGBD en conteneur Docker \label{dev-sgbd-docker}}
+        \begin{tabularx}{1.0\textwidth} {X|X}
+            Avantages                             & Inconvénients                                                         \\ \hline
+            Accélère l'installation de l'environnement de développement,
+            \cite{labrecque,data-flair-pros-cons} & Gestion de la BD
+            potentiellement plus compliquée                                                                               \\
+            Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe,
+            \cite{labrecque,data-flair-use-cases} & Docker peut avoir des problèmes de performances,
+            \cite{labrecque}                                                                                              \\
+            Rend le debugging dû aux environnements de développement plus facile,
+            \cite{labrecque,koukia}               & Nécessite Docker et les connaissances qui vont avec. \cite{labrecque} \\
+            Facilite la configuration, car elle est en gande partie déjà réalisée,
+            \cite{data-flair-pros-cons}           &                                                                       \\
+            Compatible avec tous les OS           &                                                                       \\
+        \end{tabularx}
+    \end{center}
+\end{table}
 
 Si nous évaluons les deux solutions proposées selon les besoins suivants:
 \begin{itemize}
@@ -673,43 +743,48 @@ Si nous évaluons les deux solutions proposées selon les besoins suivants:
 On se rend facilement compte que la solution avec Docker est celle qui se rapproche le plus de ces derniers.
 
 \subsubsection{Passage de Laravel en conteneur Docker}
-\begin{multicols}{2}[Passons maintenant au passage de l'environnement Laravel en conteneur Docker.]
-    Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet environnement.
-    Avantages:
-    \begin{itemize}
-        \item (Meilleur performance),
-        \item Gestion totale de l'environnement.
-    \end{itemize}
+Passons maintenant au passage de l'environnement Laravel en conteneur Docker.\newline
+Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet
+environnement. Ces derniers sont visible avec la table \ref{dev-laravel-native}.
 
-    Inconvénients:
-    \begin{itemize}
-        \item Peut générer des conflits si plusieurs versions sont présentes,
-        \item Impossibilité d'avoir plusieurs versions différentes installées,
-        \item L'installation demande du temps,
-        \item Configuration à faire à la main,
-        \item Fort risque d'erreur lors de la configuration,
-        \item Installation différente pour chaque OS.
-    \end{itemize}
+\begin{table}[h]
+    \begin{center}
+        \caption{Laravel natif \label{dev-laravel-native}}
+        \begin{tabularx}{1.0\textwidth} {X|X}
+            Avantages                         & Inconvénients
+            \\ \hline
+            (Meilleur performance)            & Peut générer des conflits si plusieurs versions sont présentes \\
+            Gestion totale de l'environnement & Impossibilité d'avoir plusieurs versions différentes
+            installées                                                                                         \\
+                                              & L'installation demande du temps                                \\
+                                              & Configuration à faire à la main                                \\
+                                              & Fort risque d'erreur lors de la configuration                  \\
+                                              & Installation différente pour chaque OS                         \\
+        \end{tabularx}
+    \end{center}
+\end{table}
 
-    \columnbreak
-    Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement Laravel en machine Docker.\newline
-    Avantages:
-    \begin{itemize}
-        \item Accélère l'installation de l'environnement de développement, \cite{labrecque}
-        \item Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe, \cite{labrecque, data-flair-use-cases}
-        \item Rend le debugging dû aux environnements de développement plus facile, \cite{labrecque,koukia}
-        \item Facilite la configuration, car elle est en gande partie déjà réalisée, \cite{data-flair-pros-cons}
-        \item Compatible avec tous les OS,
-        \item Existance d'un outil donné par Laravel et conçu pour être utiliser avec \Gls{docker}, il s'agit de \href{https://laravel.com/docs/9.x/sail}{Sail},
-        \item Permet d'avoir plusieurs versions installées.
-    \end{itemize}
+Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement Laravel en
+machine Docker. Ces derniers sont visible avec la table \ref{dev-laravel-docker}.
 
-    Inconvénients:
-    \begin{itemize}
-        \item \Gls{docker} peut avoir des problèmes de performances, \cite{labrecque}
-        \item Nécessite Docker et les connaissances qui vont avec. \cite{labrecque}
-    \end{itemize}
-\end{multicols}
+\begin{table}[h]
+    \begin{center}
+        \caption{Laravel en conteneur Docker \label{dev-laravel-docker}}
+        \begin{tabularx}{1.0\textwidth} {X|X}
+            Avantages                                                                                                                 & Inconvénients
+            \\ \hline
+            Accélère l'installation de l'environnement de développement, \cite{labrecque}                                             &                                                                         \\
+            Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe, \cite{labrecque, data-flair-use-cases} & \Gls{docker} peut avoir des problèmes de performances, \cite{labrecque} \\
+            Rend le debugging dû aux environnements de développement plus facile, \cite{labrecque,koukia}                             & Nécessite Docker et les connaissances qui vont avec. \cite{labrecque}   \\
+            Facilite la configuration, car elle est en gande partie déjà réalisée, \cite{data-flair-pros-cons}                        &                                                                         \\
+            Compatible avec tous les OS                                                                                               &                                                                         \\
+            Existance d'un outil donné par Laravel et conçu pour être utiliser avec \Gls{docker}, il
+            s'agit de \href{https://laravel.com/docs/9.x/sail}{Sail}
+                                                                                                                                      &                                                                         \\
+            Permet d'avoir plusieurs versions installées                                                                              &                                                                         \\
+        \end{tabularx}
+    \end{center}
+\end{table}
 
 Si nous évaluons les deux solutions proposées selon les besoins suivants:
 \begin{itemize}
@@ -724,36 +799,38 @@ On se rend facilement compte que la solution avec Laravel Sail est celle qui se 
 %https://laravel.com/docs/9.x/homestead
 
 \subsubsection{Passage de Vue.js en conteneur Docker}
-\begin{multicols}{2}[Finalement, parlons du passage de l'environnement Vue.js en conteneur Docker.]
-    Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet environnement.
-    Avantages:
-    \begin{itemize}
-        \item (Meilleur performance),
-        \item Node.js possède un bon gestionnaire de version,
-        \item Compatible avec tous les OS,
-        \item Gestion totale de l'environnement.
-    \end{itemize}
+Finalement, parlons du passage de l'environnement \Gls{vuejs} en conteneur Docker.
 
-    Inconvénients:
-    \begin{itemize}
-        \item Configuration à faire à la main,
-    \end{itemize}
+Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet
+environnement. Ces derniers sont visible avec la table \ref{dev-vuejs-native}.
 
-    \columnbreak
-    Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement Laravel en machine Docker.
-    Avantages:
-    \begin{itemize}
-        \item Rapide à installer,
-        \item Configuration en gande partie déjà réalisée,
-        \item Compatible avec tous les OS.
-    \end{itemize}
+\begin{table}[h]
+    \begin{center}
+        \caption{Vue.js natif \label{dev-vuejs-native}}
+        \begin{tabular}{c|c}
+            Avantages                                           & Inconvénients                   \\ \hline
+            (Meilleur performance)                              & Configuration à faire à la main \\
+            \Gls{nodejs} possède un bon gestionnaire de version &                                 \\
+            Compatible avec tous les OS                         &                                 \\
+            Gestion totale de l'environnement                   &                                 \\
+        \end{tabular}
+    \end{center}
+\end{table}
 
-    Inconvénients:
-    \begin{itemize}
-        \item Nécessite Docker et les connaissances qui vont avec,
-        \item Peut-être compliqué à mettre en place.
-    \end{itemize}
-\end{multicols}
+Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement Laravel en
+machine Docker.Ces derniers sont visible avec la table \ref{dev-vuejs-docker}.
+
+\begin{table}[h]
+    \begin{center}
+        \caption{Vue.js en conteneur Docker \label{dev-vuejs-docker}}
+        \begin{tabular}{c|c}
+            Avantages                                   & Inconvénients                                       \\ \hline
+            Rapide à installer                          & Nécessite Docker et les connaissances qui vont avec \\
+            Configuration en gande partie déjà réalisée & Peut-être compliqué à mettre en place               \\
+            Compatible avec tous les OS                 &                                                     \\
+        \end{tabular}
+    \end{center}
+\end{table}
 
 Si nous évaluons les deux solutions proposées selon les besoins, désormais bien connus et suivants:
 \begin{itemize}
@@ -765,22 +842,23 @@ Si nous évaluons les deux solutions proposées selon les besoins, désormais bi
 On se rend compte que la solution avec Docker n'apporte pas forcément assez d'avanatages comparé à celle proposant l'installation native et cela est principalement dû au bon gestionnaire de paquets \href{https://www.npmjs.com/}{NPM} de Javascript. C'est pourquoi, solution proposant l'installation native sera préférée.
 
 \subsubsection{Résultat de l'analyse}
-Suite à cette analyse des outils, la solution la plus adaptée semble être de mettre en place l'environement de développment suivant:
+Suite à cette analyse des outils, la solution la plus adaptée semble être de mettre en place
+l'environement de développment illustré sur la figure \ref{env-dev}.
 
 \begin{table}[h]
     \begin{center}
         \caption{Environement de développment choisi \label{env-dev}}
-        \begin{tabular}{c|l|r}
-            Outil             & Technologie utilisée  \\ \hline
-            SGBD - MySQL      & Docker                \\
-            Frontend - Vue.js & Installation native   \\
-            Backend - Laravel & Laravel Sail (Docker) \\
+        \begin{tabular}{c|c}
+            Outil             & Technologie utilisée             \\ \hline
+            SGBD - MySQL      & Docker (inclu dans Laravel Sail) \\
+            Frontend - Vue.js & Installation native              \\
+            Backend - Laravel & Laravel Sail (Docker)            \\
         \end{tabular}
     \end{center}
 \end{table}
 
 
-Finalement cela correspond à la figure numéro %TODO \href{}{}.
+Finalement cela correspond à la figure numéro \ref{infrastructure-dev-db-laravel-docker.drawio}.
 
 % prod
 \clearpage
@@ -806,45 +884,48 @@ Les deux améliorations (combinées ou non) proposées sont les suivantes:
 \end{itemize}
 
 \subsubsection{Passage du SGBD en conteneur Docker}
-\begin{multicols}{2}[Nous recommençons également par réfléchir sur le passage du SGBD en machine Docker.]
-    Pour ceci, nous allons énumérer les avantages et inconvénients d'installer le SGBD nativement.
-    Certains peuvent être les mêmes qu'énumérer dans la partie "Infrastructure de développement".\newline %\href TODO
-    Avantages:
-    \begin{itemize}
-        \item Gestion de la BD plus facile car le SGB est installé nativement,
-        \item Sauvegarde aisément réalisable,
-        \item Mise en place d'un service de façon triviale,
-        \item Le SGBD peut-être déjà installé et peut être utilisée directement,
-        \item Ne nécessite pas Docker.
-    \end{itemize}
+Nous recommençons également par réfléchir sur le passage du SGBD en machine Docker.
 
-    Inconvénients:
-    \begin{itemize}
-        \item Demande du temps pour l'installation,
-        \item Configuration à réaliser à la main,
-        \item Fort risque d'erreur lors de la configuration,
-        \item Installation différente pour chaque OS.
-    \end{itemize}
+Pour ceci, nous allons énumérer les avantages et inconvénients d'installer le SGBD nativement.
+Certains peuvent être les mêmes qu'énumérer dans la partie "Infrastructure de
+développement". Ces derniers sont visible avec la table \ref{prod-db-native}.
 
-    \columnbreak
-    Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir le SGBD en machine Docker.\newline
-    Avantages:
-    \begin{itemize}
-        \item Accélère l'installation de l'environnement de production,
-        \item Facilite la mise à jour de l'environnement de production si l'environnement de développement intègre un containeur docker pour le SGBD,
-        \item Configuration en gande partie déjà réalisée,
-        \item Compatible avec tous les OS.
-    \end{itemize}
+\begin{table}[h]
+    \begin{center}
+        \caption{SGBD natif \label{prod-db-native}}
+        \begin{tabularx}{1.0\textwidth} {X|X}
+            Avantages                                                         & Inconvénients                          \\ \hline
+            Gestion de la BD plus facile car le SGB est installé nativement   & Demande du temps
+            pour l'installation                                                                                        \\
+            Sauvegarde aisément réalisable                                    & Configuration à réaliser à la main     \\
+            Mise en place d'un service de façon triviale                      &                                        \\
+            Le SGBD peut-être déjà installé et peut être utilisée directement & Fort risque
+            d'erreur lors de la configuration                                                                          \\
+            Ne nécessite pas Docker                                           & Installation différente pour chaque OS \\
+        \end{tabularx}
+    \end{center}
+\end{table}
 
-    Inconvénients:
-    \begin{itemize}
-        \item Gestion de la BD potentiellement plus compliquée,
-        \item Sauvegarde de la BD potentiellement plus compliquée,
-        \item Mise en place d'un service non trivial,
-        \item Docker peut avoir des problèmes de performances, \cite{labrecque}
-        \item Nécessite Docker et les connaissances qui vont avec. \cite{labrecque}
-    \end{itemize}
-\end{multicols}
+Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir le SGBD en machine
+Docker. Ces derniers sont visible avec la table \ref{prod-db-docker}.
+
+\begin{table}[h]
+    \begin{center}
+        \caption{SGBD en conteneur Docker \label{prod-db-docker}}
+        \begin{tabularx}{1.0\textwidth} {X|X}
+            Avantages                                                & Inconvénients                                                        \\ \hline
+            Accélère l'installation de l'environnement de production & Gestion de la BD
+            potentiellement plus compliquée                                                                                                 \\
+            Facilite la mise à jour de l'environnement de production si l'environnement de
+            développement intègre un containeur docker pour le SGBD  & Sauvegarde de la BD
+            potentiellement plus compliquée                                                                                                 \\
+            Configuration en gande partie déjà réalisée              & Mise en place d'un service non trivial                               \\
+            Compatible avec tous les OS                              & Docker peut avoir des problèmes de performances
+            \cite{labrecque}                                                                                                                \\
+                                                                     & Nécessite Docker et les connaissances qui vont avec \cite{labrecque} \\
+        \end{tabularx}
+    \end{center}
+\end{table}
 
 Si nous évaluons les deux solutions proposées selon les besoins, désormais bien connus et suivants:
 \begin{itemize}
@@ -857,42 +938,45 @@ Si nous évaluons les deux solutions proposées selon les besoins, désormais bi
 On se rend compte que les deux solutions se valent à peu de chose près. Je choisi donc d'essayer de mettre en place une infrastructure avec Docker en premier temps. Si cela est trop compliqué, l'autre solution étant viable pourra toujours être utilisée.
 
 \subsubsection{Passage de Laravel en conteneur Docker}
-\begin{multicols}{2}[Passons maintenant au passage de l'environnement Laravel en conteneur Docker.]
-    Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet environnement.\newline
-    Avantages:
-    \begin{itemize}
-        \item (Meilleur performance),
-        \item Gestion totale de l'environnement.
-    \end{itemize}
+Passons maintenant au passage de l'environnement Laravel en conteneur Docker.
 
-    Inconvénients:
-    \begin{itemize}
-        \item Mise à jour compliquée si un changement de version à lieu,
-        \item L'installation demande du temps,
-        \item Configuration à faire à la main,
-        \item Fort risque d'erreur lors de la configuration,
-        \item Installation différente pour chaque OS.
-    \end{itemize}
+Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet
+environnement. Ces derniers sont visible avec la table \ref{prod-laravel-native}.
 
-    \columnbreak
-    Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement Laravel en machine Docker.\newline
-    Avantages:
-    \begin{itemize}
-        \item Mise à jour du programme facilitée, dans tous les cas,
-        \item Accélère l'installation de l'environnement de production,
-        \item Configuration en gande partie déjà réalisée,
-        \item Offre une possibilité d'extensibilité horizontale,
-        \item Compatible avec tous les OS.
-    \end{itemize}
+\begin{table}[h]
+    \begin{center}
+        \caption{Laravel natif \label{prod-laravel-native}}
+        \begin{tabularx}{1.0\textwidth} {X|X}
+            Avantages                         & Inconvénients                                             \\ \hline
+            (Meilleur performance)            & Mise à jour compliquée si un changement de version à lieu \\
+            Gestion totale de l'environnement & L'installation demande du temps                           \\
+                                              & Configuration à faire à la main                           \\
+                                              & Fort risque d'erreur lors de la configuration             \\
+                                              & Installation différente pour chaque OS                    \\
+        \end{tabularx}
+    \end{center}
+\end{table}
 
-    Inconvénients:
-    \begin{itemize}
-        \item Peut laisser des failles de sécurité, suivant l'environnement mis en place,
-        \item Mise en place d'un service non trivial,
-        \item Docker peut avoir des problèmes de performances, \cite{labrecque}
-        \item Nécessite Docker et les connaissances qui vont avec. \cite{labrecque}
-    \end{itemize}
-\end{multicols}
+Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement Laravel
+en machine Docker.Ces derniers sont visible avec la table \ref{prod-laravel-docker}.
+
+\begin{table}[h]
+    \begin{center}
+        \caption{Laravel en conteneur Docker \label{prod-laravel-docker}}
+        \begin{tabularx}{1.0\textwidth} {X|X}
+            Avantages                                                & Inconvénients                      \\ \hline
+            Mise à jour du programme facilitée, dans tous les cas    & Peut laisser des failles de
+            sécurité, suivant l'environnement mis en place                                                \\
+            Accélère l'installation de l'environnement de production & Mise en place d'un service
+            non trivial                                                                                   \\
+            Configuration en gande partie déjà réalisée              & Docker peut avoir des problèmes de
+            performances, \cite{labrecque}                                                                \\
+            Offre une possibilité d'extensibilité horizontale        & Nécessite Docker et les
+            connaissances qui vont avec. \cite{labrecque}                                                 \\
+            Compatible avec tous les OS                              &                                    \\
+        \end{tabularx}
+    \end{center}
+\end{table}
 
 Si nous évaluons les deux solutions proposées selon les besoins, désormais bien connus et suivants:
 \begin{itemize}
@@ -907,12 +991,13 @@ On se rend compte que la solution avec Docker paraît plus adaptée. Cependant, 
 % TODO pour le déploiment, regarder pourquoi certains sont parti de docker
 
 \subsubsection{Résultat de l'analyse}
-Suite à cette analyse des outils, la solution la plus adaptée semble être de mettre en place l'environement de développment suivant:
+Suite à cette analyse des outils, la solution la plus adaptée semble être de mettre en place
+l'environnement de production suivant \ref{env-prod}.
 
 \begin{table}[h]
     \begin{center}
-        \caption{Environement de développment choisi \label{env-prod}}
-        \begin{tabular}{c|l|r}
+        \caption{Environement de production choisi \label{env-prod}}
+        \begin{tabular}{c|c}
             Outil             & Technologie utilisée \\ \hline
             SGBD - MySQL      & Docker               \\
             Backend - Laravel & Docker               \\
@@ -947,11 +1032,14 @@ Les DevOps c'est un ensemble de processus qui permettent de gérer et faciliter 
 Les DevOps intègre également tout ce qui est déployement continu et livraison continue (\Gls{cd}).
 En pratique, ils intègrent également d'autre aspect, comme la maintenance de l'infrastructure de production et développement, la sécurité des processus et beaucoup d'autres concepts.\newline
 Au final c'est un cycle de vie visant à faciliter le développement d'applications en équipe.\newline
-Ci-dessous, on peut observer un exemple de lifecycle fourni par IBM:
-%\begin{figure}
-%\caption{Cycle de vie de développement - IBM}
-%\fig{ibm-devops-lifecycle.png}{Cycle de vie de développement - IBM}
-%\end{figure}
+Ci-dessous, on peut observer un exemple de lifecycle fourni par IBM selon la figure \ref{devops-lifecycle}.
+
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/ibm-devops-lifecycle.png}
+        \caption[Cycle de vie de développement]{Cycle de vie de développement - IBM} \label{devops-lifecycle}
+    \end{figure}
+\end{center}
 
 
 Aucun Devops ou pipeline n'avait été réalisé lors du précédent projet.
@@ -959,17 +1047,20 @@ Nous avons donc que des propositions, sans solution existante (ce qui était le 
 Avant de présenter chacun des pipeline DevOps proposé, il est nécessaire d'expliquer pourquoi chacun de ces derniers passent par Github, et plus précisément, les Github Actions.
 
 \subsubsection{Pourquoi Github?}
-Tout d'abord, il faut comprendre qu'il existe d'autres outil de "gestion" de \Gls{devops}, appelé aussi services de \Gls{ci} / \Gls{devops}, en voici une liste non exhaustive:
-\begin{itemize}
-    \item Jenkins \href{https://www.jenkins.io/},
-    \item TeamCity \href{https://www.jetbrains.com/teamcity/},
-    \item CircleCI \href{https://www.guru99.com/top-20-continuous-integration-tools.html},
-    \item Travis-CI \href{https://www.travis-ci.com/},
-    \item GitLab \href{https://about.gitlab.com/},
-    \item Bamboo \href{https://www.atlassian.com/software/bamboo},
-    \item GoCD \href{https://www.gocd.org/},
-    \item Azure DevOps \href{https://azure.microsoft.com/fr-fr/services/devops/}.
-\end{itemize}
+Tout d'abord, il faut comprendre qu'il existe d'autres outil de "gestion" de \Gls{devops}, appelé
+aussi services de \Gls{ci} / \Gls{devops}, en voici une liste non exhaustive:
+\begin{multicols}{2}
+    \begin{itemize}
+        \item \href{https://www.jenkins.io/}{Jenkins},
+        \item \href{https://www.jetbrains.com/teamcity/}{TeamCity},
+        \item \href{https://www.guru99.com/top-20-continuous-integration-tools.html}{CircleCI},
+        \item \href{https://www.travis-ci.com/}{Travis-CI},
+        \item \href{https://about.gitlab.com/}{GitLab},
+        \item \href{https://www.atlassian.com/software/bamboo}{Bamboo},
+        \item \href{https://www.gocd.org/}{GoCD},
+        \item \href{https://azure.microsoft.com/fr-fr/services/devops/}{Azure DevOps}.
+    \end{itemize}
+\end{multicols}
 
 Tous ces outils, mise à part GitLab, doivent être installé en plus et configurer pour le projet.\newline
 Comme il s'agit d'un projet assez restreint et n'impliquant que peu de personnes, nous cherchons à rester dans une solution simple et donc "all in one".\newline
@@ -1044,10 +1135,12 @@ Inconvénients:
 %https://laravel.com/docs/9.x/upgrade
 %https://github.com/laravel/vonage-notification-channel/blob/3.x/UPGRADE.md
 
-%\begin{figure}
-%\caption{Stack de technologies utilisées via \href{https://stackshare.io/alecberney/bachelors-thesis}{stackshare}}
-%\fig{stack-tb.png}{Stack de technologies utilisées}
-%\end{figure}
+% \begin{center}
+%     \begin{figure}
+%         \includegraphics[width=\textwidth]{./assets/figures/ea.png}
+%         \caption[Stack de technologies]{Stack de technologies utilisées via \href{https://stackshare.io/alecberney/bachelors-thesis \label{stack-tb}}}
+%     \end{figure}
+% \end{center}
 
 \chapter{Conception et Réalisation de la BD}
 
@@ -1074,7 +1167,12 @@ Un message peut être envoyé que par un utilisateur.
 
 Finalement, certains peuvent être ajouté avec des rectangles pliés en haut à droite et relié avec des traits pointillés.
 
-\figi{ea}{16cm}{Modèle Entitié - Associations de la base de données}
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/ea.png}
+        \caption{Modèle EA \label{ea}}
+    \end{figure}
+\end{center}
 
 \subsection{Entité user}
 L'entité "user" représente un utilisateur de l'application, que ce soit un élève, un professeur ou un technicien.\newline
@@ -1169,7 +1267,12 @@ Les associations N à N du modèle EA voient naître une table intermédiaire. V
     \item role-user.
 \end{itemize}
 
-\figi{mld}{16cm}{Modèle logique des données de la base de données}
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/mld.png}
+        \caption{Modèle Logique des données \label{mld}}
+    \end{figure}
+\end{center}
 
 Sur le schéma, quelques nouveaux symboles apparaîssent, voici une légende:
 \begin{itemize}
@@ -1215,8 +1318,65 @@ Voici une liste des types possibles et utilisées:
 
 La liste plus complète peut être consultée dans la doc \href{https://laravel.com/docs/9.x/migrations#available-column-types}{Laravel}.
 
-% TODO: insert code migrations
-% TODO: regarder avec prof
+\begin{listing}[h]
+    \inputminted{php}{assets/code/11_create_devices_table.php}
+    \caption{Migration de la table "devices" \label{migrations-devices}}
+\end{listing}
+
+\begin{listing}[h]
+    \inputminted{php}{assets/code/12_create_file_types_table.php}
+    \caption{Migration de la table "file-types" \label{migrations-file-types}}
+\end{listing}
+
+\begin{listing}[h]
+    \inputminted{php}{assets/code/13_create_roles_table.php}
+    \caption{Migration de la table "roles" \label{migrations-roles}}
+\end{listing}
+
+\begin{listing}[h]
+    \inputminted{php}{assets/code/14_create_users_table.php}
+    \caption{Migration de la table "users" \label{migrations-users}}
+\end{listing}
+
+\begin{listing}[h]
+    \inputminted{php}{assets/code/15_create_job_categories_table.php}
+    \caption{Migration de la table "job-categories" \label{migrations-job-categories}}
+\end{listing}
+
+\begin{listing}[h]
+    \inputminted{php}{assets/code/16_create_jobs_table.php}
+    \caption{Migration de la table "jobs" \label{migrations-jobs}}
+\end{listing}
+
+\begin{listing}[h]
+    \inputminted{php}{assets/code/17_create_events_table.php}
+    \caption{Migration de la table "events" \label{migrations-events}}
+\end{listing}
+
+\begin{listing}[h]
+    \inputminted{php}{assets/code/18_create_files_table.php}
+    \caption{Migration de la table "files" \label{migrations-files}}
+\end{listing}
+
+\begin{listing}[h]
+    \inputminted{php}{assets/code/19_create_messages_table.php}
+    \caption{Migration de la table "messages" \label{migrations-messages}}
+\end{listing}
+
+\begin{listing}[h]
+    \inputminted{php}{assets/code/20_create_device_job_category_table.php}
+    \caption{Migration de la table "device-job-category" \label{migrations-device-job-category}}
+\end{listing}
+
+\begin{listing}[h]
+    \inputminted{php}{assets/code/21_create_file_type_job_category_table.php}
+    \caption{Migration de la table "file-type-job-category" \label{migrations-file-type-job-category}}
+\end{listing}
+
+\begin{listing}[h]
+    \inputminted{php}{assets/code/22_create_role_user_table.php}
+    \caption{Migration de la table "role-user" \label{migrations-role-user}}
+\end{listing}
 
 \subsection{Champs possiblement "null"}
 La possibilité de laisser une valeur nulle sur un champ n'apparaît pas sur le MLD, mais est bien présente au niveau des migrations et modèles de Laravel.\newline
@@ -1239,7 +1399,7 @@ Ces derniers sont toujours créer sur les clés primaires et doivent être crée
 Les clés étrangères peuvent être gérées de deux façon différentes.\newline
 Soit on ajoute un champ "foreignId('table-id')" suivi d'un "->constrained('table')" qui permet de faire le lien directe entre la clé primaire et la clé étrangère tout en générant un index. Mais ceci est possible uniquement si l'on utilise une clé primaire de type "id()".
 
-Dans le deuxième cas, lorsque l'on possède une clé primaire basée sur un autre type de champ, il faut tout d'abord créer un champ à la main avec la valeur voulue.\newline
+Dans le deuxième cas, lorsque l'on possède une clé primaire basée sur un autre type de champ, il faut tout d'abord cr��er un champ à la main avec la valeur voulue.\newline
 Puis faire le lien entre la clé primaire et étrangère à la main en utilisant d'abord "->foreign('table-champ')", puis en référançant avec "->references('champ')->on('table')".\newline
 Puis, finalement, créer un index avec "index('table-champ')" sur le champ de la clé étrangère.
 
@@ -1304,6 +1464,22 @@ Laravel s'occupera ensuite de gérer les cas de suppression lui-même.
 %Il est de coutume de signer la conclusion...
 %%fi
 
+\section{Sources d'informations}
+Lors d'un projet de développement informatique, beraucoup de recherches sont réalisées lors de la
+phase de développement. Il est impossible de citer toutes les sources utilisées, mais il est
+important de citer les forums les plus utilisés, ainsi que les documentations.\newline
+Voici donc une liste de références:
+
+\begin{itemize}
+    \item laravel.com : documentation de Laravel \cite{laravel},
+    \item stackoverflow.com : forum mondial numéro un pour les programmeurs \cite{stackoverflow},
+    \item w3schools.com : documentation et exemples pour HTML, CSS et JavaScript \cite{w3schools},
+    \item digitalocean.com : Tutoriels, pour Docker, Apache et Ubuntu \cite{digitalocean},
+    \item switch.ch : toute la procédure pour l’utilisation de Shibboleth et Switch edu-id \cite{switch},
+    \item stackshare.io : outil pour comparer des technologies ou utils \cite{stackshare},
+    \item wikipedia.org: site d'informations.
+\end{itemize}
+
 \vfil
 \hspace{8cm}\makeatletter\@author\makeatother\par
 \hspace{8cm}\begin{minipage}{5cm}
@@ -1319,9 +1495,11 @@ Laravel s'occupera ensuite de gérer les cas de suppression lui-même.
 \addappheadtotoc
 
 %%if
-\chapter{Première annexe}
-%% TODO: ajouter planning
-% TODO: regarder avec prof
+\chapter{Planning}
+
+\begin{landscape}
+    \includepdf{./assets/annexes/planning.pdf}
+\end{landscape}
 
 %Les annexes n'ont pas un contenu \underline{normatif} mais \underline{descriptif}. Tout contenu annexé ne doit pas être nécessaire à la bonne compréhension du travail.
 

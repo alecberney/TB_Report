@@ -6,30 +6,23 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('role_user', function (Blueprint $table) {
             $table->id();
             // Foreign keys
             $table->string('user_switch_uuid');
-            $table->foreign('user_switch_uuid')->references('switch_uuid')->on('users')->onDelete('cascade');
-            $table->foreignId('role_id')->constrained()->onDelete('cascade');
+            $table->foreign('user_switch_uuid')
+            ->references('switch_uuid')->on('users')->onDelete('cascade');
+            
+            $table->foreignId('role_id')
+            ->constrained()->onDelete('cascade');
             // Indexes
             $table->index('user_switch_uuid');
             $table->index('role_id');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('role_user');

@@ -6,6 +6,7 @@
 \def\builddir{build}
 \def\graphicsExt{pdf}
 \def\assetsdir{\builddir/assets/figures}
+\def\assetsdirnotbuilded{./assets/figures}
 
 \RequirePackage[T1]{fontenc}
 \RequirePackage[main=french,english]{babel}
