@@ -198,7 +198,6 @@ Pour les toutes les tâches qui seront listés plus bas, celles qui nécessitent
 
 Je m'engage à réaliser les tâches énumérées dans le tableau \ref{taches}.
 
-% TODO: regarder avec prof
 \begin{table}[h]
     \begin{center}
         \caption{Liste des tâches / exigences à réaliser durant le projet \label{taches}}
@@ -284,6 +283,56 @@ En effet, chaque tâche définie est vérifiable et sera donc utilisée pour év
 \section{Planning}
 Cette section a pour but d'apporter une discussion sur le planning et son évolution.
 Le planning est disponible en annexe.
+
+\subsection{Description générale du planning}
+
+Dans le document, certaines couleurs apparaîssent, en voici les significations:
+\begin{itemize}
+    \item La colonne en gris indique une semaine sans travail,
+    \item Le bleu indiquant quand les tâches seront réalisées,
+    \item En orange clair, les tâches réalisées tout au long du projet,
+    \item En rouge, les rendus / jalons importants du projet.
+\end{itemize}
+
+La semaine sans travail est un choix personnel, cette semaine là, nous avons une semaine spéciale à l'HEIG, le Crunch. C'est une semaine interdisciplinaire obligatoire.
+
+Il faut savoir qu'il y aura sûrement une grande différence entre la réalisation des tâches indiquées et la réalité. En effet, dans les projets comme celui-ci, il est souvent nécessaire de jongler entre les différentes tâches et il est donc compliqué de suivre un planning en cascade comme celui-ci.
+
+Le planning est séparé en trois grandes parties:
+\begin{itemize}
+    \item L'analyse,
+    \item La conception et la réalisation,
+    \item La préparation des livrables.
+\end{itemize}
+
+La conception et réalisation ne sont pas séparées car je vais devoir altérner entre les deux, c'est-à-dire que je vais souvent concevoir quelque chose, le réaliser, me rendre compte que ce n'est pas optimal et répéter le processus. C'est pour cela que ces deux parties sont liés et non séparées, afin de travailler itérativement, comme cela se fait beaucoup en développement.
+
+\subsection{Analyse}
+L'analyse contient principalement de l'étude et des choix technologiques. Certains prototypes peuvent être réalisé pour consolider les choix effectués. Tous les choix technologiques et conceptuels sont cruciaux pour la suite du projet.\newline
+La justification des choix à l'aide d'articles scientifiques sera également un point à ne pas négliger au niveau du temps consacré.
+
+\subsection{Conception et réalisation}
+La partie conception et réalisation est séparée en plusieurs sections:
+\begin{itemize}
+    \item Mise en place de l'environnement de développement et de production,
+    \item DevOps,
+    \item Backend et base de données,
+    \item Frontend.
+\end{itemize}
+
+Les points à ne pas sous-estimer dans ces parties sont la mise en place d'un bon environnement de travail / de développement et la CI pour la première partie du projet. Ces deux points sont essentiels pour pouvoir développer l'application sans problème.\newline
+Deux sujets sur la conception peuvent prendre du temps et sont très important, il s'agit de la conception de la base de données, car celle-ci découle sur toute la réalisation du backend et la conception de l'architecture de code, car si elle est significativement changée au milieu du projet, peut faire perdre énorméement de temps.\newline
+Un point qui a été mal identifié de ma part lorsque j'ai réalisé ce planning, c'est le fait que de concevoir toute une nouvelle base de données allaient presque obliger à développer le backend quasiment de zéro sans pouvoir utiliser significativement le travail déjà présent.\newline
+Cette partie était presque prévue sous le point "Séparation et refactor du code déjà écrit" mais elle prendra beaucoup plus de temps que prévu. Elle va s'en doute s'étendre à plus de 80 heures de travail.\newline
+En plus, cette partie est cruciale pour le projet car elle correspond à la base de l'API et doit être solide pour pouvoir itérer dessus.
+
+\subsection{Livrables}
+En ce qui concerne la préparation des livrables, il est clair que le rapport est l'un des points demandant le plus de temps du travail et est crucial pour la réussite du projet. Ce dernier se réalisant tout au long du projet, il n'a pas de date précise où il va être réaliser. On peut cependant prévoir plus d'effort avant le rendu intermédiaire et le rendu final.\newline
+En ce qui concerne la présentation de la défense est indiquée mais sera uniquement réalisée pendant le mois d'août.\newline
+La partie gestion de projet est également et logiquement réalisée tout au long du projet.
+
+%TODO: Demander si je dois rechanger à cause de tout refaire le backend?
+
 
 \section{Choix technologiques}
 
@@ -449,7 +498,6 @@ Voici une liste des inconvénients de Docker comparé à une VM:
 % Abstracting software applications from the hardware without sacrificing resources \cite{kane2018docker}
 
 On peut voir ici une liste des cas d'utilisations de docker \cite{data-flair-use-cases}: %\ref{}
-% TODO ajouter image docker use cases
 %\begin{figure}
 %\caption{Cas d'utilisation de docker \href{https://data-flair.training/blogs/wp-content/uploads/sites/2/2018/10/}}
 %\fig{docker-use-cases.jpg}{Cas d'utilisation de docker}
@@ -464,9 +512,9 @@ On peut voir ici une liste des cas d'utilisations de docker \cite{data-flair-use
 
 
 \subsubsection{Performances de Docker}
-\Gls{docker} est outil qui paraît très pratique, mais qu'en est-il de ses performances?
+Docker est outil qui paraît très pratique, mais qu'en est-il de ses performances?
 Pour ceci, nous allons retracer quelques évalutations réalisées lors d'une étude de IBM. Nous allons parcourir ces évalutations via des graphiques, tiré de l'étude, résumants bien les résultats.
-Commençant par la latence que peut apporter \Gls{docker}: %\ref{}
+Commençant par la latence que peut apporter Docker: %\ref{}
 %copier coller et dans la légende, source: x ou tiré de: x
 %todo ajouter figure
 %\begin{figure}
@@ -518,18 +566,25 @@ En effet, La charge attendu par l'application déployée ne devrait pas dépasse
 
 %https://stackshare.io/: outil très utile pour faire des comparaisons de technologies
 
-\subsubsection{Autres solutions de containers}
-% TODO 12.05.2022
-Pourquoi utiliserions-nous forcément \Gls{docker}
--> beaucoup moins utilisé
-
+\subsubsection{Autres solutions de conteneurs}
+Une question se pose, pourquoi utiliserions-nous forcément Docker alors que d'autres solutions existent?
+Pour commencer, voici une liste non exhaustive des solutions alternatives à Docker:
 \begin{itemize}
-    \item BSD Jails, %https://fr.wikipedia.org/wiki/BSD_Jail
-    \item LXD, %https://linuxcontainers.org/lxd/
-    \item LXC, %https://linuxcontainers.org/lxc/introduction/
-    \item Solaris Zones, %https://docs.oracle.com/cd/E18440_01/doc.111/e18415/chapter_zones.htm#OPCUG426
-    \item RKT. %https://www.redhat.com/en/topics/containers/what-is-rkt
+    \item \href{https://fr.wikipedia.org/wiki/BSD_Jail}{BSD Jails},
+    \item \href{https://linuxcontainers.org/lxd/}{LXD},
+    \item \href{https://linuxcontainers.org/lxc/introduction/}{LXC},
+    \item \href{https://docs.oracle.com/cd/E18440_01/doc.111/e18415/chapter_zones.htm#OPCUG426}{Solaris Zones},
+    \item \href{https://www.redhat.com/en/topics/containers/what-is-rkt}{RKT}.
 \end{itemize}
+
+Le principal problème de ces solutions est le manque de popularité comme on peut le remarquer sur la figure %\ref{}
+
+%\figi{google-trend-containers-2022.png}{16cm}{Tendances sur les différentes solutions de conteneurs depuis 2004}
+
+représentant les recherches sur concernant les différents sujets via l'outil \href{https://trends.google.fr/trends}{Google trends}.\newline
+Le fait de ne pas être populaire est un gros désavantage pour ces solutions car très peu d'informations, de tutoriels et de documentations sont disponibles sur internet.\newline
+Ce simple fait suffit à orienté le choix de la solution de conteneur sur Docker.\newline
+N'ayant également pas le temps d'analyser chaque solution en profondeur dans ce travail, cela conforte mon choix.
 
 % dev
 \subsection{Infrastructures de développement}
@@ -707,15 +762,14 @@ Si nous évaluons les deux solutions proposées selon les besoins, désormais bi
     \item la difficulté nécessaire pour mettre en place les outils facilitant la prise en main.
 \end{itemize}
 
-On se rend compte que la solution avec Docker n'apporte pas forcément assez d'avanatages comparé à celle proposant l'installation native et cela est principalement dû au bon gestionnaire de paquets NPM de Javascript. C'est pourquoi, solution proposant l'installation native sera préférée.
-%https://www.npmjs.com/
+On se rend compte que la solution avec Docker n'apporte pas forcément assez d'avanatages comparé à celle proposant l'installation native et cela est principalement dû au bon gestionnaire de paquets \href{https://www.npmjs.com/}{NPM} de Javascript. C'est pourquoi, solution proposant l'installation native sera préférée.
 
 \subsubsection{Résultat de l'analyse}
 Suite à cette analyse des outils, la solution la plus adaptée semble être de mettre en place l'environement de développment suivant:
 
 \begin{table}[h]
     \begin{center}
-        \caption{Environement de développment choisi \label{env_dev}}
+        \caption{Environement de développment choisi \label{env-dev}}
         \begin{tabular}{c|l|r}
             Outil             & Technologie utilisée  \\ \hline
             SGBD - MySQL      & Docker                \\
@@ -759,7 +813,7 @@ Les deux améliorations (combinées ou non) proposées sont les suivantes:
     \begin{itemize}
         \item Gestion de la BD plus facile car le SGB est installé nativement,
         \item Sauvegarde aisément réalisable,
-        \item Mise en place d'un service de façon trivialle,
+        \item Mise en place d'un service de façon triviale,
         \item Le SGBD peut-être déjà installé et peut être utilisée directement,
         \item Ne nécessite pas Docker.
     \end{itemize}
@@ -787,11 +841,20 @@ Les deux améliorations (combinées ou non) proposées sont les suivantes:
         \item Gestion de la BD potentiellement plus compliquée,
         \item Sauvegarde de la BD potentiellement plus compliquée,
         \item Mise en place d'un service non trivial,
-        \item \Gls{docker} peut avoir des problèmes de performances, \cite{labrecque}
+        \item Docker peut avoir des problèmes de performances, \cite{labrecque}
         \item Nécessite Docker et les connaissances qui vont avec. \cite{labrecque}
     \end{itemize}
 \end{multicols}
-% TODO reciter besoins et dire solution qui se rapproche le plus
+
+Si nous évaluons les deux solutions proposées selon les besoins, désormais bien connus et suivants:
+\begin{itemize}
+    \item la performance de l'infrastructure,
+    \item la simplicité de mise à jour du programme au sein de l'infrastructure,
+    \item la robustesse de l'infrastructure,
+    \item la flexibilité de l'infrastructure.
+\end{itemize}
+
+On se rend compte que les deux solutions se valent à peu de chose près. Je choisi donc d'essayer de mettre en place une infrastructure avec Docker en premier temps. Si cela est trop compliqué, l'autre solution étant viable pourra toujours être utilisée.
 
 \subsubsection{Passage de Laravel en conteneur Docker}
 \begin{multicols}{2}[Passons maintenant au passage de l'environnement Laravel en conteneur Docker.]
@@ -825,21 +888,30 @@ Les deux améliorations (combinées ou non) proposées sont les suivantes:
     Inconvénients:
     \begin{itemize}
         \item Peut laisser des failles de sécurité, suivant l'environnement mis en place,
+        \item Mise en place d'un service non trivial,
         \item Docker peut avoir des problèmes de performances, \cite{labrecque}
         \item Nécessite Docker et les connaissances qui vont avec. \cite{labrecque}
     \end{itemize}
 \end{multicols}
 
-% TODO reciter besoins et dire solution qui se rapproche le plus
+Si nous évaluons les deux solutions proposées selon les besoins, désormais bien connus et suivants:
+\begin{itemize}
+    \item la performance de l'infrastructure,
+    \item la simplicité de mise à jour du programme au sein de l'infrastructure,
+    \item la robustesse de l'infrastructure,
+    \item la flexibilité de l'infrastructure.
+\end{itemize}
+
+On se rend compte que la solution avec Docker paraît plus adaptée. Cependant, si cela venait à être est trop compliqué, l'autre solution étant viable pourra toujours être utilisée.
 
 % TODO pour le déploiment, regarder pourquoi certains sont parti de docker
 
-
+\subsubsection{Résultat de l'analyse}
 Suite à cette analyse des outils, la solution la plus adaptée semble être de mettre en place l'environement de développment suivant:
 
 \begin{table}[h]
     \begin{center}
-        \caption{Environement de développment choisi \label{env_prod}}
+        \caption{Environement de développment choisi \label{env-prod}}
         \begin{tabular}{c|l|r}
             Outil             & Technologie utilisée \\ \hline
             SGBD - MySQL      & Docker               \\
@@ -978,11 +1050,6 @@ Inconvénients:
 %\end{figure}
 
 \chapter{Conception et Réalisation de la BD}
-%todo à rendre aussi pour le premier rendu
-%todo MLD
-%todo model de l'ORM
-
-% TODO before 12.05.2022
 
 Dans toutes les desciptions suivantes, les tirets du bas seront remplacé par des "-" à cause d'un problème de LaTex.
 
@@ -1121,7 +1188,7 @@ Les champs switch-uuid et email, de la table "users" possèdent 320 charactères
 Le champ status de la table "job" est une enum comme expliqué précédement dans le modèle EA.
 
 \subsection{Remarques}
-% TODO
+% TODO une fois défini
 Tous les autres champs n'ont pas encore fait l'objet de recherches ou de spécifications et ont donc souvent une valeur de 45 ou 50 charactères. Cela cera réalisé prochainement.
 
 Les entités concernant les tâches en arrière plan n'apparaîssent pas car elle ne sont pas encore assez connue.
@@ -1135,17 +1202,51 @@ Les entités concernant les tâches en arrière plan n'apparaîssent pas car ell
 
 Les migrations du backend réalisées avec Laravel et l'ORM Eloquent se rapprochent le plus possibles du MLD présenté précédement.
 
-% TODO: insert code migrations
+\subsection{Types de champs}
+Voici une liste des types possibles et utilisées:
+\begin{itemize}
+    \item id représentant un entier positif incrémentable, unique, indiqué comme clé primaire et référencé via un index,
+    \item string représentant une chaîne de caractères,
+    \item longText représentant un grand texte,
+    \item enum représentant une liste exhaustive de valeurs possibles,
+    \item tinyInteger représentant un petit entier,
+    \item date représentant une date.
+\end{itemize}
 
-\subsection{Champs possiblement nulles}
+La liste plus complète peut être consultée dans la doc \href{https://laravel.com/docs/9.x/migrations#available-column-types}{Laravel}.
+
+% TODO: insert code migrations
+% TODO: regarder avec prof
+
+\subsection{Champs possiblement "null"}
+La possibilité de laisser une valeur nulle sur un champ n'apparaît pas sur le MLD, mais est bien présente au niveau des migrations et modèles de Laravel.\newline
+Tous ces champs possèdent l'indiquation: "->nullable()".\newline
+Seul certains champs peuvent être "null" dans notre base de données et ceux-ci interviennent surtout dans la table "jobs".\newline
+Les champs qui peuvent être "null" sont des champs dont la valeur n'est pas obligatoirement présente à la création mais peut-être ajoutée plus tard. Il s'agit par exemple de la note donnée au travail "rating" ou encore le technicien devant effectuer ce dernier qui peut être assigné après coup.
+
+\subsection{Champs uniques}
+Il est possible d'indiquer qu'un champ doit posséder une valeur unique avec l'option: "->unique()".\newline
+Cette possibilité est par exemple utilisée par le champ email.
 
 \subsection{Champs timestamps}
-
-\subsection{Clés étrangères}
-
-\subsection{Options de suppression}
+Les champs de type "->timestamps()" sont un raccourci utilisé par Laravel pour créer deux champs indiquant la date de création de la donnée et la date de modification. Ces champs sont gérés automatiquement par Laravel, ce qui est bien pratique.
 
 \subsection{Indexes}
+Il est possible de créer des indexes sur certains champs afin d'améliorer les performances de la base de données lors de certaines requêtes. Ces indexes peuvent être créer grâce à l'instruction "index('table-champ')".\newline
+Ces derniers sont toujours créer sur les clés primaires et doivent être créer sur les clés étrangères. D'autres champs régulièrement utilisés par des requêtes peuvent faire l'objet d'indexes.
+
+\subsection{Clés étrangères}
+Les clés étrangères peuvent être gérées de deux façon différentes.\newline
+Soit on ajoute un champ "foreignId('table-id')" suivi d'un "->constrained('table')" qui permet de faire le lien directe entre la clé primaire et la clé étrangère tout en générant un index. Mais ceci est possible uniquement si l'on utilise une clé primaire de type "id()".
+
+Dans le deuxième cas, lorsque l'on possède une clé primaire basée sur un autre type de champ, il faut tout d'abord créer un champ à la main avec la valeur voulue.\newline
+Puis faire le lien entre la clé primaire et étrangère à la main en utilisant d'abord "->foreign('table-champ')", puis en référançant avec "->references('champ')->on('table')".\newline
+Puis, finalement, créer un index avec "index('table-champ')" sur le champ de la clé étrangère.
+
+\subsection{Options de suppression}
+Des options de suppression sont proposées par Eloquent afin de ne pas supprimer définitivement les données de la base de données, mais de simplement les désactiver afin quelles n'apparaîssent plus dans les requêtes.\newline
+Ceci est possible en ajoutant l'option "->softDeletes()" à la table.\newline
+Laravel s'occupera ensuite de gérer les cas de suppression lui-même.
 
 \chapter{Conception et Réalisation du Backend / de l'API}
 %todo à rendre aussi pour le premier rendu
@@ -1174,13 +1275,11 @@ Les migrations du backend réalisées avec Laravel et l'ORM Eloquent se rapproch
 
 \chapter{Intégration continu}
 
-%php unit
-
 \chapter{Déploiement continu}
 
 \chapter{Reprise du projet}
 
-\section{Récupération du physique du projet}
+\section{Récupération physique du projet}
 
 \section{Erreurs restantes}
 
@@ -1191,18 +1290,18 @@ Les migrations du backend réalisées avec Laravel et l'ORM Eloquent se rapproch
 \section{Citations et bibliographie}
 %Citer vos sources est essentiel. Avec \texttt{biblatex} vous pouvez facilement citer des articles, des livres ou des sites internet. Toutes les citations dans le texte seront automatiquement regroupées en fin de document dans la section \guillemotleft Bibliographie\guillemotright. Par exemple, citons un article d'Einstein \cite{einstein} ou le livre de Dirac \cite{dirac}.
 
-Parfois il peut être utile d'utiliser un gestionnaire de bibliographie. La communauté académique recommande l'outil \href{https://www.zotero.org/}{Zotero} qui permet de gérer une bibliothèque numérique d'ouvrages et de références numériques. Il permet également de générer une bibliographie compatible avec \LaTeX.
+%Parfois il peut être utile d'utiliser un gestionnaire de bibliographie. La communauté académique recommande l'outil \href{https://www.zotero.org/}{Zotero} qui permet de gérer une bibliothèque numérique d'ouvrages et de références numériques. Il permet également de générer une bibliographie compatible avec \LaTeX.
 
 
-\mintinline{latex}{\SI{42.12}{\kilo\gram\metre\per\square\second}}\par
+%\mintinline{latex}{\SI{42.12}{\kilo\gram\metre\per\square\second}}\par
 %%fi
 
 \chapter{Conclusion}
 
 %%if
-Bien que non nécessaire dans un rapport de Bachelor, la discussion finale d'un projet résume les résultats obtenus et dresse une conclusion objective du projet. Un manager de société est souvent amené à lire de nombreux rapport, il ne s'intéresse généralement qu'à l'introduction au contexte de l'étude et à sa conclusion.
+%Bien que non nécessaire dans un rapport de Bachelor, la discussion finale d'un projet résume les résultats obtenus et dresse une conclusion objective du projet. Un manager de société est souvent amené à lire de nombreux rapport, il ne s'intéresse généralement qu'à l'introduction au contexte de l'étude et à sa conclusion.
 
-Il est de coutume de signer la conclusion...
+%Il est de coutume de signer la conclusion...
 %%fi
 
 \vfil
@@ -1221,21 +1320,23 @@ Il est de coutume de signer la conclusion...
 
 %%if
 \chapter{Première annexe}
+%% TODO: ajouter planning
+% TODO: regarder avec prof
 
-Les annexes n'ont pas un contenu \underline{normatif} mais \underline{descriptif}. Tout contenu annexé ne doit pas être nécessaire à la bonne compréhension du travail.
+%Les annexes n'ont pas un contenu \underline{normatif} mais \underline{descriptif}. Tout contenu annexé ne doit pas être nécessaire à la bonne compréhension du travail.
 
-Les annexes contiennent généralement :
+%Les annexes contiennent généralement :
 
-\begin{itemize}
-    \item les dessins mécaniques (mises en plan);
-    \item les schémas électriques détaillés;
-    \item des photographies du projet;
-    \item des scripts et des extraits de code source;
-    \item des documents techniques \pex \emph{datasheet};
-    \item des développements mathématiques.
-\end{itemize}
-\section{Sous section}
-\lipsum[1]
+%\begin{itemize}
+%    \item les dessins mécaniques (mises en plan);
+%    \item les schémas électriques détaillés;
+%    \item des photographies du projet;
+%    \item des scripts et des extraits de code source;
+%    \item des documents techniques \pex \emph{datasheet};
+%    \item des développements mathématiques.
+%\end{itemize}
+%\section{Sous section}
+%\lipsum[1]
 %%fi
 
 \let\cleardoublepage\clearpage
