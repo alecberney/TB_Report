@@ -1413,7 +1413,17 @@ Laravel s'occupera ensuite de gérer les cas de suppression lui-même.
 %todo architecture de code
 \section{Architectures de code}
 
+Ne connaissant pas le framework Laravel à l'origine, mais plutôt celui de Java Spring, j'ai effectué
+un schéma de l'architecture de code de ce dernier afin de le comparer avec celui de Laravel et
+pouvoir mieux le comprendre. Sur la figure \ref{architecture-code-spring.drawio}, on voit clairement
+l'architecture classique allant de la vue passant par les controllers, puis les services contenant
+la logique métier et les repository utilisant les DAO pour commumiquer avec la base de données. \\
+Des DTO peuvent également être ajoutées entre la vue et les controlles.
+
 \figi{architecture-code-spring.drawio}{16cm}{Architecture de code du framework Spring "classique"}
+
+J'ai ensuite essayé de comprendre l'architecture de code Laravel et la représenté à l'aide de la
+figure \ref{architecture-code-laravel.drawio}.
 
 \figi{architecture-code-laravel.drawio}{16cm}{Architecture de code du framework Laravel "classique"}
 
@@ -1441,11 +1451,16 @@ exécuter des tests sur un base de données SQLLite sans migration. Puis il a fa
 de données MySQL pour reproduire le véritable environnement. Finalement il a fallu intégrer les
 migrations et les seeders afin de donner l'opportunité de tester au mieux l'application.\newline
 Ayant un dépôt Gitub pour le code, la CI a été réalisée avec Github Actions.\newline
-La CI est consultable sur la figure \ref{ci}
+La CI est consultable sur les figures \ref{ci-1} et \ref{ci-2}
 
 \begin{listing}[h]
-    \inputminted{yml}{assets/code/ci.yml}
-    \caption{CI pour Laravel \label{ci}}
+    \inputminted{yaml}{assets/code/ci-1.yml}
+    \caption{CI pour Laravel \label{ci-1}}
+\end{listing}
+
+\begin{listing}[h]
+    \inputminted{yaml}{assets/code/ci-2.yml}
+    \caption{CI pour Laravel \label{ci-2}}
 \end{listing}
 
 \section{Déclenchement de la CI}
@@ -1480,8 +1495,8 @@ de lancer tous les tests de l'application avec phpunit.
 \section{Améliorations possibles}
 
 %%if
-\chapter{Bibliographie}
-\section{Citations et bibliographie}
+%\chapter{Bibliographie}
+%\section{Citations et bibliographie}
 %Citer vos sources est essentiel. Avec \texttt{biblatex} vous pouvez facilement citer des articles, des livres ou des sites internet. Toutes les citations dans le texte seront automatiquement regroupées en fin de document dans la section \guillemotleft Bibliographie\guillemotright. Par exemple, citons un article d'Einstein \cite{einstein} ou le livre de Dirac \cite{dirac}.
 
 %Parfois il peut être utile d'utiliser un gestionnaire de bibliographie. La communauté académique recommande l'outil \href{https://www.zotero.org/}{Zotero} qui permet de gérer une bibliothèque numérique d'ouvrages et de références numériques. Il permet également de générer une bibliographie compatible avec \LaTeX.
@@ -1532,7 +1547,11 @@ Voici donc une liste de références:
 \chapter{Planning}
 
 \begin{landscape}
-    \includepdf{./assets/annexes/planning.pdf}
+    \includepdf{./assets/annexes/planning-v1.pdf}
+\end{landscape}
+
+\begin{landscape}
+    \includepdf{./assets/annexes/planning-v2.pdf}
 \end{landscape}
 
 %Les annexes n'ont pas un contenu \underline{normatif} mais \underline{descriptif}. Tout contenu annexé ne doit pas être nécessaire à la bonne compréhension du travail.
