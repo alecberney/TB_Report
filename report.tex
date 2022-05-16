@@ -62,10 +62,9 @@
 \mainmatter
 
 \chapter{Introduction}
-L'introduction est une section requise dans un rapport technique. Introduisez votre travail, l'idée de départ et les objectifs attendus. Un lecteur qui découvrirait votre projet au travers de cette introduction devrait ainsi être capable d'en comprendre le cadre, l'idée générale et les aboutissants du projet.
 
 \section{Contexte}
-Le \Gls{fablab} est un laboratoire permettant de réaliser des travaux sur des machines de ce dernier. Actuellement, pour réaliser un travail sur une machine, il est nécessaire de réaliser une demande par email à l'un des techniciens ayant le droit d'usiner sur la machine souhaitée. Une fois la demande reçue, le technicien usine dès qu'il le peut et doit recontacter le mandataire pour lui donner son travail fini. Durant toute cette période, aucun retour n'a été donné au mandataire. En cas de problème avec un travail, le technicien doit également recontacter le client.\newline
+Le \Gls{fablab} est un laboratoire permettant de réaliser des travaux sur des machines spécifiques à ce dernier. Actuellement, pour réaliser un travail sur une machine, il est nécessaire de réaliser une demande par email à l'un des techniciens ayant le droit d'usiner sur la machine souhaitée. Une fois la demande reçue, le technicien usine dès qu'il le peut et doit recontacter le mandataire pour lui donner son travail fini. Durant toute cette période, aucun retour n'a été donné au mandataire. En cas de problème avec un travail, le technicien doit également recontacter le client.\\
 Certains défauts majeurs peuvent être identifier avec la procédure actuelle, les voici :
 \begin{itemize}
     \item Il n'y a aucun suivi des travaux pour le mandataire, \cite{lieberherr}
@@ -73,25 +72,26 @@ Certains défauts majeurs peuvent être identifier avec la procédure actuelle, 
     \item Risque de désorganisation, \cite{lieberherr}
     \item Manque de clarté quant à la procédure, \cite{lieberherr}
     \item Aucun historique des travaux réalisé,
-    \item Gestion problèmes survenus lors du travail compliqué.
+    \item Gestion des problèmes survenus lors du travail compliqué.
 \end{itemize}
 Une première partie du projet a déjà été réalisée lors du travail de Bachelor de monsieur Tristan Lieberherr. De ce fait aucun cahier des charges n'était défini à l'origine, car il était d'abord nécessaire d'effectuer une analyse du projet afin de définir les points d'améliorations qu'allaient contenir le cahier des charges.
 
 \section{But du travail de Bachelor}
-Le but, plus global, de ce travail de Bachelor, est de fournir une application web au fablab afin de faciliter la gestion et le suivi des demandes de travaux pour leur laboratoire.
+Le but, plus global, de ce travail de Bachelor, est de fournir une application web au Fablab afin de faciliter la gestion et le suivi des demandes de travaux pour leur laboratoire.
 
-Le but au niveau technique est de fournir une application déployée en production.\newline
-Il est également important de significativement améliorer le travail déjà existant en ajoutant certaines fonctionnalités et améliorant la qualité du code.\newline
-Cette application devra reposer sur une base de données bien conçues et ayant déjà prévu certains améliorations possibles. Elle devra également posséder un backend propre permettant de reprendre et l'améliorer sans devoir tout repenser.\newline
+Le but au niveau technique est de fournir une application déployée en production.\\
+Il est également important de significativement améliorer le travail déjà existant en ajoutant certaines fonctionnalités et améliorant la qualité du code.\\
+Cette application devra reposer sur une base de données bien conçues et ayant déjà prévu certains améliorations possibles. Elle devra également posséder un backend propre permettant de reprendre et l'améliorer sans devoir tout repenser.\\
 La qualité de l'environnement de travail et de production ne seront pas à négliger et devront être facilement repris en main par la futur équipe s'occupant du projet.
 
 \section{État de la situation}
-Cette section permet de définir ce qui a déjà été réalisé et de l'analyser.\newline
-Pour commencer, il faut savoir que le travail fourni est déjà fonctionnel et fait l'objet d'une documentation suffisante pour le reprendre en main.\newline
-Le choix des technologies déjà utilisées sera abordé plus tard dans le document.
+Cette section permet de définir ce qui a déjà été réalisé et de l'analyser.\\
+Pour commencer, il faut savoir que le travail fourni est déjà fonctionnel et fait l'objet d'une documentation suffisante pour le reprendre en main.\\
+Les choix technologiques déjà réalisés et utilisés sera abordé plus tard dans le document.
 
 \subsection{Analyse du système existant}
-Dans cette partie, nous allons énumérer tous les aspects de l'ancien travail fourni. Nous n'allons pas toucher le détail, car le but est de faire ressortir seulement les points essentiels.
+Dans cette partie, nous allons énumérer tous les aspects de l'ancien travail fourni. Nous n'allons
+pas toucher le détail, car le but est seulement de faire ressortir les points essentiels.
 
 \subsubsection{Environement de développement}
 Pour commencer, parlons de l'environnement de travail. Il faut savoir que le projet a été transmi avec 2 dépôts \Gls{github} au nom de l'ancien Bachelier et le rapport de l'ancien travail de Bachelor.
@@ -107,35 +107,35 @@ Maintenant, voici les points qui ressortent de l'analyse concernant l'environnem
 \end{itemize}
 
 \subsubsection{Base de données}
-Cette partie défini tout ce qui touche à la base de données et influence également le \Gls{backend}.\newline
+Cette partie défini tout ce qui touche à la base de données et influence également le \Gls{backend}.\\
 Les points ressortant de l'analyse de la base données sont les suivants:
 \begin{itemize}
     \item La base de données contient les ressources principales (utilisateurs, travaux, messages, fichiers),
-    \item La base de données possèdent de la redondance paraîssant inutiles,
+    \item La base de données possèdent de la redondance paraîssant inutile,
     \item La base de données ne peut pas intégrer la gestion de plusieurs rôles,
     \item La base de données n'intégrent pas la notion de machines et de catégories de travaux,
     \item La gestion des types de fichiers acceptés pour les travaux n'est pas présente.
 \end{itemize}
 
 \subsubsection{Backend / API}
-Passons maintenant au Backend qui est la plus grosse partie du travail.\newline
-Il faut savoir que toute l'analyse de la base de donnée s'applique également pour une bonne partie du Backend et ne sera pas répétée.\newline
+Passons maintenant au Backend qui est la plus grosse partie du travail.\\
+Il faut savoir que toute l'analyse de la base de données s'applique également pour une bonne partie du Backend et ne sera pas répétée.\\
 Les points ressortant de l'analyse de ce dernier sont les suivants:
 \begin{itemize}
     \item Le principe \Gls{rest} n'est pas respecté en ce qui concerne l'\Gls{api},
     \item Les entrées utilisateurs ne font l'objet d'aucune vérification syntaxique et sémantique,
     \item L'architecture de code ne respecte pas totalement celle mise à disposition par \Gls{laravel},
-    \item Le code n'utilise pas toutes les possibilités utiles fournies par le \Gls{framework},
+    \item Le code n'utilise pas toutes les possibilités utiles fournies par le \gls{framework},
     \item Le contrôle de l'accès aux ressources via des rôles n'est pas mis en place,
-    \item Le système de stockage de fichier et fonctionnel,
-    \item Le système de notification via est fonctionnel, mais malheureusement non sécurisé,
+    \item Le système de stockage de fichier est fonctionnel,
+    \item Le système de notification est fonctionnel, mais malheureusement non sécurisé,
     \item Les travaux d'arrière plan envoyant des emails est fonctionnel,
     \item Le Backend utilise une version antérieur du framework,
     \item Le Backend est actuellement entièrement fonctionnel.
 \end{itemize}
 
 \subsubsection{Frontend}
-Finalement, passons au frontend, ce dernier a été réalisé à l'aide d'un \Gls{template}. Il a été adapté aux besoins de l'application. Le but du projet n'étant pas concentrer sur le frontend, seul une analyse de surface a été réalisée.\newline
+Finalement, passons au frontend, ce dernier a été réalisé à l'aide d'un \gls{template}. Il a été adapté aux besoins de l'application. Le but du projet n'étant pas concentrer sur le frontend, seul une analyse de surface a été réalisée.\\
 Les points ressortant de l'analyse de ce dernier sont les suivants:
 \begin{itemize}
     \item Le frontend est totalement fonctionnel,
@@ -148,9 +148,12 @@ Les points ressortant de l'analyse de ce dernier sont les suivants:
 \subsection{Propositions d'améliorations}
 
 \subsubsection{Environement de développement}
-Concernant l'environnement de travail, il est important d'améliorer significativement la façon dont une personne s'intégrer au travail, à l'équipe de développement.\newline
-Pour commencer, il est nécessaire de créer une orgranisation github acceuillant les 2 dépôts Github. Chaque dépôt devra lister les technologies utilisées et indiquer comment les installer, ainsi que comment configurer facilement configurer son environnement de travail pour pariticiper au projet.\newline
-Il sera également nécessaire de réaliser un suivi du travail grâce aux outils fourni par Github (issues, kanban, milestones, etc.).\newline
+Concernant l'environnement de travail, il est important d'améliorer significativement la façon dont
+une personne peut s'intégrer au travail, à l'équipe de développement.\\
+Pour commencer, il est nécessaire de créer une orgranisation github accueillant les 2 dépôts Github.
+Chaque dépôt devra lister les technologies utilisées et indiquer comment les installer, ainsi que
+comment configurer facilement son environnement de travail afin de participer au projet.\\
+Il sera également nécessaire de réaliser un suivi du travail grâce aux outils fourni par Github (issues, kanban, milestones, etc.).\\
 Fournir un environement aisément configurable pour tout un chacun est également un point essentiel.
 Une CI devra impérativement être mise en place afin de faciliter le travail à plusieurs sur le projet. Il en va de même pour le CD, si l'on souhaite déployer aisément les différentes versions de l'application.
 
@@ -158,7 +161,7 @@ Une CI devra impérativement être mise en place afin de faciliter le travail à
 La base de données fera l'objet d'une toute nouvelle conception pour améliorer tous les points énumérés précédement et intégrer les notions manquantes. Le Backend en sera fortement influencé.
 
 \subsubsection{Backend}
-Le Backend étant fortement influencé par la base de données, ce dernier se verra adminsitrer de gros changements.\newline
+Le Backend étant fortement influencé par la base de données, ce dernier se verra adminsitrer de gros changements.\\
 Les sujets sur lequel une amélioration devra être apportée sont les suivants:
 \begin{itemize}
     \item Le principe REST devra être appliqué,
@@ -170,11 +173,13 @@ Les sujets sur lequel une amélioration devra être apportée sont les suivants:
     \item Le Backend passera à la nouvelle version du framework.
 \end{itemize}
 
-Après avoir lister tous ces points, on se rend compte que le backend devra presque être réaliser de 0. Ce ne sera pas le cas, car l'ancien projet sera toujours présent comme référence en cas de questions.
+Après avoir lister tous ces points, on se rend compte que le backend devra presque être réaliser de
+zéro. Ce ne sera pas totalement le cas, car, sur certains points, l'ancien projet sera toujours
+présent comme référence en cas de questions ou de doutes.
 
 \subsubsection{Frontend}
-Les améliorations possibles concernant le frontend gravite essentiellement autour de la mise à jour des dépendances du projet et la façon dans les valeurs sont stockées.\newline
-Un système de gestion des langues (ii8n) pourraient être envisagé, ainsi que vérifier les entrées utilisateurs.\newline
+Les améliorations possibles concernant le frontend gravite essentiellement autour de la mise à jour des dépendances du projet et la façon dans les valeurs sont stockées.\\
+Un système de gestion des langues (ii8n) pourrait être envisagé, ainsi que vérifier les entrées utilisateurs.\\
 Le frontend sera surtout modifié pour être adapté aux changements du backend.
 
 \section{Cahier des Charges}
@@ -196,7 +201,7 @@ Les objectifs principaux du projet sont les suivants:
 \newpage
 Nous allons maintenant passer à la liste des tâches qui devront être effectuées durant le travail de Bachelor.
 
-Pour les toutes les tâches qui seront listés plus bas, celles qui nécessitent une décomposition en plusieurs tâches voient le numéro de ses sous-tâches suivi d'une lettre. Les tâches possédant des sous-tâches des priorités différentes, n'auront aucune priorité globale.
+Pour les toutes les tâches qui seront listées plus bas, celles qui nécessitent une décomposition en plusieurs tâches voient le numéro de ses sous-tâches suivi d'une lettre. Les tâches possédant des sous-tâches des priorités différentes, n'auront aucune priorité globale.
 
 Je m'engage à réaliser les tâches énumérées dans le tableau \ref{taches}.
 
@@ -238,8 +243,8 @@ Je m'engage à réaliser les tâches énumérées dans le tableau \ref{taches}.
 \newpage
 \subsection{Déroulement global projet}
 
-Le projet se réalise durant le semestre de printemps. Le semestre possède 14 semaines de travail de 1 jour et demi de travail si on exclut la semaine du CRUNCH et celle des vacances.\newline
-Il y a ensuite 6 semaines à temps pleins pour finaliser le travail de Bachelor.
+Le projet se réalise durant le semestre de printemps. Le semestre possède 14 semaines de travail de 1 jour et demi de travail si on exclut la semaine du CRUNCH et celle des vacances.\\
+Il y a ensuite 6 semaines à temps plein pour finaliser le travail de Bachelor.
 
 Une séance hebdomadaire est prévue avec le professeur responsable du travail, m. Chevallier.
 
@@ -263,8 +268,8 @@ Le projet est réparti en 3 principales phases, qui s'effectueront dans l'ordre 
     \item La préparation des livrables.
 \end{enumerate}
 
-La première phase d'analyse a pour objectif de définir tout le cadre théorique du projet et les divers choix à réaliser tout au long de ce dernier.\newline
-Cette phase devrait se terminer à la fin de la semaine numéro 7 ou 8.\newline
+La première phase d'analyse a pour objectif de définir tout le cadre théorique du projet et les divers choix à réaliser tout au long de ce dernier.\\
+Cette phase devrait se terminer à la fin de la semaine numéro 7 ou 8.\\
 Tout en sachant que cette phase contient l'écriture du cahier des charges et que ce dernier doit être rendu au plus tard 6 semaines après le début du travail de bachelor, c'est-à-dire, le 10.04.2022.
 
 La seconde phase, concernant la conception et la réalisation du projet est la plus conséquente.
@@ -276,7 +281,7 @@ Un rendu intermédiaire est également prévu après 150 heures de travail et po
 
 \subsection{Résultats attendus}
 
-Les résultats attendus pour ce projet dépendent énormément des tâches établies définies dans la partie \ref{objectifs} du cahier des charges.\newline
+Les résultats attendus pour ce projet dépendent énormément des tâches établies définies dans la partie \ref{objectifs} du cahier des charges.\\
 En effet, chaque tâche définie est vérifiable et sera donc utilisée pour évaluer le résultat du projet.
 \newpage
 
@@ -293,12 +298,15 @@ Dans le document, certaines couleurs apparaîssent, en voici les significations:
     \item La colonne en gris indique une semaine sans travail,
     \item Le bleu indiquant quand les tâches seront réalisées,
     \item En orange clair, les tâches réalisées tout au long du projet,
+    \item En vert, la marge d'erreur / d'imprévus,
     \item En rouge, les rendus / jalons importants du projet.
 \end{itemize}
 
 La semaine sans travail est un choix personnel, cette semaine là, nous avons une semaine spéciale à l'HEIG, le Crunch. C'est une semaine interdisciplinaire obligatoire.
 
-Il faut savoir qu'il y aura sûrement une grande différence entre la réalisation des tâches indiquées et la réalité. En effet, dans les projets comme celui-ci, il est souvent nécessaire de jongler entre les différentes tâches et il est donc compliqué de suivre un planning en cascade comme celui-ci.
+Il faut savoir qu'il y aura sûrement une grande différence entre la réalisation des tâches indiquées
+et la réalité. En effet, dans les projets comme celui-ci, il est souvent nécessaire de jongler entre
+les différentes tâches et il est donc compliqué de suivre un planning en cascade comme ce dernier.
 
 Le planning est séparé en trois grandes parties:
 \begin{itemize}
@@ -307,10 +315,13 @@ Le planning est séparé en trois grandes parties:
     \item La préparation des livrables.
 \end{itemize}
 
-La conception et réalisation ne sont pas séparées car je vais devoir altérner entre les deux, c'est-à-dire que je vais souvent concevoir quelque chose, le réaliser, me rendre compte que ce n'est pas optimal et répéter le processus. C'est pour cela que ces deux parties sont liés et non séparées, afin de travailler itérativement, comme cela se fait beaucoup en développement.
+La conception et réalisation ne sont pas séparées car je vais devoir altérner entre les deux,
+c'est-à-dire que je vais souvent concevoir quelque chose, le réaliser, me rendre compte que ce n'est
+pas optimal et répéter le processus. C'est pour cela que ces deux parties sont liés et non séparées,
+afin de travailler itérativement, comme cela se fait beaucoup en développement logiciel.
 
 \subsection{Analyse}
-L'analyse contient principalement de l'étude et des choix technologiques. Certains prototypes peuvent être réalisé pour consolider les choix effectués. Tous les choix technologiques et conceptuels sont cruciaux pour la suite du projet.\newline
+L'analyse contient principalement de l'étude et des choix technologiques. Certains prototypes peuvent être réalisé pour consolider les choix effectués. Tous les choix technologiques et conceptuels sont cruciaux pour la suite du projet.\\
 La justification des choix à l'aide d'articles scientifiques sera également un point à ne pas négliger au niveau du temps consacré.
 
 \subsection{Conception et réalisation}
@@ -322,15 +333,24 @@ La partie conception et réalisation est séparée en plusieurs sections:
     \item Frontend.
 \end{itemize}
 
-Les points à ne pas sous-estimer dans ces parties sont la mise en place d'un bon environnement de travail / de développement et la CI pour la première partie du projet. Ces deux points sont essentiels pour pouvoir développer l'application sans problème.\newline
-Deux sujets sur la conception peuvent prendre du temps et sont très important, il s'agit de la conception de la base de données, car celle-ci découle sur toute la réalisation du backend et la conception de l'architecture de code, car si elle est significativement changée au milieu du projet, peut faire perdre énorméement de temps.\newline
-Un point qui a été mal identifié de ma part lorsque j'ai réalisé ce planning, c'est le fait que de concevoir toute une nouvelle base de données allaient presque obliger à développer le backend quasiment de zéro sans pouvoir utiliser significativement le travail déjà présent.\newline
-Cette partie était presque prévue sous le point "Séparation et refactor du code déjà écrit" mais elle prendra beaucoup plus de temps que prévu. Elle va s'en doute s'étendre à plus de 80 heures de travail.\newline
-En plus, cette partie est cruciale pour le projet car elle correspond à la base de l'API et doit être solide pour pouvoir itérer dessus.
+Les points à ne pas sous-estimer dans ces parties sont la mise en place d'un bon environnement de travail / de développement et la CI pour la première partie du projet. Ces deux points sont essentiels pour pouvoir développer l'application sans problème.\\
+Deux sujets sur la conception peuvent prendre du temps et sont très important, il s'agit de la conception de la base de données, car celle-ci découle sur toute la réalisation du backend et la conception de l'architecture de code, car si elle est significativement changée au milieu du projet, peut faire perdre énorméement de temps.\\
+Un point qui a été mal identifié de ma part lorsque j'ai réalisé la première version de ce planning,
+c'est le fait que concevoir toute une nouvelle base de données allaient presque m'obliger à
+re-développer le backend quasiment de zéro sans pouvoir utiliser significativement le travail déjà
+présent.\\
+Cette partie était presque prévue sous le point "Séparation et refactor du code déjà écrit" mais
+elle prendra beaucoup plus de temps que prévu. Elle va s'en doute s'étendre à plus de 80 heures de
+travail.\\
+Au final, une deuxième version du planning prenant en compte cette erreur a été conçu et est également fournie en annexe.\\
+Pour finir, cette partie est cruciale pour le projet car elle correspond à la base de l'API et doit être solide pour pouvoir itérer dessus.
 
 \subsection{Livrables}
-En ce qui concerne la préparation des livrables, il est clair que le rapport est l'un des points demandant le plus de temps du travail et est crucial pour la réussite du projet. Ce dernier se réalisant tout au long du projet, il n'a pas de date précise où il va être réaliser. On peut cependant prévoir plus d'effort avant le rendu intermédiaire et le rendu final.\newline
-En ce qui concerne la présentation de la défense est indiquée mais sera uniquement réalisée pendant le mois d'août.\newline
+En ce qui concerne la préparation des livrables, il est clair que le rapport est l'un des points
+demandant le plus de temps au niveau du travail et est crucial pour la réussite du projet. Ce
+dernier se réalisant tout au long du projet, il n'a pas de date précise où il va être réaliser. On
+peut cependant prévoir plus d'effort avant le rendu intermédiaire et le rendu final.\\
+En ce qui concerne la présentation de la défense, elle est indiquée sur le planning mais sera uniquement réalisée pendant le mois d'août.\\
 La partie gestion de projet est également et logiquement réalisée tout au long du projet.
 
 %TODO: Demander si je dois rechanger à cause de tout refaire le backend?
@@ -339,19 +359,19 @@ La partie gestion de projet est également et logiquement réalisée tout au lon
 \section{Choix technologiques}
 
 Dans cette section, je vais énumérer tous les choix technologiques ou conceptuels liés au projet.
-Mais avant cela, il est nécessaire de définir précisément les besoins pour le projet afin de réaliser des choix cohérents en fonction de ces derniers.\newline
-Pour chaque choix, technologiques ou conceptuels, une liste des possibilités réalisables sera énumérée et si possible représentée visuellement.\newline
+Mais avant cela, il est nécessaire de définir précisément les besoins pour le projet afin de réaliser des choix cohérents en fonction de ces derniers.\\
+Pour chaque choix, technologiques ou conceptuels, une liste des possibilités réalisables sera énumérée et si possible représentée visuellement.\\
 Cette liste de possibilités sera accompagnées des avantages et inconvénients de chaque solution en s'inspirant des besoins du projet.
 
 \subsection{Rappel des choix technologiques déjà effectués}
-Dans cette section, je vais énumérer les choix technologiques déjà effectués par le premier étudiant ayant travaillé sur le projet.\newline
+Dans cette section, je vais énumérer les choix technologiques déjà effectués par le premier étudiant ayant travaillé sur le projet.\\
 Considérant les choix de l'étudiant comme bon et bien argumenté, je ne vois aucune raison de les remettre en question, surtout qu'un travail conséquent a déjà été réalisé avec les technologies choisies. Pour plus de précisions sur ces choix technologiques, je vous invite à consulter son %\href{TODO}{rapport}. //voir avec prof %mettre url tb.heig-vd.ch sur rapport dans biblio
 Voici un résumé des décisions prises lors de la première phase du projet:
 \begin{itemize}
     \item Backend: PHP avec le framework \href{https://laravel.com/}{Laravel},
     \item Frontend: \Gls{javascript} avec \href{https://vuejs.org/}{Vue.js},
     \item SGBD: \href{https://www.mysql.com/}{MySQL},
-    \item Outil SSO: Shibboleth. %https://blog.miniorange.com/what-is-shibboleth/
+    \item Outil SSO: \href{https://www.switch.ch/aai/about/shibboleth/}{Shibboleth}. %https://blog.miniorange.com/what-is-shibboleth/
 \end{itemize}
 
 Au final, la "stack" de technologies utilisées ressemble à celle de la figure \ref{stack-old-tb}
@@ -368,21 +388,21 @@ Au final, la "stack" de technologies utilisées ressemble à celle de la figure 
 Je vais ici définir les besoins du projet et ceci en les séparant par parties distinctes.
 
 \subsubsection{Besoins pour l'infrastructure de développement}
-Pour commencer, définissons l'infrastructure de développement.\newline
+Pour commencer, définissons l'infrastructure de développement.\\
 L'infrastructure de développement englobe tous les outils à installer et toutes les configurations à réaliser sur un pc vierge afin que le développeur puisse commencer à développer l'application.
-En général, ce qui est recherché, c'est la simplicité et la rapidité de configuration de cet environnement.\newline
+En général, ce qui est recherché, c'est la simplicité et la rapidité de configuration de cet environnement.\\
 Dans notre cas, pour que le développeur puisse commencer à développer, il doit principalement mettre en place les outils suivants:
 \begin{itemize}
-    \item un IDE (Integrated Development Environment), de préférence Visual Studio Code,
-    \item l'outil de versioning git,
-    \item un SGBD (Système de Gestion de Base de Données), %\cite{}
+    \item un \Gls{ide} (Integrated Development Environment), de préférence Visual Studio Code,
+    \item l'outil de versioning \Gls{git},
+    \item un \Gls{sgbd} (Système de Gestion de Base de Données),
     \item le language PHP,
     \item l'outil Composer,
     \item le framework Laravel,
     \item l'environement d'exécution (runtime environment) Node.js,
     \item le framework Vue.js.
 \end{itemize}
-Comme vous pouvez le voir, la liste devient vite longue et certains des outils à installer prennent passablement de temps et possèdent des configuration spécifiques.\newline
+Comme vous pouvez le voir, la liste devient vite longue et certains des outils à installer prennent passablement de temps et possèdent des configuration spécifiques.\\
 Je parle notamment des outils suivants:
 \begin{itemize}
     \item le SGBD (Système de Gestion de Base de Données),
@@ -391,29 +411,29 @@ Je parle notamment des outils suivants:
 \end{itemize}
 Ces outils n'étant pas triviaux à mettre en place et changeant pour chaque projet, il est préférable de simplifier le plus possible leur installation et configuration.
 
-Comme vous l'aurez compris, un des besoins le plus important pour le choix de cette infrastructure, est la simplicité de mise en place du projet.\newline
-Il faut que cela soit facile à prendre en main et bien documenté.\newline
-Un des autres points à prendre en compte, est la disponibilité des outils utilisés, dans le sens où des outils payants ne pourraient pas être accessibles pour certains développeur.\newline
+Comme vous l'aurez compris, un des besoins le plus important pour le choix de cette infrastructure, est la simplicité de mise en place du projet.\\
+Il faut que cela soit facile à prendre en main et bien documenté.\\
+Un des autres points à prendre en compte, est la disponibilité des outils utilisés, dans le sens où des outils payants ne pourraient pas être accessibles pour certains développeur.\\
 Créer quelque chose de simple à prendre en main, c'est important, mais il faut aussi prendre en compte la difficulté nécessaire pour mettre en place les outils facilitant la prise en main, par exemple Docker.
 
 \subsubsection{Besoins pour l'infrastructure de production}
-Nous allons maintenant faire de même pour l'infrastructure de production.\newline
-L'infrastructure de production englobe tous les outils à installer et toutes les configurations à réaliser sur un pc vierge afin que le programme final soit accessible est utilisable par n'importe quel utilisateur.\newline
-En général, la simplicité de mise à jour du programme, la performance et la robustesse sont recherchés.\newline
-On peut aussi prendre en compte la flexibilité de la solution, dans le sens où il serait facile de déployer le programme final sur une autre machine de production.\newline
-En effet, la première étape de configuration se réalise peu de fois et si cette dernière est un peu plus compliquée, cela n'est pas forcément un énorme désavantage.\newline
+Nous allons maintenant faire de même pour l'infrastructure de production.\\
+L'infrastructure de production englobe tous les outils à installer et toutes les configurations à réaliser sur un pc vierge afin que le programme final soit accessible est utilisable par n'importe quel utilisateur.\\
+En général, la simplicité de mise à jour du programme, la performance et la robustesse sont recherchés.\\
+On peut aussi prendre en compte la flexibilité de la solution, dans le sens où il serait facile de déployer le programme final sur une autre machine de production.\\
+En effet, la première étape de configuration se réalise peu de fois et si cette dernière est un peu plus compliquée, cela n'est pas forcément un énorme désavantage.\\
 Dans notre cas, pour que le programme puisse fonctionner sur le serveur de production, il est nécessaire d'installer tous les outils suivants:
 \begin{itemize}
-    \item potentiellement l'outil de versioning git,
+    \item potentiellement l'outil de versioning Git,
     \item un SGBD (Système de Gestion de Base de Données),
     \item le language PHP,
     \item l'outil Composer,
     \item le framework Laravel,
-    \item Un serveur Apache,
-    \item Un proxy.
+    \item Un serveur \Gls{apache},
+    \item Un \Gls{proxy}.
 \end{itemize}
-La liste des outils à installer et configurer, comme pour l'environnement de développement, est conséquente.\newline
-Certains outils prennent passablement de temps et possèdent des configuration spécifique.\newline
+La liste des outils à installer et configurer, comme pour l'environnement de développement, est conséquente.\\
+Certains outils prennent passablement de temps et possèdent des configuration spécifique.\\
 Je parle notamment des outils suivants:
 \begin{itemize}
     \item le SGBD (Système de Gestion de Base de Données),
@@ -431,8 +451,8 @@ Si nous résumons les critères qui influenceront notre décision, nous pouvons 
 
 \subsubsection{Besoins pour les Devops}
 Pour finir, nous allons maintenant faire de même pour le pipeline \Gls{devops}.
-Le pipeline \Gls{devops} défini toutes les étapes réalisées et les outils utilisé pour parvenir à mettre en place une infrastructure de travail et de livraison de produit fonctionnel et automatisée au maximum.\newline
-Le but des \Gls{devops} étant d'automatisé le plus de tâches possibles, on attend du donc du pipeline les critères suivants:
+Le pipeline \Gls{devops} défini toutes les étapes réalisées et les outils utilisé pour parvenir à mettre en place une infrastructure de travail et de livraison de produit fonctionnel et automatisée au maximum.\\
+Le but des \Gls{devops} étant d'automatisé le plus de tâches possibles, on attend donc du pipeline les critères suivants:
 \begin{itemize}
     \item la performance de l'infrastructure (dans le sens de la rapidité),
     \item la "simplicité" de mise en place du pipeline,
@@ -446,16 +466,16 @@ Mais un point important est la possibilité de tester manuellement son produit a
 
 \subsubsection{Importance de l'open source et de la gratuité des outils}
 Pour tous les choix technologiques qui vont être réaliser, un besoin essentiel intervient.
-Plus nous utilisons d'outils open source ou gratuit, plus nous faciliterons l'intégration de n'importe quel développeur au projet.\newline
+Plus nous utilisons d'outils open source ou gratuit, plus nous faciliterons l'intégration de n'importe quel développeur au projet.\\
 Mais utiliser des outils qui sont gratuits ou open source offre également un plus pour l'intégration aux DevOps car il facilitera de façon non négligeable la mise en place de ces derniers.
 
 % docker
 \subsection{Introduction à Docker}
-Pour pour pouvoir comparer les différentes infrastructures et faire des choix sur ces dernière, il est important d'introduire l'outil \Gls{docker}.\newline
-Docker est un outil permettant de gérer des conteneurs.\newline
-Qu'est-ce qu'un conteneur? Un \Gls{conteneur} est une sorte de machine virtuelle plus légère ayant pour but d'encapsuler une ou plusieurs applications / outils technologiques ainsi que toutes les dépendances que ces applications exigent pour leur bon fonctionnement.\newline
+Pour pour pouvoir comparer les différentes infrastructures et faire des choix sur ces dernières, il est important d'introduire l'outil \Gls{docker}.\\
+Docker est un outil permettant de gérer des conteneurs.\\
+Qu'est-ce qu'un conteneur? Un \Gls{conteneur} est une sorte de machine virtuelle plus légère ayant pour but d'encapsuler une ou plusieurs applications / outils technologiques ainsi que toutes les dépendances que ces applications exigent pour leur bon fonctionnement.\\
 Il ne s'agit donc pas de virtualisation mais de "conteneurisation" ou "containerization" en anglais.
-Dans une "conteneurisation", seul l'\Gls{os} et le software est virtualisé et non le hardware.\newline
+Dans une "conteneurisation", seul l'\Gls{os} et le software est virtualisé et non le hardware.\\
 Nous remarquons bien la différence avec la figure suivante \ref{docker-compare}
 
 \begin{center}
@@ -467,12 +487,12 @@ Nous remarquons bien la différence avec la figure suivante \ref{docker-compare}
     \end{figure}
 \end{center}
 
-Les containers sont facilement téléchargeables et transmissibles. Ils sont également relativement facile à mettre en place.\newline
-Le principe est simple, nous avons une application et une certaine configuration qui fonctionne, nous pouvons facilement l'encapsuler dans un container et le transmettre à nos collègues ou le télécharger sur un autre pc.\newline
-Un des principales avantages, est le fait que le container ne dépend pas de l'OS ou de l'état de la machine sur lequel il va être lancé.\newline
-Le seul point requis, est de posséder docker sur la machine.\newline
-Cette solution rend plus flexible et portable l'exécution d'application sur n'importe quelle machine.\newline
-Voici un schéma démontrant la façon dont docker et des containers dockers sont mis en place sur une
+Les containers sont facilement téléchargeables et transmissibles. Ils sont également relativement facile à mettre en place.\\
+Le principe est simple, nous avons une application et une certaine configuration qui fonctionne, nous pouvons facilement l'encapsuler dans un conteneur et le transmettre à nos collègues ou le télécharger sur un autre pc.\\
+Un des principals avantages, est le fait que le conteneur ne dépend pas de l'OS ou de l'état de la machine sur lequel il va être lancé.\\
+Le seul point requis, est de posséder docker sur la machine.\\
+Cette solution rend plus flexible et portable l'exécution d'application sur n'importe quelle machine.\\
+Voici un schéma démontrant la façon dont docker et des conteneurs dockers sont mis en place sur une
 machine comme illustré sur la figure \ref{docker-container-app}.
 
 \begin{center}
@@ -491,34 +511,25 @@ machine comme illustré sur la figure \ref{docker-container-app}.
 
 Voici une liste des avantages généraux de Docker comparé à une VM:
 \begin{itemize}
-    \item Les containers sont petits comparé au VM \cite{koukia,nick}, %\char{2713}
-    \item Les containers utilisent moins de ressources \cite{koukia},
-    \item Les containers démarrent plus rapidement \cite{koukia},
-    \item Fonctionne bien avec les DevOps et les CI/CD \cite{koukia,data-flair-pros-cons,data-flair-use-cases},
-    \item Facilite l'extensibilité horizontale \cite{data-flair-use-cases},
-    \item Regroupe les applications et les fichiers système en une seule image standardisée \cite{kane2018docker},
-    \item Permet de tester et livrer l'exact même artefact à tous les systèmes et dans tous les
+    \item \char"2295 Les conteneurs sont petits comparé au VM \cite{koukia,nick}, %\char{2713}
+    \item \char"2295 Les conteneurs utilisent moins de ressources \cite{koukia},
+    \item \char"2295 Les conteneurs démarrent plus rapidement \cite{koukia},
+    \item \char"2295 Fonctionne bien avec les DevOps et les CI/CD \cite{koukia,data-flair-pros-cons,data-flair-use-cases},
+    \item \char"2295 Facilite l'extensibilité horizontale \cite{data-flair-use-cases},
+    \item \char"2295 Regroupe les applications et les fichiers système en une seule image standardisée \cite{kane2018docker},
+    \item \char"2295 Permet de tester et livrer l'exact même artefact à tous les systèmes et dans tous les
           environnements \cite{kane2018docker,nick},
-    \item Créer une abstraction autour de l'application sans sacrifier trop de ressources \cite{kane2018docker}.
+    \item \char"2295 Créer une abstraction autour de l'application sans sacrifier trop de ressources \cite{kane2018docker}.
 \end{itemize}
 
 Voici une liste des inconvénients de Docker comparé à une VM:
 \begin{itemize}
-    \item La sécurité, \cite{koukia}
-    \item L'isolation non complète', \cite{koukia}
-    \item La gestion du réseau. \cite{koukia}
+    \item \char"2296 La sécurité, \cite{koukia}
+    \item \char"2296 L'isolation non complète', \cite{koukia}
+    \item \char"2296 La gestion du réseau. \cite{koukia}
 \end{itemize}
 
-\subsubsection{Docker point de vue sécurité}
-En ce qui concerne la sécurité de Docker, je ne me suis plongé assez dedans pour ressortir une
-analyse concrète et fiable mais j'ai trouvé un article qui en parle. \cite{combe}
-
-% Packaging software in a way that leverages the skills developers already have. \cite{kane2018docker}
-% Bundling application software and required OS filesystems together in a single standar‐dized image format. \cite{kane2018docker}
-% Using packaged artifacts to test and deliver the exact same artifact to all systems in all environments. \cite{kane2018docker}
-% Abstracting software applications from the hardware without sacrificing resources \cite{kane2018docker}
-
-On peut voir sur la figure \ref{docker-use-cases} une liste des cas d'utilisations de docker \cite{data-flair-use-cases}.
+Pour terminer, on peut voir sur la figure \ref{docker-use-cases} une liste des cas d'utilisations de docker \cite{data-flair-use-cases}.
 
 \begin{center}
     \begin{figure}
@@ -527,6 +538,16 @@ On peut voir sur la figure \ref{docker-use-cases} une liste des cas d'utilisatio
             \label{docker-use-cases}}
     \end{figure}
 \end{center}
+
+\subsubsection{Docker point de vue sécurité}
+En ce qui concerne la sécurité de Docker, je ne me suis pas assez plongé dedans pour ressortir une
+analyse concrète et fiable mais j'ai trouvé un article \cite{combe} qui en parle et qui pourrait
+être une première direction pour approfondir le sujet.
+
+% Packaging software in a way that leverages the skills developers already have. \cite{kane2018docker}
+% Bundling application software and required OS filesystems together in a single standar‐dized image format. \cite{kane2018docker}
+% Using packaged artifacts to test and deliver the exact same artifact to all systems in all environments. \cite{kane2018docker}
+% Abstracting software applications from the hardware without sacrificing resources \cite{kane2018docker}
 
 % quand ne pas utiliser docker: Performance is critical to your application
 
@@ -591,8 +612,9 @@ que nous utilisons pour le projet.
 
 Beaucoup d'autres informations ressortent dans un article étudiant les performances de Docker pour
 des applications demandant une grande performance. \cite{chung}
-Un point intéressant ressort au niveau de la gestion de la mémoire vive qu'utilise Docker, illustré
-sur la figure \ref{docker-perf-ram}.
+Un point intéressant, qui me paraît important, est celui de la gestion de la mémoire vive qu'utilise
+Docker, illustré sur la figure \ref{docker-perf-ram}.\\
+On voit clairement que Docker n'est pas pas plus gourmand qu'une machine native et c'est un bon point.
 
 \begin{center}
     \begin{figure}
@@ -608,13 +630,12 @@ sur la figure \ref{docker-perf-ram}.
 %https://dominoweb.draco.res.ibm.com/reports/rc25482.pdf
 %https://www.freecodecamp.org/news/7-cases-when-not-to-use-docker/
 
-
 \subsubsection{Et Kubernetes?}
 Pourquoi utiliserions-nous forcément docker sans avoir réfléchi à la possibilité de \Gls{kubernetes}?
 Pour commencer, comme indiquer sur le site officiel:
-"Kubernetes est un système open-source permettant d'automatiser le déploiement, la mise à l'échelle et la gestion des applications conteneurisées".\newline
-Kubernetes n'est donc pas vraiment une alternative à docker, mais peut être plutôt utiliser comme complément à ce dernier.\newline
-Comme la partie principale de Kubernetes est de gérer les applications conteneurisées et de simplifier le load balancing, par exemple, il n'est pas forcément utile pour nous d'approfondir les recherches sur le sujet.\newline
+"Kubernetes est un système open-source permettant d'automatiser le déploiement, la mise à l'échelle et la gestion des applications conteneurisées".\\
+Kubernetes n'est donc pas vraiment une alternative à docker, mais peut être plutôt utiliser comme complément à ce dernier.\\
+Comme la partie principale de Kubernetes est de gérer les applications conteneurisées et de simplifier le load balancing, par exemple, il n'est pas forcément utile pour nous d'approfondir les recherches sur le sujet.\\
 En effet, La charge attendu par l'application déployée ne devrait pas dépasser les 100 utilisateurs simultanés. La question du load-balancing est donc écartée, tout comme la mise en place d'un cluster Kubernetes.
 
 % comment mettre en place -> voir avec monsieur Graf / regarder avec des profs
@@ -638,7 +659,11 @@ Pour commencer, voici une liste non exhaustive des solutions alternatives à Doc
     \item \href{https://www.redhat.com/en/topics/containers/what-is-rkt}{RKT}.
 \end{itemize}
 
-Le principal problème de ces solutions est le manque de popularité comme on peut le remarquer sur la figure \ref{containers-trends}
+Le principal problème de ces solutions est le manque de popularité comme on peut le remarquer sur la
+figure \ref{containers-trends} représentant les recherches concernant les différents sujets via l'outil \href{https://trends.google.fr/trends}{Google trends}.\\
+Le fait de ne pas être populaire est un gros désavantage pour ces solutions car très peu d'informations, de tutoriels et de documentations sont disponibles sur internet.\\
+Ce simple fait suffit à orienté le choix de la solution de conteneur sur Docker.\\
+N'ayant également pas le temps d'analyser chaque solution en profondeur dans ce travail, cela conforte mon choix.
 
 \begin{center}
     \begin{figure}
@@ -647,29 +672,32 @@ Le principal problème de ces solutions est le manque de popularité comme on pe
     \end{figure}
 \end{center}
 
-
-représentant les recherches sur concernant les différents sujets via l'outil \href{https://trends.google.fr/trends}{Google trends}.\newline
-Le fait de ne pas être populaire est un gros désavantage pour ces solutions car très peu d'informations, de tutoriels et de documentations sont disponibles sur internet.\newline
-Ce simple fait suffit à orienté le choix de la solution de conteneur sur Docker.\newline
-N'ayant également pas le temps d'analyser chaque solution en profondeur dans ce travail, cela conforte mon choix.
-
 % dev
 \subsection{Infrastructures de développement}
 
 \subsubsection{Présentation des infrastructures de développement possibles}
-L'infrastructure que vous pouvez voir dans la figure ci-dessous et celle qui était utilisée lorsque j'ai reprise le projet.\newline
-En résumé, tous les outils ont été installés nativement sur la machine de développement sans virtualisation. %\ref
+L'infrastructure que vous pouvez voir dans la figure \ref{infrastructure-dev-actuelle.drawio} et celle qui était utilisée lorsque j'ai reprise le projet.\\
+En résumé, tous les outils ont été installés nativement sur la machine de développement sans virtualisation.
 \figi[Infra. dev. actuelle]{infrastructure-dev-actuelle.drawio}{18cm}{Infrastructure de développement actuelle}
 
+Ensuite, nous avons la possibilité d'utiliser une infrastructure avec uniquement la base de données
+en conteneur Docker, comme illustré sur la figure \ref{infrastructure-dev-db-laravel-docker.drawio}.
 \figi[Infra. dev. avec DB en Docker]{infrastructure-dev-db-docker.drawio}{16cm}{Infrastructure de développement avec une DB en Docker}
 
+Comme nouveau changement, il est également possible de passer tout l'environnement de développement
+du Backend sous plusieurs conteneurs Docker en utilisant un outil fourni par Laravel, \href{https://laravel.com/docs/9.x/sail}{Sail}.
 \figi[Infra. dev. avec DB + Laravel en Docker]{infrastructure-dev-db-laravel-docker.drawio}{16cm}{Infrastructure de développement avec une DB et Laravel en Docker}
 
-Laravel \href{https://laravel.com/docs/9.x/homestead}{Homestead} est un environnement de développement virtualisé à l'aide d'une machine virtuelle \href{https://www.vagrantup.com/}{Vagrant}.\newline
-Cette solution est considérée comme le prédecesseur à Laravel Sail qui est beaucoup plus léger.\newline
-C'est pourquoi, cette solution ne fera pas parti des choix que nous allons argumenter, mais est présentée comme complément.
+Une autre possibilité du même genre étant Laravel
+\href{https://laravel.com/docs/9.x/homestead}{Homestead} qui est un environnement de développement
+virtualisé à l'aide d'une machine virtuelle \href{https://www.vagrantup.com/}{Vagrant}.\\
+Cette solution est considérée comme le prédecesseur à Laravel Sail qui est beaucoup plus léger.\\
+C'est pourquoi, cette solution ne fera pas parti des choix que nous allons argumenter, mais est
+présentée comme complément. Cette solution correspond à la figure \ref{infrastructure-dev-laravel-homestead.drawio}.
 \figi[Infra. dev. avec Homestead]{infrastructure-dev-laravel-homestead.drawio}{16cm}{Infrastructure de développement avec Laravel Homestead}
 
+Finalement, une infrastructure avec tous les projets en conteneurs Docker est possible et visible
+avec la figure \ref{infrastructure-dev-db-laravel-vuejs-docker.drawio}.
 \figi[Infra. dev. avec DB + Laravel + Vue en Docker]{infrastructure-dev-db-laravel-vuejs-docker.drawio}{16cm}{Infrastructure de développement avec une DB, Laravel et Vue.js en Docker}
 
 %https://laravel.com/docs/9.x/sail
@@ -681,7 +709,7 @@ C'est pourquoi, cette solution ne fera pas parti des choix que nous allons argum
 \clearpage
 
 \subsubsection{Évolutions de l'infrastructure de développement possibles}
-Les différentes infrastructures désormais présentées, il est nécessaire de les comparer en listant les pour et les contres de chaque changement en prenant comme référentielle l'infrastructure actuelle.\newline
+Les différentes infrastructures désormais présentées, il est nécessaire de les comparer en listant les pours et les contres de chaque changement en prenant comme référentielle l'infrastructure actuelle.\\
 Les 3 améliorations (combinées ou non) proposées sont les suivantes:
 \begin{itemize}
     \item Passage du SGBD en machine Docker,
@@ -703,9 +731,14 @@ Ces derniers sont visible avec la table \ref{dev-sgbd-native}
         \caption{SGBD natif \label{dev-sgbd-native}}
         \begin{tabularx}{1.0\textwidth} {X|X}
             Avantages                                                         & Inconvénients                                 \\ \hline
-            Gestion de la BD plus facile car le SGB est installé nativement   & Demande du temps pour l'installation          \\
-            Le SGBD peut-être déjà installé et peut être utilisée directement & Configuration à réaliser à la main            \\
-            Ne nécessite pas Docker                                           & Fort risque d'erreur lors de la configuration \\             & Installation différente pour chaque OS                                \\
+            \char"2295 Gestion de la BD plus facile car le SGBD est installé nativement   &
+            \char"2296 Demande du temps pour l'installation          \\
+            \char"2295 Le SGBD peut-être déjà installé et peut être utilisée directement &
+            \char"2296 Configuration à réaliser à la main            \\
+            \char"2295 Ne nécessite pas Docker                                           &
+            \char"2296 Fort
+            risque d'erreur lors de la configuration \\             & \char"2296 Installation
+            différente pour chaque OS                                \\
         \end{tabularx}
     \end{center}
 \end{table}
@@ -743,7 +776,7 @@ Si nous évaluons les deux solutions proposées selon les besoins suivants:
 On se rend facilement compte que la solution avec Docker est celle qui se rapproche le plus de ces derniers.
 
 \subsubsection{Passage de Laravel en conteneur Docker}
-Passons maintenant au passage de l'environnement Laravel en conteneur Docker.\newline
+Passons maintenant au passage de l'environnement Laravel en conteneur Docker.\\
 Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet
 environnement. Ces derniers sont visible avec la table \ref{dev-laravel-native}.
 
@@ -839,11 +872,14 @@ Si nous évaluons les deux solutions proposées selon les besoins, désormais bi
     \item la difficulté nécessaire pour mettre en place les outils facilitant la prise en main.
 \end{itemize}
 
-On se rend compte que la solution avec Docker n'apporte pas forcément assez d'avanatages comparé à celle proposant l'installation native et cela est principalement dû au bon gestionnaire de paquets \href{https://www.npmjs.com/}{NPM} de Javascript. C'est pourquoi, solution proposant l'installation native sera préférée.
+On se rend compte que la solution avec Docker n'apporte pas forcément assez d'avanatages comparé à
+celle proposant l'installation native et cela est principalement dû au bon gestionnaire de paquets
+\href{https://www.npmjs.com/}{NPM} de Javascript. C'est pourquoi, la solution proposant
+l'installation native sera préférée.
 
 \subsubsection{Résultat de l'analyse}
 Suite à cette analyse des outils, la solution la plus adaptée semble être de mettre en place
-l'environement de développment illustré sur la figure \ref{env-dev}.
+l'environement de développment illustré sur le tableau \ref{env-dev}.
 
 \begin{table}[h]
     \begin{center}
@@ -857,7 +893,6 @@ l'environement de développment illustré sur la figure \ref{env-dev}.
     \end{center}
 \end{table}
 
-
 Finalement cela correspond à la figure numéro \ref{infrastructure-dev-db-laravel-docker.drawio}.
 
 % prod
@@ -865,18 +900,18 @@ Finalement cela correspond à la figure numéro \ref{infrastructure-dev-db-larav
 \subsection{Infrastructures de production}
 
 \subsubsection{Présentation des infrastructures de production possibles}
-L'infrastructure de production que vous pouvez voir dans la figure ci-dessous et celle qui était utilisée lorsque j'ai reprise le projet.\newline
-En résumé, tous les outils ont été installés nativement sur la machine de développement sans virtualisation.\newline
+L'infrastructure de production que vous pouvez voir dans la figure \ref{infrastructure-prod-actuelle.drawio} et celle qui était utilisée lorsque j'ai reprise le projet.\\
+En résumé, tous les outils ont été installés nativement sur la machine de production sans virtualisation.\\
 \figi{infrastructure-prod-actuelle.drawio}{16cm}{Infrastructure de production actuelle}
 
-Cette figure-ci, montre la première amélioration possible, c'est à dire, de passer le SGBD en container docker.
+La figure \ref{infrastructure-prod-db-docker.drawio}, montre la première amélioration possible, c'est à dire, de passer le SGBD en conteneur docker.
 \figi{infrastructure-prod-db-docker.drawio}{16cm}{Infrastructure de production avec une db en docker}
 
-Cette figure-ci, montre la secondes amélioration possible (mais aussi la première), c'est à dire, de passer l'application web réalisée avec le framework Laravel en container docker.
+La figure \ref{infrastructure-prod-db-laravel-docker.drawio}, montre la seconde amélioration possible (mais aussi la première), c'est à dire, de passer l'application web réalisée avec le framework Laravel en conteneur docker.
 \figi{infrastructure-prod-db-laravel-docker.drawio}{16cm}{Infrastructure de production avec une db et laravel en docker}
 
 \subsubsection{Évolutions de l'infrastructure de production possibles}
-Les différentes infrastructures possibles désormais présentées, il est nécessaire de les comparer en listant les pour et les contres de chaque changement en prenant comme référentielle l'infrastructure actuelle.\newline
+Les différentes infrastructures possibles désormais présentées, il est nécessaire de les comparer en listant les pours et les contres de chaque changement en prenant comme référentielle l'infrastructure actuelle.\\
 Les deux améliorations (combinées ou non) proposées sont les suivantes:
 \begin{itemize}
     \item Passage du SGBD en machine Docker,
@@ -906,7 +941,7 @@ développement". Ces derniers sont visible avec la table \ref{prod-db-native}.
     \end{center}
 \end{table}
 
-Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir le SGBD en machine
+Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir le SGBD en conteneur
 Docker. Ces derniers sont visible avec la table \ref{prod-db-docker}.
 
 \begin{table}[h]
@@ -958,7 +993,7 @@ environnement. Ces derniers sont visible avec la table \ref{prod-laravel-native}
 \end{table}
 
 Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement Laravel
-en machine Docker.Ces derniers sont visible avec la table \ref{prod-laravel-docker}.
+en machine Docker. Ces derniers sont visible avec la table \ref{prod-laravel-docker}.
 
 \begin{table}[h]
     \begin{center}
@@ -1005,6 +1040,8 @@ l'environnement de production suivant \ref{env-prod}.
     \end{center}
 \end{table}
 
+Finalement cela correspond à la figure numéro \ref{infrastructure-prod-db-laravel-docker.drawio}.
+
 \subsubsection{Analyse de risques}
 % comment protéger une infra en prod
 % contacter des profs de sécu
@@ -1012,9 +1049,9 @@ l'environnement de production suivant \ref{env-prod}.
 % on est resté en surface, il faudrait investir des experts pour évaluer. (audit par exemple)
 % sécurité pas prise en compte dans le projet car pas dans objectif, pas le luxe de rechercher car trop de temps, à mentionner dans le rapport.
 
-L'analyse de risques de l'infrastructure de production est point très important lorsque que l'on publie un logiciel. Cette dernière peut être très complexe et nécessite énormément de connaissances.
-Une analyse de risque complète demande une quantité conséquent de travail. L'intervention d'expert dans le domaine, via par exemple, des audits serait une solution pour réaliser cette partie du projet.\newline
-L'analyse de risques ne pourra donc pas être réaliser lors de ce projet, pour toutes les raisons énumérées plus haut, mais aussi car ce n'est pas le but principal de ce dernier.\newline
+L'analyse de risques de l'infrastructure de production est un point très important lorsque l'on publie un logiciel. Cette dernière peut être très complexe et nécessite énormément de connaissances.
+Une analyse de risque complète demande une quantité conséquente de travail. L'intervention d'experts dans le domaine, via par exemple, des audits serait une solution pour réaliser cette partie du projet.\\
+L'analyse de risques ne pourra donc pas être réaliser lors de ce projet, pour toutes les raisons énumérées plus haut, mais aussi car ce n'est pas le but principal de ce dernier.\\
 J'ai donc décider d'appliquer tout ce que je connaissais et faire le meilleur travail possible sans aller en profondeur dans le sujet.
 
 % devops
@@ -1027,12 +1064,13 @@ J'ai donc décider d'appliquer tout ce que je connaissais et faire le meilleur t
 %https://www.padok.fr/blog/devops-tout-savoir
 %https://azure.microsoft.com/en-us/overview/what-is-devops/#devops-overview
 %https://www.ibm.com/cloud/learn/devops-a-complete-guide
-Pour commencer, c'est quoi les DevOps?\newline
-Les DevOps c'est un ensemble de processus qui permettent de gérer et faciliter le développement et le déploiement continu de l'application. Cela permet de garantir une meilleur qualité du code et de simplifier l'intégration de ce dernier. C'est-à-dire, si un collaborateur souhaite ajouter sa partie du code au projet, il doit d'abord passer par un système automatisé de contrôle et d'intégration de son code avant de pouvoir l'ajouter. Cette partie est appelée \Gls{ci}.\newline
+Pour commencer, c'est quoi les DevOps?\\
+Les DevOps c'est un ensemble de processus permettant de gérer et faciliter le développement et le déploiement continu de l'application. Cela permet de garantir une meilleure qualité du code et de simplifier l'intégration de ce dernier. C'est-à-dire, si un collaborateur souhaite ajouter sa partie du code au projet, il doit d'abord passer par un système automatisé de contrôle et d'intégration de son code avant de pouvoir l'ajouter. Cette partie est appelée \Gls{ci}.\\
 Les DevOps intègre également tout ce qui est déployement continu et livraison continue (\Gls{cd}).
-En pratique, ils intègrent également d'autre aspect, comme la maintenance de l'infrastructure de production et développement, la sécurité des processus et beaucoup d'autres concepts.\newline
-Au final c'est un cycle de vie visant à faciliter le développement d'applications en équipe.\newline
-Ci-dessous, on peut observer un exemple de lifecycle fourni par IBM selon la figure \ref{devops-lifecycle}.
+En pratique, ils intègrent également d'autre aspect, comme la maintenance de l'infrastructure de
+production et de développement, la sécurité des processus et beaucoup d'autres concepts.\\
+Au final c'est un cycle de vie visant à faciliter le développement d'applications en équipe.\\
+On peut observer un exemple de lifecycle fourni par IBM selon la figure \ref{devops-lifecycle}.
 
 \begin{center}
     \begin{figure}
@@ -1041,9 +1079,8 @@ Ci-dessous, on peut observer un exemple de lifecycle fourni par IBM selon la fig
     \end{figure}
 \end{center}
 
-
-Aucun Devops ou pipeline n'avait été réalisé lors du précédent projet.
-Nous avons donc que des propositions, sans solution existante (ce qui était le cas pour d'autres choix).\newline
+Aucun Devops ou pipeline n'avait été réalisé lors du précédent projet.\\
+Nous avons donc que des propositions, sans solution existante (ce qui était le cas pour d'autres choix).\\
 Avant de présenter chacun des pipeline DevOps proposé, il est nécessaire d'expliquer pourquoi chacun de ces derniers passent par Github, et plus précisément, les Github Actions.
 
 \subsubsection{Pourquoi Github?}
@@ -1062,10 +1099,10 @@ aussi services de \Gls{ci} / \Gls{devops}, en voici une liste non exhaustive:
     \end{itemize}
 \end{multicols}
 
-Tous ces outils, mise à part GitLab, doivent être installé en plus et configurer pour le projet.\newline
-Comme il s'agit d'un projet assez restreint et n'impliquant que peu de personnes, nous cherchons à rester dans une solution simple et donc "all in one".\newline
-Nous n'allons donc pas plonger dans les détails de chaque technologie citée plus haut.\newline
-Parmi les solutions "all in one", c'est-à-dire qui propose des services de \Gls{ci} / \Gls{devops} et permette le versioning de code, il reste uniquement GitLab et Github comme choix.\newline
+Tous ces outils, mise à part GitLab, doivent être installé en plus et configurer pour le projet.\\
+Comme il s'agit d'un projet assez restreint et n'impliquant que peu de personnes, nous cherchons à rester dans une solution simple et donc "all in one".\\
+Nous n'allons donc pas plonger dans les détails de chaque technologie citée plus haut.\\
+Parmi les solutions "all in one", c'est-à-dire qui propose des services de \Gls{ci} / \Gls{devops} et permette le versioning de code, il reste uniquement GitLab et Github comme choix.\\
 Ne souhaitant pas réaliser une profonde analyse sur ces 2 solutions, car les 2 étant souvent considérées comme équivalentes ou interchangeable, ma connaissance de la solution Github est un argument suffisant, selon moi, pour faire pencher la balance en sa faveur.
 % Tous les outils CI / CD
 %https://katalon.com/resources-center/blog/ci-cd-tools#
@@ -1077,7 +1114,7 @@ Ne souhaitant pas réaliser une profonde analyse sur ces 2 solutions, car les 2 
 Ce premier pipeline possible possède uniquement un intérêt si l'infrastructure de production tourne à l'aide de conteneurs Docker. En effet, le but est de construire l' /les image(s) Docker contenant tout ce qui est nécessaire (configurations, programmes, etc.) au niveau de la machine de développement, puis d'envoyer cette / ces dernière(s) sur un repository d'image, en l'occurence, Dockerhub. Puis de récupérer cette / ces images sur la machine de production et les lancer simplement.
 \figi{devops-dockerhub.drawio}{16cm}{DevOps via dockerhub}
 
-Ce second pipeline, passerait par une plateforme appelée Heroku. Heroku permet de déployer son application sur l'un de leur serveur, puis le redéployer sur une machine de production finale.\newline
+Ce second pipeline, passerait par une plateforme appelée Heroku. Heroku permet de déployer son application sur l'un de leur serveur, puis le redéployer sur une machine de production finale.\\
 Cette approche est très intéressante car l'étape intermédiaire permet de tester l'application sur une autre machine que celle de développement et ceci avant de livrer en production.
 \figi{devops-heroku.drawio}{16cm}{DevOps via heroku}
 %https://devcenter.heroku.com/articles/getting-started-with-laravel
@@ -1087,7 +1124,7 @@ Finalement, le pipeline passant uniquement par Github, est la solution la plus s
 
 \subsubsection{Comparaison des pipeline Devops possibles}
 Nous allons définir pour chacun des pipeline, les avantages et inconvénients de ces derniers.
-Mais pour réaliser cette section, certains prototypes doivent être réalisés, ainsi que des recherches appronfidie sur la mise en oeuvre des différents pipeline.\newline
+Mais pour réaliser cette section, certains prototypes doivent être réalisés, ainsi que des recherches appronfidie sur la mise en oeuvre des différents pipeline.\\
 En effet, n'étant pas expert dans le domaine, et n'ayant pas le temps de le devenir le temps de ce travail, l'un des critères / besoins importants et la facilité de mise ne place du pipeline.
 
 % pipeline docker
@@ -1147,12 +1184,12 @@ Inconvénients:
 Dans toutes les desciptions suivantes, les tirets du bas seront remplacé par des "-" à cause d'un problème de LaTex.
 
 \section{Modèle EA}
-Le modèle Entité-Associations est la première étape lors de la conception d'une base de données. Il se rapproche également d'un diagramme de classe classique utiliser pour la POO (programmation orienté objet).\newline
-Nous allons décrire chacune des entités et ses relations.\newline
-Mais avons ça, voici une légende:\newline
-Un rectangle représente une entité et possède son nom dans sa partie supérieur.\newline
-Les valeurs textuelles en dessous sont les champs de l'entité. Le champ souligné représente la clé primaire de l'entité, cette dernière doit être unique.\newline
-Les traits tiré entre deux entités sont des associations et peuvent se lire dans les deux sens. Les verbes écrits au dessus des traits servent à donner un sens à l'association.\newline
+Le modèle Entité-Associations est la première étape lors de la conception d'une base de données. Il se rapproche également d'un diagramme de classe classique utiliser pour la POO (programmation orienté objet).\\
+Nous allons décrire chacune des entités et ses relations.\\
+Mais avons ça, voici une légende:\\
+Un rectangle représente une entité et possède son nom dans sa partie supérieur.\\
+Les valeurs textuelles en dessous sont les champs de l'entité. Le champ souligné représente la clé primaire de l'entité, cette dernière doit être unique.\\
+Les traits tiré entre deux entités sont des associations et peuvent se lire dans les deux sens. Les verbes écrits au dessus des traits servent à donner un sens à l'association.\\
 Les symboles et numéros à chaque extrémités des entités indiquent respectivement:
 \begin{itemize}
     \item 0 : zéro / aucun,
@@ -1161,8 +1198,8 @@ Les symboles et numéros à chaque extrémités des entités indiquent respectiv
     \item * : zéro ou plusieurs.
 \end{itemize}
 
-Par exemple, on peut lire l'association "user" - "message", comme ceci:\newline
-Un utilisateur peut envoyer zéro ou plusieurs messages.\newline
+Par exemple, on peut lire l'association "user" - "message", comme ceci:\\
+Un utilisateur peut envoyer zéro ou plusieurs messages.\\
 Un message peut être envoyé que par un utilisateur.
 
 Finalement, certains peuvent être ajouté avec des rectangles pliés en haut à droite et relié avec des traits pointillés.
@@ -1175,18 +1212,18 @@ Finalement, certains peuvent être ajouté avec des rectangles pliés en haut à
 \end{center}
 
 \subsection{Entité user}
-L'entité "user" représente un utilisateur de l'application, que ce soit un élève, un professeur ou un technicien.\newline
-Il possède des informations classiques le concernant, ainsi que le champ "switch-uuid" représentant l'identifiant unique fourni par le service Switch edu-id qui sera utilisé.\newline
+L'entité "user" représente un utilisateur de l'application, que ce soit un élève, un professeur ou un technicien.\\
+Il possède des informations classiques le concernant, ainsi que le champ "switch-uuid" représentant l'identifiant unique fourni par le service Switch edu-id qui sera utilisé.\\
 Les champs contenant le mot "notify" servent à stocker les préférences de l'utilisateur concernant les notifications de l'application.
 
-On voit au niveau des relations, que l'utilisateur peut envoyer et recevoir des messages.\newline
-Il peut posséder également plusieurs rôles mais doit en posséder au moins un, celui par défaut qui est le rôle "client".\newline
-L'utilisateur peut de toute façon faire une demande de travail (job). Cependant, seul les utilisateurs possédant le rôle "validator", en général, les professeurs pourront valider le travail.\newline
+On voit au niveau des relations, que l'utilisateur peut envoyer et recevoir des messages.\\
+Il peut posséder également plusieurs rôles mais doit en posséder au moins un, celui par défaut qui est le rôle "client".\\
+L'utilisateur peut de toute façon faire une demande de travail (job). Cependant, seul les utilisateurs possédant le rôle "validator", en général, les professeurs pourront valider le travail.\\
 Le travail validé, un "worker", en général un technicien, pourra réaliser le travail demander et en indiquer le suivi.
 
 \subsection{Entité job}
-L'entité "job" représente un travail demandé par un utilisateur de l'application.\newline
-Il possède un id (identifiant unique), une description du travail à réaliser, une date butoir (deadline), une évaluation que l'utilisateur / client peut attribuer au travail terminé et un status d'avancement du travail mis à jour par le travailleur.\newline
+L'entité "job" représente un travail demandé par un utilisateur de l'application.\\
+Il possède un id (identifiant unique), une description du travail à réaliser, une date butoir (deadline), une évaluation que l'utilisateur / client peut attribuer au travail terminé et un status d'avancement du travail mis à jour par le travailleur.\\
 Le status d'avancement d'un travail sera défini par un enum (liste exhaustive de valeurs), la voici:
 \begin{itemize}
     \item new,
@@ -1197,15 +1234,15 @@ Le status d'avancement d'un travail sera défini par un enum (liste exhaustive d
     \item completed.
 \end{itemize}
 
-On voit au niveau des relations, que le travail peut posséder des messages qui lui sont liés.\newline
-Il posséde également une catégorie de travail définissant ensuite quelles machines peuvent être utilisées pour le réaliser.\newline
-Le travail possédera également un utilisateur client, un validateur et un travailleur.\newline
-Il doit également contenir un ou plusieurs fichiers nécessaires pour réaliser le travail demandé.\newline
+On voit au niveau des relations, que le travail peut posséder des messages qui lui sont liés.\\
+Il posséde également une catégorie de travail définissant ensuite quelles machines peuvent être utilisées pour le réaliser.\\
+Le travail possédera également un utilisateur client, un validateur et un travailleur.\\
+Il doit également contenir un ou plusieurs fichiers nécessaires pour réaliser le travail demandé.\\
 Finalement, certains événements peuvent être lié au travail. On parle ici d'événement permettant de préfevenir l'utilisateur via des notifications ou email.
 
 \subsection{Entité role}
-L'entité "role" représente simplement un rôle que peut avoir un utilisateur au sein de l'application. Cette entité est nécessaire car un utilisateur peut posséder plusieurs rôles et ils doivent tous être défini la même chose.\newline
-Seul un id (identifiant unique) et un nom du rôle est nécessaire.\newline
+L'entité "role" représente simplement un rôle que peut avoir un utilisateur au sein de l'application. Cette entité est nécessaire car un utilisateur peut posséder plusieurs rôles et ils doivent tous être défini la même chose.\\
+Seul un id (identifiant unique) et un nom du rôle est nécessaire.\\
 Voici la liste des rôles définis:
 \begin{itemize}
     \item admin,
@@ -1215,51 +1252,51 @@ Voici la liste des rôles définis:
 \end{itemize}
 
 \subsection{Entité message}
-L'entité "message" représente un message envoyé entre deux utilisateurs au sujet d'un travail demandé.\newline
-Il possède uniquement un id (identifiant unique) et un text.\newline
-Il est associé à deux utilisateurs, un représentant celui qui a envoyé le message et l'autre celui qu'il l'a reçu. Le message est également associé au travail dont il est le sujet.\newline
+L'entité "message" représente un message envoyé entre deux utilisateurs au sujet d'un travail demandé.\\
+Il possède uniquement un id (identifiant unique) et un text.\\
+Il est associé à deux utilisateurs, un représentant celui qui a envoyé le message et l'autre celui qu'il l'a reçu. Le message est également associé au travail dont il est le sujet.\\
 Une aggrégation a été modélisé pour cette dernière association car on souhaite supprimé tous les messages liés à un travail, si ce dernier est supprimé.
 
 \subsection{Entité job-category}
-L'entité "job-category" représente une catégorie de travail pouvant être effecutée au fablab, pare exemple, une impression 3D ou une découpe laser.\newline
-La catégorie possède un id (identifiant unique), un acronyme et un nom.\newline
-Elle est associé à un travail car ce dernier est obligé d'avoir une catégorie.\newline
-Elle possède également une ou plusieurs machines (device) sur lesquels peuvent être réaliser les travaux.\newline
+L'entité "job-category" représente une catégorie de travail pouvant être effecutée au fablab, pare exemple, une impression 3D ou une découpe laser.\\
+La catégorie possède un id (identifiant unique), un acronyme et un nom.\\
+Elle est associé à un travail car ce dernier est obligé d'avoir une catégorie.\\
+Elle possède également une ou plusieurs machines (device) sur lesquels peuvent être réaliser les travaux.\\
 Comme elle possède des machines, une liste de type de fichiers acceptés est nécessaire et est défini par l'association "job-category" - "file-type". Cela permettra de facilement vérifier si un fichier donné pour un travail peut être accepté pour la catégorie de ce dernier.
 
 \subsection{Entité device}
-L'entité "device" représente une machine / un outil utilisé pour réaliser un travail du fablab.\newline
-La machine possède un id (identifiant unique), un nom, une description plus précise et un chemin de fichier où est stocké son image (cette partie pourrait changer).\newline
-Comme expliqué précédement dans la catégorie, elle possède une ou plusieurs catégories sur lesquels elle peut être utilisée.\newline
+L'entité "device" représente une machine / un outil utilisé pour réaliser un travail du fablab.\\
+La machine possède un id (identifiant unique), un nom, une description plus précise et un chemin de fichier où est stocké son image (cette partie pourrait changer).\\
+Comme expliqué précédement dans la catégorie, elle possède une ou plusieurs catégories sur lesquels elle peut être utilisée.\\
 
 \subsection{Entité file-type}
-L'entité "file-type" représente un type de fichier que peut accepter une catégorie de travail du fablab.\newline
-Le type de fichier possède un id (identifiant unique), un nom et un mime-type \href{https://developer.mozilla.org/fr/docs/Web/HTTP/Basics_of_HTTP/MIME_Types} étant utiliser pour valider les fichiers télécharger.\newline
-Comme expliqué précédement dans la catégorie, un type de fichier possède une ou plusieurs catégories qui sont acceptées.\newline
+L'entité "file-type" représente un type de fichier que peut accepter une catégorie de travail du fablab.\\
+Le type de fichier possède un id (identifiant unique), un nom et un mime-type \href{https://developer.mozilla.org/fr/docs/Web/HTTP/Basics_of_HTTP/MIME_Types} étant utiliser pour valider les fichiers télécharger.\\
+Comme expliqué précédement dans la catégorie, un type de fichier possède une ou plusieurs catégories qui sont acceptées.\\
 Le type de fichier peut également être associé à plusieurs fichiers.
 
 \subsection{Entité file}
-L'entité "file" représente un fichier fourni pour réaliser un travail du fablab.\newline
-Le fichier possède un id (identifiant unique), un nom et un hash de son contenu.\newline
-Il est associé à un type de fichier (file-type), ce qui est utile pour faire le lien avec la catégorie du travail.\newline
-Il possède évidemment un travail pour indiquer pour auquel il appartient.\newline
+L'entité "file" représente un fichier fourni pour réaliser un travail du fablab.\\
+Le fichier possède un id (identifiant unique), un nom et un hash de son contenu.\\
+Il est associé à un type de fichier (file-type), ce qui est utile pour faire le lien avec la catégorie du travail.\\
+Il possède évidemment un travail pour indiquer pour auquel il appartient.\\
 Une aggrégation a été modélisé pour cette dernière association car on souhaite supprimé tous les fichiers liés à un travail, si ce dernier est supprimé.
 
 \subsection{Entité event}
-L'entité "event" représente un événement concernant un travail du fablab. Par exemple, un événement est généré si le status d'un travail a été modifié ou si un fichier a été ajouté.\newline
-L'événement possède un id (identifiant unique) et des données (data).\newline
-Il est associé à un travail comme expliqué plus précédement.\newline
+L'entité "event" représente un événement concernant un travail du fablab. Par exemple, un événement est généré si le status d'un travail a été modifié ou si un fichier a été ajouté.\\
+L'événement possède un id (identifiant unique) et des données (data).\\
+Il est associé à un travail comme expliqué plus précédement.\\
 Une aggrégation a été modélis�� pour cette dernière association car on souhaite supprimé tous les événements liés à un travail, si ce dernier est supprimé.
 
 \subsection{Entité tasks-queue et failed-tasks}
 Ces entités ont été modélisées pour effectuer les tâches en arrière plan du backend, comme l'envoi d'email retardé. Elle ne sont pas encore très développée par manque de connaissances de leur fonctionnement.
 
 \section{MLD}
-Le modèle logique des données n'est rien d'autre qu'une évolution du modèle EA.\newline
-Les entités deviennent des tables et les associations des relations, ce qui est presque la même chose.\newline
-Les tables ont pris un nom au pluriel pour respecter la philosophie de Laravel et de son ORM Eloquent.\newline
-Les champs obtiennent des types représentant la façon dont ils seront stockés.\newline
-Les clés étrangère issues des association s'ajoutent aux tables.\newline
+Le modèle logique des données n'est rien d'autre qu'une évolution du modèle EA.\\
+Les entités deviennent des tables et les associations des relations, ce qui est presque la même chose.\\
+Les tables ont pris un nom au pluriel pour respecter la philosophie de Laravel et de son ORM Eloquent.\\
+Les champs obtiennent des types représentant la façon dont ils seront stockés.\\
+Les clés étrangère issues des association s'ajoutent aux tables.\\
 Les associations N à N du modèle EA voient naître une table intermédiaire. Voici celles qui ont été créées:
 \begin{itemize}
     \item device-job-category,
@@ -1285,7 +1322,7 @@ Sur le schéma, quelques nouveaux symboles apparaîssent, voici une légende:
 Une clé étrangère étant le champ représantant une autre table dont une relation existe. La clé primaire représente la table en elle-même, elle est son identifiant.
 
 \subsection{Champs spéciaux}
-Quelques champs obtiennet des valeurs précises et méritent une explication.\newline
+Quelques champs obtiennet des valeurs précises et méritent une explication.\\
 Les champs switch-uuid et email, de la table "users" possèdent 320 charactères car ils sont tous des emails ou des dérivés et une email peut contenir au maximum 320 charactères.
 
 Le champ status de la table "job" est une enum comme expliqué précédement dans le modèle EA.
@@ -1379,33 +1416,33 @@ La liste plus complète peut être consultée dans la doc \href{https://laravel.
 \end{listing}
 
 \subsection{Champs possiblement "null"}
-La possibilité de laisser une valeur nulle sur un champ n'apparaît pas sur le MLD, mais est bien présente au niveau des migrations et modèles de Laravel.\newline
-Tous ces champs possèdent l'indiquation: "->nullable()".\newline
-Seul certains champs peuvent être "null" dans notre base de données et ceux-ci interviennent surtout dans la table "jobs".\newline
+La possibilité de laisser une valeur nulle sur un champ n'apparaît pas sur le MLD, mais est bien présente au niveau des migrations et modèles de Laravel.\\
+Tous ces champs possèdent l'indiquation: "->nullable()".\\
+Seul certains champs peuvent être "null" dans notre base de données et ceux-ci interviennent surtout dans la table "jobs".\\
 Les champs qui peuvent être "null" sont des champs dont la valeur n'est pas obligatoirement présente à la création mais peut-être ajoutée plus tard. Il s'agit par exemple de la note donnée au travail "rating" ou encore le technicien devant effectuer ce dernier qui peut être assigné après coup.
 
 \subsection{Champs uniques}
-Il est possible d'indiquer qu'un champ doit posséder une valeur unique avec l'option: "->unique()".\newline
+Il est possible d'indiquer qu'un champ doit posséder une valeur unique avec l'option: "->unique()".\\
 Cette possibilité est par exemple utilisée par le champ email.
 
 \subsection{Champs timestamps}
 Les champs de type "->timestamps()" sont un raccourci utilisé par Laravel pour créer deux champs indiquant la date de création de la donnée et la date de modification. Ces champs sont gérés automatiquement par Laravel, ce qui est bien pratique.
 
 \subsection{Indexes}
-Il est possible de créer des indexes sur certains champs afin d'améliorer les performances de la base de données lors de certaines requêtes. Ces indexes peuvent être créer grâce à l'instruction "index('table-champ')".\newline
+Il est possible de créer des indexes sur certains champs afin d'améliorer les performances de la base de données lors de certaines requêtes. Ces indexes peuvent être créer grâce à l'instruction "index('table-champ')".\\
 Ces derniers sont toujours créer sur les clés primaires et doivent être créer sur les clés étrangères. D'autres champs régulièrement utilisés par des requêtes peuvent faire l'objet d'indexes.
 
 \subsection{Clés étrangères}
-Les clés étrangères peuvent être gérées de deux façon différentes.\newline
+Les clés étrangères peuvent être gérées de deux façon différentes.\\
 Soit on ajoute un champ "foreignId('table-id')" suivi d'un "->constrained('table')" qui permet de faire le lien directe entre la clé primaire et la clé étrangère tout en générant un index. Mais ceci est possible uniquement si l'on utilise une clé primaire de type "id()".
 
-Dans le deuxième cas, lorsque l'on possède une clé primaire basée sur un autre type de champ, il faut tout d'abord créer un champ à la main avec la valeur voulue.\newline
-Puis faire le lien entre la clé primaire et étrangère à la main en utilisant d'abord "->foreign('table-champ')", puis en référançant avec "->references('champ')->on('table')".\newline
+Dans le deuxième cas, lorsque l'on possède une clé primaire basée sur un autre type de champ, il faut tout d'abord créer un champ à la main avec la valeur voulue.\\
+Puis faire le lien entre la clé primaire et étrangère à la main en utilisant d'abord "->foreign('table-champ')", puis en référançant avec "->references('champ')->on('table')".\\
 Puis, finalement, créer un index avec "index('table-champ')" sur le champ de la clé étrangère.
 
 \subsection{Options de suppression}
-Des options de suppression sont proposées par Eloquent afin de ne pas supprimer définitivement les données de la base de données, mais de simplement les désactiver afin quelles n'apparaîssent plus dans les requêtes.\newline
-Ceci est possible en ajoutant l'option "->softDeletes()" à la table.\newline
+Des options de suppression sont proposées par Eloquent afin de ne pas supprimer définitivement les données de la base de données, mais de simplement les désactiver afin quelles n'apparaîssent plus dans les requêtes.\\
+Ceci est possible en ajoutant l'option "->softDeletes()" à la table.\\
 Laravel s'occupera ensuite de gérer les cas de suppression lui-même.
 
 \chapter{Conception et Réalisation du Backend / de l'API}
@@ -1475,12 +1512,12 @@ définir des collections de ressources lorsqu'une route doit fournir plus qu'un 
 
 \chapter{Intégration continue}
 L'intégration continue ou CI a fait l'objet d'un prototype afin de tester le bon fonctionnement
-avant de l'intégrer au projet final.\newline
+avant de l'intégrer au projet final.\\
 Ce prototype a subit plusieurs itérations, il a fallu partir d'une CI simple permettant de juste
 exécuter des tests sur un base de données SQLLite sans migration. Puis il a fallu ajouter une base
 de données MySQL pour reproduire le véritable environnement. Finalement il a fallu intégrer les
-migrations et les seeders afin de donner l'opportunité de tester au mieux l'application.\newline
-Ayant un dépôt Gitub pour le code, la CI a été réalisée avec Github Actions.\newline
+migrations et les seeders afin de donner l'opportunité de tester au mieux l'application.\\
+Ayant un dépôt Gitub pour le code, la CI a été réalisée avec Github Actions.\\
 La CI est consultable sur les figures \ref{ci-1} et \ref{ci-2}
 
 \begin{listing}[h]
@@ -1495,22 +1532,22 @@ La CI est consultable sur les figures \ref{ci-1} et \ref{ci-2}
 
 \section{Déclenchement de la CI}
 La première partie après le mot clé "on", indique quand cette CI et donc cette Github Actions est
-déclanchée.\newline
+déclanchée.\\
 
 \section{Infrastructure et services}
 Ensuite, il est nécessaire d'indiquer sur quel type de machine on souhaite faire tourner notre
 installation et nos tests. Il faut également construire les services nécessaires au bon
-fonctionnement des tests. Ici nous construisons un SGBD MySQL, ainsi qu'une base de données.\newline
+fonctionnement des tests. Ici nous construisons un SGBD MySQL, ainsi qu'une base de données.\\
 
 \section{Étapes de configuration}
 
-À partir du mot clé "steps", une série d'étape de configuration a lieu.\newline
-Chaque étape est décrite après le mot clé "name"\newline
+À partir du mot clé "steps", une série d'étape de configuration a lieu.\\
+Chaque étape est décrite après le mot clé "name"\\
 Tout d'abord, on lance les Github Actions, puis on réalise une étape non obligatoire mais
-importante, on vérifie si la connexion à MySQL construit plus tôt fonctionne.\newline
-Il est notamment important d'installer tout l'environnement php.\newline
+importante, on vérifie si la connexion à MySQL construit plus tôt fonctionne.\\
+Il est notamment important d'installer tout l'environnement php.\\
 Il faut ensuite générer les clés pour l'appluication, puis lancer les migrations et le
-seeding.\newline
+seeding.\\
 Il est ensuite important de changer les permissions pour le storage. Et finalement il est possible
 de lancer tous les tests de l'application avec phpunit.
 
@@ -1546,7 +1583,7 @@ de lancer tous les tests de l'application avec phpunit.
 \section{Sources d'informations}
 Lors d'un projet de développement informatique, beraucoup de recherches sont réalisées lors de la
 phase de développement. Il est impossible de citer toutes les sources utilisées, mais il est
-important de citer les forums les plus utilisés, ainsi que les documentations.\newline
+important de citer les forums les plus utilisés, ainsi que les documentations.\\
 Voici donc une liste de références:
 
 \begin{itemize}
