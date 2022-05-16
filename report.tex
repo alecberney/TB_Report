@@ -1249,7 +1249,7 @@ Une aggrégation a été modélisé pour cette dernière association car on souh
 L'entité "event" représente un événement concernant un travail du fablab. Par exemple, un événement est généré si le status d'un travail a été modifié ou si un fichier a été ajouté.\newline
 L'événement possède un id (identifiant unique) et des données (data).\newline
 Il est associé à un travail comme expliqué plus précédement.\newline
-Une aggrégation a été modélisé pour cette dernière association car on souhaite supprimé tous les événements liés à un travail, si ce dernier est supprimé.
+Une aggrégation a été modélis�� pour cette dernière association car on souhaite supprimé tous les événements liés à un travail, si ce dernier est supprimé.
 
 \subsection{Entité tasks-queue et failed-tasks}
 Ces entités ont été modélisées pour effectuer les tâches en arrière plan du backend, comme l'envoi d'email retardé. Elle ne sont pas encore très développée par manque de connaissances de leur fonctionnement.
@@ -1399,7 +1399,7 @@ Ces derniers sont toujours créer sur les clés primaires et doivent être crée
 Les clés étrangères peuvent être gérées de deux façon différentes.\newline
 Soit on ajoute un champ "foreignId('table-id')" suivi d'un "->constrained('table')" qui permet de faire le lien directe entre la clé primaire et la clé étrangère tout en générant un index. Mais ceci est possible uniquement si l'on utilise une clé primaire de type "id()".
 
-Dans le deuxième cas, lorsque l'on possède une clé primaire basée sur un autre type de champ, il faut tout d'abord cr��er un champ à la main avec la valeur voulue.\newline
+Dans le deuxième cas, lorsque l'on possède une clé primaire basée sur un autre type de champ, il faut tout d'abord créer un champ à la main avec la valeur voulue.\newline
 Puis faire le lien entre la clé primaire et étrangère à la main en utilisant d'abord "->foreign('table-champ')", puis en référançant avec "->references('champ')->on('table')".\newline
 Puis, finalement, créer un index avec "index('table-champ')" sur le champ de la clé étrangère.
 
@@ -1418,7 +1418,7 @@ un schéma de l'architecture de code de ce dernier afin de le comparer avec celu
 pouvoir mieux le comprendre. Sur la figure \ref{architecture-code-spring.drawio}, on voit clairement
 l'architecture classique allant de la vue passant par les controllers, puis les services contenant
 la logique métier et les repository utilisant les DAO pour commumiquer avec la base de données. \\
-Des DTO peuvent également être ajoutées entre la vue et les controlles.
+Des DTO peuvent également être ajoutées entre la vue et les controllers.
 
 \figi{architecture-code-spring.drawio}{16cm}{Architecture de code du framework Spring "classique"}
 
@@ -1427,7 +1427,37 @@ figure \ref{architecture-code-laravel.drawio}.
 
 \figi{architecture-code-laravel.drawio}{16cm}{Architecture de code du framework Laravel "classique"}
 
+Je ne comprenais pas où la logique métier (business logic) devait être codée et je pensais donc
+ajouter des services comme l'architecture de code Spring le fait si bien. Cela donnait une
+architecture correspondant à la figure \ref{architecture-code-laravel-proposee.drawio}.
+
 \figi{architecture-code-laravel-proposee.drawio}{16cm}{Architecture de code Laravel proposée}
+
+Finalement après m'être plus plongé dans le code et la documentation, je me suis rendu compte que
+Laravel proposait beaucoup plus de classe ou d'outil de code que ce que j'avais pu comprendre en
+premier temps. J'ai donc mis à jour l'architecture de code finale et cette dernière suivra le schéma
+de la figure \ref{architecture-code-finale.drawio}.
+
+Nous allons maintenant discuté de quelques pattern de code utilisé et fourni par Laravel.\\
+Tout d'abord, on peut observer que les middleware utiliseront l'AuthServiceProvider qui
+implémentera des Gates. Ces Gates utiliseront des Policy qui permettront de définir la logique afin
+de valider si l'utilisateur possédera ou non le droit d'accès à l'action sur la route utilisée de
+l'API utilisée. Par exemple, il sera vérifier que seul un technicien ou un validateur puisse mettre
+à jour le statut de la demande.
+
+Ensuite, on observe que les Controllers vont recevoir des ModelRequests représentant des requêtes
+contnant les valeurs nécessaires. Les valeurs à l'intérieur des requêtes seront exhaustivement
+définies et syntaxiquement validées. Cela permettra de travailler avec des valeurs sûrs au niveau
+des Controllers et des Models. Par exemple, il sera possible de valider qu'un email donné soit un
+email syntaxiquement correct.
+
+Les Controllers travailleront avec des Resources (ressources) afin de retourner uniquement les
+valeurs voulues. Ces Resources définissent exactement ce qui doit être renvoyer, comme données, à
+l'utilisateur. Il sera par exemple possible de définir que le mot de passe de l'utilisateur ne soit
+pas retourné à ce dernier. Ces Resources utilisent également des ResourcesCollection permettant de
+définir des collections de ressources lorsqu'une route doit fournir plus qu'un seul élément.
+
+\figi{architecture-code-finale.drawio}{16cm}{Architecture de code Laravel finale}
 
 % ensuite décrire ce qu'on a mis en place et indiquer s'il y a des failles
 
