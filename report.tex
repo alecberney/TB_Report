@@ -730,15 +730,15 @@ Ces derniers sont visible avec la table \ref{dev-sgbd-native}
     \begin{center}
         \caption{SGBD natif \label{dev-sgbd-native}}
         \begin{tabularx}{1.0\textwidth} {X|X}
-            Avantages                                                         & Inconvénients                                 \\ \hline
-            \char"2295 Gestion de la BD plus facile car le SGBD est installé nativement   &
-            \char"2296 Demande du temps pour l'installation          \\
+            Avantages                                                                    & Inconvénients \\ \hline
+            \char"2295 Gestion de la BD plus facile car le SGBD est installé nativement  &
+            \char"2296 Demande du temps pour l'installation                                              \\
             \char"2295 Le SGBD peut-être déjà installé et peut être utilisée directement &
-            \char"2296 Configuration à réaliser à la main            \\
+            \char"2296 Configuration à réaliser à la main                                                \\
             \char"2295 Ne nécessite pas Docker                                           &
             \char"2296 Fort
-            risque d'erreur lors de la configuration \\             & \char"2296 Installation
-            différente pour chaque OS                                \\
+            risque d'erreur lors de la configuration                                                     \\             & \char"2296 Installation
+            différente pour chaque OS                                                                    \\
         \end{tabularx}
     \end{center}
 \end{table}
@@ -1111,7 +1111,11 @@ Ne souhaitant pas réaliser une profonde analyse sur ces 2 solutions, car les 2 
 %https://stackshare.io/stackups/github-actions-vs-gitlab-ci#pros
 
 \subsubsection{Présentation des pipeline Devops possibles}
-Ce premier pipeline possible possède uniquement un intérêt si l'infrastructure de production tourne à l'aide de conteneurs Docker. En effet, le but est de construire l' /les image(s) Docker contenant tout ce qui est nécessaire (configurations, programmes, etc.) au niveau de la machine de développement, puis d'envoyer cette / ces dernière(s) sur un repository d'image, en l'occurence, Dockerhub. Puis de récupérer cette / ces images sur la machine de production et les lancer simplement.
+Ce premier pipeline possible possède uniquement un intérêt si l'infrastructure de production tourne
+à l'aide de conteneurs Docker. En effet, le but est de construire les images Docker contenant tout
+ce qui est nécessaire (configurations, programmes, etc.) au niveau de la machine de développement,
+puis d'envoyer ces dernières sur un repository d'image, en l'occurence, Dockerhub. Puis de
+récupérer ces images sur la machine de production et de les lancer simplement.
 \figi{devops-dockerhub.drawio}{16cm}{DevOps via dockerhub}
 
 Ce second pipeline, passerait par une plateforme appelée Heroku. Heroku permet de déployer son application sur l'un de leur serveur, puis le redéployer sur une machine de production finale.\\
@@ -1123,40 +1127,55 @@ Finalement, le pipeline passant uniquement par Github, est la solution la plus s
 \figi{devops-github.drawio}{16cm}{DevOps via github}
 
 \subsubsection{Comparaison des pipeline Devops possibles}
-Nous allons définir pour chacun des pipeline, les avantages et inconvénients de ces derniers.
-Mais pour réaliser cette section, certains prototypes doivent être réalisés, ainsi que des recherches appronfidie sur la mise en oeuvre des différents pipeline.\\
-En effet, n'étant pas expert dans le domaine, et n'ayant pas le temps de le devenir le temps de ce travail, l'un des critères / besoins importants et la facilité de mise ne place du pipeline.
+Nous allons définir pour chacun des pipelines, les avantages et inconvénients de ces derniers.
+Mais pour réaliser cette section, certains prototypes doivent être réalisés, ainsi que des recherches appronfidies sur la mise en oeuvre des différents pipeline.\\
+En effet, n'étant pas expert dans le domaine, et n'ayant pas le temps de le devenir le temps de ce travail, l'un des critères / besoins importants et la facilité de mise en place du pipeline.
 
 % pipeline docker
-Commençons par le pipeline Docker:
-\begin{itemize}
-    \item x
-\end{itemize}
+Commençons par le pipeline Docker \ref{devops-dockerhub}.
+\begin{table}[h]
+    \begin{center}
+        \caption{pipeline Docker / Dockerhub \label{devops-dockerhub}}
+        \begin{tabularx}{1.0\textwidth} {X|X}
+            Avantages & Inconvénients \\ \hline
+                      &               \\
+                      &               \\
+                      &               \\
+                      &               \\
+                      &               \\
+        \end{tabularx}
+    \end{center}
+\end{table}
 
-Inconvénients:
-\begin{itemize}
-    \item x
-\end{itemize}
+Continuons avec le pipeline Heroku \ref{devops-heroku}.
+\begin{table}[h]
+    \begin{center}
+        \caption{pipeline Heroku \label{devops-heroku}}
+        \begin{tabularx}{1.0\textwidth} {X|X}
+            Avantages & Inconvénients \\ \hline
+                      &               \\
+                      &               \\
+                      &               \\
+                      &               \\
+                      &               \\
+        \end{tabularx}
+    \end{center}
+\end{table}
 
-Continuons avec le pipeline Heroku:
-\begin{itemize}
-    \item x
-\end{itemize}
-
-Inconvénients:
-\begin{itemize}
-    \item x
-\end{itemize}
-
-Finissons avec le pipeline Github:
-\begin{itemize}
-    \item x
-\end{itemize}
-
-Inconvénients:
-\begin{itemize}
-    \item x
-\end{itemize}
+Finissons avec le pipeline Github \ref{devops-github}.
+\begin{table}[h]
+    \begin{center}
+        \caption{pipeline Github \label{devops-github}}
+        \begin{tabularx}{1.0\textwidth} {X|X}
+            Avantages & Inconvénients \\ \hline
+                      &               \\
+                      &               \\
+                      &               \\
+                      &               \\
+                      &               \\
+        \end{tabularx}
+    \end{center}
+\end{table}
 
 % TODO reciter besoins et dire solution qui se rapproche le plus
 
@@ -1186,7 +1205,7 @@ Dans toutes les desciptions suivantes, les tirets du bas seront remplacé par de
 \section{Modèle EA}
 Le modèle Entité-Associations est la première étape lors de la conception d'une base de données. Il se rapproche également d'un diagramme de classe classique utiliser pour la POO (programmation orienté objet).\\
 Nous allons décrire chacune des entités et ses relations.\\
-Mais avons ça, voici une légende:\\
+Mais avant ça, voici quelques informations sur le schéma, une sorte de légende:\\
 Un rectangle représente une entité et possède son nom dans sa partie supérieur.\\
 Les valeurs textuelles en dessous sont les champs de l'entité. Le champ souligné représente la clé primaire de l'entité, cette dernière doit être unique.\\
 Les traits tiré entre deux entités sont des associations et peuvent se lire dans les deux sens. Les verbes écrits au dessus des traits servent à donner un sens à l'association.\\
@@ -1202,7 +1221,7 @@ Par exemple, on peut lire l'association "user" - "message", comme ceci:\\
 Un utilisateur peut envoyer zéro ou plusieurs messages.\\
 Un message peut être envoyé que par un utilisateur.
 
-Finalement, certains peuvent être ajouté avec des rectangles pliés en haut à droite et relié avec des traits pointillés.
+Finalement, quelques commentaires peuvent être ajouté avec des rectangles pliés en haut à droite et relié avec des traits pointillés.
 
 \begin{center}
     \begin{figure}
@@ -1253,40 +1272,40 @@ Voici la liste des rôles définis:
 
 \subsection{Entité message}
 L'entité "message" représente un message envoyé entre deux utilisateurs au sujet d'un travail demandé.\\
-Il possède uniquement un id (identifiant unique) et un text.\\
+Il possède uniquement un id (identifiant unique) et un texte.\\
 Il est associé à deux utilisateurs, un représentant celui qui a envoyé le message et l'autre celui qu'il l'a reçu. Le message est également associé au travail dont il est le sujet.\\
 Une aggrégation a été modélisé pour cette dernière association car on souhaite supprimé tous les messages liés à un travail, si ce dernier est supprimé.
 
 \subsection{Entité job-category}
-L'entité "job-category" représente une catégorie de travail pouvant être effecutée au fablab, pare exemple, une impression 3D ou une découpe laser.\\
+L'entité "job-category" représente une catégorie de travail pouvant être effecutée au Fablab, pare exemple, une impression 3D ou une découpe laser.\\
 La catégorie possède un id (identifiant unique), un acronyme et un nom.\\
 Elle est associé à un travail car ce dernier est obligé d'avoir une catégorie.\\
 Elle possède également une ou plusieurs machines (device) sur lesquels peuvent être réaliser les travaux.\\
 Comme elle possède des machines, une liste de type de fichiers acceptés est nécessaire et est défini par l'association "job-category" - "file-type". Cela permettra de facilement vérifier si un fichier donné pour un travail peut être accepté pour la catégorie de ce dernier.
 
 \subsection{Entité device}
-L'entité "device" représente une machine / un outil utilisé pour réaliser un travail du fablab.\\
+L'entité "device" représente une machine / un outil utilisé pour réaliser un travail du Fablab.\\
 La machine possède un id (identifiant unique), un nom, une description plus précise et un chemin de fichier où est stocké son image (cette partie pourrait changer).\\
 Comme expliqué précédement dans la catégorie, elle possède une ou plusieurs catégories sur lesquels elle peut être utilisée.\\
 
 \subsection{Entité file-type}
 L'entité "file-type" représente un type de fichier que peut accepter une catégorie de travail du fablab.\\
-Le type de fichier possède un id (identifiant unique), un nom et un mime-type \href{https://developer.mozilla.org/fr/docs/Web/HTTP/Basics_of_HTTP/MIME_Types} étant utiliser pour valider les fichiers télécharger.\\
+Le type de fichier possède un id (identifiant unique), un nom et un \href{https://developer.mozilla.org/fr/docs/Web/HTTP/Basics_of_HTTP/MIME_Types}{mime-type} étant utiliser pour valider les fichiers télécharger.\\
 Comme expliqué précédement dans la catégorie, un type de fichier possède une ou plusieurs catégories qui sont acceptées.\\
 Le type de fichier peut également être associé à plusieurs fichiers.
 
 \subsection{Entité file}
-L'entité "file" représente un fichier fourni pour réaliser un travail du fablab.\\
+L'entité "file" représente un fichier fourni pour réaliser un travail du Fablab.\\
 Le fichier possède un id (identifiant unique), un nom et un hash de son contenu.\\
 Il est associé à un type de fichier (file-type), ce qui est utile pour faire le lien avec la catégorie du travail.\\
 Il possède évidemment un travail pour indiquer pour auquel il appartient.\\
-Une aggrégation a été modélisé pour cette dernière association car on souhaite supprimé tous les fichiers liés à un travail, si ce dernier est supprimé.
+Une aggrégation a été modélisée pour cette dernière association car on souhaite supprimé tous les fichiers liés à un travail, si ce dernier est supprimé.
 
 \subsection{Entité event}
 L'entité "event" représente un événement concernant un travail du fablab. Par exemple, un événement est généré si le status d'un travail a été modifié ou si un fichier a été ajouté.\\
 L'événement possède un id (identifiant unique) et des données (data).\\
 Il est associé à un travail comme expliqué plus précédement.\\
-Une aggrégation a été modélis�� pour cette dernière association car on souhaite supprimé tous les événements liés à un travail, si ce dernier est supprimé.
+Une aggrégation a été modélisée pour cette dernière association car on souhaite supprimé tous les événements liés à un travail, si ce dernier est supprimé.
 
 \subsection{Entité tasks-queue et failed-tasks}
 Ces entités ont été modélisées pour effectuer les tâches en arrière plan du backend, comme l'envoi d'email retardé. Elle ne sont pas encore très développée par manque de connaissances de leur fonctionnement.
@@ -1294,7 +1313,7 @@ Ces entités ont été modélisées pour effectuer les tâches en arrière plan 
 \section{MLD}
 Le modèle logique des données n'est rien d'autre qu'une évolution du modèle EA.\\
 Les entités deviennent des tables et les associations des relations, ce qui est presque la même chose.\\
-Les tables ont pris un nom au pluriel pour respecter la philosophie de Laravel et de son ORM Eloquent.\\
+Les tables ont pris un nom au pluriel pour respecter la philosophie de Laravel et de son \Gls{orm} Eloquent.\\
 Les champs obtiennent des types représentant la façon dont ils seront stockés.\\
 Les clés étrangère issues des association s'ajoutent aux tables.\\
 Les associations N à N du modèle EA voient naître une table intermédiaire. Voici celles qui ont été créées:
@@ -1313,17 +1332,18 @@ Les associations N à N du modèle EA voient naître une table intermédiaire. V
 
 Sur le schéma, quelques nouveaux symboles apparaîssent, voici une légende:
 \begin{itemize}
-    \item Clé jaune : clé primaire de la ligne,
+    \item Clé jaune : clé primaire de la table,
     \item Losange bleu : la colonne ne peut pas valoir null,
     \item Losange vide : la colonne peut valoir null,
     \item Losange rouge : la colonne possède une clé étrangère.
 \end{itemize}
 
-Une clé étrangère étant le champ représantant une autre table dont une relation existe. La clé primaire représente la table en elle-même, elle est son identifiant.
+Une clé étrangère étant le champ représantant une autre table issue d'une relation existante. La clé primaire représente la table en elle-même, elle est son identifiant.
 
 \subsection{Champs spéciaux}
-Quelques champs obtiennet des valeurs précises et méritent une explication.\\
-Les champs switch-uuid et email, de la table "users" possèdent 320 charactères car ils sont tous des emails ou des dérivés et une email peut contenir au maximum 320 charactères.
+Quelques champs obtiennent des valeurs précises et méritent une explication.\\
+Les champs switch-uuid et email, de la table "users" possèdent 320 charactères car ils sont tous
+deux des emails ou des dérivés et une email peut contenir au maximum 320 charactères \cite{email-length}.
 
 Le champ status de la table "job" est une enum comme expliqué précédement dans le modèle EA.
 
@@ -1345,12 +1365,12 @@ Les migrations du backend réalisées avec Laravel et l'ORM Eloquent se rapproch
 \subsection{Types de champs}
 Voici une liste des types possibles et utilisées:
 \begin{itemize}
-    \item id représentant un entier positif incrémentable, unique, indiqué comme clé primaire et référencé via un index,
-    \item string représentant une chaîne de caractères,
-    \item longText représentant un grand texte,
-    \item enum représentant une liste exhaustive de valeurs possibles,
-    \item tinyInteger représentant un petit entier,
-    \item date représentant une date.
+    \item id: un entier positif incrémentable, unique, indiqué comme clé primaire et référencé via un index,
+    \item string: une chaîne de caractères,
+    \item longText: un grand texte,
+    \item enum: une liste exhaustive de valeurs possibles,
+    \item tinyInteger: un petit entier,
+    \item date: une date.
 \end{itemize}
 
 La liste plus complète peut être consultée dans la doc \href{https://laravel.com/docs/9.x/migrations#available-column-types}{Laravel}.
@@ -1441,7 +1461,7 @@ Puis faire le lien entre la clé primaire et étrangère à la main en utilisant
 Puis, finalement, créer un index avec "index('table-champ')" sur le champ de la clé étrangère.
 
 \subsection{Options de suppression}
-Des options de suppression sont proposées par Eloquent afin de ne pas supprimer définitivement les données de la base de données, mais de simplement les désactiver afin quelles n'apparaîssent plus dans les requêtes.\\
+Des options de suppression sont proposées par \Gls{eloquent} afin de ne pas supprimer définitivement les données de la base de données, mais de simplement les désactiver afin quelles n'apparaîssent plus dans les requêtes.\\
 Ceci est possible en ajoutant l'option "->softDeletes()" à la table.\\
 Laravel s'occupera ensuite de gérer les cas de suppression lui-même.
 
@@ -1483,7 +1503,7 @@ l'API utilisée. Par exemple, il sera vérifier que seul un technicien ou un val
 à jour le statut de la demande.
 
 Ensuite, on observe que les Controllers vont recevoir des ModelRequests représentant des requêtes
-contnant les valeurs nécessaires. Les valeurs à l'intérieur des requêtes seront exhaustivement
+contenant les valeurs nécessaires. Les valeurs à l'intérieur des requêtes seront exhaustivement
 définies et syntaxiquement validées. Cela permettra de travailler avec des valeurs sûrs au niveau
 des Controllers et des Models. Par exemple, il sera possible de valider qu'un email donné soit un
 email syntaxiquement correct.
@@ -1495,6 +1515,11 @@ pas retourné à ce dernier. Ces Resources utilisent également des ResourcesCol
 définir des collections de ressources lorsqu'une route doit fournir plus qu'un seul élément.
 
 \figi{architecture-code-finale.drawio}{16cm}{Architecture de code Laravel finale}
+
+
+\section{Validation des entrées utilisateurs}
+
+\section{Gestion des droits}
 
 % ensuite décrire ce qu'on a mis en place et indiquer s'il y a des failles
 
@@ -1579,6 +1604,19 @@ de lancer tous les tests de l'application avec phpunit.
 
 %Il est de coutume de signer la conclusion...
 %%fi
+
+\section{Conclusion intermédiaire}
+Je pense être en bonne voie pour le projet. J'ai bien saisi les concepts du framework Laravel et
+vais pouvoir me plonger pleinement dans le code.\\
+La première partie du projet contenant beaucoup d'analyse et de rédaction, désormais
+passée, me permettra également de passer plus temps pour la réalisation du projet.\\
+J'ai eu quelques soucis d'estimation du travail lors de la première réalisation du planning. J'ai pu
+les corriger afin de mieux visualiser la suite du projet.\\
+Mon ressenti principal sur le projet est simple, plus je me plonge dans une tâche, plus j'ai
+l'impression qu'elle prendra du temps, et potentiellement plus que prévu initalement. C'est
+pourquoi, j'ai essayé de prévoir plus de temps qu'en premier lieu, pour chacune de mes tâches.\\
+J'ai aussi l'impression de mieux en mieux prendre en main le framework Laravel et par ce fait,
+commencer à être plus productif.\\
 
 \section{Sources d'informations}
 Lors d'un projet de développement informatique, beraucoup de recherches sont réalisées lors de la
