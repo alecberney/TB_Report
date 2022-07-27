@@ -605,8 +605,7 @@ que nous utilisons pour le projet.
 \begin{center}
     \begin{figure}
         \includegraphics[width=\textwidth]{./assets/figures/docker-perf-mysql.png}
-        \caption[Comparaison des perf. Docker sur MySQ]{Comparaison des performances de Docker avec des
-            transactions sur MySQL \cite{felter} \label{docker-perf-mysql}}
+        \caption[Comparaison des perf. Docker sur MySQ]{Comparaison des performances de Docker avec des transactions sur MySQL \cite{felter} \label{docker-perf-mysql}}
     \end{figure}
 \end{center}
 
@@ -668,7 +667,7 @@ N'ayant également pas le temps d'analyser chaque solution en profondeur dans ce
 \begin{center}
     \begin{figure}
         \includegraphics[width=\textwidth]{./assets/figures/google-trend-containers-2022.png}
-        \caption[Tendances solutions de conteneurs]{Tendances sur les différentes solutions de conteneurs depuis 2004} \label{containers-trends}
+        \caption[Tendances solutions de conteneurs]{Tendances sur les différentes solutions de conteneurs depuis 2004 \label{containers-trends}}
     \end{figure}
 \end{center}
 
@@ -678,13 +677,19 @@ N'ayant également pas le temps d'analyser chaque solution en profondeur dans ce
 \subsubsection{Présentation des infrastructures de développement possibles}
 
 %\figi{infrastructure-dev-choix.drawio}{18cm}{Différentes possibilités d'infrastructure de développement}
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/infrastructure-dev-choix.drawio.png}
+        \caption{Différentes possibilités d'infrastructure de développement \label{infrastructure-dev-choix.drawio}}
+    \end{figure}
+\end{center}
 
-L'infrastructure que vous pouvez voir dans la figure \ref{infrastructure-dev-actuelle.drawio} et celle qui était utilisée lorsque j'ai reprise le projet.\\
+L'infrastructure que vous pouvez voir dans la figure %\ref{infrastructure-dev-actuelle.drawio} et celle qui était utilisée lorsque j'ai reprise le projet.\\
 En résumé, tous les outils ont été installés nativement sur la machine de développement sans virtualisation.
 %\figi[Infra. dev. actuelle]{infrastructure-dev-actuelle.drawio}{18cm}{Infrastructure de développement actuelle}
 
 Ensuite, nous avons la possibilité d'utiliser une infrastructure avec uniquement la base de données
-en conteneur Docker, comme illustré sur la figure \ref{infrastructure-dev-db-laravel-docker.drawio}.
+en conteneur Docker, %comme illustré sur la figure \ref{infrastructure-dev-db-laravel-docker.drawio}.
 %\figi[Infra. dev. avec DB en Docker]{infrastructure-dev-db-docker.drawio}{16cm}{Infrastructure de développement avec une DB en Docker}
 
 Comme nouveau changement, il est également possible de passer tout l'environnement de développement
@@ -698,9 +703,15 @@ Cette solution est considérée comme le prédecesseur à Laravel Sail qui est b
 C'est pourquoi, cette solution ne fera pas parti des choix que nous allons argumenter, mais est
 présentée comme complément. Cette solution correspond à la figure \ref{infrastructure-dev-laravel-homestead.drawio}.
 %\figi[Infra. dev. avec Homestead]{infrastructure-dev-laravel-homestead.drawio}{16cm}{Infrastructure de développement avec Laravel Homestead}
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/infrastructure-dev-laravel-homestead.drawio.png}
+        \caption{Infrastructure de développement avec Laravel Homestead \label{infrastructure-dev-laravel-homestead.drawio}}
+    \end{figure}
+\end{center}
 
 Finalement, une infrastructure avec tous les projets en conteneurs Docker est possible et visible
-avec la figure \ref{infrastructure-dev-db-laravel-vuejs-docker.drawio}.
+avec la figure %\ref{infrastructure-dev-db-laravel-vuejs-docker.drawio}.
 %\figi[Infra. dev. avec DB + Laravel + Vue en Docker]{infrastructure-dev-db-laravel-vuejs-docker.drawio}{16cm}{Infrastructure de développement avec une DB, Laravel et Vue.js en Docker}
 
 %https://laravel.com/docs/9.x/sail
@@ -896,7 +907,7 @@ l'environement de développment illustré sur le tableau \ref{env-dev}.
     \end{center}
 \end{table}
 
-Finalement cela correspond à la figure numéro \ref{infrastructure-dev-db-laravel-docker.drawio}.
+Finalement cela correspond à la figure numéro %\ref{infrastructure-dev-db-laravel-docker.drawio}.
 
 % prod
 \clearpage
@@ -905,15 +916,21 @@ Finalement cela correspond à la figure numéro \ref{infrastructure-dev-db-larav
 \subsubsection{Présentation des infrastructures de production possibles}
 
 %\figi{infrastructure-prod-choix.drawio}{16cm}{Différentes possibilités d'infrastructure de production}
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/infrastructure-prod-choix.drawio.png}
+        \caption{Différentes possibilités d'infrastructure de production \label{infrastructure-prod-choix.drawio}}
+    \end{figure}
+\end{center}
 
-L'infrastructure de production que vous pouvez voir dans la figure \ref{infrastructure-prod-actuelle.drawio} et celle qui était utilisée lorsque j'ai reprise le projet.\\
+L'infrastructure de production que vous pouvez voir dans la figure %\ref{infrastructure-prod-actuelle.drawio} et celle qui était utilisée lorsque j'ai reprise le projet.\\
 En résumé, tous les outils ont été installés nativement sur la machine de production sans virtualisation.\\
 %\figi{infrastructure-prod-actuelle.drawio}{16cm}{Infrastructure de production actuelle}
 
-La figure \ref{infrastructure-prod-db-docker.drawio}, montre la première amélioration possible, c'est à dire, de passer le SGBD en conteneur docker.
+La figure %\ref{infrastructure-prod-db-docker.drawio}, montre la première amélioration possible, c'est à dire, de passer le SGBD en conteneur docker.
 %\figi{infrastructure-prod-db-docker.drawio}{16cm}{Infrastructure de production avec une db en docker}
 
-La figure \ref{infrastructure-prod-db-laravel-docker.drawio}, montre la seconde amélioration possible (mais aussi la première), c'est à dire, de passer l'application web réalisée avec le framework Laravel en conteneur docker.
+La figure %\ref{infrastructure-prod-db-laravel-docker.drawio}, montre la seconde amélioration possible (mais aussi la première), c'est à dire, de passer l'application web réalisée avec le framework Laravel en conteneur docker.
 %\figi{infrastructure-prod-db-laravel-docker.drawio}{16cm}{Infrastructure de production avec une db et laravel en docker}
 
 \subsubsection{Évolutions de l'infrastructure de production possibles}
@@ -1046,7 +1063,7 @@ l'environnement de production suivant \ref{env-prod}.
     \end{center}
 \end{table}
 
-Finalement cela correspond à la figure numéro \ref{infrastructure-prod-db-laravel-docker.drawio}.
+Finalement cela correspond à la figure numéro %\ref{infrastructure-prod-db-laravel-docker.drawio}.
 
 \subsubsection{Analyse de risques}
 % comment protéger une infra en prod
@@ -1119,6 +1136,12 @@ Ne souhaitant pas réaliser une profonde analyse sur ces 2 solutions, car les 2 
 \subsubsection{Présentation des pipeline Devops possibles}
 
 %\figi{devops-choix.drawio}{16cm}{Différents pipelines DevOps possibles}
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/devops-choix.drawio.png}
+        \caption{Différents pipelines DevOps possibles \label{devops-choix.drawio}}
+    \end{figure}
+\end{center}
 
 Ce premier pipeline possible possède uniquement un intérêt si l'infrastructure de production tourne
 à l'aide de conteneurs Docker. En effet, le but est de construire les images Docker contenant tout
@@ -1247,12 +1270,13 @@ Le "kanban" que j'ai créé contient 5 colonnes:
 Pour m'organiser et travailler d'une manière agile, j'ai créé des milestones représantant les sprints que j'allais réaliser durant le projet. Une milestone spécial s'y est glisser, elles est nommée "nice to have" est représente toutes les tâches non inclues dans le cahier des charges ou non prioritaires / nécessaires mais étant intéressantes à ajouter au projet.
 
 \section{Git flow / Workflow}
-Même si j'étais seul lors de ce projet, j'ai prévu qu'il soit potentiellement maintenu par plusieurs personnes à la fois, j'ai donc établi un Git flow ou Workflow afin de faciliter la collaboration. Ce dernier suit un standard bien établi et est consultable à la figure \ref{git-flow}.
+Même si j'étais seul lors de ce projet, j'ai prévu qu'il soit potentiellement maintenu par plusieurs personnes à la fois, j'ai donc établi un Git flow ou Workflow afin de faciliter la collaboration. Ce dernier suit un standard bien établi et est consultable à la figure
+\ref{git-flow} tiré dur site \href{https://www.atlassian.com/fr/git/tutorials/comparing-workflows/.gitflow-workflow}{atlassian}.
 
 \begin{center}
     \begin{figure}
         \includegraphics[width=\textwidth]{./assets/figures/git-flow.png}
-        \caption{Git flow \href{https://www.atlassian.com/fr/git/tutorials/comparing-workflows/gitflow-workflow} \label{git-flow}}
+        \caption{Git flow \label{git-flow}}
     \end{figure}
 \end{center}
 
@@ -1414,8 +1438,8 @@ Tous les autres champs n'ont pas encore fait l'objet de recherches ou de spécif
 
 Les entités concernant les tâches en arrière plan n'apparaîssent pas car elle ne sont pas encore assez connue.
 
-%Certaines colonnes sont communes à plusieurs des tables. C'est le cas de 'created_at',
-%qui indique l'heure de création de la ligne, et 'updated_at', qui indique l’heure à
+%Certaines colonnes sont communes à plusieurs des tables. C'est le cas de $'created_at'$,
+%qui indique l'heure de création de la ligne, et $'updated_at'$, qui indique l’heure à
 %laquelle la ligne à été modifiée pour la dernière fois.
 
 
@@ -1477,28 +1501,34 @@ Laravel s'occupera ensuite de gérer les cas de suppression lui-même.
 
 Ne connaissant pas le framework Laravel à l'origine, mais plutôt celui de Java Spring, j'ai effectué
 un schéma de l'architecture de code de ce dernier afin de le comparer avec celui de Laravel et
-pouvoir mieux le comprendre. Sur la figure \ref{architecture-code-spring.drawio}, on voit clairement
+pouvoir mieux le comprendre. Sur la figure \ref{architecture-code-spring}, on voit clairement
 l'architecture classique allant de la vue passant par les controllers, puis les services contenant
 la logique métier et les repository utilisant les DAO pour commumiquer avec la base de données. \\
 Des DTO peuvent également être ajoutées entre la vue et les controllers.
 
 %\figi{architecture-code-spring.drawio}{16cm}{Architecture de code du framework Spring "classique"}
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/architecture-code-spring.drawio.png}
+        \caption{Architecture de code du framework Spring "classique" \label{architecture-code-spring}}
+    \end{figure}
+\end{center}
 
-J'ai ensuite essayé de comprendre l'architecture de code Laravel et la représenté à l'aide de la
-figure \ref{architecture-code-laravel.drawio}.
+%J'ai ensuite essayé de comprendre l'architecture de code Laravel et la représenté à l'aide de la
+%figure \ref{architecture-code-laravel.drawio}.
 
 %\figi{architecture-code-laravel.drawio}{16cm}{Architecture de code du framework Laravel "classique"}
 
 Je ne comprenais pas où la logique métier (business logic) devait être codée et je pensais donc
-ajouter des services comme l'architecture de code Spring le fait si bien. Cela donnait une
-architecture correspondant à la figure \ref{architecture-code-laravel-proposee.drawio}.
+ajouter des services comme l'architecture de code Spring le fait si bien. %Cela donnait une
+%architecture correspondant à la figure \ref{architecture-code-laravel-proposee.drawio}.
 
 %\figi{architecture-code-laravel-proposee.drawio}{16cm}{Architecture de code Laravel proposée}
 
 Finalement après m'être plus plongé dans le code et la documentation, je me suis rendu compte que
 Laravel proposait beaucoup plus de classe ou d'outil de code que ce que j'avais pu comprendre en
 premier temps. J'ai donc mis à jour l'architecture de code finale et cette dernière suivra le schéma
-de la figure \ref{architecture-code-finale.drawio}.
+de la figure \ref{architecture-code-finale}.
 
 Nous allons maintenant discuté de quelques pattern de code utilisé et fourni par Laravel.\\
 Tout d'abord, on peut observer que les middleware utiliseront l'AuthServiceProvider qui
@@ -1520,6 +1550,12 @@ pas retourné à ce dernier. Ces Resources utilisent également des ResourcesCol
 définir des collections de ressources lorsqu'une route doit fournir plus qu'un seul élément.
 
 %\figi{architecture-code-finale.drawio}{16cm}{Architecture de code Laravel finale}
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/architecture-code-finale.drawio.png}
+        \caption{Architecture de code Laravel finale \label{architecture-code-finale}}
+    \end{figure}
+\end{center}
 
 % cliffhanger
 Avant de passer aux détails d'implémentation de cette architecture de code, il est nécessaire de définir les routes que l'\Gls{api} fournit.
@@ -1553,7 +1589,7 @@ Les routes avec la méthode "PATCH" à mettre à jour seulement certaines donné
 Les routes avec la méthode "DELETE" à supprimer une entrée.
 
 On remarque également qu'il a été choisi d'insérer l'id de l'entrée mise à jour (méthode "PUT") au niveau des données "body" de la requête et non dans la "query string". Le but étant de regrouper toutes les informnations / données à vérifier au même endroit. \\
-La majorité des routes avec la méthode "PATCH" suivent le même principe. Une exception a été faite pour la route "PATCH /api/jobs/{id}/notifications/user/{username}" car aucune donnée ne doit être transmise ne plus du job et de l'utilisateur concerné. Il était donc plus simple et lisible de passer les informations dans la query string.
+La majorité des routes avec la méthode "PATCH" suivent le même principe. Une exception a été faite pour la route "PATCH /api/jobs/\{id\}/notifications/user/\{username\}" car aucune donnée ne doit être transmise ne plus du job et de l'utilisateur concerné. Il était donc plus simple et lisible de passer les informations dans la query string.
 
 % cliffhanger
 Maintenant les routes définies et connues, il est nécessaire de parler de ce qu'il faut fournir et ce qui est nécessaire de fournir pour les utiliser. Nous allons donc voir comment l'authentification pour accéder à l'API a été mise en place.
@@ -1579,16 +1615,22 @@ Il est maintenant nécessaire de définir son fonctionnement plus en détail.
 \subsection{Fonctionnement de Keycloak}
 En résumé, l'outil Keycloak permet à l'école d'utiliser les utilisateurs de leur domaine et donc de leur \Gls{ad} afin d'authentifier une personne. Tout ceci en fournissant un formulaire de connexion et renvoyant un \Gls{jwt} une fois l'authentification réussie.
 
-En consultant la figure \ref{keycloak-flow} et l'image \ref{}, On comprend bien que l'utilisateur arrivant sur le site, commence par s'authentifier à l'aide de ses informations d'identification, puis récupère un \Gls{jwt} agissant comme certificat / clé d'accès afin d'effectuer des requêtes au \Gls{backend}. \\
+En consultant les figures \ref{keycloak-flow.drawio} et \ref{keycloak-flow-lib} (tirée de la librairie \href{https://github.com/robsontenorio/laravel-keycloak-guard}{laravel-keycloak-guard}), on comprend bien que l'utilisateur arrivant sur le site, commence par s'authentifier à l'aide de ses informations d'identification, puis récupère un \Gls{jwt} agissant comme certificat / clé d'accès afin d'effectuer des requêtes au \Gls{backend}. \\
 Ce token / jeton est ensuite ajouter dans l'entête de chaque requête vers le \Gls{backend}. \\
 Lorsque le \Gls{backend}, reçoit une requête, il vérifie le jeton donné grâce à une signature fournie par le domaine Keycloak de la \Gls{heig-vd} et détermine si ce dernier et valable ou non.
 
 %\figi{keycloak-flow.drawio}{16cm}{Flow de Keycloak}
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/keycloak-flow.drawio.png}
+        \caption{Flow de Keycloak \label{keycloak-flow.drawio}}
+    \end{figure}
+\end{center}
 
 \begin{center}
     \begin{figure}
-        \includegraphics[width=\textwidth]{./assets/figures/keycloak-flow.png}
-        \caption{Flow de Keycloak tiré de \href{https://github.com/robsontenorio/laravel-keycloak-guard} \label{keycloak-flow-lib}}
+        \includegraphics[width=\textwidth]{./assets/figures/keycloak-flow-lib.png}
+        \caption{Flow de Keycloak tiré de \label{keycloak-flow-lib}}
     \end{figure}
 \end{center}
 
@@ -1649,6 +1691,12 @@ Par définition, les rôles worker et validator peuvent être vu comme des sorte
 On peut donc représenter les rôles sous la forme d'un diagramme, comme la figure \ref{roles-diagram.drawio}
 
 %\figi{roles-diagram.drawio}{16cm}{Diagramme de classe des rôles de l'application}
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/roles-diagram.drawio.png}
+        \caption{Diagramme de classe des rôles de l'application \label{roles-diagram.drawio}}
+    \end{figure}
+\end{center}
 
 Quelques précisions s'imposent, on remarque que le rôle "client" est donné à n'importe quel utilisateur authentifier par la \Gls{heig-vd}. \\
 On remarque aussi que le rôle "admin" possède tous les droits.
@@ -1664,7 +1712,7 @@ Mais avant cela, un petit rappel sur le nom de fonctions utilisées pour les mé
 \begin{table}[h]
     \begin{center}
         \caption{Rappel des méthodes définies par Laravel pour une API \label{rappel-methode-api}}
-        \begin{tabularx}{1.0\textwidth} {X|X}
+        \begin{tabularx}{1.0\textwidth} {X|X|X}
             Méthode HTTP & Chemin  & Nom de fonction \\ \hline
             GET          & /       & index           \\
             GET          & /\{id\} & show            \\
@@ -1688,7 +1736,7 @@ Pour la route "files", la gestion des autorisations est disponible sur la figure
 \begin{table}[h]
     \begin{center}
         \caption{Route "files" \label{autorisations-route-files}}
-        \begin{tabularx}{1.0\textwidth} {X|X}
+        \begin{tabularx}{1.0\textwidth} {X|X|X|X|X}
             rôles  & show & store & update & delete \\ \hline
             admin  & x    & x     & x      & x      \\
             client & j    & j     & j      & j      \\
@@ -1707,7 +1755,7 @@ Pour les actions du client uniquement, il doit faire partie du travail en tant q
 \begin{table}[h]
     \begin{center}
         \caption{Route "jobs" \label{autorisations-route-jobs}}
-        \begin{tabularx}{1.0\textwidth} {X|X}
+        \begin{tabularx}{1.0\textwidth} {X|X|X|X|X|X}
             rôles  & index & show & store & update & delete \\ \hline
             admin  & x     & x    & x     & x      & x      \\
             client &       & j    & x     & j      & j      \\
@@ -1724,7 +1772,7 @@ Pour les actions du client uniquement, il doit faire partie du travail en tant q
 \begin{table}[h]
     \begin{center}
         \caption{Route "jobs" suite \label{autorisations-route-jobs-other-get}}
-        \begin{tabularx}{1.0\textwidth} {X|X}
+        \begin{tabularx}{1.0\textwidth} {X|X|X|X|X}
             rôles  & get unassigned jobs & get all user's jobs & get all client's jobs & get all worker's jobs \\ \hline
             admin  & x                   & x                   & x                     & x                     \\
             client &                     & u                   & u                     &                       \\
@@ -1738,7 +1786,7 @@ u = Pour effectuer ces actions, le client / travailleur doit être le même util
 \begin{table}[h]
     \begin{center}
         \caption{Route "jobs" suite 2\label{autorisations-route-jobs-updates}}
-        \begin{tabularx}{1.0\textwidth} {X|X}
+        \begin{tabularx}{1.0\textwidth} {X|X|X|X|X}
             rôles  & assign a worker & update status & update rating & update notifications \\ \hline
             admin  & x               & x             & x             & x                    \\
             client &                 &               & j             & j u                  \\
@@ -1758,7 +1806,7 @@ u = Pour effectuer ces actions, le client / travailleur doit être le même util
 \begin{table}[h]
     \begin{center}
         \caption{Route "messages" \label{autorisations-route-messages}}
-        \begin{tabularx}{1.0\textwidth} {X|X}
+        \begin{tabularx}{1.0\textwidth} {X|X|X|X}
             rôles  & index & show & store \\ \hline
             admin  & x     & x    & x     \\
             client &       & m    & j s   \\
@@ -1776,7 +1824,7 @@ s = Pour effectuer ces actions, le client / travailleur doit être l'expéditeur
 \begin{table}[h]
     \begin{center}
         \caption{Route "users" \label{autorisations-route-users}}
-        \begin{tabularx}{1.0\textwidth} {X|X}
+        \begin{tabularx}{1.0\textwidth} {X|X|X|X|X|X|X}
             rôles  & index & show & store & update & delete & update email notifications \\ \hline
             admin  & x     & x    & x     & x      & x      & x                          \\
             client &       & u    &       &        &        & u                          \\
@@ -1792,7 +1840,7 @@ u = Pour effectuer ces actions, le client / travailleur doit être le même util
 \begin{table}[h]
     \begin{center}
         \caption{Route "job categories" \label{autorisations-route-job-categories}}
-        \begin{tabularx}{1.0\textwidth} {X|X}
+        \begin{tabularx}{1.0\textwidth} {X|X|X|X|X|X|X}
             rôles  & index & show & store & update & delete & image \\ \hline
             admin  & x     & x    & x     & x      & x      & x     \\
             client & x     & x    &       &        &        & x     \\
@@ -1811,7 +1859,7 @@ Seul les administrateurs peuvent effectuer des actions sur les routes suivantes:
 \begin{table}[h]
     \begin{center}
         \caption{Routes admin \label{autorisations-route-admin}}
-        \begin{tabularx}{1.0\textwidth} {X|X}
+        \begin{tabularx}{1.0\textwidth} {X|X|X|X|X|X}
             rôles  & index & show & store & update & delete \\ \hline
             admin  & x     & x    & x     & x      & x      \\
             client &       &      &       &        &        \\
@@ -1888,7 +1936,7 @@ Le tableau \ref{reponses-erreurs-backend} trace les différentes réponses que l
 \begin{table}[h]
     \begin{center}
         \caption{Réponses et erreurs retournées par le Backend \label{reponses-erreurs-backend}}
-        \begin{tabularx}{1.0\textwidth} {X|X}
+        \begin{tabularx}{1.0\textwidth} {X|X|X}
             Status code & Signification         & Événements générant la réponse                                                                   \\ \hline
             200         & Ok                    & L'action a été exécutée avec succès                                                              \\
             400         & Bad Request           & Lorsqu'une erreur de logique métier s'est produite ou que le chemin n'existe pas                 \\
@@ -1955,18 +2003,18 @@ Pour valider un fichier, certains conditions doivent être respectées, les voic
     \item le fichier doit posséder un type accepter par la catégorie de travail auquel le job est relié;
 \end{itemize}
 
-Toutes ces validations sont réalisées dans une fonction nommée "is_valid_file" que vous pouvez consulter à la figure \ref{file-validation}. Cette fonction est utilisée dans toutes les "Form Request" nécessitant un fichier.
+Toutes ces validations sont réalisées dans une fonction nommée "\verb|is_valid_file|" que vous pouvez consulter à la figure \ref{file-validation}. Cette fonction est utilisée dans toutes les "Form Request" nécessitant un fichier.
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/FileValidation.php}
-    \caption{fonction is_valid_file du "File Service" \label{file-validation}}
+    \caption{fonction \verb|is_valid_file| du "File Service" \label{file-validation}}
 \end{listing}
 
 Un point important concernant la validation de fichier étant le type de fichier qui est détecté par la fonction "extension" de Laravel. Cette dernière inspecte le fichier et détermine son type. Cette dernière fonctionne très bien avec les types de fichiers classique, cependant, certains types de fichiers qui m'ont été demandé d'ajouter, ne sont pas du tout détecté correctement par cette dernière. \\
 De ce fait, j'ai dû trouvé une solution et la voici. J'ai créé deux listes constantes de types de fichiers non supportés par cette fonction. \\
 La première liste défini les types de fichiers dont j'ai pu testé l'upload et donc obtenir le type retourné par la fonction "extension". Cette liste fait également l'objet d'un tableau de correspondance qui est utilisé lorsqu'il faut vérifier le type du fichier. \\
 La seconde liste contient tous les types de fichiers que je n'ai pas pu tester et qui esquiveront donc la vérification de la fonction "extension". \\
-Une façon d'améliorer cette solution un peu "bout de bois" serait d'essayer d'utiliser la fonction "mime_content_type" de PHP.
+Une façon d'améliorer cette solution un peu "bout de bois" serait d'essayer d'utiliser la fonction "\verb|mime_content_type|" de PHP.
 
 Une autre requête m'a été demandée en fin de projet, les types de fichiers compressé devraient si possible être validé en observant également les fichiers à l'intérieur du fichier compresser et en les validant. Cette demande n'a pas pu être mise en place pour le moment, mais des essaies ont été tentés et sont disponibles en commentaires dans le code principal, ainsi que sur l'issue ouverte sur Github.
 
@@ -1995,7 +2043,7 @@ Toute cette procédure est disponible en code sous la figure \ref{file-upload}.
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/FileUpload.php}
-    \caption{fonction store_file du "File Service" \label{file-upload}}
+    \caption{fonction \verb|store_file| du "File Service" \label{file-upload}}
 \end{listing}
 
 De la même façon, avec le hash et la parade des dossiers, le "File Service" gère également la mise à jour et la suppression d'un fichier.
@@ -2011,7 +2059,7 @@ Le code permettant de réaliser ces deux actions est disponible sur la figure \r
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/FileDownload.php}
-    \caption{Fonction store_file du "File Service" \label{file-download}}
+    \caption{Fonctions \verb|download_file| et \verb|get_file_url| du "File Service" \label{file-download}}
 \end{listing}
 
 Le codee utilise les fonctions fournies par Laravel consultable sur la \href{https://laravel.com/docs/9.x/filesystem#downloading-files}{documentation pour le download} et la \href{https://laravel.com/docs/9.x/filesystem#file-urls}{documentation pour les urls}.
@@ -2024,7 +2072,13 @@ Pour notre application, nous souhaitons réaliser une timeline indiquant tous le
 On peut clairement comprendre quel type d'événement est généré dans quelle situation. \\
 Il est important de prendre en compte que lorsqu'un événement est créé dans chacune des ces actions, ce dernier a forcément la valeur "to notify" à "true" et va donc indiquer à l'utilisateur concerné (à droite) la notification sur le travail lié.
 
-\figi{events-email-scenario.drawio}{16cm}{Conception des événements pour les Websockets}
+%\figi{events-email-scenario.drawio}{16cm}{Conception des événements pour les notifications et la timeline}
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/events-email-scenario.drawio.png}
+        \caption{Conception des événements pour les notifications et la timeline \label{events-email-scenario.drawio}}
+    \end{figure}
+\end{center}
 
 % cliffhanger
 On peut également voir que quand un événement est généré, un email est préparé et c'est ce dont nous allons parler dans la prochaine section.
@@ -2035,7 +2089,7 @@ Comme les emails ne doivent pas être envoyé tout de suite mais uniquement apr�
 Au final, ce n'est pas le mail qui est retardé, mais le "Job" qui envoie le mail qui l'est.
 
 Les "Jobs" en attente sont stockés dans la base de données en attendant d'être exécuter. \\
-De ce fait, deux tables ont été ajoutées aux "migrations", ce sont les tables "jobs_queue" et "failed_jobs".
+De ce fait, deux tables ont été ajoutées aux "migrations", ce sont les tables "\verb|jobs_queue|" et "\verb|failed_jobs|".
 
 Pour mettre en place notre système de mail et de queue, un "NotificationsEmailJob" a été créé, disponible dans le dossier "/app/Jobs" ainsi qu'un "NotificationsEmail" disponibles dans le dossier "/app/Mail". \\
 Une méthode permettant de "dispatch" le "NotificationsEmailJob" a été ajouté au modèle "Event" comme méthode de "service". Cette dernière "dispatch" simplement le mail en fonction du statut de l'environnement (production ou développement). \\
@@ -2079,7 +2133,13 @@ Pour mettre en place ce système de Webosckets, j'ai d'abord défini tous les é
 Ces scénarii sont disponibles sur la figure \ref{ws-conception-notifications.drawio}. \\
 Un Event est au final un objet contenant le canal sur lequel il doit être envoyé et les données qu'il doit envoyer.
 
-\figi{ws-conception-notifications.drawio}{16cm}{Conception des événements pour les Websockets}
+%\figi{ws-conception-notifications.drawio}{16cm}{Conception des événements pour les Websockets}
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/ws-conception-notifications.drawio.png}
+        \caption{Conception des événements pour les Websockets \label{ws-conception-notifications.drawio}}
+    \end{figure}
+\end{center}
 
 Un exemple de code d'un "Event" est disponible à la figure \ref{event-exemple}. \\
 Comme expliqué précédemment, on remarque la méthode "broadcastOn" retournant le channel sur lequel doit être transmis les données lorsque cet événement intervient. \\
@@ -2115,7 +2175,7 @@ Cette manière de faire permet d'avoir un fichier ".env" pour le développement 
 
 Le second fichier à configurer est nommé "webosckets.php" est se voit ajouter la configuration disponible sur la figure \ref{ws-broadcasting}. \\
 Comme pour le premier fichier et pour les mêmes raisons, un maximum de données sont associées aux valeurs données dans le ".env". \\
-On peut remarquer les lignes "verify_peer" et "verify_peer_name" qui sont à false afin d'accepter les certificats autosignés.
+On peut remarquer les lignes "\verb|verify_peer|" et "\verb|verify_peer_name|" qui sont à false afin d'accepter les certificats autosignés.
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/websockets.php}
@@ -2312,9 +2372,8 @@ Voici donc une liste de références:
     \includepdf{./assets/annexes/planning-v2.pdf}
 \end{landscape}
 
-\begin{landscape}
-    \includepdf{./assets/annexes/test-protocole.pdf}
-\end{landscape}
+
+\includepdf{./assets/annexes/test-protocole.pdf}
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/13_create_roles_table.php}
