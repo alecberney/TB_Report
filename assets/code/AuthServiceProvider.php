@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+[...]
+
 class AuthServiceProvider extends ServiceProvider
 {
 

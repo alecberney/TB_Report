@@ -1,5 +1,7 @@
 <?php
 
+[...]
+
 public static function is_valid_file($file, $accepted_file_types): bool
 {
     if ($file == null) {
@@ -18,9 +20,11 @@ public static function is_valid_file($file, $accepted_file_types): bool
     $file_type_matching_ok = true;
     if (self::is_file_type_not_detected_with_correspondence(
         $file->getClientOriginalExtension())) {
-        $file_type_correspondence = self::get_file_type_correspondence($file->getClientOriginalExtension());
+        $file_type_correspondence = self::get_file_type_correspondence(
+            $file->getClientOriginalExtension());
         $file_type_matching_ok = $file_type_correspondence == $file->extension();
-    } else if (!self::is_file_type_not_detected_without_correspondence($file->getClientOriginalExtension())
+    } else if (!self::is_file_type_not_detected_without_correspondence(
+        $file->getClientOriginalExtension())
         && $file->getClientOriginalExtension() != $file->extension()) {
         $file_type_matching_ok = false;
     }
@@ -31,13 +35,15 @@ public static function is_valid_file($file, $accepted_file_types): bool
     }
 
     // Verify if file type exists in BD
-    $file_type = FileType::where('name', '=', $file->getClientOriginalExtension())->first();
+    $file_type = FileType::where('name', '=', 
+        $file->getClientOriginalExtension())->first();
     if ($file_type == null) {
         log::Info("File type not found in BD");
         return false;
     }
 
-    // $file->extension() = Determine the file's extension based on the file's MIME type
+    // $file->extension() = Determine the file's extension based 
+    // on the file's MIME type
     // Check matching file type with file extension
     if (!self::is_file_type_not_detected($file->getClientOriginalExtension())
         && $file_type->name != $file->extension()) {
@@ -53,3 +59,5 @@ public static function is_valid_file($file, $accepted_file_types): bool
 
     return true;
 }
+
+[...]

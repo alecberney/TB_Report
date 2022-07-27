@@ -1,5 +1,7 @@
 <?php
 
+[...]
+
 class JobAssignedEvent implements ShouldBroadcastNow
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;

@@ -44,45 +44,4 @@ class FilePolicy
         );
     }
 
-    public function update(User $user)
-    {
-        $file = File::findOrFail(app('request')->get('id'));
-
-        return PolicyHelper::can_access(
-            $file->job->client_username == $user->username,
-            "User can update file with id " . $file->id,
-            "User tried to update file with id ".
-            $file->id . " to a job but is not client in job related"
-        );
-    }
-
-    public function destroy(User $user, int $id)
-    {
-        $file = File::findOrFail($id);
-
-        return PolicyHelper::can_access(
-            $file->job->client_username == $user->username,
-            "User can delete file with id " . $id,
-            "User tried to delete file with id " .
-            $id . " to a job but is not client in job related"
-        );
-    }
-
-    // Other functions
-    public function download(User $user, int $id)
-    {
-        $file = File::findOrFail($id);
-
-        if ($file->job == null && $file->job_category != null) {
-            Log::Info("User can download file with id " . $id);
-            return true;
-        }
-
-        return PolicyHelper::can_access(
-            $file->job->participate_in_job($user),
-            "User can download file with id " . $id,
-            "User tried to download file with id " .
-            $id . " but does not participate in job related"
-        );
-    }
-}
+    [...]

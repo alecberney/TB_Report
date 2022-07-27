@@ -2,6 +2,8 @@
 
 return [
 
+    [...]
+
     'defaults' => [
         'guard' => 'api', // Define guard for API
         'passwords' => 'users',
@@ -13,4 +15,6 @@ return [
             'provider' => 'users',
         ],
     ],
+
+    [...]
 ];

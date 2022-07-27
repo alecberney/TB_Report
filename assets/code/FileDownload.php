@@ -1,4 +1,7 @@
 <?php
+
+[...]
+
 // File Storage Service
 public const PRIVATE_FILE_STORAGE_PATH = 'private/file-storage/';
 public const PUBLIC_FILE_STORAGE_PATH = 'public/';
@@ -23,3 +26,5 @@ public static function get_file_url($file)
         return null;
     }
 }
+
+[...]

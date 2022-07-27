@@ -4,7 +4,7 @@
 
     - name: Generate key
       run: php artisan key:generate
-      
+
     - name: Run laravel database migrations and seeding
       env:
         DB_CONNECTION: mysql
@@ -23,4 +23,14 @@
         DB_USERNAME: user
         DB_PASSWORD: secret
         DB_PORT: ${{ job.services.mysql.ports[3306] }}
-      run: vendor/bin/phpunit
+        KEYCLOAK_REALM_PUBLIC_KEY: test
+        KEYCLOAK_USER_PROVIDER_CREDENTIAL: username
+        KEYCLOAK_TOKEN_PRINCIPAL_ATTRIBUTE: preferred_username
+      run: vendor/bin/phpunit --coverage-clover clover.xml
+
+    - name: Generate test coverage badge
+      uses: timkrase/phpunit-coverage-badge@v1.2.0
+      with:
+        coverage_badge_path: 'badge-coverage.svg'
+        push_badge: true
+        repo_token: ${{ secrets.GITHUB_TOKEN }}

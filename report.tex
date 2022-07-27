@@ -13,6 +13,8 @@
 
 \signature{signature_alec_berney.svg}
 
+\setcounter{tocdepth}{1}
+
 \makenomenclature
 \makenoidxglossaries
 \makeindex
@@ -142,7 +144,7 @@ Les points ressortant de l'analyse de ce dernier sont les suivants:
     \item Les entrées utilisateurs ne font l'objet d'aucune vérification syntaxique et sémantique,
     \item Le projet possède des dépendances obsolètes et non mise à jour,
     \item Les valeurs textuelles sont toutes insérées directement dans le code et n'offre pas la possibilité de traduire facilement le site,
-    \item Les valeurs concernant les machines et les catégories de travaux sont "hardcodées" dans le frontend.
+    \item Les valeurs concernant les machines et les catégories de travaux sont \emph{hardcodées} dans le frontend.
 \end{itemize}
 
 \subsection{Propositions d'améliorations}
@@ -374,7 +376,7 @@ Voici un résumé des décisions prises lors de la première phase du projet:
     \item Outil SSO: \href{https://www.switch.ch/aai/about/shibboleth/}{Shibboleth}. %https://blog.miniorange.com/what-is-shibboleth/
 \end{itemize}
 
-Au final, la "stack" de technologies utilisées ressemble à celle de la figure \ref{stack-old-tb}
+Au final, la \emph{stack} de technologies utilisées ressemble à celle de la figure \ref{stack-old-tb}
 
 \begin{center}
     \begin{figure}
@@ -474,8 +476,8 @@ Mais utiliser des outils qui sont gratuits ou open source offre également un pl
 Pour pour pouvoir comparer les différentes infrastructures et faire des choix sur ces dernières, il est important d'introduire l'outil \Gls{docker}.\\
 Docker est un outil permettant de gérer des conteneurs.\\
 Qu'est-ce qu'un conteneur? Un \Gls{conteneur} est une sorte de machine virtuelle plus légère ayant pour but d'encapsuler une ou plusieurs applications / outils technologiques ainsi que toutes les dépendances que ces applications exigent pour leur bon fonctionnement.\\
-Il ne s'agit donc pas de virtualisation mais de "conteneurisation" ou "containerization" en anglais.
-Dans une "conteneurisation", seul l'\Gls{os} et le software est virtualisé et non le hardware.\\
+Il ne s'agit donc pas de virtualisation mais de \emph{conteneurisation} ou \emph{containerization} en anglais.
+Dans une \emph{conteneurisation}, seul l'\Gls{os} et le software est virtualisé et non le hardware.\\
 Nous remarquons bien la différence avec la figure suivante \ref{docker-compare}
 
 \begin{center}
@@ -1230,7 +1232,7 @@ Finissons avec le pipeline Github \ref{devops-github}.
 %     \end{figure}
 % \end{center}
 
-\chapter{Github et code}
+\chapter{Github et gestion de projet}
 Avant de commencer à parler de conception et de réalisation, il est nécessaire de parler de la façon dont les projets sont stockés et gérer.
 
 \section{Association GitHub}
@@ -1245,7 +1247,7 @@ Dans cette association, trois \Gls{repository} ont été créés, les voici:
 \end{itemize}
 
 \section{README}
-Chaque \Gls{repository} contient un fichier "README.md" indiquant toutes les instructions à suivre afin d'installer l'environement de développement lié au \Gls{repository} ainsi que quelques informations supplémentaires utiles tel que les versions des outils utilisés pour le développement.
+Chaque \Gls{repository} contient un fichier \emph{README.md} indiquant toutes les instructions à suivre afin d'installer l'environement de développement lié au \Gls{repository} ainsi que quelques informations supplémentaires utiles tel que les versions des outils utilisés pour le développement.
 
 Les \Gls{repository} sont rédigés en anglais afin de pouvoir transmettre le plus aisément possible le projet.
 
@@ -1253,21 +1255,21 @@ Les \Gls{repository} sont rédigés en anglais afin de pouvoir transmettre le pl
 Le \Gls{repository} fablab-manager étant le principal, ce dernier possède également un wiki avec énormément d'informations concernant la conception et la réalisation du projet. On peut notamment retrouver une majorité des informations disponibles dans ce rapport.
 
 \section{Issues Github}
-Ce \Gls{repository} liste également toutes les tâches réalisées et à réaliser du projet. Ces tâches sont répertoriées sous forme d'"issue" \Gls{github}. Ces dernières indique grâce à des labels s'il s'agit d'un bug, de la documentation, un ajout, etc. et si elles appartiennent au projet \Gls {frontend} ou \Gls{backend} ou les deux.
+Ce \Gls{repository} liste également toutes les tâches réalisées et à réaliser du projet. Ces tâches sont répertoriées sous forme d'\emph{issue} \Gls{github}. Ces dernières indique grâce à des labels s'il s'agit d'un bug, de la documentation, un ajout, etc. et si elles appartiennent au projet \Gls {frontend} ou \Gls{backend} ou les deux.
 
 \section{Kanban}
-Les "issues" abordées, il est maintenant nécessaire de parler du "kanban" mis en place. Le "kanban" est un tableau contenant toutes les "issues" et les rangeants dans des catégories en fonction de l'avancement de la tâche / "issue". \\
-Le "kanban" que j'ai créé contient 5 colonnes:
+Les \emph{issues} abordées, il est maintenant nécessaire de parler du \emph{kanban} mis en place. Le \emph{kanban} est un tableau contenant toutes les \emph{issues} et les rangeants dans des catégories en fonction de l'avancement de la tâche / \emph{issue}. \\
+Le \emph{kanban} que j'ai créé contient 5 colonnes:
 \begin{itemize}
-    \item backlog représantant toutes les tâches / "issues" à mettre en place sur le projet à terme,
-    \item todo (actual sprint) représantant toutes les tâches / "issues" à réaliser pendant le sprint actuel,
-    \item in-progress indiquant toutes les tâches / "issues" en cours de réalisation,
-    \item done but can be modified indiquant les tâches / "issues" terminée mais pouvant être re-modifiée.
-    \item done représentant les tâches / "issues" terminées et fermées.
+    \item backlog représantant toutes les tâches / \emph{issues} à mettre en place sur le projet à terme,
+    \item todo (actual sprint) représantant toutes les tâches / \emph{issues} à réaliser pendant le sprint actuel,
+    \item in-progress indiquant toutes les tâches / \emph{issues} en cours de réalisation,
+    \item done but can be modified indiquant les tâches / \emph{issues} terminée mais pouvant être re-modifiée.
+    \item done représentant les tâches / \emph{issues} terminées et fermées.
 \end{itemize}
 
 \section{Milestones}
-Pour m'organiser et travailler d'une manière agile, j'ai créé des milestones représantant les sprints que j'allais réaliser durant le projet. Une milestone spécial s'y est glisser, elles est nommée "nice to have" est représente toutes les tâches non inclues dans le cahier des charges ou non prioritaires / nécessaires mais étant intéressantes à ajouter au projet.
+Pour m'organiser et travailler d'une manière agile, j'ai créé des milestones représantant les sprints que j'allais réaliser durant le projet. Une milestone spécial s'y est glisser, elles est nommée \emph{nice to have} est représente toutes les tâches non inclues dans le cahier des charges ou non prioritaires / nécessaires mais étant intéressantes à ajouter au projet.
 
 \section{Git flow / Workflow}
 Même si j'étais seul lors de ce projet, j'ai prévu qu'il soit potentiellement maintenu par plusieurs personnes à la fois, j'ai donc établi un Git flow ou Workflow afin de faciliter la collaboration. Ce dernier suit un standard bien établi et est consultable à la figure
@@ -1280,12 +1282,13 @@ Même si j'étais seul lors de ce projet, j'ai prévu qu'il soit potentiellement
     \end{figure}
 \end{center}
 
+\section{Postman}
+Durant le développement du \Gls{backend}, j'ai réalisé un \href{Postman collaboratif}{https://www.postman.com/} afin d'acceuillir toutes les requêtes possibles pour le backend et le tester pendant la phase de développement.
+
 % cliffhanger
 Maintenant les outils de travail ont été définis, nous pouvons passer à la conception et la réalisation de la base de données, racine de tout projet avec stockage de données.
 
 \chapter{Conception et Réalisation de la BD}
-
-Dans toutes les desciptions suivantes, les tirets du bas seront remplacé par des "-" à cause d'un problème de LaTex.
 
 \section{Modèle EA}
 Le modèle Entité-Associations est la première étape lors de la conception d'une base de données. Il se rapproche également d'un diagramme de classe classique utiliser pour la POO (programmation orienté objet).\\
@@ -1302,7 +1305,7 @@ Les symboles et numéros à chaque extrémités des entités indiquent respectiv
     \item * : zéro ou plusieurs.
 \end{itemize}
 
-Par exemple, on peut lire l'association "user" - "message", comme ceci:\\
+Par exemple, on peut lire l'association \emph{user - message}, comme ceci:\\
 Un utilisateur peut envoyer zéro ou plusieurs messages.\\
 Un message peut être envoyé que par un utilisateur.
 
@@ -1316,17 +1319,17 @@ Finalement, quelques commentaires peuvent être ajouté avec des rectangles pli�
 \end{center}
 
 \subsection{Entité user}
-L'entité "user" représente un utilisateur de l'application, que ce soit un élève, un professeur ou un technicien.\\
-Il possède des informations classiques le concernant, ainsi que le champ "switch-uuid" représentant l'identifiant unique fourni par le service Switch edu-id qui sera utilisé.\\
-Les champs contenant le mot "notify" servent à stocker les préférences de l'utilisateur concernant les notifications de l'application.
+L'entité \emph{user} représente un utilisateur de l'application, que ce soit un élève, un professeur ou un technicien.\\
+Il possède des informations classiques le concernant, ainsi que le champ \emph{username} représentant l'identifiant unique fourni par le service Switch edu-id qui sera utilisé.\\
+Les champs contenant le mot \emph{notify} servent à stocker les préférences de l'utilisateur concernant les notifications de l'application.
 
 On voit au niveau des relations, que l'utilisateur peut envoyer et recevoir des messages.\\
-Il peut posséder également plusieurs rôles mais doit en posséder au moins un, celui par défaut qui est le rôle "client".\\
-L'utilisateur peut de toute façon faire une demande de travail (job). Cependant, seul les utilisateurs possédant le rôle "validator", en général, les professeurs pourront valider le travail.\\
-Le travail validé, un "worker", en général un technicien, pourra réaliser le travail demander et en indiquer le suivi.
+Il peut posséder également plusieurs rôles mais doit en posséder au moins un, celui par défaut qui est le rôle \emph{client}.\\
+L'utilisateur peut de toute façon faire une demande de travail (job). Cependant, seul les utilisateurs possédant le rôle \emph{validator}, en général, les professeurs pourront valider le travail.\\
+Le travail validé, un \emph{worker}, en général un technicien, pourra réaliser le travail demander et en indiquer le suivi.
 
 \subsection{Entité job}
-L'entité "job" représente un travail demandé par un utilisateur de l'application.\\
+L'entité \emph{job} représente un travail demandé par un utilisateur de l'application.\\
 Il possède un id (identifiant unique), une description du travail à réaliser, une date butoir (deadline), une évaluation que l'utilisateur / client peut attribuer au travail terminé et un status d'avancement du travail mis à jour par le travailleur.\\
 Le status d'avancement d'un travail sera défini par un enum (liste exhaustive de valeurs), la voici:
 \begin{itemize}
@@ -1345,7 +1348,7 @@ Il doit également contenir un ou plusieurs fichiers nécessaires pour réaliser
 Finalement, certains événements peuvent être lié au travail. On parle ici d'événement permettant de préfevenir l'utilisateur via des notifications ou email.
 
 \subsection{Entité role}
-L'entité "role" représente simplement un rôle que peut avoir un utilisateur au sein de l'application. Cette entité est nécessaire car un utilisateur peut posséder plusieurs rôles et ils doivent tous être défini la même chose.\\
+L'entité \emph{role"}représente simplement un rôle que peut avoir un utilisateur au sein de l'application. Cette entité est nécessaire car un utilisateur peut posséder plusieurs rôles et ils doivent tous être défini la même chose.\\
 Seul un id (identifiant unique) et un nom du rôle est nécessaire.\\
 Voici la liste des rôles définis:
 \begin{itemize}
@@ -1356,38 +1359,39 @@ Voici la liste des rôles définis:
 \end{itemize}
 
 \subsection{Entité message}
-L'entité "message" représente un message envoyé entre deux utilisateurs au sujet d'un travail demandé.\\
+L'entité \emph{message} représente un message envoyé entre deux utilisateurs au sujet d'un travail demandé.\\
 Il possède uniquement un id (identifiant unique) et un texte.\\
 Il est associé à deux utilisateurs, un représentant celui qui a envoyé le message et l'autre celui qu'il l'a reçu. Le message est également associé au travail dont il est le sujet.\\
 Une aggrégation a été modélisé pour cette dernière association car on souhaite supprimé tous les messages liés à un travail, si ce dernier est supprimé.
 
 \subsection{Entité job-category}
-L'entité "job-category" représente une catégorie de travail pouvant être effecutée au Fablab, pare exemple, une impression 3D ou une découpe laser.\\
+L'entité \emph{job-category} représente une catégorie de travail pouvant être effecutée au Fablab, pare exemple, une impression 3D ou une découpe laser.\\
 La catégorie possède un id (identifiant unique), un acronyme et un nom.\\
 Elle est associé à un travail car ce dernier est obligé d'avoir une catégorie.\\
 Elle possède également une ou plusieurs machines (device) sur lesquels peuvent être réaliser les travaux.\\
-Comme elle possède des machines, une liste de type de fichiers acceptés est nécessaire et est défini par l'association "job-category" - "file-type". Cela permettra de facilement vérifier si un fichier donné pour un travail peut être accepté pour la catégorie de ce dernier.
+Comme elle possède des machines, une liste de type de fichiers acceptés est nécessaire et est défini par l'association \emph{job-category - file-type}. Cela permettra de facilement vérifier si un fichier donné pour un travail peut être accepté pour la catégorie de ce dernier.
 
 \subsection{Entité device}
-L'entité "device" représente une machine / un outil utilisé pour réaliser un travail du Fablab.\\
+%todo remove
+L'entité \emph{device} représente une machine / un outil utilisé pour réaliser un travail du Fablab.\\
 La machine possède un id (identifiant unique), un nom, une description plus précise et un chemin de fichier où est stocké son image (cette partie pourrait changer).\\
 Comme expliqué précédement dans la catégorie, elle possède une ou plusieurs catégories sur lesquels elle peut être utilisée.\\
 
 \subsection{Entité file-type}
-L'entité "file-type" représente un type de fichier que peut accepter une catégorie de travail du fablab.\\
+L'entité \emph{file-type} représente un type de fichier que peut accepter une catégorie de travail du fablab.\\
 Le type de fichier possède un id (identifiant unique), un nom et un \href{https://developer.mozilla.org/fr/docs/Web/HTTP/Basics_of_HTTP/MIME_Types}{mime-type} étant utiliser pour valider les fichiers télécharger.\\
 Comme expliqué précédement dans la catégorie, un type de fichier possède une ou plusieurs catégories qui sont acceptées.\\
 Le type de fichier peut également être associé à plusieurs fichiers.
 
 \subsection{Entité file}
-L'entité "file" représente un fichier fourni pour réaliser un travail du Fablab.\\
+L'entité \emph{file} représente un fichier fourni pour réaliser un travail du Fablab.\\
 Le fichier possède un id (identifiant unique), un nom et un hash de son contenu.\\
 Il est associé à un type de fichier (file-type), ce qui est utile pour faire le lien avec la catégorie du travail.\\
 Il possède évidemment un travail pour indiquer pour auquel il appartient.\\
 Une aggrégation a été modélisée pour cette dernière association car on souhaite supprimé tous les fichiers liés à un travail, si ce dernier est supprimé.
 
 \subsection{Entité event}
-L'entité "event" représente un événement concernant un travail du fablab. Par exemple, un événement est généré si le status d'un travail a été modifié ou si un fichier a été ajouté. \\
+L'entité \emph{event} représente un événement concernant un travail du fablab. Par exemple, un événement est généré si le status d'un travail a été modifié ou si un fichier a été ajouté. \\
 L'événement possède un id (identifiant unique) et des données (data).\\
 Il est associé à un travail comme expliqué plus précédement.\\
 Une aggrégation a été modélisée pour cette dernière association car on souhaite supprimé tous les événements liés à un travail, si ce dernier est supprimé.
@@ -1403,8 +1407,7 @@ Les champs obtiennent des types représentant la façon dont ils seront stockés
 Les clés étrangère issues des association s'ajoutent aux tables.\\
 Les associations N à N du modèle EA voient naître une table intermédiaire. Voici celles qui ont été créées:
 \begin{itemize}
-    \item device-job-category,
-    \item file-type-job-category,
+    \item file-type-job-category;
     \item role-user.
 \end{itemize}
 
@@ -1417,9 +1420,9 @@ Les associations N à N du modèle EA voient naître une table intermédiaire. V
 
 Sur le schéma, quelques nouveaux symboles apparaîssent, voici une légende:
 \begin{itemize}
-    \item Clé jaune : clé primaire de la table,
-    \item Losange bleu : la colonne ne peut pas valoir null,
-    \item Losange vide : la colonne peut valoir null,
+    \item Clé jaune : clé primaire de la table;
+    \item Losange bleu : la colonne ne peut pas valoir null;
+    \item Losange vide : la colonne peut valoir null;
     \item Losange rouge : la colonne possède une clé étrangère.
 \end{itemize}
 
@@ -1427,10 +1430,10 @@ Une clé étrangère étant le champ représantant une autre table issue d'une r
 
 \subsection{Champs spéciaux}
 Quelques champs obtiennent des valeurs précises et méritent une explication.\\
-Les champs switch-uuid et email, de la table "users" possèdent 320 charactères car ils sont tous
+Les champs switch-uuid et email, de la table \emph{users} possèdent 320 charactères car ils sont tous
 deux des emails ou des dérivés et une email peut contenir au maximum 320 charactères \cite{email-length}.
 
-Le champ status de la table "job" est une enum comme expliqué précédement dans le modèle EA.
+Le champ status de la table \emph{job} est une enum comme expliqué précédement dans le modèle EA.
 
 \subsection{Remarques}
 % TODO une fois défini
@@ -1461,39 +1464,42 @@ Voici une liste des types possibles et utilisées:
 La liste plus complète peut être consultée dans la doc \href{https://laravel.com/docs/9.x/migrations#available-column-types}{Laravel}.
 
 \begin{listing}[h]
-    \inputminted{php}{assets/code/12_create_file_types_table.php}
-    \caption{Migration de la table "file-types" \label{migrations-file-types}}
+    \inputminted{php}{assets/code/16_create_jobs_table.php}
+    \caption{Migration de la table \emph{file-types} \label{migrations-jobs}}
 \end{listing}
 
-\subsection{Champs possiblement "null"}
+\subsection{Champs possiblement \emph{null}}
 La possibilité de laisser une valeur nulle sur un champ n'apparaît pas sur le MLD, mais est bien présente au niveau des migrations et modèles de Laravel.\\
-Tous ces champs possèdent l'indiquation: "->nullable()".\\
-Seul certains champs peuvent être "null" dans notre base de données et ceux-ci interviennent surtout dans la table "jobs".\\
-Les champs qui peuvent être "null" sont des champs dont la valeur n'est pas obligatoirement présente à la création mais peut-être ajoutée plus tard. Il s'agit par exemple de la note donnée au travail "rating" ou encore le technicien devant effectuer ce dernier qui peut être assigné après coup.
+Tous ces champs possèdent l'indiquation: \emph{->nullable()}.\\
+Seul certains champs peuvent être \emph{null} dans notre base de données et ceux-ci interviennent surtout dans la table \emph{jobs}.\\
+Les champs qui peuvent être \emph{null} sont des champs dont la valeur n'est pas obligatoirement présente à la création mais peut-être ajoutée plus tard. Il s'agit par exemple de la note donnée au travail \emph{rating} ou encore le technicien devant effectuer ce dernier qui peut être assigné après coup.
 
 \subsection{Champs uniques}
-Il est possible d'indiquer qu'un champ doit posséder une valeur unique avec l'option: "->unique()".\\
+Il est possible d'indiquer qu'un champ doit posséder une valeur unique avec l'option: \emph{->unique()}.\\
 Cette possibilité est par exemple utilisée par le champ email.
 
 \subsection{Champs timestamps}
-Les champs de type "->timestamps()" sont un raccourci utilisé par Laravel pour créer deux champs indiquant la date de création de la donnée et la date de modification. Ces champs sont gérés automatiquement par Laravel, ce qui est bien pratique.
+Les champs de type \emph{->timestamps()} sont un raccourci utilisé par Laravel pour créer deux champs indiquant la date de création de la donnée et la date de modification. Ces champs sont gérés automatiquement par Laravel, ce qui est bien pratique.
 
 \subsection{Indexes}
-Il est possible de créer des indexes sur certains champs afin d'améliorer les performances de la base de données lors de certaines requêtes. Ces indexes peuvent être créer grâce à l'instruction "index('table-champ')".\\
+Il est possible de créer des indexes sur certains champs afin d'améliorer les performances de la base de données lors de certaines requêtes. Ces indexes peuvent être créer grâce à l'instruction \emph{index('table-champ')}.\\
 Ces derniers sont toujours créer sur les clés primaires et doivent être créer sur les clés étrangères. D'autres champs régulièrement utilisés par des requêtes peuvent faire l'objet d'indexes.
 
 \subsection{Clés étrangères}
 Les clés étrangères peuvent être gérées de deux façon différentes.\\
-Soit on ajoute un champ "foreignId('table-id')" suivi d'un "->constrained('table')" qui permet de faire le lien directe entre la clé primaire et la clé étrangère tout en générant un index. Mais ceci est possible uniquement si l'on utilise une clé primaire de type "id()".
+Soit on ajoute un champ \emph{foreignId('table-id')} suivi d'un \emph{->constrained('table')} qui permet de faire le lien directe entre la clé primaire et la clé étrangère tout en générant un index. Mais ceci est possible uniquement si l'on utilise une clé primaire de type \emph{id()}.
 
 Dans le deuxième cas, lorsque l'on possède une clé primaire basée sur un autre type de champ, il faut tout d'abord créer un champ à la main avec la valeur voulue.\\
-Puis faire le lien entre la clé primaire et étrangère à la main en utilisant d'abord "->foreign('table-champ')", puis en référançant avec "->references('champ')->on('table')".\\
-Puis, finalement, créer un index avec "index('table-champ')" sur le champ de la clé étrangère.
+Puis faire le lien entre la clé primaire et étrangère à la main en utilisant d'abord \emph{->foreign('table-champ')}, puis en référançant avec \emph{->references('champ')->on('table')}.\\
+Puis, finalement, créer un index avec \emph{index('table-champ')} sur le champ de la clé étrangère.
 
 \subsection{Options de suppression}
 Des options de suppression sont proposées par \Gls{eloquent} afin de ne pas supprimer définitivement les données de la base de données, mais de simplement les désactiver afin quelles n'apparaîssent plus dans les requêtes.\\
-Ceci est possible en ajoutant l'option "->softDeletes()" à la table.\\
+Ceci est possible en ajoutant l'option \emph{->softDeletes()} à la table.\\
 Laravel s'occupera ensuite de gérer les cas de suppression lui-même.
+
+\section{Seeding de la BD}
+%todo
 
 \chapter{Conception et Réalisation du Backend / de l'API}
 
@@ -1572,24 +1578,29 @@ Voici la liste des ressources sur lesquels certaines actions peuvent être exéc
     \item users;
 \end{itemize}
 
-Le détail de ces routes est consultable sur la figure \ref{routes-api}.
+Le détail de ces routes est consultable sur les figures \ref{routes-api-1} et \ref{routes-api-2}.
 \begin{listing}[h]
-    \inputminted{php}{assets/code/api.php}
-    \caption{Routes de l'API \label{routes-api}}
+    \inputminted{php}{assets/code/api-1.php}
+    \caption{Routes de l'API \label{routes-api-2}}
 \end{listing}
 
-On remarque aisément que la route principale est la route "jobs" et que toutes les autres routes sont également liées à cette dernière. On peut également remarquer que la route "file types" est uniquement réservé aux administrateurs.
+\begin{listing}[h]
+    \inputminted{php}{assets/code/api-2.php}
+    \caption{Routes de l'API \label{routes-api-1}}
+\end{listing}
+
+On remarque aisément que la route principale est la route \emph{jobs} et que toutes les autres routes sont également liées à cette dernière. On peut également remarquer que la route \emph{file types} est uniquement réservé aux administrateurs.
 
 \subsection{REST}
 Les routes fournies essaient au maximum de suivre le principe \Gls{rest}. \\
-Toutes les routes indiquant la méthode "GET" servent uniquement à récupérer des informations.
-Les routes avec la méthode "POST" à créer une nouvelle donnée / entrée. \\
-Les routes avec la méthode "PUT" à mettre à jour les données d'une entrée. \\
-Les routes avec la méthode "PATCH" à mettre à jour seulement certaines données spécifiques d'une entrée. \\
-Les routes avec la méthode "DELETE" à supprimer une entrée.
+Toutes les routes indiquant la méthode \emph{GET} servent uniquement à récupérer des informations.
+Les routes avec la méthode \emph{POST} à créer une nouvelle donnée / entrée. \\
+Les routes avec la méthode \emph{PUT} à mettre à jour les données d'une entrée. \\
+Les routes avec la méthode \emph{PATCH} à mettre à jour seulement certaines données spécifiques d'une entrée. \\
+Les routes avec la méthode \emph{DELETE} à supprimer une entrée.
 
-On remarque également qu'il a été choisi d'insérer l'id de l'entrée mise à jour (méthode "PUT") au niveau des données "body" de la requête et non dans la "query string". Le but étant de regrouper toutes les informnations / données à vérifier au même endroit. \\
-La majorité des routes avec la méthode "PATCH" suivent le même principe. Une exception a été faite pour la route "PATCH /api/jobs/\{id\}/notifications/user/\{username\}" car aucune donnée ne doit être transmise ne plus du job et de l'utilisateur concerné. Il était donc plus simple et lisible de passer les informations dans la query string.
+On remarque également qu'il a été choisi d'insérer l'id de l'entrée mise à jour (méthode \emph{PUT}) au niveau des données du \emph{body} de la requête et non dans la \emph{query string}. Le but étant de regrouper toutes les informnations / données à vérifier au même endroit. \\
+La majorité des routes avec la méthode \emph{PATCH} suivent le même principe. Une exception a été faite pour la route \emph{PATCH /api/jobs/\{id\}/notifications/user/\{username\}} car aucune donnée ne doit être transmise ne plus du job et de l'utilisateur concerné. Il était donc plus simple et lisible de passer les informations dans la query string.
 
 % cliffhanger
 Maintenant les routes définies et connues, il est nécessaire de parler de ce qu'il faut fournir et ce qui est nécessaire de fournir pour les utiliser. Nous allons donc voir comment l'authentification pour accéder à l'API a été mise en place.
@@ -1638,29 +1649,29 @@ Lorsque le \Gls{backend}, reçoit une requête, il vérifie le jeton donné grâ
 Le fonctionnement de Keycloak expliqué, il est nécessaire d'expliquer la façon dont il a été implémenté au niveau de Backend.
 
 \subsection{Implémentation de Keycloak côté Backend}
-Tout d'abord, on peut remarque sur la figure \ref{routes-api}, que l'authentification est utilisée dans le middleware "auth:api". Ce dernier étant appliqué à toutes les routes de l'\Gls{api}.
+Tout d'abord, on peut remarque sur les figures \ref{routes-api-1} et \ref{routes-api-2}, que l'authentification est utilisée dans le middleware \emph{auth:api}. Ce dernier étant appliqué à toutes les routes de l'\Gls{api}.
 
 Pour ensuite implémenter la logique utilisée par ce middleware, je me suis inspiré d'un packet Laravel existant, \href{https://github.com/robsontenorio/laravel-keycloak-guard}{laravel-keycloak-guard}. Je n'ai pas pu l'utiliser direcement, car il n'était pas totalement adapté à nos besoins.
 
-Pour intégrer mon adaptation de package au projet, j'ai d'abord créer un "KeycloakServiceProvider" comme on peut le voir à la figure \ref{keycloak-service-provider}. \\
-Dans ce dernier on voit que l'on défini la "KeycloakGuard" pour l'authentification.
+Pour intégrer mon adaptation de package au projet, j'ai d'abord créer un \emph{KeycloakServiceProvider} comme on peut le voir à la figure \ref{keycloak-service-provider}. \\
+Dans ce dernier on voit que l'on défini la \emph{KeycloakGuard} pour l'authentification.
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/KeycloakServiceProvider.php}
     \caption{KeycloakServiceProvider \label{keycloak-service-provider}}
 \end{listing}
 
-Ensuite, on implémente la "KeycloakGuard" dans un fichier et une classe à part (disponible en annexe \ref{keycloak-guard}). Il est également nécessaire de définir quelques Exception liées à cette implémentation. \\
+Ensuite, on implémente la \emph{KeycloakGuard} dans un fichier et une classe à part (disponible en annexe \ref{keycloak-guard}). Il est également nécessaire de définir quelques Exception liées à cette implémentation. \\
 Tous ces fichiers sont disponibles dans le dossier /app/Providers/Keycloak.
 
-De plus, il est nécessaire d'ajouter un fichier de config afin de supporter certains paramètres à fournir dans le ".env" tel que la clé publique permettant de vérifier les tokens. Ce fichier de config doit être créer dans le dossier "config" et se nommer "keycloak.php". Ce dernier est défini comme sous la figure \ref{keycloak.php}.
+De plus, il est nécessaire d'ajouter un fichier de config afin de supporter certains paramètres à fournir dans le \emph{.env} tel que la clé publique permettant de vérifier les tokens. Ce fichier de config doit être créer dans le dossier \emph{config} et se nommer \emph{keycloak.php}. Ce dernier est défini comme sous la figure \ref{keycloak.php}.
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/keycloak.php}
     \caption{auth.php \label{keycloak.php}}
 \end{listing}
 
-Finalement, il faut définir la "KeycloakGuard" comme "guard" dans le fichier de configuration "auth.php", comme montré sur la figure \ref{auth.php}.
+Finalement, il faut définir la \emph{KeycloakGuard} comme \emph{guard} dans le fichier de configuration \emph{auth.php}, comme montré sur la figure \ref{auth.php}.
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/auth.php}
@@ -1672,19 +1683,19 @@ Maintenant que le système d'authentification est défini, il est important d'ut
 
 \section{Autorisation d'accès aux ressources et gestion des droits}
 
-Un système de contrôle d'accès aux ressources basé sur les rôles a été mis en place ou aussi appelé "RBAC" (Role Based Access Control).
+Un système de contrôle d'accès aux ressources basé sur les rôles a été mis en place ou aussi appelé \emph{RBAC (Role Based Access Control)}.
 Pour mettre ce système en place, il nous faut des rôles bien défini et c'est ce que nous allons maintenant.
 
 \subsection{Rôles}
 Voici les différents rôles:
 \begin{itemize}
-    \item "admin" représentant un admin de l'application,
-    \item "client" représantant un client de l'application (généralement étudiant de la \Gls{heig-vd}),
-    \item "worker" représantant un technicien,
-    \item "validator" représentant un validateur de travail (généralement un professeur);
+    \item \emph{admin} représentant un admin de l'application,
+    \item \emph{client} représantant un client de l'application (généralement étudiant de la \Gls{heig-vd}),
+    \item \emph{worker} représantant un technicien,
+    \item \emph{validator} représentant un validateur de travail (généralement un professeur);
 \end{itemize}
 
-À savoir que le rôle "validator" a été prévu mais non implémenté dans l'application.
+À savoir que le rôle \emph{validator} a été prévu mais non implémenté dans l'application.
 
 Par définition, les rôles worker et validator peuvent être vu comme des sortes d'interface dans le milieu de la programmation.
 
@@ -1698,8 +1709,8 @@ On peut donc représenter les rôles sous la forme d'un diagramme, comme la figu
     \end{figure}
 \end{center}
 
-Quelques précisions s'imposent, on remarque que le rôle "client" est donné à n'importe quel utilisateur authentifier par la \Gls{heig-vd}. \\
-On remarque aussi que le rôle "admin" possède tous les droits.
+Quelques précisions s'imposent, on remarque que le rôle \emph{client} est donné à n'importe quel utilisateur authentifier par la \Gls{heig-vd}. \\
+On remarque aussi que le rôle \emph{admin} possède tous les droits.
 
 Un autre point étant que les utilisateurs anonymes, n'ont accès à aucune ressource fournie par l'API.
 
@@ -1730,12 +1741,12 @@ Voici un récapitulatif des symboles qui peuvent être utilisés dans les tablea
 x indique que le rôle a accès à la route sans condition.
 j / u / m = indique que le rôle a accès à la route sous certaines conditions. Ces conditions seront précisées pour chacune des lettres et des routes.
 
-\subsubsection{Route "files"}
-Pour la route "files", la gestion des autorisations est disponible sur la figure \ref{autorisations-route-files}.
+\subsubsection{Route \emph{files}}
+Pour la route \emph{files}, la gestion des autorisations est disponible sur la figure \ref{autorisations-route-files}.
 
 \begin{table}[h]
     \begin{center}
-        \caption{Route "files" \label{autorisations-route-files}}
+        \caption{Route \emph{files} \label{autorisations-route-files}}
         \begin{tabularx}{1.0\textwidth} {X|X|X|X|X}
             rôles  & show & store & update & delete \\ \hline
             admin  & x    & x     & x      & x      \\
@@ -1748,13 +1759,13 @@ Pour la route "files", la gestion des autorisations est disponible sur la figure
 j = Pour effectuer ces actions, le client / travailleur doit faire partie du travail liée au fichier. \\
 Pour les actions du client uniquement, il doit faire partie du travail en tant que client.
 
-\subsubsection{Route "jobs"}
+\subsubsection{Route \emph{jobs}}
 
 \subsubsubsection{méthodes API}
 
 \begin{table}[h]
     \begin{center}
-        \caption{Route "jobs" \label{autorisations-route-jobs}}
+        \caption{Route \emph{jobs} \label{autorisations-route-jobs}}
         \begin{tabularx}{1.0\textwidth} {X|X|X|X|X|X}
             rôles  & index & show & store & update & delete \\ \hline
             admin  & x     & x    & x     & x      & x      \\
@@ -1771,7 +1782,7 @@ Pour les actions du client uniquement, il doit faire partie du travail en tant q
 
 \begin{table}[h]
     \begin{center}
-        \caption{Route "jobs" suite \label{autorisations-route-jobs-other-get}}
+        \caption{Route \emph{jobs} suite \label{autorisations-route-jobs-other-get}}
         \begin{tabularx}{1.0\textwidth} {X|X|X|X|X}
             rôles  & get unassigned jobs & get all user's jobs & get all client's jobs & get all worker's jobs \\ \hline
             admin  & x                   & x                   & x                     & x                     \\
@@ -1785,7 +1796,7 @@ u = Pour effectuer ces actions, le client / travailleur doit être le même util
 
 \begin{table}[h]
     \begin{center}
-        \caption{Route "jobs" suite 2\label{autorisations-route-jobs-updates}}
+        \caption{Route \emph{jobs} suite 2\label{autorisations-route-jobs-updates}}
         \begin{tabularx}{1.0\textwidth} {X|X|X|X|X}
             rôles  & assign a worker & update status & update rating & update notifications \\ \hline
             admin  & x               & x             & x             & x                    \\
@@ -1801,11 +1812,11 @@ Pour les actions du travailleur uniquement, il doit faire partie du travail en t
 
 u = Pour effectuer ces actions, le client / travailleur doit être le même utilisateur que celui qui effectue la requête.
 
-\subsubsection{Route "messages"}
+\subsubsection{Route \emph{messages}}
 
 \begin{table}[h]
     \begin{center}
-        \caption{Route "messages" \label{autorisations-route-messages}}
+        \caption{Route \emph{messages} \label{autorisations-route-messages}}
         \begin{tabularx}{1.0\textwidth} {X|X|X|X}
             rôles  & index & show & store \\ \hline
             admin  & x     & x    & x     \\
@@ -1819,12 +1830,12 @@ m = Pour effectuer ces actions, le client / travailleur doit faire partie du mes
 j = Pour effectuer ces actions, le client / travailleur doit faire partie du travail liée au message.
 s = Pour effectuer ces actions, le client / travailleur doit être l'expéditeur du message.
 
-\subsubsection{Route "users"}
+\subsubsection{Route \emph{users}}
 
 \begin{table}[h]
     \begin{center}
-        \caption{Route "users" \label{autorisations-route-users}}
-        \begin{tabularx}{1.0\textwidth} {X|X|X|X|X|X|X}
+        \caption{Route \emph{users} \label{autorisations-route-users}}
+        \begin{tabularx}{1.0\textwidth} {l|l|l|l|l|l|X}
             rôles  & index & show & store & update & delete & update email notifications \\ \hline
             admin  & x     & x    & x     & x      & x      & x                          \\
             client &       & u    &       &        &        & u                          \\
@@ -1835,11 +1846,11 @@ s = Pour effectuer ces actions, le client / travailleur doit être l'expéditeur
 
 u = Pour effectuer ces actions, le client / travailleur doit être le même utilisateur que celui qui effectue la requête.
 
-\subsubsection{Route "job categories"}
+\subsubsection{Route \emph{job categories}}
 
 \begin{table}[h]
     \begin{center}
-        \caption{Route "job categories" \label{autorisations-route-job-categories}}
+        \caption{Route \emph{job categories} \label{autorisations-route-job-categories}}
         \begin{tabularx}{1.0\textwidth} {X|X|X|X|X|X|X}
             rôles  & index & show & store & update & delete & image \\ \hline
             admin  & x     & x    & x     & x      & x      & x     \\
@@ -1853,7 +1864,7 @@ u = Pour effectuer ces actions, le client / travailleur doit être le même util
 Seul les administrateurs peuvent effectuer des actions sur les routes suivantes:
 
 \begin{itemize}
-    \item "file types";
+    \item \emph{file types};
 \end{itemize}
 
 \begin{table}[h]
@@ -1872,20 +1883,20 @@ Seul les administrateurs peuvent effectuer des actions sur les routes suivantes:
 Toute cette conception d'autorisation théorique définie, il est maintenant nécessaire de définir comment elle a été implémentée au niveau du code.
 
 \subsection{Mise en place}
-La mise en place du système d'autorisation est basée sur un concepte que Laravel fourni, les \href{https://laravel.com/docs/9.x/authorization#creating-policies}{"Policies"}.
+La mise en place du système d'autorisation est basée sur un concepte que Laravel fourni, les \href{https://laravel.com/docs/9.x/authorization#creating-policies}{\emph{Policies}}.
 
-Les "Policies" une fois définies, elles sont utilisées et appelées dans un middleware. L'instruction "can" fait appelle au middleware et à la policy correspondante afin de vérifier l'accès à la ressource. On voit bien l'appel à cette fonction dans le fichier "routes/api.php" \ref{routes-api}. \\
-Pour chaque route disponible sur une ressource / un modèle, une fonction dans la "Policy" correspondant défini l'accès à cette dernière. \\
-Dans chaque "Policy", il y également une fonction de nommée "before" qui est appelée avant toute vérification. Cette fonction est utilisée afin de vérifier si l'utilisateur possède au moins le rôle "client" ou s'il est "admin".
+Les \emph{Policies} une fois définies, elles sont utilisées et appelées dans un middleware. L'instruction \emph{can} fait appelle au middleware et à la policy correspondante afin de vérifier l'accès à la ressource. On voit bien l'appel à cette fonction dans le fichier \emph{routes/api.php} (\ref{routes-api-1}, \ref{routes-api-2}). \\
+Pour chaque route disponible sur une ressource / un modèle, une fonction dans la \emph{Policy} correspondant défini l'accès à cette dernière. \\
+Dans chaque \emph{Policy}, il y également une fonction de nommée \emph{before} qui est appelée avant toute vérification. Cette fonction est utilisée afin de vérifier si l'utilisateur possède au moins le rôle \emph{client} ou s'il est \emph{admin}.
 
-La figure \ref{policy-files} est un exemple de "Policy".
+La figure \ref{policy-files} est un exemple de \emph{Policy}.
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/FilePolicy.php}
-    \caption{Policy de la route "files" \label{policy-files}}
+    \caption{Policy de la route \emph{files} \label{policy-files}}
 \end{listing}
 
-Il est également nécessaire d'enregistrer chacune des "Policies" dans le tableau "policies" de la classe "AuthServiceProvider", comme on peut le voir sur la figure \ref{auth-service-provider},
+Il est également nécessaire d'enregistrer chacune des \emph{Policies} dans le tableau \emph{policies} de la classe \emph{AuthServiceProvider}, comme on peut le voir sur la figure \ref{auth-service-provider}.
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/FilePolicy.php}
@@ -1904,7 +1915,7 @@ Le logging contient différent niveau de sévérité, de ce fait une politique d
 \begin{table}[h]
     \begin{center}
         \caption{Politique de log\label{politique-log}}
-        \begin{tabularx}{1.0\textwidth} {X|X}
+        \begin{tabularx}{1.0\textwidth} {l|X}
             Niveau de log & Raison déclanchant le log                                                           \\ \hline
             Emergency     & Pas utilisé                                                                         \\
             Critical      & Pas utilisé                                                                         \\
@@ -1922,21 +1933,21 @@ Le logging contient différent niveau de sévérité, de ce fait une politique d
 
 \subsection{Niveau de logging du serveur de production}
 Un autre point survient lorsque l'on souhaite mettre en place une politique de logging, quel sera le niveau minimum de sévérité utilisé pour la production. En effet, nous ne voulant pas forcément enregistrer la totalité des logs afin de réduire au maximum les fichiers de log et garder les informations essentiels. \\
-Dans notre cas, j'ai fixé la limite de sévérité minimum à "Warning" pour la production afin d'obtenir uniquement les informations utiles pour retracer les erreurs de serveur et les tentatives d'accès aux ressources non autorisées. \\
-Lors du développement, il est évident que la limite est à "Debug".
+Dans notre cas, j'ai fixé la limite de sévérité minimum à \emph{Warning} pour la production afin d'obtenir uniquement les informations utiles pour retracer les erreurs de serveur et les tentatives d'accès aux ressources non autorisées. \\
+Lors du développement, il est évident que la limite est à \emph{Debug}.
 
 % cliffhanger
 Maintenant que nous avons vu qu'il fallait tracer ce qu'il se passe sur le \Gls{backend}, il est important de connaître les messages et status que ce dernier peut nous retourner et c'est ce que nous allons voir dans la section suivante.
 
 \section{Erreurs retrounées par le Backend}
 Tout les erreurs retournées par le \Gls{backend} sont des erreurs HTTP et suivent les codes défini par ce protocole. \\
-Toutes les erreurs comporte donc un "Status code" et un message / des données. Ces réponses sont toutes transmises au format \Gls{json}. \\
+Toutes les erreurs comporte donc un \emph{Status code} et un message / des données. Ces réponses sont toutes transmises au format \Gls{json}. \\
 Le tableau \ref{reponses-erreurs-backend} trace les différentes réponses que le \Gls{backend} peut retourner.
 
 \begin{table}[h]
     \begin{center}
         \caption{Réponses et erreurs retournées par le Backend \label{reponses-erreurs-backend}}
-        \begin{tabularx}{1.0\textwidth} {X|X|X}
+        \begin{tabularx}{1.0\textwidth} {l|l|X}
             Status code & Signification         & Événements générant la réponse                                                                   \\ \hline
             200         & Ok                    & L'action a été exécutée avec succès                                                              \\
             400         & Bad Request           & Lorsqu'une erreur de logique métier s'est produite ou que le chemin n'existe pas                 \\
@@ -1952,11 +1963,11 @@ Le tableau \ref{reponses-erreurs-backend} trace les différentes réponses que l
 Maintenant que nous avons vu toutes les réponses que le \Gls{backend} peut fournir et qu'il peut parfois renvoyé une erreur liée à une mauvaise entrée utilisateur, nous allons voir comment valider ces entrées utilisateurs et comment sont renvoyées ces erreurs dans la prochaine section.
 
 \section{Validation des entrées utilisateurs}
-Pour commencer les entrées utilisateurs peuvent être contenu à 2 endroits lors d'une requête. Elles peuvent être dans la "query string" ou dans le "body" de la requête HTTP.
+Pour commencer les entrées utilisateurs peuvent être contenu à 2 endroits lors d'une requête. Elles peuvent être dans la \emph{query string} ou dans le \emph{body} de la requête HTTP.
 
 \subsection{Query string}
-Pour valider les entrées utilisateurs dans les query string, il est possible de définir des \Gls{regex} pour tous les paramètres portant le même nom des fichiers du dossier "routes".
-Pour cela, il faut modifier le fichier "RouteServiceProvider" comme indiqué sur la figure \ref{route-service-provider} afin d'ajouter toutes les entrées que l'on souhaite valider.
+Pour valider les entrées utilisateurs dans les query string, il est possible de définir des \Gls{regex} pour tous les paramètres portant le même nom des fichiers du dossier \emph{routes}.
+Pour cela, il faut modifier le fichier \emph{RouteServiceProvider} comme indiqué sur la figure \ref{route-service-provider} afin d'ajouter toutes les entrées que l'on souhaite valider.
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/RouteServiceProvider.php}
@@ -1964,10 +1975,10 @@ Pour cela, il faut modifier le fichier "RouteServiceProvider" comme indiqué sur
 \end{listing}
 
 \subsection{Form Request}
-Pour valider les entrées utilisateurs dans le corps de la requête, un architecture de code plus compliquée doit être mise en place. Laravel fournit la possibilité de valider les requêtes grâce à des \href{https://laravel.com/docs/9.x/validation#form-request-validation}{"Form Request"} et c'est ce que j'ai utilisé. \\
-Le but de ces "Form Request" étant de définir une liste de règles précises pour un type de requête précis, par exemple, insérer un nouveau "job". Ces règles vont valider les entrées utilisateurs et vont ensuite nous permettre d'être sûr de travailler avec des données valides.
+Pour valider les entrées utilisateurs dans le corps de la requête, un architecture de code plus compliquée doit être mise en place. Laravel fournit la possibilité de valider les requêtes grâce à des \href{https://laravel.com/docs/9.x/validation#form-request-validation}{\emph{Form Request}} et c'est ce que j'ai utilisé. \\
+Le but de ces \emph{Form Request} étant de définir une liste de règles précises pour un type de requête précis, par exemple, insérer un nouveau \emph{job}. Ces règles vont valider les entrées utilisateurs et vont ensuite nous permettre d'être sûr de travailler avec des données valides.
 
-Toutes les "Form Request" sont disponibles dans le dossier "/app/Http/Requests". \\
+Toutes les \emph{Form Request} sont disponibles dans le dossier \emph{/app/Http/Requests}. \\
 Sur la figure \ref{job-category-request}, on peut observer un exemple de tableau de règles définies pour l'insertion ou la mise à jour d'une catégorie de travail. \\
 À savoir que toutes les règles utilisables sont disponibles sur la doc \href{https://laravel.com/docs/9.x/validation#available-validation-rules}{Laravel}
 
@@ -1978,43 +1989,43 @@ Sur la figure \ref{job-category-request}, on peut observer un exemple de tableau
 
 \subsection{Regex}
 Comme vous l'avez peut-être remarqué sur la figure \ref{job-category-request}, il y a également des règles impliquant des \Gls{regex} et ces dernières sont définies ailleurs dans le code. \\
-Ces \Gls{regex} se trouvent dans la classe disponible en suivant le chemin "/app/Constants/Regex.php". Toutes ces \Gls{regex} ont été mise en place afin de valider le maximum d'entrées utilisateurs du programme et utilisées dans les "Form Request".
+Ces \Gls{regex} se trouvent dans la classe disponible en suivant le chemin \emph{/app/Constants/Regex.php}. Toutes ces \Gls{regex} ont été mise en place afin de valider le maximum d'entrées utilisateurs du programme et utilisées dans les \emph{Form Request}.
 
 \subsection{Constantes}
-Je tiens à préciser que toutes les classes contenant des constantes utilisées dans l'application sont disponibles dans le dossier "/app/Constants".
+Je tiens à préciser que toutes les classes contenant des constantes utilisées dans l'application sont disponibles dans le dossier \emph{/app/Constants}.
 
 % cliffhanger
 Maintenant que nous avons vu comment valider les entrées utilisateurs, nous allons nous intéresser à des entrées utilisateurs un peu moins classique, les fichiers. Comment réussir à gérer la validation, l'upload et le download de fichiers pour l \Gls{backend}, C'est ce que nous allons voir dans la prochaine section.
 
 \section{Gestion des fichiers}
-Tout d'abord, il faut savoir que toute la gestion des fichiers est réalisée dans le modèle "File", toute cette partie peut-être définie comme un "File Service".
+Tout d'abord, il faut savoir que toute la gestion des fichiers est réalisée dans le modèle \emph{File}, toute cette partie peut-être définie comme un \emph{File Service}.
 
 \subsection{Validation de fichiers}
 
-Pour commencer avec la réalisation de ce "service", nous allons parcourir la validation de fichier. \\
+Pour commencer avec la réalisation de ce \emph{service}, nous allons parcourir la validation de fichier. \\
 Il faut savoir que Laravel fournit la possibilité de récupérer des informations sur le fichier qui est en train d'être upload, ces dernières peuvent être consultée en suivant le lien suivant: \href{https://laravel.com/docs/9.x/filesystem#other-uploaded-file-information}. \\
 
 Pour valider un fichier, certains conditions doivent être respectées, les voici:
 \begin{itemize}
-    \item le fichier ne doit pas être "null",
+    \item le fichier ne doit pas être \emph{null},
     \item le fichier ne doit pas dépasser la taille de 10 Mo,
     \item le fichier doit avoir une extension qui correspond au type de fichier détecté en l'inspectant,
     \item le fichier doit posséder un type contenu dans la base de données,
     \item le fichier doit posséder un type accepter par la catégorie de travail auquel le job est relié;
 \end{itemize}
 
-Toutes ces validations sont réalisées dans une fonction nommée "\verb|is_valid_file|" que vous pouvez consulter à la figure \ref{file-validation}. Cette fonction est utilisée dans toutes les "Form Request" nécessitant un fichier.
+Toutes ces validations sont réalisées dans une fonction nommée \emph{is\_valid\_file} que vous pouvez consulter à la figure \ref{file-validation}. Cette fonction est utilisée dans toutes les \emph{Form Request} nécessitant un fichier.
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/FileValidation.php}
-    \caption{fonction \verb|is_valid_file| du "File Service" \label{file-validation}}
+    \caption{fonction is\_valid\_file du \emph{File Service} \label{file-validation}}
 \end{listing}
 
-Un point important concernant la validation de fichier étant le type de fichier qui est détecté par la fonction "extension" de Laravel. Cette dernière inspecte le fichier et détermine son type. Cette dernière fonctionne très bien avec les types de fichiers classique, cependant, certains types de fichiers qui m'ont été demandé d'ajouter, ne sont pas du tout détecté correctement par cette dernière. \\
+Un point important concernant la validation de fichier étant le type de fichier qui est détecté par la fonction \emph{extension} de Laravel. Cette dernière inspecte le fichier et détermine son type. Cette dernière fonctionne très bien avec les types de fichiers classique, cependant, certains types de fichiers qui m'ont été demandé d'ajouter, ne sont pas du tout détecté correctement par cette dernière. \\
 De ce fait, j'ai dû trouvé une solution et la voici. J'ai créé deux listes constantes de types de fichiers non supportés par cette fonction. \\
-La première liste défini les types de fichiers dont j'ai pu testé l'upload et donc obtenir le type retourné par la fonction "extension". Cette liste fait également l'objet d'un tableau de correspondance qui est utilisé lorsqu'il faut vérifier le type du fichier. \\
-La seconde liste contient tous les types de fichiers que je n'ai pas pu tester et qui esquiveront donc la vérification de la fonction "extension". \\
-Une façon d'améliorer cette solution un peu "bout de bois" serait d'essayer d'utiliser la fonction "\verb|mime_content_type|" de PHP.
+La première liste défini les types de fichiers dont j'ai pu testé l'upload et donc obtenir le type retourné par la fonction \emph{extension}. Cette liste fait également l'objet d'un tableau de correspondance qui est utilisé lorsqu'il faut vérifier le type du fichier. \\
+La seconde liste contient tous les types de fichiers que je n'ai pas pu tester et qui esquiveront donc la vérification de la fonction \emph{extension}. \\
+Une façon d'améliorer cette solution un peu "bout de bois" serait d'essayer d'utiliser la fonction \emph{mime\_content\_type} de PHP.
 
 Une autre requête m'a été demandée en fin de projet, les types de fichiers compressé devraient si possible être validé en observant également les fichiers à l'intérieur du fichier compresser et en les validant. Cette demande n'a pas pu être mise en place pour le moment, mais des essaies ont été tentés et sont disponibles en commentaires dans le code principal, ainsi que sur l'issue ouverte sur Github.
 
@@ -2022,12 +2033,12 @@ Une autre requête m'a été demandée en fin de projet, les types de fichiers c
 Une fois les fichiers validés, il faut les upload, mais où? C'est ce que nous allons voir maintenant.
 
 \subsection{File Storage}
-Pour stocker des fichiers, Laravel propose un système de \href{https://laravel.com/docs/9.x/filesystem}{"File Storage"}. Pour ce projet, il a été décidé d'utiliser un stockage de fichier local. Au niveau local, 2 "disques" sont disponibles, le "public" et le "private". \\
+Pour stocker des fichiers, Laravel propose un système de \href{https://laravel.com/docs/9.x/filesystem}{\emph{File Storage}}. Pour ce projet, il a été décidé d'utiliser un stockage de fichier local. Au niveau local, 2 \emph{disques} sont disponibles, le \emph{public} et le \emph{private}. \\
 Le premier ayant pour but d'exposer des fichiers que tout le monde peut consulter et le second de conserver des fichiers afin de définir plus tard qui pourra les consulter. \\
 
-Dans notre projet, nous utilisons le disque "public" afin de stocker les images des catégories de travaux sous le dossier "images" et le disque "private" pour stocker tous les autres fichiers upload par les utilisateurs.
+Dans notre projet, nous utilisons le disque \emph{public} afin de stocker les images des catégories de travaux sous le dossier \emph{images} et le disque \emph{private} pour stocker tous les autres fichiers upload par les utilisateurs.
 
-Ces disques sont disponibles au chemin "/storage/app".
+Ces disques sont disponibles au chemin \emph{/storage/app}.
 
 % cliffhanger
 Maintenant que nous savons où stocker ces fichiers, regardons comment les upload.
@@ -2043,23 +2054,23 @@ Toute cette procédure est disponible en code sous la figure \ref{file-upload}.
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/FileUpload.php}
-    \caption{fonction \verb|store_file| du "File Service" \label{file-upload}}
+    \caption{fonction \emph{store\_file} du \emph{File Service} \label{file-upload}}
 \end{listing}
 
-De la même façon, avec le hash et la parade des dossiers, le "File Service" gère également la mise à jour et la suppression d'un fichier.
+De la même façon, avec le hash et la parade des dossiers, le \emph{File Service} gère également la mise à jour et la suppression d'un fichier.
 
 % cliffhanger
 Upload des fichiers c'est bien, mais pouvoir les récupérer et les utiliser, c'est encore mieux!
 C'est ce que nous allons voir maintenant.
 
 \subsection{Download de fichiers}
-Pour récupérer des fichiers, 2 façons sont disponibles, soit on force l'utilisateur à télécharger un fichier, soit on créer un \Gls{url} sur le disque "public" où l'on peut consulter le fichier. \\
+Pour récupérer des fichiers, 2 façons sont disponibles, soit on force l'utilisateur à télécharger un fichier, soit on créer un \Gls{url} sur le disque \emph{public} où l'on peut consulter le fichier. \\
 Ces deux méthodes ont été mise en place, la première est utilisée pour télécharger les fichiers ajoutés par les utilisateurs, tandis que la seconde est utilisé pour afficher les différentes catégories de travail au niveau du \Gls{frontend}. \\
 Le code permettant de réaliser ces deux actions est disponible sur la figure \ref{file-download}.
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/FileDownload.php}
-    \caption{Fonctions \verb|download_file| et \verb|get_file_url| du "File Service" \label{file-download}}
+    \caption{Fonctions download\_file et get\_file\_url du \emph{File Service} \label{file-download}}
 \end{listing}
 
 Le codee utilise les fonctions fournies par Laravel consultable sur la \href{https://laravel.com/docs/9.x/filesystem#downloading-files}{documentation pour le download} et la \href{https://laravel.com/docs/9.x/filesystem#file-urls}{documentation pour les urls}.
@@ -2070,7 +2081,7 @@ Maintenant que nous en avons terminé avec la gestion des fichiers, il est néce
 \section{Gestion des événements et notifications}
 Pour notre application, nous souhaitons réaliser une timeline indiquant tous les événements intervenu sur le travail consulter afin d'avoir un suivi total. Pour réaliser cette timeline, la mise en place d'événements a été conçue. Nous avons déjà vu plus tôt ce que contenait un événement dans la base de données, il est maintenant nécessaire de définir quand est-ce qu'un événement est créé et pourquoi. La figure \ref{events-email-scenario.drawio} défini parfaitement dans quelle situation un événement est généré. \\
 On peut clairement comprendre quel type d'événement est généré dans quelle situation. \\
-Il est important de prendre en compte que lorsqu'un événement est créé dans chacune des ces actions, ce dernier a forcément la valeur "to notify" à "true" et va donc indiquer à l'utilisateur concerné (à droite) la notification sur le travail lié.
+Il est important de prendre en compte que lorsqu'un événement est créé dans chacune des ces actions, ce dernier a forcément la valeur \emph{to notify} à \emph{true} et va donc indiquer à l'utilisateur concerné (à droite) la notification sur le travail lié.
 
 %\figi{events-email-scenario.drawio}{16cm}{Conception des événements pour les notifications et la timeline}
 \begin{center}
@@ -2085,20 +2096,20 @@ On peut également voir que quand un événement est généré, un email est pr�
 
 \section{Envoi d'email}
 L'envoi d'email a été réalisée en suivant la \href{https://laravel.com/docs/9.x/mail}{documentation Laravel à ce sujet}. \\
-Comme les emails ne doivent pas être envoyé tout de suite mais uniquement après 10 minutes, la mise en place d'un \href{https://laravel.com/docs/9.x/queues#creating-jobs}{"Job"} et d'une "Queue" a également été nécessaire. \\
-Au final, ce n'est pas le mail qui est retardé, mais le "Job" qui envoie le mail qui l'est.
+Comme les emails ne doivent pas être envoyé tout de suite mais uniquement après 10 minutes, la mise en place d'un \href{https://laravel.com/docs/9.x/queues#creating-jobs}{\emph{Job}} et d'une \emph{Queue} a également été nécessaire. \\
+Au final, ce n'est pas le mail qui est retardé, mais le \emph{Job} qui envoie le mail qui l'est.
 
-Les "Jobs" en attente sont stockés dans la base de données en attendant d'être exécuter. \\
-De ce fait, deux tables ont été ajoutées aux "migrations", ce sont les tables "\verb|jobs_queue|" et "\verb|failed_jobs|".
+Les \emph{Jobs} en attente sont stockés dans la base de données en attendant d'être exécuter. \\
+De ce fait, deux tables ont été ajoutées aux \emph{migrations}, ce sont les tables \emph{jobs\_queue} et \emph{failed\_jobs}.
 
-Pour mettre en place notre système de mail et de queue, un "NotificationsEmailJob" a été créé, disponible dans le dossier "/app/Jobs" ainsi qu'un "NotificationsEmail" disponibles dans le dossier "/app/Mail". \\
-Une méthode permettant de "dispatch" le "NotificationsEmailJob" a été ajouté au modèle "Event" comme méthode de "service". Cette dernière "dispatch" simplement le mail en fonction du statut de l'environnement (production ou développement). \\
+Pour mettre en place notre système de mail et de queue, un \emph{NotificationsEmailJob} a été créé, disponible dans le dossier \emph{/app/Jobs} ainsi qu'un \emph{NotificationsEmail} disponibles dans le dossier \emph{/app/Mail}. \\
+Une méthode permettant de \emph{dispatch} le \emph{NotificationsEmailJob} a été ajouté au modèle \emph{Event} comme méthode de \emph{service}. Cette dernière \emph{dispatch} simplement le mail en fonction du statut de l'environnement (production ou développement). \\
 La fonction a appelé est la suivante:
-\begin{verbatim}
+\begin{lstlisting}
     NotificationsEmailJob::dispatch($id)->delay(now()->addMinutes(10));
-\end{verbatim}
+\end{lstlisting}
 
-Cela a pour effet de stocker l'"Event" dans la base de données comme expliqué précédement et il sera automatiquement exécuter après le temps indiqué lors de l'appel de la fonction.
+Cela a pour effet de stocker l'\emph{Event} dans la base de données comme expliqué précédement et il sera automatiquement exécuter après le temps indiqué lors de l'appel de la fonction.
 
 Pour vous expliquer comment le système de mail fonctionne en adéquation avec les événements générés pour la timeline et les notifications, un diagramme de séquence est à disposition sur la figure \ref{events-email-sequence}.
 
@@ -2111,25 +2122,27 @@ Pour vous expliquer comment le système de mail fonctionne en adéquation avec l
 
 Le but principal de ce schéma est de montrer que seuls les événements de l'application sont utilisés pour déterminer si un email doit être envoyé à l'utilisateur ou non.
 
-En plus de tout ceci, il est également nécessaire de configurer le fichier de config "mail.php" afin que l'on puisse utiliser le service mail de la \Gls{heig-vd} en production. Cette configuration est disponible sur la figure \ref{config-mail}.
+En plus de tout ceci, il est également nécessaire de configurer le fichier de config \emph{mail.php} afin que l'on puisse utiliser le service mail de la \Gls{heig-vd} en production. Cette configuration est disponible sur la figure \ref{config-mail}.
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/mail.php}
     \caption{Configuration ajoutée au fichier mail.php \label{config-mail}}
 \end{listing}
 
-Dernier point sur ce sujet, la classe "NotificationsEmail" créé un email en utilisant une vue réalisée grâce à \href{https://laravel.com/docs/9.x/blade}{Laravel Blade} et disponible sous "/resources/views/mails/email.blade".
+Dernier point sur ce sujet, la classe \emph{NotificationsEmail} créé un email en utilisant une vue réalisée grâce à \href{https://laravel.com/docs/9.x/blade}{Laravel Blade} et disponible sous \emph{/resources/views/mails/email.blade}.
 
 % cliffhanger
 Maintenant, que nous avons vu comment mettre en place des emails, nous allons passé au dernier point spécifique de cette application, les Websockets.
 
 \section{Websockets}
 Pour que notre application soit réactive, dans le sens où un utilisateur n'ait pas besoin de raffraichir la page afin de voir apparaître les changements qu'une autre personne aurait pu apporter sur une donnée observée, le choix des webosckets avait été réalisé. \\
-Une solution classique pour contrer le problème énoncer, est d'utiliser un service externe, comme \href{https://pusher.com/}{"pusher"} recevant les changements du bakcend et les propageants au frontend via des canaux. \\
-Le système utiliser est basé sur le même principe, mais au lieu d'utiliser directement "pusher", la librairie permet de lancer un serveur websockets imitant celui de pusher et donc d'éviter de passer par un service externe non maîtriser et potentiellement payant. \\
-Cette librairie est nommée \href{https://beyondco.de/docs/laravel-websockets/getting-started/introduction}{"Laravel Websockets"}. Un guide de mise en place est disponible et c'est celui que j'ai suivi.
+Une solution classique pour contrer le problème énoncer, est d'utiliser un service externe, comme \href{https://pusher.com/}{\emph{pusher}} recevant les changements du bakcend et les propageants au frontend via des canaux. \\
+Le système utiliser est basé sur le même principe, mais au lieu d'utiliser directement \emph{pusher}, la librairie permet de lancer un serveur websockets imitant celui de pusher et donc d'éviter de passer par un service externe non maîtriser et potentiellement payant. \\
+Cette librairie est nommée \href{https://beyondco.de/docs/laravel-websockets/getting-started/introduction}{\emph{Laravel Websockets}}. Un guide de mise en place est disponible et c'est celui que j'ai suivi.
 
-Pour mettre en place ce système de Webosckets, j'ai d'abord défini tous les événements ("Events") qui pouvait intervenir et être utiliser par les Webosckets. Je me suis inspiré de \href{https://laravel.com/docs/9.x/events}{la documentation Laravel sur les "Events"} pour les créer et réaliser.
+\subsection{Events}
+
+Pour mettre en place ce système de Webosckets, j'ai d'abord défini tous les événements (\emph{Events}) qui pouvait intervenir et être utiliser par les Webosckets. Je me suis inspiré de \href{https://laravel.com/docs/9.x/events}{la documentation Laravel sur les \emph{Events}} pour les créer et réaliser.
 Ces scénarii sont disponibles sur la figure \ref{ws-conception-notifications.drawio}. \\
 Un Event est au final un objet contenant le canal sur lequel il doit être envoyé et les données qu'il doit envoyer.
 
@@ -2141,41 +2154,45 @@ Un Event est au final un objet contenant le canal sur lequel il doit être envoy
     \end{figure}
 \end{center}
 
-Un exemple de code d'un "Event" est disponible à la figure \ref{event-exemple}. \\
-Comme expliqué précédemment, on remarque la méthode "broadcastOn" retournant le channel sur lequel doit être transmis les données lorsque cet événement intervient. \\
-On peut également remarquer l'utilisation de l'interface "ShouldBroadcastNow" permettant d'émettre la diffusion de l' "Event" de façon synchrone.
+Un exemple de code d'un \emph{Event} est disponible à la figure \ref{event-exemple}. \\
+Comme expliqué précédemment, on remarque la méthode \emph{broadcastOn} retournant le channel sur lequel doit être transmis les données lorsque cet événement intervient. \\
+On peut également remarquer l'utilisation de l'interface \emph{ShouldBroadcastNow} permettant d'émettre la diffusion de l' \emph{Event} de façon synchrone.
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/JobAssignedEvent.php}
-    \caption{Exemple d'un "Event" avec le "JobAssignedEvent" \label{event-exemple}}
+    \caption{Exemple d'un \emph{Event} avec le \emph{JobAssignedEvent} \label{event-exemple}}
 \end{listing}
 
-Il a ensuite fallu configurer ces différents channels comme utilisé sur la figure précédente \ref{event-exemple}. Ces définitions de channels sont réalisées dans le fichier "/routes/channels.php" que l'on peut consulter sur la figure \ref{ws-channels}. \\
+Il a ensuite fallu configurer ces différents channels comme utilisé sur la figure précédente \ref{event-exemple}. Ces définitions de channels sont réalisées dans le fichier \emph{/routes/channels.php} que l'on peut consulter sur la figure \ref{ws-channels}. \\
 Dans ce fichier, les channels défini possède une fonction qui détermine si l'utilisateur le droit ou non de se connecter au channel.
+
+\subsection{Channels}
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/channels.php}
     \caption{Channels pour le Broadcast sur les Websockets \label{ws-channels}}
 \end{listing}
 
-Un "Event" peut ensuite être envoyer / broadcast grâce à l'instruction suivante:
-\begin{verbatim}
+Un \emph{Event} peut ensuite être envoyer / broadcast grâce à l'instruction suivante:
+\begin{lstlisting}
     broadcast(new JobClosedEvent($job));
-\end{verbatim}
+\end{lstlisting}
 
-Finalement, il est nécessaire de configurer les fichiers de config liés au \Gls{broadcast} et aux \Gls{websockets}, ces derniers se trouvent dans le dossier "/config". \\
-Le premier fichier à configurer est nommé "broadcasting.php" est se voit ajouter la configuration disponible sur la figure \ref{ws-broadcasting}. \\
-Il est important de remarquer que le maximum de données sont associées aux valeurs données dans le ".env" afin d'éviter de changer le code entre la phase de développement et la release pour que cela soit adapté à la production. \\
-Cette manière de faire permet d'avoir un fichier ".env" pour le développement et un fichier ".env" pour la production et donc ne jamais toucher / changer le code pour faire fonctionner l'un ou l'autre.
+
+\subsection{Fichiers de configuration}
+Finalement, il est nécessaire de configurer les fichiers de config liés au \Gls{broadcast} et aux \Gls{websockets}, ces derniers se trouvent dans le dossier \emph{/config}. \\
+Le premier fichier à configurer est nommé \emph{broadcasting.php} est se voit ajouter la configuration disponible sur la figure \ref{ws-broadcasting}. \\
+Il est important de remarquer que le maximum de données sont associées aux valeurs données dans le \emph{.env} afin d'éviter de changer le code entre la phase de développement et la release pour que cela soit adapté à la production. \\
+Cette manière de faire permet d'avoir un fichier \emph{.env} pour le développement et un fichier \emph{.env} pour la production et donc ne jamais toucher / changer le code pour faire fonctionner l'un ou l'autre.
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/broadcasting.php}
     \caption{Fichier de configuration pour le broadcasting \label{ws-broadcasting}}
 \end{listing}
 
-Le second fichier à configurer est nommé "webosckets.php" est se voit ajouter la configuration disponible sur la figure \ref{ws-broadcasting}. \\
-Comme pour le premier fichier et pour les mêmes raisons, un maximum de données sont associées aux valeurs données dans le ".env". \\
-On peut remarquer les lignes "\verb|verify_peer|" et "\verb|verify_peer_name|" qui sont à false afin d'accepter les certificats autosignés.
+Le second fichier à configurer est nommé \emph{webosckets.php} est se voit ajouter la configuration disponible sur la figure \ref{ws-broadcasting}. \\
+Comme pour le premier fichier et pour les mêmes raisons, un maximum de données sont associées aux valeurs données dans le \emph{.env}. \\
+On peut remarquer les lignes \emph{verify\_peer} et \emph{verify\_peer\_name} qui sont à false afin d'accepter les certificats autosignés.
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/websockets.php}
@@ -2183,25 +2200,151 @@ On peut remarquer les lignes "\verb|verify_peer|" et "\verb|verify_peer_name|" q
 \end{listing}
 
 Un point important qui sera discuté plus tard dans le rapport, est que je n'ai malheureusement pas réussi à faire fonctionner la configuration en production. \\
-Au niveau local, le  \Gls{backend} semble bien réussir à se connecter au webosckets et y propager des "Events", cependant le \Gls{frontend} ne semble pas les recevoir. \\
-J'ai pu vérifier ceci grâce à la console mise à disposition par la librairie et accessible au chemin "/laravel-websockets", ainsi qu'avec des console.log du côté \Gls{frontend}.
+Au niveau local, le  \Gls{backend} semble bien réussir à se connecter au webosckets et y propager des \emph{Events}, cependant le \Gls{frontend} ne semble pas les recevoir. \\
+J'ai pu vérifier ceci grâce à la console mise à disposition par la librairie et accessible au chemin \emph{/laravel-websockets}, ainsi qu'avec des console.log du côté \Gls{frontend}.
 
 % cliffhanger
-Maintenant que nous en avons finalement terminé avec l'implémentation du \Gls{backend}, nous aimerions savoir comment tester ce dernier et être certain de son bon fonctionnement et c'est exactement ce que nous allons voir au prochain chapitre.
 
-% ensuite décrire ce qu'on a mis en place et indiquer s'il y a des failles
+\section{API admin}
+%todo
 
-% surtout indiquer tout ce qu'on a fait et tout ce que j'ai pas fait
-% et pourquoi je l'ai pas fait, pas compris qqch ou pas eu le temps, pas la priorité, pas de sources suffisantes
+% cliffhanger
+Maintenant que nous en avons finalement terminé avec l'implémentation du \Gls{backend}, nous aimerions voir comment l'utiliser via une interface graphique et c'est là qu'intervient le \Gls{frontend}.
 
-%dans le texte (Labrecque, 2018)
-%\cite{labrecque}
+\chapter{Conception et Réalisation du Frontend}
+Avant de commencer, je tiens à préciser que toute la conception graphique et la réalisation de cette dernière a été réalisée lors du travail de Bachelor de monsieur Lieberherr que vous pouvez retrouver en suivant le lien suivant: \href{https://tb.heig-vd.ch/7532}{Rapport du TB de m. Lieberherr}. \\
+De ce fait, je ne vais pas documenter toute la conception graphique, je vais me contenter d'expliquer ce que j'ai modifié et ajouté au \Gls{frontend}. \\
+Les modifications que j'ai apportées peuvent être séparées dans les thèmes suivants:
+\begin{itemize}
+    \item mise à jour et nettoyage des dépendances;
+    \item ajout de l'authentification avec Keycloak;
+    \item adaptation du \Gls{frontend} afin de correspondre à la nouvelle \Gls{api};
+    \item ajout des ressources liées aux catégories de travaux;
+    \item ajout de la gestion des rôles et modification du \emph{router};
+    \item ajout du nombre d'heures de travail réalisées lorsqu'un travail est terminé.
+\end{itemize}
 
-%suivantes:
-%(Labrecque, 2018; x, yyyy;)
-%pour reformuler
+\section{Architecture de dossier du projet}
+Avant toute chose je tiens à expliquer l'architecture de dossier du \Gls{frontend} qui ne suit peut-être pas totalement les standards ou peut vite changer suivant les développeurs. \\
+Voici une liste des dossiers à l'intérieur du dossier \emph{/src} et de leur utilité:
+\begin{itemize}
+    \item assets contient toutes les images, logos, le css et fonts du porjet;
+    \item components contient tous les composants que l'application peut utiliser dans les différentes vues;
+    \item constants contient toutes les fichiers de constantes utilisés dans le code;
+    \item containers/navs contient toutes les partie de l'application présentent sur chaque page;
+    \item data contient toutes les données statiques utilisées dans le code;
+    \item layouts contient la structure / mise en page de la page de l'application;
+    \item middleware contient le middleware permettant de mettre à jour le \Gls{jwt};
+    \item plugins contient le plugin créer pour contenir le code de l'authentification avec Keycloak;
+    \item store contient tous les fichiers et modules concernant les données stockées dans le \Gls{frontend} et les appels à l'\Gls{api};
+    \item utils contient un fichier avec des méthodes utilisées par le template de base concernant principalement le menu;
+    \item views contient toutes les vues de l'application ainsi que les composants liés uniquement à une seul vue.
+\end{itemize}
 
-%Labrecque M. (2018). Pros and cons of Docker. in \textit{Docker, planet drupal}. consulté à %l'adresse: https://affinitybridge.com/blog/pros-and-cons-docker (consulté le 31.03.2022)
+% cliffhanger
+Nous allons maintenant parcourir chacune de ces modifications afin de rentrer dans les détails.
+
+\section{Mise à jour et nettoyage des dépendances}
+La première chose à noter est la suivante, quand j'ai repris le projet, il y avait plus de 100 dépréciations avec toutes les librairies utilisées. Il faut savoir que le \Gls{frontend} a été réalisé en se basant sur un template acheté et pas forcément très maintenu à jour. \\
+Ce template avait le défaut d'utiliser énormément de petites librairies externes ce qui fait vite grossir la liste des dépendances et en avoir trop, ce n'est jamais bon. \\
+Heureusement, lorsque monsieur Lieberherr a adapté le template pour réaliser le \Gls{frontend}, il a très peu utiliser les dépendances utilisées par le template original.\\
+Après avoir remarqué ce point, j'ai passé passablement de temps à nettoyer les dépendances inutilisées dans le projet et à mettre à jour toutes les dépendances du projet pour finalement arrivé à une liste de dépendances raisonables et qui contient uniquement 21 vulnérabilités.
+
+La majorité de ces vulnérabilités sont liés à la \emph{vue-cli} dont je ne peux pas mettre à jour car tout le projet a été adapté pour avec cette version de \emph{vue-cli}. \\
+Le seul moyen de supprimer toutes ces vulnérabilités restantes, serait de repartir d'un projet vierge et ajouté au fur et à mesure les éléments du \Gls{frontend} et à nouveau refaire fonctionner le tout.
+
+Un autre point à noter dans ces dépendances, on remarque que plusieurs librairies graphiques offrant souvent les même possibilités sont utilisées. Dans ce genre de cas, il serait préférable d'en choisir une seule. \\
+Les librairies sont souvent lourdes en terme de mémoire et en utiliser plusieurs peut donc drastiquement augmenter la taille du site web et de ses pages.
+
+% cliffhanger
+Les dépendances mise à jour, il faut maintenant intégrer l'authentification au \Gls{frontend}.
+
+\section{Authentification avec Keycloak}
+Pour commencer, je me suis inspiré d'une partie de ce \href{https://davidtruxall.com/secure-a-vue-js-app-with-keycloak/}{tutoriel} afin de mettre en place Keycloak comme un plugin. \\
+Le code du \emph{plugin Keycloak} est présent dans le dossier \emph{/src/plugins/} et se nomme \emph{keycloak.js}. \\
+L'objectif est principalement de créer un objet \emph{keycloak} global et accessible partout dans le projet afin de pouvoir facilement utiliser le jeton et les informations qu'il possède. \\
+La totalité des informations utilisées par le paquet sont enregistrées dans le fichier \emph{.env} du projet afin de protéger les secrets dans le code et adapté au mieux les informations en cas de quelconque changement.
+
+J'ai également créé un middleware nommé \emph{keycloakUpdateToken.js} et se trouvant dans le dossier \emph{/src/middleware} permettant de mettre à jour le \Gls{jwt}. Ce dernier contient la méthode \emph{updateToken} qui va simplement mettre à jour le token en réalisant une requête au serveur d'authentification Keycloak de la \Gls{heig-vd}. \\
+Cette méthode est principalement utilisée avant d'envoyer une requête à l'\Gls{api} afin d'être sûr d'avoir un jeton valide comme on peut le voir sur la figure \ref{api-config-js}. \\
+
+\begin{listing}[h]
+    \inputminted{js}{assets/code/apiConfig.js}
+    \caption{Fichier de configuration pour les appels à l'API \label{api-config-js}}
+\end{listing}
+
+On peut voir que le token est intégrer à chaque entête de requête du \Gls{frontend} à l'\Gls{api} et ceci grâce à la librairie \href{https://axios-http.com/fr/docs/intro}{\emph{axios}} permettant de configurer énormément de paramètres sur les requêtes HTTP et des les envoyer.
+
+Finalement, j'ai intégrer l'objet Keycloak au fichier \emph{main.js} comme montré sur la figure \ref{main-js}.
+
+\begin{listing}[h]
+    \inputminted{js}{assets/code/main.js}
+    \caption{Fichier principal (main) de Vue.js \label{main-js}}
+\end{listing}
+
+% cliffhanger
+L'authentification implémentée, nous pouvons maintenant faire des appels à l'\Gls{api} sans soucis. Réaliser des appels à l'\Gls{api} c'est bien, mais utiliser les données récupérées, c'est mieux et c'est ce que nous allons voir maintenant.
+
+\section{Adaptation du Frontend afin de correspondre à la nouvelle API}
+Cette section ne sera pas très longue à la différence du temps que j'ai pas passé à adapter le \Gls{frontend}. En effet, la conception du \Gls{backend} ayant drastiquement changé, il a fallu modifier tous les appels à l'\Gls{api} dans le \emph{store}. \\
+En parlant de \emph{store} utilisant la librairie \href{https://vuex.vuejs.org/}{\emph{vuex}}, lorsque j'ai récupéré le projet, tout était codé dans le même fichier, ce qui le rendait imbuvable. J'ai donc séparé le \emph{store} en différents modules. Un module par ressource (par exemple les travaux ou messages) a été mis en place. \\
+Je me suis inspiré de \href{https://vuex.vuejs.org/guide/modules.html}{la documentation officiel sur les modules} pour intégrer ce concept.
+
+Une fois les appels à l'\Gls{api} réalisés,il a fallu mettre à jour toutes les pages et vues de l'application, et pour réaliser ceci, il n'y a pas de miracle, il faut aller erreur après erreur et bug après bug. \\
+Au final chaque page a été adaptée et potentiellement repensée au niveau du code. \\
+Les plus gros changements étaient surtout présent au niveau de la gestion des notifications et de la timeline du suivi d'un travail précis. \\
+J'ai également remodulé l'architecture de fichiers afin que cela soit plus instinctif.
+
+% cliffhanger
+Dans la continuation des adaptations des pages, il a fallu intégrer les catégories de travaux qui auparavant stocké statiquement dans le \Gls{frontend} et nous allons voir maintenant comment elles ont intégrées en provenant du \Gls{backend}.
+
+\section{Ajout des ressources liées aux catégories de travaux}
+Le premier ajout a été de rajouter un module dans le \emph{store} dédié aux catégories de travaux et d'y mettre les appels à l'\Gls{api} nécessaires. \\
+Ensuite, il a fallu remplacer les informations statiques dans la vue dédiée aux catégories de travaux par celles récupérées de \Gls{api}. \\
+Il a également fallu intégrer les images fournies par le \Gls{backend} dans cette même vue.
+
+De plus, il a fallu intégrer dans le reste des pages afin que ces dernières soit utilisées correctement notamment pour:
+\begin{itemize}
+    \item la création d'un nouveau travail,
+    \item les informations sur le travail spécifique,
+    \item les tableaux contenant la liste des travaux de l'utilisateur;
+    \item les tableaux contenant la liste des travaux non assignés;
+\end{itemize}
+
+% cliffhanger
+Une fois le \Gls{frontend} totalement adapté, il est nécessaire d'ajouter une gestion des rôles afin de vérifier l'accès à certaines ressources / pages en fonction du rôle de l'utilisateur.
+
+\section{Ajout de la gestion des rôles et modification du \emph{router}}
+La première chose que j'ai mise en place est la création d'un fichier de constantes contenant tous les rôles disponibles dans l'application. Ce fichier se trouve dans le dossier \emph{/constants}.
+
+Le routing du \Gls{frontend} a été réalisé avec la librairie \href{https://router.vuejs.org/}{\emph{vue-router}}. Le routing était déjà totalement configuré / réalisé. Les urls de l'application commençaient tous par \emph{/app} et j'ai donc fait en sorte de retirer cet \emph{url} qui pourrait apparement créer des conflits avec les \Gls{websockets}.
+
+De plus j'ai changé le nom de certaines routes afin qu'elles soient plus instinctives. Le fichier contenant toute la gestion de routes est nommé \emph{router.js} et est consultable sur la figure \ref{router-js}.
+
+\begin{listing}[h]
+    \inputminted{javascript}{assets/code/router.js}
+    \caption{Router de l'application Vue.js \label{router-js}}
+\end{listing}
+
+Pour finir, j'ai ajouté une garde devant la seule route demandant d'avoir un autre rôle que \emph{client}. La route est celle des travaux non assignés \emph{/unassigned-jobs}. \\
+Pour accéder à cette dernière, il faut que l'utilisateur stocké dans le \emph{store} possède le rôle \emph{worker} ou \emph{admin}.
+
+% cliffhanger
+Maintenant que le frontend est opérationnel, il est possible d'ajouter de nouvelles fonctionnalités, et c'est ce que nous allons voir dans la prochaine section.
+
+\section{Ajout du nombre d'heures de travail réalisées lorsqu'un travail est terminé}
+La seule fonctionnalité que j'ai ajouté au frontend est la suivante. Lorsque un travail indique qu'une tâche est terminée, il lui est demandé d'entrer le nombre d'heures passées sur le travail. \\
+Pour ajouter cette fonctionnalité, j'ai observé la mise à jour du statut et quand ce dernier était sélectionner à \emph{Terminé}, un champ numérique s'ajoute afin de demander le nombre d'heures passées sur le travail. On peut voir le résultat final sur la figure \ref{nb-worked-hours}.
+
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/nb-worked-hours.png}
+        \caption{Interface pour entrer le nombre d'heures passées sur un travail \label{nb-worked-hours}}
+    \end{figure}
+\end{center}
+
+% cliffhanger
+Maintenant que nous en avons finalement terminé avec l'implémentation du \Gls{backend} et du \Gls{frontend}, nous aimerions savoir comment tester l'application et être certain de son bon fonctionnement et c'est exactement ce que nous allons voir au prochain chapitre.
 
 \chapter{Tests}
 Dans ce chapitre, nous allons nous concentrer sur les tests réalisés et prévus pour l'application. \\
@@ -2219,18 +2362,18 @@ Les tests automatiques réalisés peuvent être séparés en deux types:
 \subsection{Tests unitaires}
 Les tests unitaires ont été uniquement réalisé sur les \Gls{regex}, ces derniers permettant de valider le bon fonctionnement de la validation d'entrée utilisateurs.
 
-On peut retrouver ces tests dans le dossier "/tests/Unit".
+On peut retrouver ces tests dans le dossier \emph{/tests/Unit}.
 
 \subsection{Tests d'intégration}
-Les tests d'intégration ont été réalisés sur toutes les routes majoritairement utilisées par les utilisateurs. Ces tests sont des tests dit "end-to-end" et ont été réalisés en suivant \href{https://laravel.com/docs/9.x/http-tests}{la documentation Laravel à ce sujet}.
+Les tests d'intégration ont été réalisés sur toutes les routes majoritairement utilisées par les utilisateurs. Ces tests sont des tests dit \emph{end-to-end} et ont été réalisés en suivant \href{https://laravel.com/docs/9.x/http-tests}{la documentation Laravel à ce sujet}.
 
 Des tests sur la validation de fichiers upload ont également été réalisés.
 
-On peut retrouver tous ces tests dans le dossier "/tests/Feature". Chaque dossier contient les tests réalisés sur une ressource / modèle. Chaque fichier représente les tests sur une action / route précise.
+On peut retrouver tous ces tests dans le dossier \emph{/tests/Feature}. Chaque dossier contient les tests réalisés sur une ressource / modèle. Chaque fichier représente les tests sur une action / route précise.
 
 \subsection{Protocole de tests}
 Comme mentionné précédemment, un protocole de tests a été rédigé. Ce dernier a pour but de tester globalement l'application, que cela soit en production ou en développement. \\
-On peut comparer ce protocole à des tests "système". \\
+On peut comparer ce protocole à des tests \emph{système}. \\
 Ce dernier est disponible en annexe. \\
 Ce protocole est une adaptation de celui réaliser par monsieur Lieberherr.
 
@@ -2258,7 +2401,7 @@ La CI est consultable sur les figures \ref{ci-1} et \ref{ci-2}
 \end{listing}
 
 \section{Déclenchement de la CI}
-La première partie après le mot clé "on", indique quand cette CI et donc cette Github Actions est
+La première partie après le mot clé \emph{on}, indique quand cette CI et donc cette Github Actions est
 déclanchée.\\
 
 \section{Infrastructure et services}
@@ -2268,35 +2411,134 @@ fonctionnement des tests. Ici nous construisons un SGBD MySQL, ainsi qu'une base
 
 \section{Étapes de configuration}
 
-À partir du mot clé "steps", une série d'étape de configuration a lieu.\\
-Chaque étape est décrite après le mot clé "name"\\
+À partir du mot clé \emph{steps}, une série d'étape de configuration a lieu.\\
+Chaque étape est décrite après le mot clé \emph{name}\\
 Tout d'abord, on lance les Github Actions, puis on réalise une étape non obligatoire mais
 importante, on vérifie si la connexion à MySQL construit plus tôt fonctionne.\\
 Il est notamment important d'installer tout l'environnement php.\\
 Il faut ensuite générer les clés pour l'appluication, puis lancer les migrations et le
 seeding.\\
 Il est ensuite important de changer les permissions pour le storage. Et finalement il est possible
-de lancer tous les tests de l'application avec phpunit.
+de lancer tous les tests de l'application avec phpunit. \\
 
 \section{Code coverage}
+Comme vous le remarquez, les tests sont exécutés avec l'option \emph{--coverage clover.xml} afin de générer un rapport de code coverage. \\
+Ce rapport de code coverage est stocké dans le fichier \emph{clover.xml}. Ce fichier est ensuite utiliser afin de créer un badge de code coverage au formar \emph{svg} sous le nom \emph{badge-coverage.svg}. \\
+Ce badge est présent sur le \emph{README} du \Gls{repository} \Gls{github}. \\
+Et c'est ainsi que le code coverage a été ajouté au projet.
+
+% cliffhanger
+Nous avons une intégration continue mise en place pour réaliser l'application qui est désormais terminée, c'est bien vous me direz, mais nous ne pouvons toujours pas accéder au site, il n'est pas en ligne! \\
+Cela tombe bien, nous allons voir dans le prochain chapitre comment déployer l'application web.
 
 \chapter{Déploiement}
+Le déploiement, quelle étape importante dans un projet et souvent la plus compliquée.
+Je ne vais pas vous mentir, n'étant pas expert dans le domaine, cela n'a pas été facile.
+
+\section{Infrastructure de production}
+Avant de commencer à parler du déploiement en lui-même, il est nécessaire de vous présenter l'infrastructure de production mise en place. Cette dernière est visible à la figure \ref{prod-infra}.
+
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./assets/figures/prod-infra.png}
+        \caption{Infrastructure de production \label{prod-infra}}
+    \end{figure}
+\end{center}
+
+Tout d'abord, il faut savoir que la machine de production a été fournie par la \Gls{heig-vd}. Cette dernière est donc situé à l'intérieur du réseau de l'école. La machine n'ayant pas d'ouverture directe en \Gls{ssh} ouverte avec l'extérieur, il est obligatoire d'être connecté sur le réseau de l'école physiquement ou via \Gls{vpn}.
+
+On peut ensuite constater qu'un \Gls{proxy} se situe entre le client et notre serveur. Ce \Gls{proxy} est installé par la \Gls{heig-vd} afin de permettre une entrée sur le serveur via une autre adresse \Gls{dns}, via un autre domaine. d'ouvrir les ports HTTP et \Gls{https}. \\
+Ce \Gls{proxy} permet également d'encrypter le flux avec leur propre certificat. Il a pour seul rôle de rediriger le port 443 (\Gls{https}) sur le même port de la machine et pareil pour le port 80 (\Gls{http}). \\
+Ces redirections nous force donc à créer un certificat autosigné sur la machine de production afin de pouvoir tout de même accepter les connexions en \Gls{https}.
+
+On remarque également qu'un serveur \Gls{apache} a été mis en place dont nous allons voir la configuration plus tard. Ce dernier sert de serveur \Gls{http} et \Gls{https}. \\
+La machine possède également un \Gls{sgbd} tournant sur un container \Gls{docker} à l'aide d'un \emph{docker-compose}. \\
+De plus, il est nécessaire de lancer deux autres services, un pour le serveur \Gls{websockets} et un pour gérer la queue des emails.
+
+\section{Guide d'installation de la machine de production}
+Avant de passer aux différentes configurations, il est important de préciser qu'un guide d'installation de la machine de production a été réalisé afin de pouvoir reproduire au mieux l'environnement de travail final. Ce dernier est disponible sur le
+\href{https://github.com/heig-fablab/fablab-manager/blob/main/prod-install-guide.md}{\Gls{repository} principal sous le nom de \emph{prod-install-guide.md}} et en annexe.
+
+\section{Docker-compose de la BD}
+Avant de parler de la configuration \Gls{apache}, il est important de préciser certains points concernant la base de données mise en place. \\
+Cette dernière est un \emph{Docker-compose} contenant plusieurs \Gls{conteneur}. Il contient donc le \Gls{sgbd} \Gls{mysql}, hébergement lui-même la base données nommé \emph{fablab-amanager}.
+
+Mais il contient également un \Gls{conteneur} \href{https://www.adminer.org/}{\emph{Adminer}} permettant de gérer la base de données via une petite interface web.
+
+Le dernier \Gls{conteneur} contient un programme permettant de réaliser des sauvegardes des base de données \Gls{mysql} à intervalle régulière et automatiquement, il est nommé \href{https://hub.docker.com/r/databack/mysql-backup}{databack/mysql-backup}.
+
+Toute cette configuration est disponible dans le dossier \href{https://github.com/heig-fablab/fablab-manager/blob/main/mysql/docker-compose.yml}{\emph{mysql} du projet principal} et en annexe.
+
+Nous pouvons maintenant passer à la configuration \Gls{apache}.
+
+\section{Configuration Apache}
+Tout d'abord, pourquoi ai-je choisi \Gls{apache} comme serveur \Gls{http} ?
+J'ai choisi \Gls{apache} car c'est le seul serveur \Gls{http} dont je possédais des connaissances, mais aussi car il avait été utilisé dans le projet initial et finalement car il me paraîssait simple à mettre en place.
+
+Le serveur Apache va permettre de servir notre application web. \\
+La configuration va simplement pointé sur le dossier \emph{public} du projet \Gls{laravel} et servir les pages web. Ces pages vont communiqué avec le \Gls{backend} lancer en parallèle avec la commande \emph{php artisan up}.
+
+Pour entrer en détail dans la configuration \Gls{apache}, il est important de la vous la présenter avec la figure \ref{config-apache}.
+
+\begin{listing}[h]
+    \inputminted{conf}{assets/code/config-apache.conf}
+    \caption{Configuration Apache \label{config-apache}}
+\end{listing}
+
+Tout d'abord, il faut savoir que la configuration est un \emph{VirtualHost} afin de ne pas toucher aux configurations de base de \Gls{apache}. Cela permet d'avoir plusieurs configuration établies sur le serveur et d'ensuite choisir laquelle est utilisée pour le site.
+
+La configuration réalisée permet de rediriger tout le flux du port 80 sur le port 443 afin de servir le site uniquement en \Gls{https}. Cette redirection peut-être observée au niveau des opérations de type \emph{Rewrite} sous le \emph{VirtualHost *:80}.
+
+Ensuite, nous constatons toutes les informations nécessaire au bon fonctionnement du serveur et indiquant où les pages web à servir se trouvent.
+
+De plus, nous remarquons qu'un \emph{reverse proxy} a été mis en place sur les entrées dédiées aux \Gls{websockets}. Ces derniers passant par le chemin \emph{/app} ou \emph{/apps} sont donc redirigé sur le serveur webosckets tournant sur le port 6000 en local que nous verrons plus tard.
+
+Finalement, nous pouvons observer la configuration permettant de servir le site en  \Gls{https} grâce au certificat autosigné généré avec \href{https://www.openssl.org/}{\emph{OpenSSL}}.
+
+Le serveur \Gls{apache} configuré, nous devons maintenant ajouté les processus supervisés.
+
+\section{Processus supervisé}
+Les processus supervisé ont été réalisé avec l'outil \href{http://supervisord.org/}{\emph{Supervisor}}. Cet outil a comme avantage, par rapport au processus \emph{systemctl} classiques de Linux qu'il peut-être intégrer à un \Gls{docker} et offre également une meilleure surveillance des processus.
+
+Pour ajouter des processus gérer par \emph{Supervisor} (une fois installé), il suffit d'ajouter un fichier de configuration par processus sous le dossier \emph{/etc/supervisor/conf.d}. Deux fichiers de configurations ont été créés. \\
+Le premier, pour la queue est consulable sur la figure \ref{laravel-queue}.
+
+\begin{listing}[h]
+    \inputminted{configuration}{assets/code/laravel-queue.conf}
+    \caption{Configuration pour la queue Laravel \label{laravel-queue}}
+\end{listing}
+
+Le second, pour les \Gls{websockets} est consulable sur la figure \ref{laravel-websockets}.
+
+\begin{listing}[h]
+    \inputminted{configuration}{assets/code/laravel-websockets.conf}
+    \caption{Configuration pour la queue Laravel \label{laravel-websockets}}
+\end{listing}
+
+\emph{Supervisor} permet de toujours maintenir ces processus en vie et de les superviser.
 
 \section{Déploiement continu}
+Comme expliqué précédemment, la machine étant uniquement accessible en étant connecté sur le réseau de l'école, il était très compliqué de réaliser un déployement automatique.
+De ce fait, un guide de déployement a été réalisé à la place et est disponible en annexe ou à la fin du \href{https://github.com/heig-fablab/fablab-manager/blob/main/README.md}{\emph{REAMDE.md} du \Gls{repository} principal}.
 
-\chapter{Reprise du projet}
+L'application web est déployée à l'adresse suivante \href{https://tb22-berney.heig-vd.ch/}{https://tb22-berney.heig-vd.ch/}.
 
-\section{Récupération physique du projet}
+% cliffhanger
+Maintenant le site est  déployé, prenons du recul sur le projet et établissant un bilan final, passons à la conclusion.
 
-\section{Erreurs restantes}
+% ensuite décrire ce qu'on a mis en place et indiquer s'il y a des failles
 
-vérification des fichiers avec le mime type de php
-vérification du contenu des fichiers compressés
-fonctionnement des websockets en local et production
-fonctionnement des emails retardés en procution
+% surtout indiquer tout ce qu'on a fait et tout ce que j'ai pas fait
+% et pourquoi je l'ai pas fait, pas compris qqch ou pas eu le temps, pas la priorité, pas de sources suffisantes
 
-\section{Améliorations possibles}
-voir toutes les issues nice to have
+%dans le texte (Labrecque, 2018)
+%\cite{labrecque}
+
+%suivantes:
+%(Labrecque, 2018; x, yyyy;)
+%pour reformuler
+
+%Labrecque M. (2018). Pros and cons of Docker. in \textit{Docker, planet drupal}. consulté à %l'adresse: https://affinitybridge.com/blog/pros-and-cons-docker (consulté le 31.03.2022)
 
 %%if
 %\chapter{Bibliographie}
@@ -2310,6 +2552,7 @@ voir toutes les issues nice to have
 %%fi
 
 \chapter{Conclusion}
+%todo
 
 %%if
 %Bien que non nécessaire dans un rapport de Bachelor, la discussion finale d'un projet résume les résultats obtenus et dresse une conclusion objective du projet. Un manager de société est souvent amené à lire de nombreux rapport, il ne s'intéresse généralement qu'à l'introduction au contexte de l'étude et à sa conclusion.
@@ -2317,18 +2560,102 @@ voir toutes les issues nice to have
 %Il est de coutume de signer la conclusion...
 %%fi
 
-\section{Conclusion intermédiaire}
-Je pense être en bonne voie pour le projet. J'ai bien saisi les concepts du framework Laravel et
-vais pouvoir me plonger pleinement dans le code.\\
-La première partie du projet contenant beaucoup d'analyse et de rédaction, désormais
-passée, me permettra également de passer plus temps pour la réalisation du projet.\\
-J'ai eu quelques soucis d'estimation du travail lors de la première réalisation du planning. J'ai pu
-les corriger afin de mieux visualiser la suite du projet.\\
-Mon ressenti principal sur le projet est simple, plus je me plonge dans une tâche, plus j'ai
-l'impression qu'elle prendra du temps, et potentiellement plus que prévu initalement. C'est
-pourquoi, j'ai essayé de prévoir plus de temps qu'en premier lieu, pour chacune de mes tâches.\\
-J'ai aussi l'impression de mieux en mieux prendre en main le framework Laravel et par ce fait,
-commencer à être plus productif.\\
+\subsection{Suite du projet}
+
+\subsection{Récupération des fichiers du projet}
+commit du frontend release ws + main -> dans rapport %todo
+commit du backend ws + main -> dans rapport %todo
+commit du keycloak -> dans rapport %todo
+
+% cliffhanger
+Le projet récupéré, regardons ce qu'il reste à corriger et améliorer sur ce dernier.
+
+\subsection{Erreurs restantes}
+
+\subsubsection{Websockets}
+Je vais par le plus gros morceau, la mise en place des \Gls{websockets} et de leur serveur.
+Comme expliqué dans la partie dédiée de l'implémentation du \Gls{backend}, ces derniers ne fonctionnent pas totalement en local, car le \Gls{frontend} ne reçoit pas les données émisent par le serveur. Cependant le \Gls{backend} arrive bien à les transmettre au serveur hébergeant les \Gls{websockets}. \\
+En production, la configuration actuelle ne fonctionne également pas pour le \Gls{backend} qui jette une exception à chaque fois qu'il tente de \Gls{broadcast} un \emph{Event}. Je suis presque sûr que cela est dû à la mauvaise configuration de mon fichier \href{https://github.com/heig-fablab/fablab-manager/blob/main/.env.prod.example}{\emph{.env} de production} disponible en annexe. \\
+Le fichier de configuration essaie actuellement de passer par l'url web du serveur, et devrait passer directement en local, ce qui éviterai pas mal de soucis.
+
+En ce qui concerne le frontend, je n'est ai aucune idée d'où vient actuellement le problème comme je ne reçois pas d'erreur, ni de message dans les \emph{logs}. Je pense aussi que cela vient de ma configuration du fichier \emph{.env}, que cela soit en local ou en production.
+Cela pourrait également venir du fait que les \emph{channels} utilisés ne sont pas \emph{public} ou car les instructions de \Gls{broadcast} ne sont pas envoyées avec la fonction \emph{->toOthers()} à la suite de l'instruction \emph{broadcast(new Event(objet))} dans les \emph{Controllers}. \\
+
+Une autre chose dont je suis presque sûr, c'est que la configuration concernant le \emph{reverse proxy} \Gls{apache} doit être fonctionnelle et le problème ne doit pas venir de là.
+
+Selon moi, la procédure pour résoudre le problème est la suivante:
+\begin{enumerate}
+    \item Faire fonctionner les communications en local en essayant de changer les types de \emph{channels} et / ou la configuration du fichier \emph{.env} et / ou utiliser la fonction \emph{->toOthers()}.
+    \item Déployer la version fonctionnelle en locale.
+    \item Configurer le fichier \emph{.env} de la production pour faire fonctionner le \Gls{broadcast} du \Gls{backend}.
+    \item Configurer le fichier \emph{.env} de la production pour faire fonctionner le \Gls{frontend}.
+\end{enumerate}
+
+Pour en finir avec ces \Gls{websockets}, les quatre fichiers d'environnement sont disponibles en annexe et avec les liens suivants:
+\begin{itemize}
+    \item \href{https://github.com/heig-fablab/fablab-manager/blob/main/.env.prod.example}{\emph{.env.backend.prod}}
+    \item \href{https://github.com/heig-fablab/fablab-manager/blob/main/.env.dev.example}{\emph{.env.backend.dev}}
+    \item \href{https://github.com/heig-fablab/fablab-manager-frontend/blob/main/.env.prod.example}{\emph{.env.frontend.prod}}
+    \item \href{https://github.com/heig-fablab/fablab-manager-frontend/blob/main/.env.dev.example}{\emph{.env.frontend.dev}}
+\end{itemize}
+
+\subsubsection{Queue d'emails en production}
+La prochaine erreur restante à aborder est la queue d'emails. Cette dernière ne semble pas fonctionner parfaitement en production. En effet, quand je modifie l'entrée \emph{QUEUE_CONNECTION=} avec la valeur \emph{database} dans le fichier \emph{.env} de la production du \Gls{backend}, je reçois une exception du \Gls{backend} au moment de stocker le \emph{Job} dans la base de données. Si cette même entrée contient la valeur \emph{sync}, cela fonctionne mais le \emph{Job} n'attends pas les 10 minutes avant d'être exécuter. \\
+Vu l'exception reçue, je pense qu'il y a un problème avec la migration ou le lien entre la fonction \emph{dispatch} et la base de données.
+
+Encore une fois pour résoudre ce problème, il faudrait pouvoir reproduire l'erreur en local, puis la corriger, puis déployer le tout et finalement mettre à jour le fichier \emph{.env} de la production pour que tout fonctionne.
+
+\subsubsection{Conteneur Docker de sauvegarde}
+Comme expliqué précédement, un \Gls{conteneur} \Gls{docker} a été ajouté au \emph{Docker-compose} de la base de données afin de faciliter les sauvegardes.\\
+La seule chose à dire sur ce point, c'est que je n'ai pas pu tester le bon fonctionnement du \Gls{conteneur} et cela serait à faire.
+
+\subsubsection{Vérification des fichiers compressés}
+Comme énoncé dans la partie correspondante, la validation et vérification des fichiers compressées fonctionnent pour le type compressé en lui-même, mais il serait préférable de valider également tous les fichiers à l'intérieur du fichier compresser. \\
+Pour cela, j'ai trouvé deux classes \Gls{php} qui peuvent être utilisées afin de récupérer des informations sur les fichiers à l'intérieur du fichier compressé. Ces deux classes sont les suivantes:
+\begin{itemize}
+    \item \href{https://www.php.net/manual/fr/class.ziparchive.php}{ZipArchive} pour les fichiers \emph{zip};
+    \item \href{https://www.php.net/manual/en/class.rararchive.php}{RarArchive} pour les fichiers \emph{rar}.
+\end{itemize}
+
+Cependant, aucune classe n'existe pour les fichiers \emph{7z}, il faudrait donc les exclure des types de fichiers accepter.
+
+J'ai également trouvé un \href{https://stackoverflow.com/questions/25847374/ziparchive-check-file-extension}{poste \emph{stackoverflow}} étant très utile pour réaliser ce que l'on souhaite. \\
+La fonction \href{https://www.php.net/manual/fr/function.pathinfo.php}{\emph{pathinfo}} pourrait également servir.
+
+Pour finir, tout ce que j'ai déjà exploré est disponible sur \href{https://github.com/heig-fablab/fablab-manager/issues/139}{une \emph{issue} dédiée}.
+
+\subsubsection{Vérification des fichiers avec le mime type de php}
+Encore une fois, comme abordé précédemment, les fichiers spéciaux utilisés pour le programme ne sont pas détecté correctement par la fonction \emph{file->extension()} fournie par \Gls{laravel}.
+Pour résoudre ce problème, il serait bien de tester la fonction \href{https://www.php.net/manual/fr/function.mime-content-type.php}{\emph{mime\_content\_type} de PHP} afin d'améliorer drastiquement la qualité et la simplicité du code actuel.
+
+Pour en finir avec ces erreurs restantes, je tiens à préciser que chaque erreur liée au code possède une \emph{issue} ouverte sur le \Gls{repository} principal du projet.
+
+\subsection{Améliorations possibles}
+voir toutes les issues nice to have
+
+Dans cette section, je vais me contenter de lister des améliorations qui seraient intéressantes à apport au projet en général et qui sont dispensables, on parle ici de \emph{nice to have}.
+
+Voici la liste en question:
+%todo
+\begin{itemize}
+    \item \href{}{Réaliser une meilleure gestion des erreurs retournées par le Backend}
+    \item \href{}{Réaliser une meilleure gestion des erreurs retournées par le Backend}
+    \item \href{}{Réaliser une meilleure gestion des erreurs retournées par le Backend}
+    \item \href{}{Réaliser une meilleure gestion des erreurs retournées par le Backend}
+    \item \href{}{Réaliser une meilleure gestion des erreurs retournées par le Backend}
+    \item \href{}{Réaliser une meilleure gestion des erreurs retournées par le Backend}
+    \item \href{}{Réaliser une meilleure gestion des erreurs retournées par le Backend}
+    \item \href{}{Réaliser une meilleure gestion des erreurs retournées par le Backend}
+    \item \href{}{Réaliser une meilleure gestion des erreurs retournées par le Backend}
+    \item \href{}{Réaliser une meilleure gestion des erreurs retournées par le Backend}
+\end{itemize}
+
+% tous ces points issues nice to have
+
+\section{Bilan final}
+%todo
+
+Commencer par toutes les erreurs restantes -> projet très conséquent + problème arriver tard dans le projet -> priorité ailleurs + méconnaissance de bcp de points et apprentissage sur point -> perdre du temps
 
 \section{Sources d'informations}
 Lors d'un projet de développement informatique, beraucoup de recherches sont réalisées lors de la
@@ -2346,6 +2673,7 @@ Voici donc une liste de références:
     \item stackshare.io : outil pour comparer des technologies ou utils \cite{stackshare},
     \item wikipedia.org: site d'informations.
 \end{itemize}
+
 
 \vfil
 \hspace{8cm}\makeatletter\@author\makeatother\par
@@ -2372,63 +2700,92 @@ Voici donc une liste de références:
     \includepdf{./assets/annexes/planning-v2.pdf}
 \end{landscape}
 
+\includepdf[pages={1-}]{./assets/annexes/test-protocole.pdf}
 
-\includepdf{./assets/annexes/test-protocole.pdf}
+\includepdf[pages={1-}]{./assets/annexes/prod-install-guide.pdf}
+
+\includepdf[pages={1-}]{./assets/annexes/release.pdf}
+
+\begin{listing}[h]
+    \inputminted{yaml}{assets/code/docker-compose-mysql.yml}
+    \caption{\emph{Docker-compose} pour la base de données \emph{MySQL} \label{docker-compose-mysql}}
+\end{listing}
+
+\begin{listing}[h]
+    \inputminted{php}{assets/code/12_create_file_types_table.php}
+    \caption{Migration de la table \emph{file\_types} \label{migrations-file-types}}
+\end{listing}
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/13_create_roles_table.php}
-    \caption{Migration de la table "roles" \label{migrations-roles}}
+    \caption{Migration de la table \emph{roles} \label{migrations-roles}}
 \end{listing}
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/14_create_users_table.php}
-    \caption{Migration de la table "users" \label{migrations-users}}
+    \caption{Migration de la table \emph{users} \label{migrations-users}}
 \end{listing}
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/15_create_job_categories_table.php}
-    \caption{Migration de la table "job-categories" \label{migrations-job-categories}}
-\end{listing}
-
-\begin{listing}[h]
-    \inputminted{php}{assets/code/16_create_jobs_table.php}
-    \caption{Migration de la table "jobs" \label{migrations-jobs}}
+    \caption{Migration de la table \emph{job\_categories} \label{migrations-job-categories}}
 \end{listing}
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/17_create_events_table.php}
-    \caption{Migration de la table "events" \label{migrations-events}}
+    \caption{Migration de la table \emph{events} \label{migrations-events}}
 \end{listing}
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/18_create_files_table.php}
-    \caption{Migration de la table "files" \label{migrations-files}}
+    \caption{Migration de la table \emph{files} \label{migrations-files}}
 \end{listing}
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/19_create_messages_table.php}
-    \caption{Migration de la table "messages" \label{migrations-messages}}
-\end{listing}
-
-\begin{listing}[h]
-    \inputminted{php}{assets/code/20_create_device_job_category_table.php}
-    \caption{Migration de la table "device-job-category" \label{migrations-device-job-category}}
+    \caption{Migration de la table \emph{messages} \label{migrations-messages}}
 \end{listing}
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/21_create_file_type_job_category_table.php}
-    \caption{Migration de la table "file-type-job-category" \label{migrations-file-type-job-category}}
+    \caption{Migration de la table \emph{file\_type\_job\_category} \label{migrations-file-type-job-category}}
 \end{listing}
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/22_create_role_user_table.php}
-    \caption{Migration de la table "role-user" \label{migrations-role-user}}
+    \caption{Migration de la table \emph{role\_user} \label{migrations-role-user}}
 \end{listing}
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/KeycloakGuard.php}
     \caption{KeycloakGuard \label{keycloak-guard}}
 \end{listing}
+
+\begin{listing}[h]
+    \inputminted{php}{assets/code/Token.php}
+    \caption{Token pour Keycloak \label{keycloak-token}}
+\end{listing}
+
+\begin{listing}[h]
+    \inputminted{text}{assets/code/.env.backend.prod}
+    \caption{Fichier \emph{.env} du Backend de la production \label{env-backend-prod}}
+\end{listing}
+
+\begin{listing}[h]
+    \inputminted{text}{assets/code/.env.backend.dev}
+    \caption{Fichier \emph{.env} du Backend du développement \label{env-backend-dev}}
+\end{listing}
+
+\begin{listing}[h]
+    \inputminted{text}{assets/code/.env.frontend.prod}
+    \caption{Fichier \emph{.env} du Frontend de la production \label{env-frontend-prod}}
+\end{listing}
+
+\begin{listing}[h]
+    \inputminted{text}{assets/code/.env.frontend.dev}
+    \caption{Fichier \emph{.env} du Frontend du développement \label{env-frontend-dev}}
+\end{listing}
+
 
 %Les annexes n'ont pas un contenu \underline{normatif} mais \underline{descriptif}. Tout contenu annexé ne doit pas être nécessaire à la bonne compréhension du travail.
 

@@ -1,4 +1,7 @@
 <?php
+
+[...]
+
 // File Storage Service
 public const PRIVATE_FILE_STORAGE_PATH = 'private/file-storage/';
 public const PUBLIC_FILE_STORAGE_PATH = 'public/';
@@ -10,7 +13,8 @@ public static function store_file($req_file, $job_id, bool $is_public = false): 
     // File infos
     $hash = hash_file(File::HASH_ALGORITHM, $req_file);
     $dir = substr($hash, 0, 2);
-    $file_type = FileType::where('name', '=', $req_file->getClientOriginalExtension())->firstOrFail();
+    $file_type = FileType::where('name', '=', 
+        $req_file->getClientOriginalExtension())->firstOrFail();
 
     // Create file for DB
     $file = File::create([
@@ -28,8 +32,11 @@ public static function store_file($req_file, $job_id, bool $is_public = false): 
     // Add to filestorage
     // Create a directory with 2 first letter of hashed_name
     // It's a Laravel trick to not be stopped after x files in directory
-    $file_storage_path = $is_public ? File::PUBLIC_FILE_STORAGE_PATH : File::PRIVATE_FILE_STORAGE_PATH;
+    $file_storage_path = $is_public ? File::PUBLIC_FILE_STORAGE_PATH :
+        File::PRIVATE_FILE_STORAGE_PATH;
     $req_file->storeAs($file_storage_path . $dir, $hash);
 
     return $file;
 }
+
+[...]

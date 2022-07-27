@@ -1,5 +1,7 @@
 <?php
 
+[...]
+
 Broadcast::channel('message.{username}', function ($user, $username) {
     return $user->username === $username;
 });
