@@ -15,7 +15,8 @@ public static function is_valid_file($file, $accepted_file_types): bool
     }
 
     // Verify file type matching with file type detected from content
-    // Some types are detected false and we know them, a correspondence function is used
+    // Some types are detected false and we know them, a
+    // correspondence function is used
     // Some other, we don't know yet the correspondence and go further
     $file_type_matching_ok = true;
     if (self::is_file_type_not_detected_with_correspondence(
@@ -30,7 +31,8 @@ public static function is_valid_file($file, $accepted_file_types): bool
     }
 
     if (!$file_type_matching_ok) {
-        log::Info("Original extension and extension detected by mime type mismatch");
+        log::Info("Original extension and extension 
+            detected by mime type mismatch");
         return false;
     }
 

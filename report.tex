@@ -2080,6 +2080,7 @@ Maintenant que nous en avons terminé avec la gestion des fichiers, il est néce
 
 \section{Gestion des événements et notifications}
 Pour notre application, nous souhaitons réaliser une timeline indiquant tous les événements intervenu sur le travail consulter afin d'avoir un suivi total. Pour réaliser cette timeline, la mise en place d'événements a été conçue. Nous avons déjà vu plus tôt ce que contenait un événement dans la base de données, il est maintenant nécessaire de définir quand est-ce qu'un événement est créé et pourquoi. La figure \ref{events-email-scenario.drawio} défini parfaitement dans quelle situation un événement est généré. \\
+À gauche nous observons la personne réalisant l'action indiquée, puis à droite l'événement généré et la personne qu'il doit notifier. \\
 On peut clairement comprendre quel type d'événement est généré dans quelle situation. \\
 Il est important de prendre en compte que lorsqu'un événement est créé dans chacune des ces actions, ce dernier a forcément la valeur \emph{to notify} à \emph{true} et va donc indiquer à l'utilisateur concerné (à droite) la notification sur le travail lié.
 
@@ -2143,7 +2144,8 @@ Cette librairie est nommée \href{https://beyondco.de/docs/laravel-websockets/ge
 \subsection{Events}
 
 Pour mettre en place ce système de Webosckets, j'ai d'abord défini tous les événements (\emph{Events}) qui pouvait intervenir et être utiliser par les Webosckets. Je me suis inspiré de \href{https://laravel.com/docs/9.x/events}{la documentation Laravel sur les \emph{Events}} pour les créer et réaliser.
-Ces scénarii sont disponibles sur la figure \ref{ws-conception-notifications.drawio}. \\
+Ces "scénarii" sont disponibles sur la figure \ref{ws-conception-notifications.drawio}. \\
+On remarque à gauche l'\emph{Event} qui peut-être généré et à droite le canal dans lequel il sera transmis puis quel type d'utilisateur le recevra. \\
 Un Event est au final un objet contenant le canal sur lequel il doit être envoyé et les données qu'il doit envoyer.
 
 %\figi{ws-conception-notifications.drawio}{16cm}{Conception des événements pour les Websockets}
@@ -2213,6 +2215,7 @@ Maintenant que nous en avons finalement terminé avec l'implémentation du \Gls{
 
 \chapter{Conception et Réalisation du Frontend}
 Avant de commencer, je tiens à préciser que toute la conception graphique et la réalisation de cette dernière a été réalisée lors du travail de Bachelor de monsieur Lieberherr que vous pouvez retrouver en suivant le lien suivant: \href{https://tb.heig-vd.ch/7532}{Rapport du TB de m. Lieberherr}. \\
+Pour rappel, le \Gls{frontend} est un \Gls{spa} (Single Page Application). \\
 De ce fait, je ne vais pas documenter toute la conception graphique, je vais me contenter d'expliquer ce que j'ai modifié et ajouté au \Gls{frontend}. \\
 Les modifications que j'ai apportées peuvent être séparées dans les thèmes suivants:
 \begin{itemize}
@@ -2228,17 +2231,17 @@ Les modifications que j'ai apportées peuvent être séparées dans les thèmes 
 Avant toute chose je tiens à expliquer l'architecture de dossier du \Gls{frontend} qui ne suit peut-être pas totalement les standards ou peut vite changer suivant les développeurs. \\
 Voici une liste des dossiers à l'intérieur du dossier \emph{/src} et de leur utilité:
 \begin{itemize}
-    \item assets contient toutes les images, logos, le css et fonts du porjet;
+    \item \emph{assets} contient toutes les images, logos, le css et fonts du porjet;
     \item components contient tous les composants que l'application peut utiliser dans les différentes vues;
-    \item constants contient toutes les fichiers de constantes utilisés dans le code;
+    \item \emph{constants} contient toutes les fichiers de constantes utilisés dans le code;
     \item containers/navs contient toutes les partie de l'application présentent sur chaque page;
-    \item data contient toutes les données statiques utilisées dans le code;
-    \item layouts contient la structure / mise en page de la page de l'application;
-    \item middleware contient le middleware permettant de mettre à jour le \Gls{jwt};
-    \item plugins contient le plugin créer pour contenir le code de l'authentification avec Keycloak;
-    \item store contient tous les fichiers et modules concernant les données stockées dans le \Gls{frontend} et les appels à l'\Gls{api};
-    \item utils contient un fichier avec des méthodes utilisées par le template de base concernant principalement le menu;
-    \item views contient toutes les vues de l'application ainsi que les composants liés uniquement à une seul vue.
+    \item \emph{data} contient toutes les données statiques utilisées dans le code;
+    \item \emph{layouts} contient la structure / mise en page de la page de l'application;
+    \item \emph{middleware} contient le middleware permettant de mettre à jour le \Gls{jwt};
+    \item \emph{plugins} contient le plugin créer pour contenir le code de l'authentification avec Keycloak;
+    \item \emph{store} contient tous les fichiers et modules concernant les données stockées dans le \Gls{frontend} et les appels à l'\Gls{api};
+    \item \emph{utils} contient un fichier avec des méthodes utilisées par le template de base concernant principalement le menu;
+    \item \emph{views} contient toutes les vues de l'application ainsi que les composants liés uniquement à une seul vue.
 \end{itemize}
 
 % cliffhanger
@@ -2560,7 +2563,7 @@ Maintenant le site est  déployé, prenons du recul sur le projet et établissan
 %Il est de coutume de signer la conclusion...
 %%fi
 
-\subsection{Suite du projet}
+\section{Suite du projet}
 
 \subsection{Récupération des fichiers du projet}
 commit du frontend release ws + main -> dans rapport %todo
@@ -2578,7 +2581,8 @@ Comme expliqué dans la partie dédiée de l'implémentation du \Gls{backend}, c
 En production, la configuration actuelle ne fonctionne également pas pour le \Gls{backend} qui jette une exception à chaque fois qu'il tente de \Gls{broadcast} un \emph{Event}. Je suis presque sûr que cela est dû à la mauvaise configuration de mon fichier \href{https://github.com/heig-fablab/fablab-manager/blob/main/.env.prod.example}{\emph{.env} de production} disponible en annexe. \\
 Le fichier de configuration essaie actuellement de passer par l'url web du serveur, et devrait passer directement en local, ce qui éviterai pas mal de soucis.
 
-En ce qui concerne le frontend, je n'est ai aucune idée d'où vient actuellement le problème comme je ne reçois pas d'erreur, ni de message dans les \emph{logs}. Je pense aussi que cela vient de ma configuration du fichier \emph{.env}, que cela soit en local ou en production.
+En ce qui concerne le frontend, je n'est ai aucune idée d'où vient actuellement le problème comme je ne reçois pas d'erreur, ni de message dans les \emph{logs}.
+Je pense aussi que cela vient de ma configuration du fichier \emph{.env}, que cela soit en local ou en production.
 Cela pourrait également venir du fait que les \emph{channels} utilisés ne sont pas \emph{public} ou car les instructions de \Gls{broadcast} ne sont pas envoyées avec la fonction \emph{->toOthers()} à la suite de l'instruction \emph{broadcast(new Event(objet))} dans les \emph{Controllers}. \\
 
 Une autre chose dont je suis presque sûr, c'est que la configuration concernant le \emph{reverse proxy} \Gls{apache} doit être fonctionnelle et le problème ne doit pas venir de là.
@@ -2600,7 +2604,11 @@ Pour en finir avec ces \Gls{websockets}, les quatre fichiers d'environnement son
 \end{itemize}
 
 \subsubsection{Queue d'emails en production}
-La prochaine erreur restante à aborder est la queue d'emails. Cette dernière ne semble pas fonctionner parfaitement en production. En effet, quand je modifie l'entrée \emph{QUEUE_CONNECTION=} avec la valeur \emph{database} dans le fichier \emph{.env} de la production du \Gls{backend}, je reçois une exception du \Gls{backend} au moment de stocker le \emph{Job} dans la base de données. Si cette même entrée contient la valeur \emph{sync}, cela fonctionne mais le \emph{Job} n'attends pas les 10 minutes avant d'être exécuter. \\
+La prochaine erreur restante à aborder est la queue d'emails.
+Cette dernière ne semble pas fonctionner parfaitement en production.
+En effet, quand je modifie l'entrée \emph{QUEUE\_CONNECTION} avec la valeur \emph{database} dans le fichier \emph{.env} de la production du \Gls{backend}.
+Je reçois une exception du \Gls{backend} au moment de stocker le \emph{Job} dans la base de données.
+Si cette même entrée contient la valeur \emph{sync}, cela fonctionne mais le \emph{Job} n'attends pas les 10 minutes avant d'être exécuter. \\
 Vu l'exception reçue, je pense qu'il y a un problème avec la migration ou le lien entre la fonction \emph{dispatch} et la base de données.
 
 Encore une fois pour résoudre ce problème, il faudrait pouvoir reproduire l'erreur en local, puis la corriger, puis déployer le tout et finalement mettre à jour le fichier \emph{.env} de la production pour que tout fonctionne.
@@ -2635,27 +2643,46 @@ voir toutes les issues nice to have
 
 Dans cette section, je vais me contenter de lister des améliorations qui seraient intéressantes à apport au projet en général et qui sont dispensables, on parle ici de \emph{nice to have}.
 
-Voici la liste en question:
-%todo
+Les améliorations possibles pour le \Gls{frontend} sont donc les suivantes:
 \begin{itemize}
-    \item \href{}{Réaliser une meilleure gestion des erreurs retournées par le Backend}
-    \item \href{}{Réaliser une meilleure gestion des erreurs retournées par le Backend}
-    \item \href{}{Réaliser une meilleure gestion des erreurs retournées par le Backend}
-    \item \href{}{Réaliser une meilleure gestion des erreurs retournées par le Backend}
-    \item \href{}{Réaliser une meilleure gestion des erreurs retournées par le Backend}
-    \item \href{}{Réaliser une meilleure gestion des erreurs retournées par le Backend}
-    \item \href{}{Réaliser une meilleure gestion des erreurs retournées par le Backend}
-    \item \href{}{Réaliser une meilleure gestion des erreurs retournées par le Backend}
-    \item \href{}{Réaliser une meilleure gestion des erreurs retournées par le Backend}
-    \item \href{}{Réaliser une meilleure gestion des erreurs retournées par le Backend}
+    \item \href{https://github.com/heig-fablab/fablab-manager/issues/78}{Réaliser une meilleure gestion des erreurs retournées par le Backend} afin de les afficher / ajouter dans les \emph{toasts} d'erreurs;
+    \item \href{https://github.com/heig-fablab/fablab-manager/issues/141}{Améliorer le \emph{design} d'assignation de travaux non attribués} afin de faciliter cette fonctionnalité et limiter le nombre de cliques;
+    \item \href{https://github.com/heig-fablab/fablab-manager/issues/156}{Afficher uniquement les types de fichiers accepter} lorsque l'explorateur de fichier est affiché pendant l'ajout de fichiers;
+    \item \href{https://github.com/heig-fablab/fablab-manager/issues/122}{Ajouter la possibilité de visualiser des fichiers sur l'application} et cela pour certains types de fichiers;
+    \item \href{https://github.com/heig-fablab/fablab-manager/issues/74}{Intégrer tous les messages ou valeurs textuelles en français dans le package \emph{i18n}} afin de pouvoir plus facilement intégrer de nouvelles langues.
 \end{itemize}
 
-% tous ces points issues nice to have
+Les améliorations possibles pour le \Gls{backend} sont donc les suivantes:
+\begin{itemize}
+    \item \href{https://github.com/heig-fablab/fablab-manager/issues/41}{Ajouter des url pointant sur les routes permettant de les modifier aux données retournées par le Backend};
+    \item \href{https://github.com/heig-fablab/fablab-manager/issues/100}{Accepter les deux façon de donner l'identifiant d'une donnée dans une route liée à la modification} que ça soit dans la \emph{query string} ou dans le \emph{body} de la requête;
+    \item \href{https://github.com/heig-fablab/fablab-manager/issues/22}{Réaliser un \emph{Swagger} pour l'API} et donc \href{https://github.com/heig-fablab/fablab-manager/issues/45}{documenter tout ce dernier avec des \emph{OpenApi tags}};
+    \item \href{https://github.com/heig-fablab/fablab-manager/issues/83}{Mieux configurer les paramètres concernant les \emph{CORS}};
+    \item \href{https://github.com/heig-fablab/fablab-manager/issues/89}{Intégrer la validation d'un professeur comme étape dans le processus de demande de travail};
+    \item \href{https://github.com/heig-fablab/fablab-manager/issues/93}{Tester les \emph{Form Request}} afin de valider totalement les validations d'entrées utilisateurs.
+\end{itemize}
+
+Les améliorations possibles pour les \Gls{devops} ou la documentation sont donc les suivantes:
+\begin{itemize}
+    \item \href{https://github.com/heig-fablab/fablab-manager/issues/126}{Ajouter un badge indiquant que le projet \emph{build}};
+    \item \href{https://github.com/heig-fablab/fablab-manager/issues/127}{Ajouter un badge indiquant la licence du projet};
+    \item \href{https://github.com/heig-fablab/fablab-manager/issues/134}{Trouver un moyen de faire fonctionner le debugging avec \emph{xdebug}}, ce qui a déjà été testé est disponible sous un fichier \href{https://github.com/heig-fablab/fablab-manager/blob/main/README-coverage-debug-part.md}{README supplémentaire}.
+\end{itemize}
 
 \section{Bilan final}
-%todo
+Pour commencer ce bilan final, si on observe le tableau \ref{taches} contenant toutes les tâches du projet, on remarque que j'ai réussi à réaliser toutes les tâches de priorité \emph{Obligatoire} et \emph{Intermédiaire} ou ai trouvé un moyen de les compenser notamment pour la \Gls{cd} automatique. \\
+Si l'on parcourt également le cahier des charges défini sur \href{https://gaps.heig-vd.ch/consultation/diplome/affichage.php?id=6135&mode=HTML}{\emph{gaps}}, j'ai également réussi à réaliser tous les points indiqués mis à part les \Gls{websockets} et les envois d'emails différés pour le serveur de production.\\
+Je considère également le projet actuellement déployé comme utilisable par le client et c'est un point positif.
 
-Commencer par toutes les erreurs restantes -> projet très conséquent + problème arriver tard dans le projet -> priorité ailleurs + méconnaissance de bcp de points et apprentissage sur point -> perdre du temps
+Parlant maintenant des regrets que j'ai à propos de ce projet. Le fait que je n'ai pas réussi à faire fonctionner totalement le serveur de production me frustre énormément car j'aurais aimé rendre un travail complet. \\
+Cependant cela m'a fait ouvrir les yeux sur des compétences dont je ne possède pas encore et un nouveau monde, une nouvelle dimension de l'éco-système du développement d'application dont je me dois d'explorer et maîtriser à l'avenir. \\
+Il est vrai que ma formation n'incluait que très peu de mise en production d'un application et cela ne m'a pas aider pour ce projet, mais je dois être capable d'apprendre ces choses par moi-même. Ce que je n'ai pas pu prendre le temps de faire dans ce projet car le temps ne me le permettait pas vu la charge de travail.
+
+En ce qui concerne toutes les erreurs restantes et pourquoi ces dernières n'ont pas réussi à être réaliser, cela est principalement dû à un projet très conséquent et au manque de compétence dans certains domaines. Certains problèmes sont également apparu très tard dans le projet, à deux semaines de la fin, ce qui laisse très peu de temps sachant qu'il m'a fallu une semaine pour rédiger le rapport final et pauffiner les derniers détails du projet. Je pense aussi que certains problèmes n'étaient pas une priorité au niveau du cahier des charges et ont été mis de côté pour d'autres points plus importants.
+
+Malgrès ces points négatifs, je pense avoir suffisament bien documenté le projet afin qu'il soit repris en main, puis amélioré et terminé.
+
+Pour terminer bilan, je tiens à préciser que je suis tout de même heureux du travail rendu, car tout ce qui est fonctionnel est selon moi bien réaliser. Une petite déception me trotte évidemment dans la tête.
 
 \section{Sources d'informations}
 Lors d'un projet de développement informatique, beraucoup de recherches sont réalisées lors de la
@@ -2663,17 +2690,34 @@ phase de développement. Il est impossible de citer toutes les sources utilisée
 important de citer les forums les plus utilisés, ainsi que les documentations.\\
 Voici donc une liste de références:
 
-\begin{itemize}
-    \item laravel.com : documentation de Laravel \cite{laravel},
-    \item stackoverflow.com : forum mondial numéro un pour les programmeurs \cite{stackoverflow},
-    \item w3schools.com : documentation et exemples pour HTML, CSS et JavaScript \cite{w3schools},
-    \item digitalocean.com : Tutoriels, pour Docker, Apache et Ubuntu \cite{digitalocean},
-    \item keycloak.org: documentation de l'outil d'authentification Keycloak utilisé par la HEIG-VD,
-    \item switch.ch : toute la procédure pour l’utilisation de Shibboleth et Switch edu-id \cite{switch},
-    \item stackshare.io : outil pour comparer des technologies ou utils \cite{stackshare},
-    \item wikipedia.org: site d'informations.
+\begin{enumerate}
+\item laravel.com : documentation de Laravel \cite{laravel}.
+\item stackoverflow.com : forum mondial numéro un pour les programmeurs \cite{stackoverflow}.
+\item medium.com : tutoriels divers sur la programmation \cite{medium}.
+\item digitalocean.com : tutoriels, pour Docker, Apache, Ubuntu et j'en passe \cite{digitalocean}.
+\item keycloak.org: documentation de l'outil d'authentification Keycloak utilisé par la HEIG-VD.
+\item switch.ch : toute la procédure pour l’utilisation de Shibboleth et Switch edu-id \cite{switch}.
+\item stackshare.io : outil pour comparer des technologies ou utils \cite{stackshare}.
+\item vuejs.org: documentation officiel de Vue \cite{vuejs}.
+\item vuex.vuejs.org: documentation officiel de Vuex \cite{vuex}.
+\item router.vuejs.org: documentation officiel de Router-vue \cite{vue-router}.
+\item beyondco.de : documentation de Laravel Websockets \cite{beyondco}.
+\item vuetify.com : documentation de la bibliothèque graphique Vuetify \cite{vuetify}.
+\item bootstrap-vue: documentation de la bibliothèque graphique Bootstrap-vue \cite{bootstrap-vue}.
+\item w3schools.com : documentation et exemples pour HTML, CSS et JavaScript \cite{w3schools}.
+\item wikipedia.org: site d'informations \cite{wikipedia}.
 \end{itemize}
 
+\section{Remerciements}
+Dans cette section, je tiens à remcercier toutes les personnes qui m'ont soutenues ou aidé lors de ce projet car sans eux, ils auraient été difficile de mener à bien se projet.
+
+Pour commencer je tiens à remercier monsieur Yves Chevallier pour son suivi sans faille et son implication lors de ce projet. Je le remercie également pour toutes les heures passées avec moi à debugger du \emph{Latex} ou les divers configurations de mon serveur de production.
+
+Je remercie également monsieur Benjamin Wolf pour m'avoir fourni la machine virtuelle de production. Mais également pour m'avoir soutenu dans la mise en place du système d'authentification \emph{Keycloak} de l'école et d'avoir toujours résolu mes quelques soucis lié à la machine de production.
+
+Je remercie aussi mes amis et collègues, Nicolas Crausaz, Maxime Scharwath et Loïc Dessaules pour leurs précieux conseils concernant le \Gls{frontend} et \Gls{apache} pour les deux premiers et le \Gls{backend} pour le dernier.
+
+Finalement, je remercie monsieur Tristant Lieberherr pour avoir passé du temps avec moi en début de projet afin de me mettre sur le droit chemin et m'avoir expliquer ce qu'il a réaliser et tenter de le faire fonctionner sur ma machine.
 
 \vfil
 \hspace{8cm}\makeatletter\@author\makeatother\par
