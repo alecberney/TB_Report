@@ -14,14 +14,17 @@ return new class extends Migration
             // Fields
             $table->enum('type', ['status', 'file', 'message']);
             $table->boolean('to_notify')->default(true);
-            $table->string('data', 255)->nullable(); // to store status type and file name
+            $table->string('data', 255)->nullable(); 
+            // to store status type and file name
             // Options
             $table->timestamps();
             $table->softDeletes();
             // Foreign keys
             $table->string('user_username', 17);
-            $table->foreign('user_username')->references('username')->on('users')->onDelete('cascade');
-            $table->foreignId('job_id')->constrained()->onDelete('cascade');
+            $table->foreign('user_username')->references('username')
+                ->on('users')->onDelete('cascade');
+            $table->foreignId('job_id')->constrained()
+                ->onDelete('cascade');
             // Indexes
             $table->index('job_id');
             $table->index('user_username');

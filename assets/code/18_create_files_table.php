@@ -18,9 +18,12 @@ return new class extends Migration
             // Options
             $table->timestamps();
             // Foreign keys
-            $table->foreignId('file_type_id')->constrained()->onDelete('cascade');
-            $table->foreignId('job_id')->nullable()->constrained()->onDelete('cascade');
-            $table->foreignId('job_category_id')->nullable()->constrained();
+            $table->foreignId('file_type_id')->constrained()
+                ->onDelete('cascade');
+            $table->foreignId('job_id')->nullable()->constrained()
+                ->onDelete('cascade');
+            $table->foreignId('job_category_id')->nullable()
+                ->constrained();
             // Indexes
             $table->index('file_type_id');
             $table->index('job_id');

@@ -7,11 +7,6 @@ use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('messages', function (Blueprint $table) {
@@ -25,10 +20,13 @@ return new class extends Migration
             $table->string('sender_username', 17);
             $table->string('receiver_username', 17);
 
-            $table->foreignId('job_id')->constrained()->onDelete('cascade');
+            $table->foreignId('job_id')->constrained()
+                ->onDelete('cascade');
 
-            $table->foreign('sender_username')->references('username')->on('users')->onDelete('cascade');
-            $table->foreign('receiver_username')->references('username')->on('users')->onDelete('cascade');
+            $table->foreign('sender_username')->references('username')
+                ->on('users')->onDelete('cascade');
+            $table->foreign('receiver_username')->references('username')
+                ->on('users')->onDelete('cascade');
             // Indexes
             $table->index('job_id');
             $table->index('sender_username');
@@ -36,11 +34,6 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         DB::statement('SET FOREIGN_KEY_CHECKS = 0');

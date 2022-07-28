@@ -119,6 +119,8 @@ Les points ressortant de l'analyse de la base données sont les suivants:
     \item la gestion des types de fichiers acceptés pour les travaux n'est pas présente.
 \end{itemize}
 
+\newpage
+
 \subsubsection{Backend / API}
 Passons maintenant au \Gls{backend} qui est la plus grosse partie du travail.\\
 Il faut savoir que toute l'analyse de la base de données s'applique également pour une bonne partie du \Gls{backend} et ne sera pas répétée.\\
@@ -157,6 +159,8 @@ comment configurer facilement son environnement de travail afin de participer au
 Il sera également nécessaire de réaliser un suivi du travail grâce aux outils fourni par \Gls{github} (issues, kanban, milestones, etc.).\\
 Fournir un environement aisément configurable pour tout un chacun est également un point essentiel.
 Une \Gls{ci} devra impérativement être mise en place afin de faciliter le travail à plusieurs sur le projet. Il en va de même pour le CD, si l'on souhaite déployer aisément les différentes versions de l'application.
+
+\newpage
 
 \subsubsection{Base de données}
 La base de données fera l'objet d'une toute nouvelle conception pour améliorer tous les points énumérés précédement et intégrer les notions manquantes. Le Backend en sera fortement influencé.
@@ -370,6 +374,8 @@ Pour l'infrastructure de développement nous recherchons avant tout:
 % cliffhanger
 Après avoir défini les besoins pour notre infrastructure de développement, il faut faire de même avec celle de production et c'est ce que nous allons faire.
 
+\newpage
+
 \subsubsection{Besoins pour l'infrastructure de production}
 Pour commencer, l'infrastructure de production englobe tous les outils à installer et toutes les configurations à réaliser sur une machine de production vierge afin que le programme final soit accessible est utilisable par n'importe quel utilisateur.
 
@@ -418,15 +424,15 @@ Dans la suite de ce chapitre, nous allons beaucoup parler de \Gls{docker} et des
 \subsubsection{Présentation des infrastructures de développement possibles}
 
 %\figi{infrastructure-dev-choix.drawio}{18cm}{Différentes possibilités d'infrastructure de développement}
-La figure \ref{infrastructure-dev-choix.drawio} représente l'infrastructure de développement actuelle avec chacune des possibilité d'amélioration. \\
-On constante que tous les outils ont été installés nativement sur la machine de développement sans virtualisation ou conteneurisation.
-
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/infrastructure-dev-choix.drawio.png}
         \caption{Différentes possibilités d'infrastructure de développement \label{infrastructure-dev-choix.drawio}}
     \end{figure}
 \end{center}
+
+La figure \ref{infrastructure-dev-choix.drawio} représente l'infrastructure de développement actuelle avec chacune des possibilité d'amélioration. \\
+On constante que tous les outils ont été installés nativement sur la machine de développement sans virtualisation ou conteneurisation.
 
 Le premier changement pouvant être effectué est d'utiliser une infrastructure avec uniquement la base de données en \Gls{conteneur} \Gls{docker} et le reste installer nativement, comme montré avec la possibilité numéro 1.
 
@@ -440,7 +446,7 @@ présentée comme complément sur la figure \ref{infrastructure-dev-laravel-home
 %\figi[Infra. dev. avec Homestead]{infrastructure-dev-laravel-homestead.drawio}{16cm}{Infrastructure de développement avec Laravel Homestead}
 
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/infrastructure-dev-laravel-homestead.drawio.png}
         \caption{Infrastructure de développement avec Laravel Homestead \label{infrastructure-dev-laravel-homestead.drawio}}
     \end{figure}
@@ -569,7 +575,7 @@ Les avantages et inconvénients de la solution native sont visibles avec la tabl
 \begin{table}[h]
     \begin{center}
         \caption{Vue.js natif \label{dev-vuejs-native}}
-        \begin{tabular}{X|X}
+        \begin{tabular}{c|c}
             Avantages                                        & Inconvénients                     \\ \hline
             + Meilleur performance                           & - Configuration à faire à la main \\
             + Node.js possède un bon gestionnaire de version &                                   \\
@@ -585,7 +591,7 @@ Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'en
 \begin{table}[h]
     \begin{center}
         \caption{Vue.js en conteneur Docker \label{dev-vuejs-docker}}
-        \begin{tabular}{X|X}
+        \begin{tabular}{c|c}
             Avantages                                     & Inconvénients                                         \\ \hline
             + Rapide à installer                          & - Nécessite Docker et les connaissances qui vont avec \\
             + Configuration en gande partie déjà réalisée & - Peut-être compliqué à mettre en place               \\
@@ -643,7 +649,7 @@ On constante que tous les outils ont été installés nativement sur la machine 
 
 %\figi{infrastructure-prod-choix.drawio}{16cm}{Différentes possibilités d'infrastructure de production}
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/infrastructure-prod-choix.drawio.png}
         \caption{Différentes possibilités d'infrastructure de production \label{infrastructure-prod-choix.drawio}}
     \end{figure}
@@ -802,7 +808,7 @@ Au final c'est un cycle de vie visant à faciliter le développement d'applicati
 Nous peuvons observer un exemple de lifecycle fourni par IBM selon la figure \ref{devops-lifecycle}.
 
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/ibm-devops-lifecycle.png}
         \caption[Cycle de vie de développement]{Cycle de vie de développement - IBM} \label{devops-lifecycle}
     \end{figure}
@@ -850,7 +856,7 @@ Sur la figure \ref{devops-choix.drawio}, nous remarquons le \emph{pipeline} \Gls
 
 %\figi{devops-choix.drawio}{16cm}{Différents \emph{pipeline}s DevOps possibles}
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/devops-choix.drawio.png}
         \caption{Différents \emph{pipeline}s DevOps possibles \label{devops-choix.drawio}}
     \end{figure}
@@ -950,7 +956,7 @@ Même si j'étais seul lors de ce projet, j'ai prévu qu'il soit potentiellement
 \ref{git-flow} tiré dur site \href{https://www.atlassian.com/fr/git/tutorials/comparing-workflows/.gitflow-workflow}{atlassian}.
 
 \begin{center}
-    \begin{figure}
+    \begin{figure}[h]
         \includegraphics[width=\textwidth]{./assets/figures/git-flow.png}
         \caption{Git flow \label{git-flow}}
     \end{figure}
@@ -1072,7 +1078,7 @@ Un message peut être envoyé que par un utilisateur.
 Finalement, quelques commentaires peuvent être ajouté avec des rectangles pliés en haut à droite et relié avec des traits pointillés.
 
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/ea.png}
         \caption{Modèle EA \label{ea}}
     \end{figure}
@@ -1146,7 +1152,7 @@ Une aggrégation a été modélisée pour cette dernière association car nous s
 
 \subsection{Entité events}
 L'entité \emph{event} représente un événement concernant un travail du \Gls{fablab}. Par exemple, un événement est généré si le status d'un travail a été modifié ou si un fichier a été ajouté. \\
-L'événement possède un id (identifiant unique), un champ indiquant s'il faut notifier l'utilisateur (\emph{to_notify}), des données (\emph{data}) et une énumération contenant les valeurs suivantes:
+L'événement possède un id (identifiant unique), un champ indiquant s'il faut notifier l'utilisateur (\emph{to\_notify}), des données (\emph{data}) et une énumération contenant les valeurs suivantes:
 
 \begin{itemize}
     \item file;
@@ -1178,7 +1184,7 @@ Les associations N à N du modèle EA voient naître une table intermédiaire. V
 \end{itemize}
 
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/mld.png}
         \caption{Modèle Logique des données \label{mld}}
     \end{figure}
@@ -1201,7 +1207,7 @@ Le champs \emph{email} de la table \emph{users} possèdent 255 charactères car 
 
 Le champ \emph{status} de la table \emph{jobs} et le champ \emph{type} de la table \emph{events} est une enum comme expliqué précédement dans le modèle EA.
 
-Tous les champs \emph{created_at}, \emph{updated_at} et \emph{deleted_at} sont des champs automatiquement généré par \Gls{laravel} si nous ajoutons certaines options à la table et au modèle comme nous allons le voir plus tard. Ces champs indique l’heure à laquelle la donnée à été créée / modifiée / supprimée pour la dernière fois.
+Tous les champs \emph{created\_at}, \emph{updated\_at} et \emph{deleted\_at} sont des champs automatiquement généré par \Gls{laravel} si nous ajoutons certaines options à la table et au modèle comme nous allons le voir plus tard. Ces champs indique l’heure à laquelle la donnée à été créée / modifiée / supprimée pour la dernière fois.
 
 Les types de champs et leur taille de la base de données ont été minutieusement choisi afin de correspondre au mieux aux besoins de l'application. \\
 Il a été décidé que seul 50 caractères suffiront pour stocker les noms et prénoms des utilisateurs. \\
@@ -1232,7 +1238,7 @@ La liste plus complète peut être consultée dans la doc \href{https://laravel.
 
 Sur la figure \ref{migrations-jobs}, nous pouvons observer un exemple de migration contenant presque tous les points abordés ci-dessous.
 
-\begin{listing}[ht]
+\begin{listing}[h]
     \inputminted{php}{assets/code/16_create_jobs_table.php}
     \caption{Migration de la table \emph{file-types} \label{migrations-jobs}}
 \end{listing}
@@ -1283,7 +1289,7 @@ Deux types de \emph{seeders} ont été mise en place, la première concerne tout
     \item role\_user.
 \end{itemize}
 
-Les tables \emph{roles} et \emph{role_user} sont nécessaire pour ajouter les utilisateur administrateur de base.
+Les tables \emph{roles} et \emph{role\_user} sont nécessaire pour ajouter les utilisateur administrateur de base.
 
 Tous les autres \emph{seeders}, donc ceux du deuxième type, sont uniquement executé en environnement de développement et ont pour but de créer quelques données fictives.
 
@@ -1301,7 +1307,7 @@ Des \emph{DTO} peuvent également être ajoutées entre la vue et les controller
 
 %\figi{architecture-code-spring.drawio}{16cm}{Architecture de code du framework Spring "classique"}
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/architecture-code-spring.drawio.png}
         \caption{Architecture de code du Framework Spring "classique" \label{architecture-code-spring}}
     \end{figure}
@@ -1312,7 +1318,7 @@ Je me suis rendu compte que \Gls{laravel} proposait énormément de classes ou d
 
 %\figi{architecture-code-finale.drawio}{16cm}{Architecture de code Laravel finale}
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/architecture-code-finale.drawio.png}
         \caption{Architecture de code Laravel finale \label{architecture-code-finale}}
     \end{figure}
@@ -1323,19 +1329,33 @@ Tout d'abord, nous pouvons observer que les authorisations peuvent être contenu
 
 Ensuite, nous observons que les \emph{Controllers} recevoivent des \emph{Form Rquests} représentant des requêtes contenant les valeurs nécessaires pour la requête. Les valeurs à l'intérieur des requêtes seront exhaustivement définies et syntaxiquement validées. Cela permettra de travailler avec des valeurs sûrs au niveau des \emph{Controllers} et des \emph{Models}. \\
 Ces \emph{Form Rquests} peuvent être comparées à des \emph{DTO} de validation. \\
-Par exemple, il sera possible de valider qu'un email donné soit un email syntaxiquement correct.
+%Par exemple, il sera possible de valider qu'un email donné soit un email syntaxiquement correct.
 
 Les \emph{Controllers} travailleront avec des \emph{Resources} (ressources) afin de retourner uniquement les valeurs voulues. Ces \emph{Resources} définissent exactement les données qui doivent être renvoyer à l'utilisateur. \\
 Ces \emph{Resources} utilisent également des \emph{ResourcesCollection} permettant de
 définir des collections de ressources lorsqu'une route doit fournir plus qu'un seul élément. \\
 Ces \emph{Ressources} peuvent être comparées à des \emph{DTO} de sortie. \\
-Il sera par exemple possible de définir que le mot de passe de l'utilisateur ne soit
+%Il sera par exemple possible de définir que le mot de passe de l'utilisateur ne soit
 pas retourné à ce dernier. \\
 
 % cliffhanger
 Avant de passer aux détails d'implémentation de cette architecture de code, il est nécessaire de définir les routes que l'\Gls{api} fournit.
 
 \section{Routes}
+
+%todo must be here
+\begin{listing}[H]
+    \inputminted{php}{assets/code/api-1.php}
+    \caption{Routes de l'API \label{routes-api-2}}
+\end{listing}
+
+\begin{listing}[H]
+    \inputminted{php}{assets/code/api-2.php}
+    \caption{Routes de l'API \label{routes-api-1}}
+\end{listing}
+
+\newpage
+
 Les routes définies par l'\Gls{api} sont organisée par modèle / ressource et sont ensuite trier par action possible. \\
 Voici la liste des ressources sur lesquels certaines actions peuvent être exécutées:
 \begin{itemize}
@@ -1348,15 +1368,6 @@ Voici la liste des ressources sur lesquels certaines actions peuvent être exéc
 \end{itemize}
 
 Le détail de ces routes est consultable sur les figures \ref{routes-api-1} et \ref{routes-api-2}.
-\begin{listing}[h]
-    \inputminted{php}{assets/code/api-1.php}
-    \caption{Routes de l'API \label{routes-api-2}}
-\end{listing}
-
-\begin{listing}[h]
-    \inputminted{php}{assets/code/api-2.php}
-    \caption{Routes de l'API \label{routes-api-1}}
-\end{listing}
 
 Nous remarquons aisément que la route principale est la route \emph{jobs} et que toutes les autres routes sont également liées à cette dernière. Nous pouvons également remarquer que la route \emph{file types} est uniquement réservé aux administrateurs.
 
@@ -1380,25 +1391,24 @@ Le système d'authentification Keycloak étant celui choisi, il est maintenant n
 \subsection{Fonctionnement de Keycloak}
 En résumé, l'outil Keycloak permet à l'école d'utiliser les utilisateurs de leur domaine et donc de leur \Gls{ldap} afin d'authentifier une personne. Tout ceci en fournissant un formulaire de connexion et renvoyant un \Gls{jwt} une fois l'authentification réussie.
 
-En consultant les figures \ref{keycloak-flow.drawio} et \ref{keycloak-flow-lib} (tirée de la librairie \href{https://github.com/robsontenorio/laravel-keycloak-guard}{laravel-keycloak-guard}), Nous comprenons bien que l'utilisateur arrivant sur le site, commence par s'authentifier à l'aide de ses informations d'identification, puis récupère un \Gls{jwt} agissant comme certificat / clé d'accès afin d'effectuer des requêtes au \Gls{backend}. \\
-Ce token / jeton est ensuite ajouter dans l'entête de chaque requête vers le \Gls{backend}. \\
-Lorsque le \Gls{backend}, reçoit une requête, il vérifie le jeton donné grâce à une signature fournie par le domaine Keycloak de la \Gls{heig-vd} et détermine si ce dernier et valable ou non.
-
 %\figi{keycloak-flow.drawio}{16cm}{Flow de Keycloak}
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/keycloak-flow.drawio.png}
         \caption{Flow de Keycloak \label{keycloak-flow.drawio}}
     \end{figure}
 \end{center}
 
+En consultant la figure \ref{keycloak-flow.drawio} mettant en image notre situation et la figure \ref{keycloak-flow-lib} tirée de la librairie \href{https://github.com/robsontenorio/laravel-keycloak-guard}{laravel-keycloak-guard}, nous comprenons bien que l'utilisateur arrivant sur le site, commence par s'authentifier à l'aide de ses informations d'identification, puis récupère un \Gls{jwt} agissant comme certificat / clé d'accès afin d'effectuer des requêtes au \Gls{backend}. \\
+Ce token / jeton est ensuite ajouter dans l'entête de chaque requête vers le \Gls{backend}. \\
+Lorsque le \Gls{backend}, reçoit une requête, il vérifie le jeton donné grâce à une signature fournie par le domaine Keycloak de la \Gls{heig-vd} et détermine si ce dernier et valable ou non.
+
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/keycloak-flow-lib.png}
         \caption{Flow de Keycloak tiré de \label{keycloak-flow-lib}}
     \end{figure}
 \end{center}
-
 
 Le fonctionnement de Keycloak expliqué, il est nécessaire d'expliquer la façon dont il a été implémenté au niveau de \Gls{backend}.
 
@@ -1410,13 +1420,13 @@ Pour ensuite implémenter la logique utilisée par ce middleware, je me suis ins
 Pour intégrer mon adaptation de package au projet, j'ai d'abord créer un \emph{KeycloakServiceProvider} comme nous pouvons le voir à la figure \ref{keycloak-service-provider}. \\
 Dans ce dernier, nous voyons que nous définissons la \emph{KeycloakGuard} pour l'authentification.
 
-\begin{listing}[h]
+\begin{listing}[H]
     \inputminted{php}{assets/code/KeycloakServiceProvider.php}
     \caption{KeycloakServiceProvider \label{keycloak-service-provider}}
 \end{listing}
 
-Ensuite, nous implémentons la \emph{KeycloakGuard} dans un fichier et une classe à part (disponible en annexe \ref{keycloak-guard}). Il est également nécessaire de définir quelques Exception liées à cette implémentation. \\
-Tous ces fichiers sont disponibles dans le dossier /app/Providers/Keycloak.
+Ensuite, nous implémentons la \emph{KeycloakGuard} dans un fichier et une classe à part (disponible en annexe). Il est également nécessaire de définir quelques Exception liées à cette implémentation. \\
+Tous ces fichiers sont disponibles dans le dossier \emph{/app/Providers/Keycloak}.
 
 De plus, il est nécessaire d'ajouter un fichier de config afin de supporter certains paramètres à fournir dans le \emph{.env} tel que la clé publique permettant de vérifier les tokens. Ce fichier de config doit être créer dans le dossier \emph{config} et se nommer \emph{keycloak.php}. Ce dernier est défini comme sous la figure \ref{keycloak.php}.
 
@@ -1434,6 +1444,8 @@ Finalement, il faut définir la \emph{KeycloakGuard} comme \emph{guard} dans le 
 
 % cliffhanger
 Maintenant que le système d'authentification est défini, il est important d'utiliser les personnes authentifiées pour définir les différentes autorisations concernant les ressources de l'\Gls{api} et c'est ce que nous allons voir dans la prochaine section.
+
+\newpage
 
 \section{Autorisation d'accès aux ressources et gestion des droits}
 
@@ -1457,7 +1469,7 @@ Nous pouvons donc représenter les rôles sous la forme d'un diagramme, comme la
 
 %\figi{roles-diagram.drawio}{16cm}{Diagramme de classe des rôles de l'application}
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/roles-diagram.drawio.png}
         \caption{Diagramme de classe des rôles de l'application \label{roles-diagram.drawio}}
     \end{figure}
@@ -1641,15 +1653,15 @@ Dans chaque \emph{Policy}, il y également une fonction de nommée \emph{before}
 
 La figure \ref{policy-files} est un exemple de \emph{Policy}.
 
-\begin{listing}[h]
+\begin{listing}[H]
     \inputminted{php}{assets/code/FilePolicy.php}
     \caption{Policy de la route \emph{files} \label{policy-files}}
 \end{listing}
 
 Il est également nécessaire d'enregistrer chacune des \emph{Policies} dans le tableau \emph{policies} de la classe \emph{AuthServiceProvider}, comme on peut le voir sur la figure \ref{auth-service-provider}.
 
-\begin{listing}[h]
-    \inputminted{php}{assets/code/FilePolicy.php}
+\begin{listing}[H]
+    \inputminted{php}{assets/code/AuthServiceProvider.php}
     \caption{AuthServiceProvider \label{auth-service-provider}}
 \end{listing}
 
@@ -1732,10 +1744,12 @@ Toutes les \emph{Form Request} sont disponibles dans le dossier \emph{/app/Http/
 Sur la figure \ref{job-category-request}, nous pouvons observer un exemple de tableau de règles définies pour l'insertion ou la mise à jour d'une catégorie de travail. \\
 À savoir que toutes les règles utilisables sont disponibles sur la doc \href{https://laravel.com/docs/9.x/validation#available-validation-rules}{Laravel}
 
-\begin{listing}[h]
+\begin{listing}[H]
     \inputminted{php}{assets/code/JobCategoryRequest.php}
     \caption{JobCategoryRequest \label{job-category-request}}
 \end{listing}
+
+\newpage
 
 \subsection{Regex}
 Comme vous l'avez peut-être remarqué sur la figure \ref{job-category-request}, il y a également des règles impliquant des \Gls{regex} et ces dernières sont définies ailleurs dans le code. \\
@@ -1766,7 +1780,7 @@ Pour valider un fichier, certains conditions doivent être respectées, les voic
 
 Toutes ces validations sont réalisées dans une fonction nommée \emph{is\_valid\_file} que vous pouvez consulter à la figure \ref{file-validation}. Cette fonction est utilisée dans toutes les \emph{Form Request} nécessitant un fichier.
 
-\begin{listing}[h]
+\begin{listing}[H]
     \inputminted{php}{assets/code/FileValidation.php}
     \caption{fonction is\_valid\_file du \emph{File Service} \label{file-validation}}
 \end{listing}
@@ -1802,7 +1816,7 @@ Finalement, nous stockons le fichier sous le bon disque et le bon dossier.
 
 Toute cette procédure est disponible en code sous la figure \ref{file-upload}.
 
-\begin{listing}[h]
+\begin{listing}[H]
     \inputminted{php}{assets/code/FileUpload.php}
     \caption{fonction \emph{store\_file} du \emph{File Service} \label{file-upload}}
 \end{listing}
@@ -1818,7 +1832,7 @@ Pour récupérer des fichiers, 2 façons sont disponibles, soit nous for4ons l'u
 Ces deux méthodes ont été mise en place, la première est utilisée pour télécharger les fichiers ajoutés par les utilisateurs, tandis que la seconde est utilisé pour afficher les différentes catégories de travail au niveau du \Gls{frontend}. \\
 Le code permettant de réaliser ces deux actions est disponible sur la figure \ref{file-download}.
 
-\begin{listing}[h]
+\begin{listing}[H]
     \inputminted{php}{assets/code/FileDownload.php}
     \caption{Fonctions download\_file et get\_file\_url du \emph{File Service} \label{file-download}}
 \end{listing}
@@ -1836,7 +1850,7 @@ Il est important de prendre en compte que lorsqu'un événement est créé dans 
 
 %\figi{events-email-scenario.drawio}{16cm}{Conception des événements pour les notifications et la timeline}
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/events-email-scenario.drawio.png}
         \caption{Conception des événements pour les notifications et la timeline \label{events-email-scenario.drawio}}
     \end{figure}
@@ -1865,7 +1879,7 @@ Cela a pour effet de stocker l'\emph{Event} dans la base de données comme expli
 Pour vous expliquer comment le système de mail fonctionne en adéquation avec les événements générés pour la timeline et les notifications, un diagramme de séquence est à disposition sur la figure \ref{events-email-sequence}.
 
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/emails-events-sequence.png}
         \caption{Diagramme de séquence pour la génération d'un email \label{events-email-sequence}}
     \end{figure}
@@ -1875,7 +1889,7 @@ Le but principal de ce schéma est de montrer que seuls les événements de l'ap
 
 En plus de tout ceci, il est également nécessaire de configurer le fichier de config \emph{mail.php} afin que nous puissions utiliser le service mail de la \Gls{heig-vd} en production. Cette configuration est disponible sur la figure \ref{config-mail}.
 
-\begin{listing}[h]
+\begin{listing}[H]
     \inputminted{php}{assets/code/mail.php}
     \caption{Configuration ajoutée au fichier mail.php \label{config-mail}}
 \end{listing}
@@ -1900,7 +1914,7 @@ Un Event est au final un objet contenant le canal sur lequel il doit être envoy
 
 %\figi{ws-conception-notifications.drawio}{16cm}{Conception des événements pour les Websockets}
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/ws-conception-notifications.drawio.png}
         \caption{Conception des événements pour les Websockets \label{ws-conception-notifications.drawio}}
     \end{figure}
@@ -1910,7 +1924,7 @@ Un exemple de code d'un \emph{Event} est disponible à la figure \ref{event-exem
 Comme expliqué précédemment, nous remarquons la méthode \emph{broadcastOn} retournant le channel sur lequel doit être transmis les données lorsque cet événement intervient. \\
 Nous pouvons également remarquer l'utilisation de l'interface \emph{ShouldBroadcastNow} permettant d'émettre la diffusion de l' \emph{Event} de façon synchrone.
 
-\begin{listing}[h]
+\begin{listing}[H]
     \inputminted{php}{assets/code/JobAssignedEvent.php}
     \caption{Exemple d'un \emph{Event} avec le \emph{JobAssignedEvent} \label{event-exemple}}
 \end{listing}
@@ -1920,7 +1934,7 @@ Dans ce fichier, les channels défini possède une fonction qui détermine si l'
 
 \subsection{Channels}
 
-\begin{listing}[h]
+\begin{listing}[H]
     \inputminted{php}{assets/code/channels.php}
     \caption{Channels pour le Broadcast sur les Websockets \label{ws-channels}}
 \end{listing}
@@ -1937,7 +1951,7 @@ Le premier fichier à configurer est nommé \emph{broadcasting.php} est se voit 
 Il est important de remarquer que le maximum de données sont associées aux valeurs données dans le \emph{.env} afin d'éviter de changer le code entre la phase de développement et la release pour que cela soit adapté à la production. \\
 Cette manière de faire permet d'avoir un fichier \emph{.env} pour le développement et un fichier \emph{.env} pour la production et donc ne jamais toucher / changer le code pour faire fonctionner l'un ou l'autre.
 
-\begin{listing}[h]
+\begin{listing}[H]
     \inputminted{php}{assets/code/broadcasting.php}
     \caption{Fichier de configuration pour le broadcasting \label{ws-broadcasting}}
 \end{listing}
@@ -1946,7 +1960,7 @@ Le second fichier à configurer est nommé \emph{webosckets.php} est se voit ajo
 Comme pour le premier fichier et pour les mêmes raisons, un maximum de données sont associées aux valeurs données dans le \emph{.env}. \\
 Nous pouvons remarquer les lignes \emph{verify\_peer} et \emph{verify\_peer\_name} qui sont à false afin d'accepter les certificats autosignés.
 
-\begin{listing}[h]
+\begin{listing}[H]
     \inputminted{php}{assets/code/websockets.php}
     \caption{Fichier de configuration pour les Websockets \label{ws-websockets}}
 \end{listing}
@@ -2028,7 +2042,7 @@ La totalité des informations utilisées par le paquet sont enregistrées dans l
 J'ai également créé un middleware nommé \emph{keycloakUpdateToken.js} et se trouvant dans le dossier \emph{/src/middleware} permettant de mettre à jour le \Gls{jwt}. Ce dernier contient la méthode \emph{updateToken} qui va simplement mettre à jour le token en réalisant une requête au serveur d'authentification Keycloak de la \Gls{heig-vd}. \\
 Cette méthode est principalement utilisée avant d'envoyer une requête à l'\Gls{api} afin d'être sûr d'avoir un jeton valide comme on peut le voir sur la figure \ref{api-config-js}. \\
 
-\begin{listing}[h]
+\begin{listing}[H]
     \inputminted{js}{assets/code/apiConfig.js}
     \caption{Fichier de configuration pour les appels à l'API \label{api-config-js}}
 \end{listing}
@@ -2037,7 +2051,7 @@ Nous pouvons voir que le token est intégrer à chaque entête de requête du \G
 
 Finalement, j'ai intégrer l'objet Keycloak au fichier \emph{main.js} comme montré sur la figure \ref{main-js}.
 
-\begin{listing}[h]
+\begin{listing}[H]
     \inputminted{js}{assets/code/main.js}
     \caption{Fichier principal (main) de Vue.js \label{main-js}}
 \end{listing}
@@ -2097,7 +2111,7 @@ La seule fonctionnalité que j'ai ajouté au \Gls{frontend} est la suivante. Lor
 Pour ajouter cette fonctionnalité, j'ai observé la mise à jour du statut et quand ce dernier était sélectionner à \emph{Terminé}, un champ numérique s'ajoute afin de demander le nombre d'heures passées sur le travail. Nous pouvons voir le résultat final sur la figure \ref{nb-worked-hours}.
 
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/nb-worked-hours.png}
         \caption{Interface pour entrer le nombre d'heures passées sur un travail \label{nb-worked-hours}}
     \end{figure}
@@ -2202,7 +2216,7 @@ Je ne vais pas vous mentir, n'étant pas expert dans le domaine, cela n'a pas é
 Avant de commencer à parler du déploiement en lui-même, il est nécessaire de vous présenter l'infrastructure de production mise en place. Cette dernière est visible à la figure \ref{prod-infra}.
 
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/prod-infra.png}
         \caption{Infrastructure de production \label{prod-infra}}
     \end{figure}
@@ -2240,7 +2254,7 @@ La configuration va simplement pointé sur le dossier \emph{public} du projet \G
 
 Pour entrer en détail dans la configuration \Gls{apache}, il est important de la vous la présenter avec la figure \ref{config-apache}.
 
-\begin{listing}[h]
+\begin{listing}[H]
     \inputminted{conf}{assets/code/config-apache.conf}
     \caption{Configuration Apache \label{config-apache}}
 \end{listing}
@@ -2263,15 +2277,15 @@ Les processus supervisé ont été réalisé avec l'outil \href{http://superviso
 Pour ajouter des processus gérer par \emph{Supervisor} (une fois installé), il suffit d'ajouter un fichier de configuration par processus sous le dossier \emph{/etc/supervisor/conf.d}. Deux fichiers de configurations ont été créés. \\
 Le premier, pour la queue est consulable sur la figure \ref{laravel-queue}.
 
-\begin{listing}[h]
-    \inputminted{configuration}{assets/code/laravel-queue.conf}
+\begin{listing}[H]
+    \inputminted{text}{assets/code/laravel-queue.conf}
     \caption{Configuration pour la queue Laravel \label{laravel-queue}}
 \end{listing}
 
 Le second, pour les \Gls{websockets} est consulable sur la figure \ref{laravel-websockets}.
 
-\begin{listing}[h]
-    \inputminted{configuration}{assets/code/laravel-websockets.conf}
+\begin{listing}[H]
+    \inputminted{text}{assets/code/laravel-websockets.conf}
     \caption{Configuration pour la queue Laravel \label{laravel-websockets}}
 \end{listing}
 
@@ -2480,7 +2494,7 @@ Dans une \emph{conteneurisation}, seul l'\Gls{os} et le software est virtualisé
 Nous remarquons bien la différence avec la figure suivante \ref{docker-compare}
 
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/docker-containerized-and-vm.png}
         \caption[Comparaison Docker vs VM]{Comparaison entre containeurs Docker et machines virtuelles
             du \href{https://www.docker.com/wp-content/uploads/2021/11/}{site Docker}
@@ -2497,7 +2511,7 @@ Voici un schéma démontrant la façon dont \Gls{docker} et des \Gls{conteneur}s
 machine comme illustré sur la figure \ref{docker-container-app}.
 
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/container-what-is-container.png}
         \caption[Conteneurisation d'applications]{Conteneurisation d'applications via
             le \href{https://www.docker.com/wp-content/uploads/2021/11/container-what-is-container.png}{site docker}
@@ -2533,7 +2547,7 @@ Voici une liste des inconvénients de \Gls{docker} comparé à une VM:
 Pour terminer, nous pouvons voir sur la figure \ref{docker-use-cases} une liste des cas d'utilisations de \Gls{docker} \cite{data-flair-use-cases}.
 
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/docker-use-cases.jpg}
         \caption[Cas d'utilisation de docker]{Cas d'utilisation de docker via \href{https://data-flair.training/blogs/wp-content/uploads/sites/2/2018/10/}{data falir}
             \label{docker-use-cases}}
@@ -2564,7 +2578,7 @@ Pour ceci, nous allons retracer quelques évalutations réalisées lors d'une é
 Commençant par la latence que peut apporter \Gls{docker} indiquée sur la figure \ref{network-latency}.
 
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/docker-perf-latency.png}
         \caption[Docker latence aller-retour du réseau]{Latence aller-retour du réseau (µs) \cite{rad2017introduction} \label{network-latency}}
     \end{figure}
@@ -2577,7 +2591,7 @@ rapprocher des performances d'une machine native, elles n'utilisent donc pas bea
 comme illustré dans la figure \ref{tcp-transfer-latency}.
 
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/docker-perf-transfer-efficiancy.png}
         \caption[Docker efficacité du transfert de masse]{Efficacité du transfert de masse TCP (cycles CPU/octet) \cite{rad2017introduction} \label{tcp-transfer-latency}}
     \end{figure}
@@ -2587,14 +2601,14 @@ Au niveau des écritures, nous remarquons grâce aux deux graphiques suivants qu
 celles d'un système natif comme le montre les figures \ref{sequential-io} et \ref{random-io}
 
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/docker-perf-sequential-io.png}
         \caption[Docker débit d'I/O séquentielles]{Débit d'Entrée/Sortie séquentielles (Mo/s) \cite{rad2017introduction} \label{sequential-io}}
     \end{figure}
 \end{center}
 
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/docker-perf-random-io.png}
         \caption[Débit d'I/O aléatoires]{Débit d'Entrée/Sortie aléatoires (IOPS) \cite{rad2017introduction} \label{random-io}}
     \end{figure}
@@ -2604,7 +2618,7 @@ Nous pouvons également observer sur la figure \ref{docker-perf-mysql} des perfo
 que nous utilisons pour le projet.
 
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/docker-perf-mysql.png}
         \caption[Comparaison des perf. Docker sur MySQ]{Comparaison des performances de Docker avec des transactions sur MySQL \cite{felter} \label{docker-perf-mysql}}
     \end{figure}
@@ -2666,7 +2680,7 @@ Ce simple fait suffit à orienté le choix de la solution de \Gls{conteneur} sur
 N'ayant également pas le temps d'analyser chaque solution en profondeur dans ce travail, cela conforte mon choix.
 
 \begin{center}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/google-trend-containers-2022.png}
         \caption[Tendances solutions de conteneurs]{Tendances sur les différentes solutions de conteneurs depuis 2004 \label{containers-trends}}
     \end{figure}
@@ -2761,8 +2775,18 @@ N'ayant également pas le temps d'analyser chaque solution en profondeur dans ce
 \section{Keycloak}
 
 \begin{listing}[h]
-    \inputminted{php}{assets/code/KeycloakGuard.php}
-    \caption{KeycloakGuard \label{keycloak-guard}}
+    \inputminted{php}{assets/code/KeycloakGuard1.php}
+    \caption{KeycloakGuard 1 \label{keycloak-guard1}}
+\end{listing}
+
+\begin{listing}[h]
+    \inputminted{php}{assets/code/KeycloakGuard2.php}
+    \caption{KeycloakGuard 2 \label{keycloak-guard2}}
+\end{listing}
+
+\begin{listing}[h]
+    \inputminted{php}{assets/code/KeycloakGuard3.php}
+    \caption{KeycloakGuard 3 \label{keycloak-guard3}}
 \end{listing}
 
 \begin{listing}[h]

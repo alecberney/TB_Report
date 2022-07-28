@@ -26,7 +26,8 @@ class Token
     public static function decode(string $publicKey, string $token = null)
     {
         $publicKey = self::buildPublicKey($publicKey);
-        return $token ? JWT::decode($token, new Key($publicKey, self::JWT_ALGORITHM)) : null;
+        return $token ? JWT::decode($token, 
+            new Key($publicKey, self::JWT_ALGORITHM)) : null;
     }
 
     /**

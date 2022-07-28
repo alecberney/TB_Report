@@ -2,6 +2,16 @@
 
     [...]
 
+    Route::prefix('/messages')->controller(MessageController::class)
+    ->group(function () {
+        Route::get('', 'index')
+        ->can('viewAny', Message::class);
+        Route::get('/{id}', 'show')
+        ->can('view', [Message::class, 'id']);
+        Route::post('', 'store')
+        ->can('create', Message::class);
+    });
+
     Route::prefix('/users')->controller(UserController::class)
     ->group(function () {
         Route::get('', 'index')
@@ -46,4 +56,3 @@
             Route::delete('/{id}', 'destroy');
         });
 });
-

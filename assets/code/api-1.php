@@ -49,14 +49,4 @@ Route::middleware('auth:api')->group(function () {
         ->can('destroy', [File::class, 'id']);
     });
 
-    Route::prefix('/messages')->controller(MessageController::class)
-    ->group(function () {
-        Route::get('', 'index')
-        ->can('viewAny', Message::class);
-        Route::get('/{id}', 'show')
-        ->can('view', [Message::class, 'id']);
-        Route::post('', 'store')
-        ->can('create', Message::class);
-    });
-
     [...]
