@@ -67,29 +67,29 @@
 
 \section{Contexte}
 Le \Gls{fablab} est un laboratoire permettant de réaliser des travaux sur des machines spécifiques à ce dernier. Actuellement, pour réaliser un travail sur une machine, il est nécessaire de réaliser une demande par email à l'un des techniciens ayant le droit d'usiner sur la machine souhaitée. Une fois la demande reçue, le technicien usine dès qu'il le peut et doit recontacter le mandataire pour lui donner son travail fini. Durant toute cette période, aucun retour n'a été donné au mandataire. En cas de problème avec un travail, le technicien doit également recontacter le client.\\
-Certains défauts majeurs peuvent être identifier avec la procédure actuelle, les voici :
+Certains défauts majeurs peuvent être identifiés avec la procédure actuelle, les voici :
 \begin{itemize}
     \item il n'y a aucun suivi des travaux pour le mandataire, \cite{lieberherr};
-    \item les échanges liés aux travaux peuvent être réalisé via plusieurs canaux (email, \Gls{teams}, vocal, etc.), \cite{lieberherr};
+    \item les échanges liés aux travaux peuvent être réalisés via plusieurs canaux (email, \Gls{teams}, vocal, etc.), \cite{lieberherr};
     \item risque de désorganisation, \cite{lieberherr};
     \item manque de clarté quant à la procédure, \cite{lieberherr};
-    \item aucun historique des travaux réalisé;
+    \item aucun historique des travaux réalisés;
     \item gestion des problèmes survenus lors du travail compliqué.
 \end{itemize}
-Une première partie du projet a déjà été réalisée lors du travail de Bachelor de monsieur Tristan Lieberherr. De ce fait aucun cahier des charges n'était défini à l'origine, car il était d'abord nécessaire d'effectuer une analyse du projet afin de définir les points d'améliorations qu'allaient contenir le cahier des charges.
+Une première partie du projet a déjà été réalisée lors du travail de Bachelor de monsieur Tristan Lieberherr. De ce fait, aucun cahier des charges n'était défini à l'origine, car il était d'abord nécessaire d'effectuer une analyse du projet afin de définir les points d'améliorations qu'allaient contenir le cahier des charges.
 
 \section{But du travail de Bachelor}
 Le but, plus global, de ce travail de Bachelor, est de fournir une application web au \Gls{fablab} afin de faciliter la gestion et le suivi des demandes de travaux pour leur laboratoire.
 
 Le but au niveau technique est de fournir une application déployée en production.\\
-Il est également important de significativement améliorer le travail déjà existant en ajoutant certaines fonctionnalités et améliorant la qualité du code.\\
-Cette application devra reposer sur une base de données bien conçues et ayant déjà prévu certains améliorations possibles. Elle devra également posséder un \Gls{backend} propre permettant de reprendre et l'améliorer sans devoir tout repenser.\\
+Il est également important de significativement améliorer le travail déjà existant en ajoutant certaines fonctionnalités et en améliorant la qualité du code.\\
+Cette application devra reposer sur une base de données bien conçue et ayant déjà prévu certaines améliorations possibles. Elle devra également posséder un \Gls{backend} propre permettant de le reprendre et l'améliorer sans devoir tout repenser.\\
 La qualité de l'environnement de travail et de production ne seront pas à négliger et devront être facilement repris en main par la futur équipe s'occupant du projet.
 
 \section{État de la situation}
 Cette section permet de définir ce qui a déjà été réalisé et de l'analyser.\\
 Pour commencer, il faut savoir que le travail fourni est déjà fonctionnel et fait l'objet d'une documentation suffisante pour le reprendre en main.\\
-Les choix technologiques déjà réalisés et utilisés sera abordé plus tard dans le document.
+Les choix technologiques déjà réalisés et utilisés seront abordés plus tard dans le document.
 
 \subsection{Analyse du système existant}
 Dans cette partie, nous allons énumérer tous les aspects de l'ancien travail fourni. Nous n'allons
@@ -104,8 +104,8 @@ Maintenant, voici les points qui ressortent de l'analyse concernant l'environnem
     \item les deux dépôts ne contiennent que très peu d'information concernant le projet;
     \item le projet tourne sur d'anciennes technologies améliorées depuis;
     \item le projet n'est pas si aisément reprenable en main suite au manque d'informations concernant les technologies;
-    \item l'environnement de développement est difficilement transmissible à une tierce personne, il est compliqué de vite intégrer l'équipe de développement,
-    \item aucun outil de collaboration n'est fourni, nous parlons ici de \Gls{devops} (\Gls{ci} et \Gls{cd}).
+    \item l'environnement de développement est difficilement transmissible à une tierce personne, il est compliqué de vite intégrer l'équipe de développement;
+    \item aucun outil de collaboration n'est fourni (\Gls{devops}, \Gls{ci} et \Gls{cd}).
 \end{itemize}
 
 \subsubsection{Base de données}
@@ -113,9 +113,9 @@ Cette partie défini tout ce qui touche à la base de données et influence éga
 Les points ressortant de l'analyse de la base données sont les suivants:
 \begin{itemize}
     \item la base de données contient les ressources principales (utilisateurs, travaux, messages, fichiers);
-    \item la base de données possèdent de la redondance paraîssant inutile;
+    \item la base de données possède de la redondance paraîssant inutile;
     \item la base de données ne peut pas intégrer la gestion de plusieurs rôles;
-    \item la base de données n'intégrent pas la notion de machines et de catégories de travaux;
+    \item la base de données n'intégre pas la notion de machines et de catégories de travaux;
     \item la gestion des types de fichiers acceptés pour les travaux n'est pas présente.
 \end{itemize}
 
@@ -139,7 +139,7 @@ Les points ressortant de l'analyse de ce dernier sont les suivants:
 \end{itemize}
 
 \subsubsection{Frontend}
-Finalement, passons au \Gls{frontend}, ce dernier a été réalisé à l'aide d'un \Gls{template}. Il a été adapté aux besoins de l'application. Le but du projet n'étant pas concentrer sur le \Gls{frontend}, seul une analyse de surface a été réalisée.\\
+Finalement, passons au \Gls{frontend}, ce dernier a été réalisé à l'aide d'un \Gls{template}. Il a été adapté aux besoins de l'application. Le but du projet n'étant pas concentré sur le \Gls{frontend}, seul une analyse de surface a été réalisée.\\
 Les points ressortant de l'analyse de ce dernier sont les suivants:
 \begin{itemize}
     \item le \Gls{frontend} est fonctionnel;
@@ -183,8 +183,8 @@ zéro. Ce ne sera pas totalement le cas, car, sur certains points, l'ancien proj
 présent comme référence en cas de questions ou de doutes.
 
 \subsubsection{Frontend}
-Les améliorations possibles concernant le \Gls{frontend} gravite essentiellement autour de la mise à jour des dépendances du projet et la façon dans les valeurs sont stockées.\\
-Un système de gestion des langues (ii8n) pourrait être envisagé, ainsi que vérifier les entrées utilisateurs.\\
+Les améliorations possibles concernant le \Gls{frontend} gravitent essentiellement autour de la mise à jour des dépendances du projet et la façon dans les valeurs sont stockées.\\
+Un système de gestion des langues (ii8n) pourrait être envisagé, ainsi que la vérification des entrées utilisateurs.\\
 Le \Gls{frontend} sera surtout modifié pour être adapté aux changements du \Gls{backend}.
 
 \section{Cahier des Charges}
@@ -206,7 +206,7 @@ Les objectifs principaux du projet sont les suivants:
 \newpage
 Nous allons maintenant passer à la liste des tâches qui devront être effectuées durant le travail de Bachelor.
 
-Pour les toutes les tâches qui seront listées plus bas, celles qui nécessitent une décomposition en plusieurs tâches voient le numéro de ses sous-tâches suivi d'une lettre. Les tâches possédant des sous-tâches des priorités différentes, n'auront aucune priorité globale.
+Pour les toutes les tâches qui seront listées plus bas, celles qui nécessitent une décomposition en plusieurs tâches voient le numéro de ses sous-tâches suivi d'une lettre. Les tâches possédant des sous-tâches avec des priorités différentes, n'auront aucune priorité globale.
 
 Je m'engage à réaliser les tâches énumérées dans le tableau \ref{taches}.
 
@@ -248,19 +248,19 @@ Je m'engage à réaliser les tâches énumérées dans le tableau \ref{taches}.
 \newpage
 \subsection{Déroulement global projet}
 
-Le projet se réalise durant le semestre de printemps. Le semestre possède 14 semaines de travail de 1 jour et demi de travail si nous excluons la semaine du CRUNCH et celle des vacances.\\
+Le projet se réalise durant le semestre de printemps. Le semestre possède 14 semaines de travail où l'on consacre un jour et demi pour le travail de Bachelor et ceci, si nous excluons la semaine du \emph{CRUNCH} et celle des vacances.\\
 Il y a ensuite 6 semaines à temps plein pour finaliser le travail de Bachelor.
 
-Une séance hebdomadaire est prévue avec le professeur responsable du travail, m. Chevallier.
+Une séance hebdomadaire est prévue avec le professeur responsable du travail, monsieur Chevallier.
 
-Le projet est réparti en 3 principales phases, qui s'effectueront dans l'ordre suivant:
+Le projet est réparti en 3 phases principales, qui s'effectueront dans l'ordre suivant:
 \begin{enumerate}
     \def\labelenumi{\arabic{enumi}.}
     \item L'analyse du projet:
           \begin{enumerate}
               \def\labelenumii{\alph{enumii}.}
               \item L'étude du projet et de ses technologies,
-              \item Les choix technologiques et conceptuels.
+              \item Les choix technologiques.
           \end{enumerate}
     \item La conception et réalisation du projet, contenant principalement:
           \begin{enumerate}
@@ -274,8 +274,7 @@ Le projet est réparti en 3 principales phases, qui s'effectueront dans l'ordre 
 \end{enumerate}
 
 La première phase d'analyse a pour objectif de définir tout le cadre théorique du projet et les divers choix à réaliser tout au long de ce dernier.\\
-Cette phase devrait se terminer à la fin de la semaine numéro 7 ou 8.\\
-Tout en sachant que cette phase contient l'écriture du cahier des charges et que ce dernier doit être rendu au plus tard 6 semaines après le début du travail de bachelor, c'est-à-dire, le 10.04.2022.
+Cette phase devrait se terminer à la fin de la semaine numéro 7 ou 8. Tout en sachant que cette phase contient l'écriture du cahier des charges et que ce dernier doit être rendu au plus tard 6 semaines après le début du travail de bachelor, c'est-à-dire, le 10.04.2022.
 
 La seconde phase, concernant la conception et la réalisation du projet est la plus conséquente.
 Cette dernière suivra la première et devrait se terminer lors de la 20ème semaine si tout se déroule comme prévu.
@@ -286,7 +285,7 @@ Un rendu intermédiaire est également prévu après 150 heures de travail et po
 
 \subsection{Résultats attendus}
 
-Les résultats attendus pour ce projet dépendent énormément des tâches établies définies dans la partie \ref{objectifs} du cahier des charges.\\
+Les résultats attendus pour ce projet dépendent énormément des tâches établies, définies dans la partie \ref{objectifs} du cahier des charges.\\
 En effet, chaque tâche définie est vérifiable et sera donc utilisée pour évaluer le résultat du projet.
 \newpage
 
@@ -298,12 +297,12 @@ En effet, chaque tâche définie est vérifiable et sera donc utilisée pour év
 
 Dans cette section, je vais énumérer tous les choix technologiques ou conceptuels liés au projet.
 Mais avant cela, il est nécessaire de définir précisément les besoins pour le projet afin de réaliser des choix cohérents en fonction de ces derniers.\\
-Pour chaque choix, technologiques ou conceptuels, une liste des possibilités réalisables sera énumérée et si possible représentée visuellement.\\
+Pour chaque choix, technologiques ou conceptuels, une liste des possibilités réalisables sera énumérée et, si possible, représentée visuellement.\\
 Cette liste de possibilités sera accompagnées des avantages et inconvénients de chaque solution en s'inspirant des besoins du projet.
 
 \subsection{Rappel des choix technologiques déjà effectués}
 Dans cette section, je vais énumérer les choix technologiques déjà effectués par le premier étudiant ayant travaillé sur le projet.\\
-Considérant les choix de l'étudiant comme bon et bien argumenté, je ne vois aucune raison de les remettre en question, surtout qu'un travail conséquent a déjà été réalisé avec les technologies choisies.
+Considérant les choix de l'étudiant comme bons et bien argumentés, je ne vois aucune raison de les remettre en question, surtout qu'un travail conséquent a déjà été réalisé avec les technologies choisies.
 
 Voici un résumé des décisions prises lors de la première phase du projet:
 \begin{enumerate}
@@ -313,14 +312,14 @@ Voici un résumé des décisions prises lors de la première phase du projet:
     \item Outil \emph{SSO}: \href{https://www.switch.ch/aai/about/shibboleth/}{Shibboleth}.
 \end{enumerate}
 
-En résumé, monsieur Lieberherr avait principalement choisi \Gls{laravel} pour sa simplicité et la rapidité à créer un \Gls{backend} fonctionnel. \\
+En résumé, monsieur Lieberherr avait principalement choisi \Gls{laravel} pour sa simplicité et sa capacité à créer rapidement un \Gls{backend} fonctionnel. \\
 En ce qui concerne le \Gls{frontend}, le \Gls{framework} \Gls{vuejs} a été choisi car il était simple à prendre en main et un modèle (\Gls{template}) de site avait déjà été trouvé et correspondait au besoin de l'application. \\
 En ce qui conerne la base de données, le \Gls{sgbd} \Gls{mysql} a été choisi pour sa popularité, sa facilité de prise en main et le fait qu'il soit relationnel. \\
-Pour finir, l'authentification via l'outil \emph{SSO} et \emph{Shibboleth} a été presque imposé car une une authentification scholaire avec les comptes \emph{Switch} était demandée.
+Pour finir, l'authentification via l'outil \emph{SSO} et \emph{Shibboleth} a été presque imposé car une authentification scholaire avec les comptes \emph{Switch} était demandée.
 
 Pour plus de précisions sur ces choix technologiques, je vous invite à consulter son \href{https://tb.heig-vd.ch/7532}{rapport}.
 
-Au final, la \emph{stack} de technologies que nous allons utilisés est disponible sur le tableau \ref{stack}.
+Au final, la \emph{stack} de technologies que nous allons utilisé est disponible sur le tableau \ref{stack}.
 
 \begin{table}[h]
     \begin{center}
@@ -345,10 +344,9 @@ Au final, la \emph{stack} de technologies que nous allons utilisés est disponib
 \end{table}
 
 % cliffhanger
-Les anciens choix technologiques expliqués, il est temps de passer aux besoins que nous avons pour ce projet afin de plus tard justifier les choix que nous allons réaliser.
+Les anciens choix technologiques expliqués, il est temps de passer aux besoins que nous avons pour ce projet afin de, plus tard, justifier les choix que nous allons réaliser.
 
 \subsection{Besoins pour le projet}
-Je vais ici définir les besoins du projet et ceci en les séparant par parties distinctes.
 
 \subsubsection{Besoins pour l'infrastructure de développement}
 Pour commencer, définissons l'infrastructure de développement.\\
@@ -381,13 +379,13 @@ Pour commencer, l'infrastructure de production englobe tous les outils à instal
 
 En général, la simplicité de mise à jour du programme, la performance et la robustesse sont recherchées.
 
-Pour une machine de production, il est nécessaire d'installer les mêmes outils qu'en développement.Cependant, certains outils et programmes doivent être ajouter et ce sont principalement les suivants:
+Pour une machine de production, il est nécessaire d'installer les mêmes outils qu'en développement. Cependant, certains outils et programmes doivent être ajouté et ce sont principalement les suivants:
 \begin{itemize}
     \item un serveur \Gls{http};
     \item un \Gls{proxy}.
 \end{itemize}
 
-Les critères qui influenceront notre décision sur l'infrastructure de producton sont:
+Les critères qui influenceront notre décision sur l'infrastructure de production sont:
 \begin{itemize}
     \item la performance de l'infrastructure;
     \item la simplicité de mise à jour du programme au sein de l'infrastructure;
@@ -400,8 +398,8 @@ Les critères qui influenceront notre décision sur l'infrastructure de producto
 Après avoir défini les besoins pour notre infrastructure de développement et de production, nous aimerions savoir ce qu'il faut pour réussir à assurer une bonne transition entre l'environnement de développement et de production. C'est pourquoi nous allons maintenant voir les besoins des \Gls{devops}.
 
 \subsubsection{Besoins pour les Devops}
-Le \emph{pipeline} \Gls{devops} défini toutes les étapes réalisées et les outils utilisé pour parvenir à mettre en place une infrastructure de travail et de livraison de produit fonctionnel et automatisée au maximum.\\
-Le but des \Gls{devops} étant d'automatisé le plus de tâches possibles, on attend donc du \emph{pipeline} les critères suivants:
+Le \emph{pipeline} \Gls{devops} défini toutes les étapes réalisées et les outils utilisés pour parvenir à mettre en place une infrastructure de travail et de livraison de produit fonctionnel et automatisée au maximum.\\
+Le but des \Gls{devops} étant d'automatiser le plus de tâches possibles, nous attendons donc du \emph{pipeline} les critères suivants:
 \begin{itemize}
     \item la performance de l'infrastructure (dans le sens de la rapidité);
     \item la simplicité de mise en place du \emph{pipeline};
@@ -411,8 +409,8 @@ Le but des \Gls{devops} étant d'automatisé le plus de tâches possibles, on at
 \end{itemize}
 
 \subsubsection{Importance de l'open source et de la gratuité des outils}
-Pour tous les choix technologiques qui vont être réaliser, un besoin essentiel intervient.
-Plus nous utilisons d'outils open source ou gratuit, plus nous faciliterons l'intégration de n'importe quel développeur au projet.\\
+Pour tous les choix technologiques qui vont être réalisé, un besoin essentiel intervient.
+Plus nous utilisons d'outils open source ou gratuits, plus nous faciliterons l'intégration de n'importe quel développeur au projet.\\
 Mais utiliser des outils qui sont gratuits ou open source offre également un plus pour l'intégration aux \Gls{devops} car il facilitera de façon non négligeable la mise en place de ces derniers.
 
 % docker
@@ -431,10 +429,10 @@ Dans la suite de ce chapitre, nous allons beaucoup parler de \Gls{docker} et des
     \end{figure}
 \end{center}
 
-La figure \ref{infrastructure-dev-choix.drawio} représente l'infrastructure de développement actuelle avec chacune des possibilité d'amélioration. \\
+La figure \ref{infrastructure-dev-choix.drawio} représente l'infrastructure de développement actuelle avec chacune des possibilités d'amélioration. \\
 On constante que tous les outils ont été installés nativement sur la machine de développement sans virtualisation ou conteneurisation.
 
-Le premier changement pouvant être effectué est d'utiliser une infrastructure avec uniquement la base de données en \Gls{conteneur} \Gls{docker} et le reste installer nativement, comme montré avec la possibilité numéro 1.
+Le premier changement pouvant être effectué est d'utiliser une infrastructure avec uniquement la base de données en \Gls{conteneur} \Gls{docker} et le reste installé nativement, comme montré avec la possibilité numéro 1.
 
 Le second changement, est de passer tout l'environnement de développement du \Gls{backend} sous plusieurs \Gls{conteneur}s \Gls{docker} en utilisant un outil fourni par Laravel, \href{https://laravel.com/docs/9.x/sail}{Sail}. Ce changement correspond à la possibilité 2.
 
@@ -468,19 +466,19 @@ Finalement, le dernier changement serait de créer un \Gls{conteneur} \Gls{docke
 % aussi parlé des charges qui devront être supportées et si c'est possible, nb user final par ex
 
 \subsubsection{Évolutions de l'infrastructure de développement possibles}
-Les différentes infrastructures désormais présentées, il est nécessaire de les comparer en listant les pours et les contres de chaque changement en prenant comme référentielle l'infrastructure actuelle. \\
+Les différentes infrastructures désormais présentées, il est nécessaire de les comparer en listant les avantages et les incovénients de chaque changement en prenant comme référentielle l'infrastructure actuelle. \\
 Les 3 améliorations (combinées ou non) proposées sont les suivantes:
 \begin{itemize}
     \item passage du \Gls{sgbd} en machine \Gls{docker};
-    \item passage du projet \Gls{laravel} (et toutes ces technologies) en \Gls{conteneur} \Gls{docker};
-    \item passage du projet Vue.js (et toutes ces technologies) en \Gls{conteneur} \Gls{docker}.
+    \item passage du projet \Gls{laravel} (et toutes ses technologies) en \Gls{conteneur} \Gls{docker};
+    \item passage du projet Vue.js (et toutes ses technologies) en \Gls{conteneur} \Gls{docker}.
 \end{itemize}
 
-Pour tous les argumentes concernant le temps que nous pouvons mettre à installer certaines technologies nativement, il faut savoir que cela peut prendre plusieurs heures si des difficultés sont rencontrées, alors qu'avec \Gls{docker}, il suffit de télécharger et lancer un \Gls{conteneur}, ce qui prend maximum cinq minutes.
+Pour tous les arguments concernant le temps que nous pouvons mettre à installer certaines technologies nativement, il faut savoir que cela peut prendre plusieurs heures si des difficultés sont rencontrées, alors qu'avec \Gls{docker}, il suffit de télécharger et lancer un \Gls{conteneur}, ce qui prend maximum cinq minutes.
 
 \subsubsection{Passage du SGBD en conteneur Docker}
-Dans cette section, nous allons énumérer les avantages et inconvénients des solutions native et conteneurisée du \Gls{sgbd}. \\
-Les avantages et inconvénients de la solution native sont visibles avec la table \ref{dev-sgbd-native}.
+Dans cette section, nous allons énumérer les avantages et inconvénients des solutions natives et conteneurisées du \Gls{sgbd}. \\
+Les avantages et inconvénients de la solution native sont visibles sur la table \ref{dev-sgbd-native}.
 
 \begin{table}[h]
     \begin{center}
@@ -498,7 +496,7 @@ Les avantages et inconvénients de la solution native sont visibles avec la tabl
 \end{table}
 
 Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir le \Gls{sgbd} en \Gls{conteneur}
-\Gls{docker}. Ces derniers sont visible avec la table \ref{dev-sgbd-docker}
+\Gls{docker}. Ces derniers sont visibles sur la table \ref{dev-sgbd-docker}
 
 \begin{table}[h]
     \begin{center}
@@ -509,23 +507,22 @@ Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir le \
             \cite{labrecque,data-flair-pros-cons} & - Gestion de la BD
             potentiellement plus compliquée, car les interfaces graphiques ne sont pas forcément présentes                  \\
             + Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe,
-            \cite{labrecque,data-flair-use-cases} & - Docker peut avoir des problèmes de performances,
+            \cite{labrecque,data-flair-use-cases} & - Docker peut avoir des problèmes de performance,
             \cite{labrecque}                                                                                                \\
             + Rend le debugging dû aux environnements de développement plus facile, car le même environnement est utilisé partout,
             \cite{labrecque,koukia}               & - Nécessite Docker et les connaissances qui vont avec. \cite{labrecque} \\
-            + Facilite la configuration, car elle est en gande partie déjà réalisée une fois le projet récupérer,
+            + Facilite la configuration, car elle est en gande partie déjà réalisée une fois le projet récupéré,
             \cite{data-flair-pros-cons}           &                                                                         \\
             + Compatible avec tous les OS         &                                                                         \\
         \end{tabularx}
     \end{center}
 \end{table}
 
-Si nous évaluons les deux solutions proposées selon les besoins énumérés dans les chapitres précédents.
-Nous nous rendons facilement compte que la solution avec \Gls{docker} est celle qui se rapproche le plus de ces derniers.
+Si nous évaluons les deux solutions proposées, selon les besoins énumérés dans les chapitres précédents, nous nous rendons facilement compte que la solution avec \Gls{docker} est celle qui se rapproche le plus de ces derniers.
 
 \subsubsection{Passage de Laravel en conteneur Docker}
-Dans cette section, nous allons énumérer les avantages et inconvénients des solutions native et conteneurisée du projet \Gls{laravel}. \\
-Les avantages et inconvénients de la solution native sont visibles avec la table \ref{dev-laravel-native}.
+Dans cette section, nous allons énumérer les avantages et inconvénients des solutions natives et conteneurisées du projet \Gls{laravel}. \\
+Les avantages et inconvénients de la solution native sont visibles sur la table \ref{dev-laravel-native}.
 
 \begin{table}[h]
     \begin{center}
@@ -533,7 +530,7 @@ Les avantages et inconvénients de la solution native sont visibles avec la tabl
         \begin{tabularx}{1.0\textwidth} {X|X}
             Avantages                           & Inconvénients
             \\ \hline
-            + Meilleur performance              & - Peut générer des conflits si plusieurs versions sont présentes \\
+            + Meilleure performance             & - Peut générer des conflits si plusieurs versions sont présentes \\
             + Gestion totale de l'environnement & - Impossibilité d'avoir plusieurs versions différentes
             installées                                                                                             \\
                                                 & - L'installation demande du temps                                \\
@@ -545,7 +542,7 @@ Les avantages et inconvénients de la solution native sont visibles avec la tabl
 \end{table}
 
 Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement \Gls{laravel} en
-machine \Gls{docker}. Ces derniers sont visible avec la table \ref{dev-laravel-docker}.
+machine \Gls{docker}. Ces derniers sont visibles sur la table \ref{dev-laravel-docker}.
 
 \begin{table}[h]
     \begin{center}
@@ -553,12 +550,12 @@ machine \Gls{docker}. Ces derniers sont visible avec la table \ref{dev-laravel-d
         \begin{tabularx}{1.0\textwidth} {X|X}
             Avantages                                                                                                                   & Inconvénients
             \\ \hline
-            + Accélère l'installation de l'environnement de développement, \cite{labrecque}                                             & - Docker peut avoir des problèmes de performances, \cite{labrecque}     \\
+            + Accélère l'installation de l'environnement de développement, \cite{labrecque}                                             & - Docker peut avoir des problèmes de performance, \cite{labrecque}      \\
             + Apporte de la cohérence au niveau des technologies utilisées, au sein de l'équipe, \cite{labrecque, data-flair-use-cases} &                                                                         \\
             + Rend le debugging dû aux environnements de développement plus facile, \cite{labrecque,koukia}                             & - Nécessite Docker et les connaissances qui vont avec. \cite{labrecque} \\
             + Facilite la configuration, car elle est en gande partie déjà réalisée, \cite{data-flair-pros-cons}                        &                                                                         \\
             + Compatible avec tous les OS                                                                                               &                                                                         \\
-            + Existance d'un outil donné par Laravel et conçu pour être utiliser avec Docker, il
+            + Existance d'un outil donné par Laravel et conçu pour être utilisé avec Docker, il
             s'agit de \href{https://laravel.com/docs/9.x/sail}{Sail}
                                                                                                                                         &                                                                         \\
             + Permet d'avoir plusieurs versions installées                                                                              &                                                                         \\
@@ -570,7 +567,7 @@ Si nous évaluons les deux solutions proposées selon les besoins cités précé
 
 \subsubsection{Passage de Vue.js en conteneur Docker}
 Dans cette section, nous allons énumérer les avantages et inconvénients des solutions native et conteneurisée du projet Vue.js. \\
-Les avantages et inconvénients de la solution native sont visibles avec la table \ref{dev-vuejs-native}.
+Les avantages et inconvénients de la solution native sont visibles sur la table \ref{dev-vuejs-native}.
 
 \begin{table}[h]
     \begin{center}
@@ -586,7 +583,7 @@ Les avantages et inconvénients de la solution native sont visibles avec la tabl
 \end{table}
 
 Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement \Gls{laravel} en
-\Gls{conteneur} \Gls{docker}. Ces derniers sont visible avec la table \ref{dev-vuejs-docker}.
+\Gls{conteneur} \Gls{docker}. Ces derniers sont visibles sur la table \ref{dev-vuejs-docker}.
 
 \begin{table}[h]
     \begin{center}
@@ -600,10 +597,7 @@ Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'en
     \end{center}
 \end{table}
 
-Si nous évaluons les deux solutions proposées selon les besoins énumérés précédemment, nous remarquons que  la solution avec \Gls{docker} n'apporte pas forcément assez d'avanatages comparé à
-celle proposant l'installation native et cela est principalement dû au bon gestionnaire de paquets
-\href{https://www.npmjs.com/}{NPM} de \Gls{javascript}. C'est pourquoi, la solution proposant
-l'installation native sera préférée.
+Si nous évaluons les deux solutions proposées selon les besoins énumérés précédemment, nous remarquons que  la solution avec \Gls{docker} n'apporte pas forcément assez d'avanatages en comparaison à celle proposant l'installation native et cela est principalement dû au bon gestionnaire de paquets \href{https://www.npmjs.com/}{NPM} de \Gls{javascript}. C'est pourquoi, la solution proposant l'installation native sera préférée.
 
 \subsubsection{Résultat de l'analyse}
 Suite à cette analyse des outils, la solution la plus adaptée semble être de mettre en place
@@ -622,7 +616,7 @@ l'environement de développment illustré sur le tableau \ref{env-dev}.
 \end{table}
 
 % cliffhanger
-L'infrastructure de développement choisie, il est nécessaire de faire de même avec celle de production.
+L'infrastructure de développement choisie, nous pouvons passer à celle de production.
 
 % prod
 \clearpage
@@ -637,39 +631,39 @@ Pour réaliser un \Gls{proxy} et un serveur \Gls{http}, les technologies suivant
     \item \href{https://www.haproxy.org/}{HAProxy}.
 \end{itemize}
 
-J'ai choisi \Gls{apache} comme serveur \Gls{apache} et \Gls{proxy} car c'est le seul outil \Gls{http} sur lequel je posséde quelques connaissances basics, mais aussi car il avait été utilisé dans le projet initial. Finalement, il me paraîssait également simple à mettre en place.
+J'ai choisi \Gls{apache} comme serveur \Gls{apache} et \Gls{proxy} car c'est le seul outil \Gls{http} sur lequel je posséde quelques connaissances basiques, mais aussi car il avait été utilisé dans le projet initial. Finalement, il me paraîssait également simple à mettre en place.
 
 % cliffhanger
-Maintenant le serveur \Gls{http} et un \Gls{proxy} choisi, nous pouvons continuer à réaliser nos choix d'infrastructure de la production.
+Maintenant le serveur \Gls{http} et un \Gls{proxy} choisi, nous pouvons continuer à réaliser nos choix d'infrastructure de production.
 
 \subsubsection{Présentation des infrastructures de production possibles}
 
-La figure \ref{infrastructure-prod-choix.drawio} représente l'infrastructure de production actuelle avec chacune des possibilité d'amélioration. \\
+La figure \ref{infrastructure-prod-choix.drawio} représente l'infrastructure de production actuelle avec chacune des possibilités d'amélioration. \\
 On constante que tous les outils ont été installés nativement sur la machine de production sans virtualisation ou conteneurisation.
 
 %\figi{infrastructure-prod-choix.drawio}{16cm}{Différentes possibilités d'infrastructure de production}
 \begin{center}
     \begin{figure}[H]
         \includegraphics[width=\textwidth]{./assets/figures/infrastructure-prod-choix.drawio.png}
-        \caption{Différentes possibilités d'infrastructure de production \label{infrastructure-prod-choix.drawio}}
+        \caption{Différentes possibilités d'infrastructures de production \label{infrastructure-prod-choix.drawio}}
     \end{figure}
 \end{center}
 
-Le premier changement pouvant être effectué est d'utiliser une infrastructure avec uniquement la base de données en \Gls{conteneur} \Gls{docker} et le reste installer nativement, comme montré avec la possibilité numéro 1.
+Le premier changement pouvant être effectué est d'utiliser une infrastructure avec uniquement la base de données en \Gls{conteneur} \Gls{docker} et le reste installé nativement, comme montré avec la possibilité numéro 1.
 
-Le second changement, est de passer tout l'environnement de production du \Gls{backend} sous plusieurs \Gls{conteneur}s \Gls{docker} en utilisant un \emph{Docker-compose}. Ce changement correspond à la possibilité 2. Si cela venait à être réaliser, il serait possiblement nécessaire de conteneuriser le serveur \Gls{http}.
+Le second changement, est de passer tout l'environnement de production du \Gls{backend} sous plusieurs \Gls{conteneur}s \Gls{docker} en utilisant un \emph{Docker-compose}. Ce changement correspond à la possibilité 2. Si cela venait à être réalisé, il serait possiblement nécessaire de conteneuriser le serveur \Gls{http}.
 
 \subsubsection{Évolutions de l'infrastructure de production possibles}
-Les différentes infrastructures possibles désormais présentées, il est nécessaire de les comparer en listant les pours et les contres de chaque changement en prenant comme référentiel l'infrastructure actuelle.\\
+Les différentes infrastructures possibles désormais présentées, il est nécessaire de les comparer en listant les avantages et inconvénients de chaque changement en prenant comme référentiel l'infrastructure actuelle.\\
 Les deux améliorations (combinées ou non) proposées sont les suivantes:
 \begin{itemize}
     \item passage du \Gls{sgbd} en machine \Gls{docker};
-    \item passage du projet \Gls{laravel} (et toutes ces technologies) en machine \Gls{docker}.
+    \item passage du projet \Gls{laravel} (et toutes ses technologies) en machine \Gls{docker}.
 \end{itemize}
 
 \subsubsection{Passage du SGBD en conteneur Docker}
 Nous allons maintenant énumérer les avantages et inconvénients d'installer le \Gls{sgbd} nativement.
-Certains peuvent être les mêmes qu'énumérer dans la partie précédente. Ces derniers sont visible avec la table \ref{prod-db-native}.
+Certains peuvent être les mêmes qu'énumérer dans la partie précédente. Ces derniers sont visibles sur la table \ref{prod-db-native}.
 
 \begin{table}[h]
     \begin{center}
@@ -686,7 +680,7 @@ Certains peuvent être les mêmes qu'énumérer dans la partie précédente. Ces
 \end{table}
 
 Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir le \Gls{sgbd} en \Gls{conteneur}
-\Gls{docker}. Ces derniers sont visible avec la table \ref{prod-db-docker}.
+\Gls{docker}. Ces derniers sont visibles sur la table \ref{prod-db-docker}.
 
 \begin{table}[h]
     \begin{center}
@@ -706,21 +700,13 @@ Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir le \
     \end{center}
 \end{table}
 
-Si nous évaluons les deux solutions proposées selon les besoins, désormais bien connus et suivants:
-\begin{itemize}
-    \item la performance de l'infrastructure;
-    \item la simplicité de mise à jour du programme au sein de l'infrastructure;
-    \item la robustesse de l'infrastructure;
-    \item la flexibilité de l'infrastructure.
-\end{itemize}
-
-Nous nous rendons compte que les deux solutions se valent à peu de chose près. Je choisi donc d'essayer de mettre en place une infrastructure avec \Gls{docker} en premier temps. Si cela est trop compliqué, l'autre solution étant viable pourra toujours être utilisée.
+Si nous évaluons les deux solutions proposées selon les besoins définis auparavant, nous nous rendons compte que les deux solutions se valent à peu de choses près. Je choisi donc d'essayer de mettre en place une infrastructure avec \Gls{docker} en premier lieu. Si cela est trop compliqué, l'autre solution étant viable pourra toujours être utilisée.
 
 \subsubsection{Passage de Laravel en conteneur Docker}
 Passons maintenant au passage de l'environnement \Gls{laravel} en \Gls{conteneur} \Gls{docker}.
 
 Pour ceci, nous allons énumérer les avantages et inconvénients d'installer nativement cet
-environnement. Ces derniers sont visible avec la table \ref{prod-laravel-native}.
+environnement. Ces derniers sont visibles sur la table \ref{prod-laravel-native}.
 
 \begin{table}[h]
     \begin{center}
@@ -735,7 +721,7 @@ environnement. Ces derniers sont visible avec la table \ref{prod-laravel-native}
 \end{table}
 
 Nous allons, maintenant, énumérer les avantages et inconvénients d'avoir l'environnement \Gls{laravel}
-en machine \Gls{docker}. Ces derniers sont visible avec la table \ref{prod-laravel-docker}.
+en machine \Gls{docker}. Ces derniers sont visibles sur la table \ref{prod-laravel-docker}.
 
 \begin{table}[h]
     \begin{center}
@@ -747,14 +733,14 @@ en machine \Gls{docker}. Ces derniers sont visible avec la table \ref{prod-larav
             + Accélère l'installation de l'environnement de production & - Mise en place d'un service
             non trivial                                                                                       \\
             + Configuration en gande partie déjà réalisée              & - Docker peut avoir des problèmes de
-            performances, \cite{labrecque}                                                                    \\
+            performance, \cite{labrecque}                                                                     \\
             + Offre une possibilité d'extensibilité horizontale        & - Nécessite Docker et les
             connaissances qui vont avec. \cite{labrecque}                                                     \\
         \end{tabularx}
     \end{center}
 \end{table}
 
-Si nous évaluons les deux solutions proposées selon les besoins explicité précédemment,nous nous rendons compte que la solution avec \Gls{docker} paraît plus adaptée mais la configuration des \Gls{conteneur}s pourrait être compliquée. De ce fait, la solution native, étant viable, peut également être utilisée.
+Si nous évaluons les deux solutions proposées selon les besoins explicité précédemment, nous nous rendons compte que la solution avec \Gls{docker} paraît plus adaptée mais la configuration des \Gls{conteneur}s pourrait être compliquée. De ce fait, la solution native, étant viable, peut également être utilisée.
 
 \subsubsection{Résultat de l'analyse}
 Suite à cette analyse des outils, la solution la plus adaptée semble être de mettre en place
@@ -778,9 +764,9 @@ Les choix d'infrastructures réalisés, une analyse de risque de cette dernière
 
 \subsubsection{Analyse de risques}
 L'analyse de risques de l'infrastructure de production est un point très important lorsque l'on publie un logiciel. Cette dernière peut être très complexe et nécessite énormément de connaissances.
-Une analyse de risque complète demande une quantité conséquente de travail. L'intervention d'experts dans le domaine, via par exemple, des audits serait une solution pour réaliser cette partie du projet.\\
-L'analyse de risques ne pourra donc pas être réaliser lors de ce projet, pour toutes les raisons énumérées plus haut, mais aussi car ce n'est pas le but principal de ce dernier.\\
-J'ai donc décider d'appliquer tout ce que je connaissais et faire le meilleur travail possible sans aller en profondeur dans le sujet.
+Une analyse de risque complète demande une quantité conséquente de travail. L'intervention d'experts dans le domaine, via, par exemple, des audits serait une solution pour réaliser cette partie du projet.\\
+L'analyse de risques ne pourra donc pas être réalisée lors de ce projet, pour toutes les raisons énumérées plus haut, mais aussi car ce n'est pas le but principal de ce dernier.\\
+J'ai donc décidé d'appliquer tout ce que je connaissais et faire le meilleur travail possible sans aller en profondeur dans le sujet.
 
 \clearpage
 
@@ -799,13 +785,13 @@ Dans la partie suivante, nous allons parler de \Gls{devops}, si vous êtes famil
 %https://www.padok.fr/blog/devops-tout-savoir
 %https://azure.microsoft.com/en-us/overview/what-is-devops/#devops-overview
 %https://www.ibm.com/cloud/learn/devops-a-complete-guide
-Pour commencer, c'est quoi les \Gls{devops}?\\
+Pour commencer, ques sont les \Gls{devops}?\\
 Les \Gls{devops} c'est un ensemble de processus permettant de gérer et faciliter le développement et le déploiement continu de l'application. Cela permet de garantir une meilleure qualité du code et de simplifier l'intégration de ce dernier. C'est-à-dire, si un collaborateur souhaite ajouter sa partie du code au projet, il doit d'abord passer par un système automatisé de contrôle et d'intégration de son code avant de pouvoir l'ajouter. Cette partie est appelée \Gls{ci}.\\
-Les \Gls{devops} intègre également tout ce qui est déployement continu et livraison continue (\Gls{cd}).
-En pratique, ils intègrent également d'autre aspect, comme la maintenance de l'infrastructure de
+Les \Gls{devops} intègrent également tout ce qui est déployement continu et livraison continue (\Gls{cd}).
+En pratique, ils intègrent également d'autres aspects, comme la maintenance de l'infrastructure de
 production et de développement, la sécurité des processus et beaucoup d'autres concepts.\\
 Au final c'est un cycle de vie visant à faciliter le développement d'applications en équipe.\\
-Nous peuvons observer un exemple de lifecycle fourni par IBM selon la figure \ref{devops-lifecycle}.
+Nous pouvons observer un exemple de \emph{lifecycle} fourni par IBM selon la figure \ref{devops-lifecycle}.
 
 \begin{center}
     \begin{figure}[H]
@@ -814,15 +800,15 @@ Nous peuvons observer un exemple de lifecycle fourni par IBM selon la figure \re
     \end{figure}
 \end{center}
 
-Aucun \Gls{devops} ou \emph{pipeline} n'avait été réalisé lors du précédent projet.\\
-Nous avons donc que des propositions, sans solution existante (ce qui était le cas pour d'autres choix).\\
+Aucun \Gls{devops} ou \emph{pipeline} n'avaient été réalisés lors du précédent projet.\\
+Nous n'avons donc que des propositions, sans solution existante (ce qui était le cas pour d'autres choix).\\
 
 % cliffhanger
-Avant de présenter chacun des \emph{pipeline} \Gls{devops} proposé, il est nécessaire d'expliquer pourquoi chacun de ces derniers passent par \Gls{github}, et plus précisément, les \Gls{github} Actions.
+Avant de présenter chacun des \emph{pipeline} \Gls{devops} proposé, il est nécessaire d'expliquer pourquoi chacun de ces derniers passent par \Gls{github}, et plus précisément, les \emph{\Gls{github} Actions}.
 
 \subsubsection{Choix de GitHub}
-Tout d'abord, il faut comprendre qu'il existe d'autres outil de "gestion" de \Gls{devops}, appelé
-aussi services de \Gls{ci} / \Gls{devops}, en voici une liste non exhaustive:
+Tout d'abord, il faut comprendre qu'il existe d'autres outils de "gestion" de \Gls{devops}, appelés
+aussi services de \Gls{ci} / \Gls{devops} et présenté sous la liste non exhaustive suivante:
 \begin{multicols}{2}
     \begin{itemize}
         \item \href{https://www.jenkins.io/}{Jenkins};
@@ -836,10 +822,10 @@ aussi services de \Gls{ci} / \Gls{devops}, en voici une liste non exhaustive:
     \end{itemize}
 \end{multicols}
 
-Tous ces outils, mise à part \Gls{gitlab}, doivent être installé en plus et configurer pour le projet.\\
+Tous ces outils, mise à part \Gls{gitlab}, doivent être installé en plus et configuré pour le projet.\\
 Comme il s'agit d'un projet assez restreint et n'impliquant que peu de personnes, nous cherchons à rester dans une solution simple et donc "all in one".\\
 Nous n'allons donc pas plonger dans les détails de chaque technologie citée plus haut.\\
-Parmi les solutions "all in one", c'est-à-dire qui propose des services de \Gls{ci} / \Gls{devops} et permette le versioning de code, il reste uniquement \Gls{gitlab} et \Gls{github} comme choix.\\
+Parmi les solutions "all in one", c'est-à-dire qui proposent des services de \Gls{ci} / \Gls{devops} et permettent le \emph{versioning} de code, il reste uniquement \Gls{gitlab} et \Gls{github} comme choix.\\
 Ne souhaitant pas réaliser une profonde analyse sur ces 2 solutions, car les 2 étant souvent considérées comme équivalentes ou interchangeable, ma connaissance de la solution \Gls{github} est un argument suffisant, selon moi, pour faire pencher la balance en sa faveur.
 % Tous les outils CI / CD
 %https://katalon.com/resources-center/blog/ci-cd-tools#
@@ -862,19 +848,19 @@ Sur la figure \ref{devops-choix.drawio}, nous remarquons le \emph{pipeline} \Gls
     \end{figure}
 \end{center}
 
-Le \emph{pipeline} passant par \Gls{docker} possède uniquement un intérêt si l'infrastructure de production tourne uniquement à l'aide de \Gls{conteneur}s \Gls{docker}. En effet, le but est de construire les images \Gls{docker} contenant tout ce qui est nécessaire (configurations, programmes, etc.) au niveau de la machine de développement, puis d'envoyer ces dernières sur un dépôt (\Gls{repository}) d'image, en l'occurence, \emph{Dockerhub}. Puis de
+Le \emph{pipeline} passant par \Gls{docker} possède, uniquement un intérêt si l'infrastructure de production tourne uniquement à l'aide de \Gls{conteneur}s \Gls{docker}. En effet, le but est de construire les images \Gls{docker} contenant tout ce qui est nécessaire (configurations, programmes, etc.) au niveau de la machine de développement, puis d'envoyer ces dernières sur un dépôt (\Gls{repository}) d'image, en l'occurence, \emph{Dockerhub}. Puis de
 récupérer ces images sur la machine de production et de les télécharger, puis lancer.
 
 Le second \emph{pipeline}, passerait par une plateforme appelée Heroku. Heroku permet de déployer son application sur l'un de leur serveur, puis le redéployer sur une machine de production finale.\\
 Cette approche est très intéressante car l'étape intermédiaire permet de tester l'application sur une autre machine que celle de développement et ceci avant de livrer en production.\\
-Le problème avec cette solution, c'est qu'il est impossible de donner des accès \Gls{vpn} à cet organisme et donc impossible de déployer sur notre machine à l'intérieur du réseau de la \Gls{heig-vd}.
+Le problème avec cette solution est qu'il est impossible de donner des accès \Gls{vpn} à cet organisme et donc impossible de déployer sur notre machine à l'intérieur du réseau de la \Gls{heig-vd}.
 
 Finalement, le troisième \emph{pipeline} passant uniquement par \Gls{github}, est la solution la plus simpliste en terme du nombre de technologies utilisées. Cette dernière repose sur le fait de pousser le code sur \Gls{github} et de le mettre à jour sur la machine de production via un script qui récupère les données sur le \Gls{github}.
 
-\subsubsection{Comparaison des \emph{pipeline} Devops possibles}
+\subsubsection{comparaisons des \emph{pipeline} Devops possibles}
 Nous allons définir pour chacun des \emph{pipeline}s, les avantages et inconvénients de ces derniers.
 Mais pour réaliser cette section, certains prototypes doivent être réalisés, ainsi que des recherches appronfidies sur la mise en oeuvre des différents \emph{pipeline}.\\
-En effet, n'étant pas expert dans le domaine, et n'ayant pas le temps de le devenir le temps de ce travail, l'un des critères / besoins importants et la facilité de mise en place du \emph{pipeline}.
+En effet, n'étant pas expert dans le domaine, et n'ayant pas le temps de le devenir le temps de ce travail, l'un des critères / besoins importants est la facilité de mise en place du \emph{pipeline}.
 
 Comme le \emph{pipeline} utilisant \emph{Heroku} ne peut pas être utilisé et que le \emph{pipeline} utilisant \emph{DockerHub} n'est également pas utilisable car l'application \Gls{laravel} ne sera pas conteneurisée, il ne nous reste plus que la solution passant par \Gls{github}.
 
@@ -894,7 +880,7 @@ Comme le \emph{pipeline} utilisant \emph{Heroku} ne peut pas être utilisé et q
 Le choix concernant les \Gls{devops} fait, il ne nous reste plus que le dernier choix concernant le système d'authentification à réaliser et nous allons voir cela dans la prochaine section.
 
 \subsection{Système d'authentification}
-Pour l'authentification, nous avions deux possibilités, utiliser le système de l'école ou utiliser \href{https://www.switch.ch/edu-id/}{Switch edu-ID}. Switch edu-ID est basé sur \href{https://www.switch.ch/aai/about/shibboleth/}{Shibboleth} et \href{https://support.google.com/a/answer/6262987?hl=fr}{SAML}, tandis que le système de l'école utilise \href{https://www.keycloak.org/}{Keycloak}.
+Pour l'authentification, nous avions deux possibilités: utiliser le système de l'école ou utiliser \href{https://www.switch.ch/edu-id/}{Switch edu-ID}. Switch edu-ID est basé sur \href{https://www.switch.ch/aai/about/shibboleth/}{Shibboleth} et \href{https://support.google.com/a/answer/6262987?hl=fr}{SAML}, tandis que le système de l'école utilise \href{https://www.keycloak.org/}{Keycloak}.
 
 Shibboleth a comme désavantage d'être un outil supplémentaire à ajouter à la machine de production, de ne pas être simple à mettre en place et d'être difficilement testable et utilisable en phase de développement. \\
 Il possède comme avantage de toucher un plus grand nombre d'utilisateur et d'avoir déjà été mis en place lors de l'ancien travail de Bachelor.
@@ -902,18 +888,18 @@ Il possède comme avantage de toucher un plus grand nombre d'utilisateur et d'av
 Keycloak étant basé sur \href{https://openid.net/connect/}{OpenID}, il a comme avantage de fournir un \Gls{jwt} et d'ensuite pourvoir l'utiliser afin de vérifier l'identité de l'utilisateur grâce à une signature également fournie par Keycloak. Un formulaire de connexion / d'authentification est également fourni avec l'outil. Un autre avantage et que l'école possède une totale maîtrise de l'outil et cela facilite grandement la mise en place et collaboration. \\
 L'outil a comme désavantage de restreindre l'authentification aux membres de l'école \Gls{heig-vd}.
 
-Si vous souhaitez plus d'informations sur les différences et le fonctionnement de chacun de ses système, je vous conseille l'article suivant: \href{https://www.parallels.com/blogs/ras/oauth-vs-saml-vs-openid/#:~:text=While%20the%20use%20cases%20for,than%20SAML%20and%20OpenID%20Connect}{OAuth vs SAML vs OpenID: Learn the Differences between Them}.
+Si vous souhaitez plus d'informations sur les différences et le fonctionnement de chacun de ces systèmes, je vous conseille l'article suivant: \href{https://www.parallels.com/blogs/ras/oauth-vs-saml-vs-openid/#:~:text=While%20the%20use%20cases%20for,than%20SAML%20and%20OpenID%20Connect}{OAuth vs SAML vs OpenID: Learn the Differences between Them}.
 
 %todo expliquer différences entre openID, SAML et OAuth2
 %https://www.parallels.com/blogs/ras/oauth-vs-saml-vs-openid/#:~:text=While%20the%20use%20cases%20for,than%20SAML%20and%20OpenID%20Connect.
 
-Le système d'authentification Keycloak a finalement été choisi, il me paraîssant le plus adapté et le plus facilement extensible grâce à \emph{OpenID}.
+Le système d'authentification Keycloak a finalement été choisi. En effet il me paraîssait plus adapté et le plus facilement extensible grâce à \emph{OpenID}.
 
 % cliffhanger
 Le système d'authentification choisi, nous pouvons finalement passer dans la première partie de la réalisation du projet et plus spécifiquement comment j'ai géré mon projet et les outils que j'ai utilisés.
 
 \chapter{Github et gestion de projet}
-Avant de commencer à parler de conception et de réalisation, il est nécessaire de parler de la façon dont les projets sont stockés et gérer.
+Avant de commencer à parler de conception et de réalisation, il est nécessaire de parler de la façon dont les projets sont stockés et géré.
 
 \section{Association GitHub}
 La première chose réalisée est d'avoir créer une association \Gls{github} au nom du \href{https://github.com/heig-fablab}{heig-fablab}. C'est un point important car cela permet de regrouper plusieurs dépôts (\Gls{repository}) sous le même "groupe de travail", la même association.
@@ -935,7 +921,7 @@ Les dépôt sont rédigés en anglais afin de pouvoir transmettre le plus aisém
 Le dépôt \emph{fablab-manager} étant le principal, ce dernier possède également un wiki avec énormément d'informations concernant la conception et la réalisation du projet. On peut notamment retrouver une majorité des informations disponibles dans ce rapport.
 
 \section{Issues Github}
-Ce dépôt liste également toutes les tâches réalisées et à réaliser du projet. Ces tâches sont répertoriées sous forme d'\emph{issue} \Gls{github}. Ces dernières indique grâce à des labels s'il s'agit d'un bug, de la documentation, un ajout, etc. et si elles appartiennent au projet \Gls {frontend} ou \Gls{backend} ou les deux.
+Ce dépôt liste également toutes les tâches réalisées et à réaliser du projet. Ces tâches sont répertoriées sous forme d'\emph{issue} \Gls{github}. Ces dernières indiquent, grâce à des labels s'il s'agit d'un bug, de la documentation, un ajout, etc. et si elles appartiennent au projet \Gls {frontend} ou \Gls{backend} ou les deux.
 
 \section{Kanban}
 Les \emph{issues} abordées, il est maintenant nécessaire de parler du \emph{kanban} mis en place. Le \emph{kanban} est un tableau contenant toutes les \emph{issues} et les rangeants dans des catégories en fonction de l'avancement de la tâche / \emph{issue}. \\
@@ -949,10 +935,10 @@ Le \emph{kanban} que j'ai créé contient 5 colonnes:
 \end{itemize}
 
 \section{Milestones}
-Pour m'organiser et travailler d'une manière agile, j'ai créé des milestones représantant les sprints que j'allais réaliser durant le projet. Une milestone spécial s'y est glisser, elles est nommée \emph{nice to have} est représente toutes les tâches non inclues dans le cahier des charges ou non prioritaires / nécessaires mais étant intéressantes à ajouter au projet.
+Pour m'organiser et travailler d'une manière agile, j'ai créé des milestones représantant les sprints que j'allais réaliser durant le projet. Une milestone spécial s'y est glissé, elle est nommée \emph{nice to have} est représente toutes les tâches non inclues dans le cahier des charges ou non prioritaires / nécessaires mais étant intéressantes à ajouter au projet.
 
 \section{Git flow / Workflow}
-Même si j'étais seul lors de ce projet, j'ai prévu qu'il soit potentiellement maintenu par plusieurs personnes à la fois, j'ai donc établi un \Gls{git} flow ou Workflow afin de faciliter la collaboration. Ce dernier suit un standard bien établi et est consultable à la figure
+Même si j'étais seul lors de ce projet, j'ai prévu qu'il soit potentiellement maintenu par plusieurs personnes à la fois. J'ai donc établi un \Gls{git} flow ou Workflow afin de faciliter la collaboration. Ce dernier suit un standard bien établi et est consultable à la figure
 \ref{git-flow} tiré dur site \href{https://www.atlassian.com/fr/git/tutorials/comparing-workflows/.gitflow-workflow}{atlassian}.
 
 \begin{center}
@@ -1016,53 +1002,53 @@ La partie conception et réalisation est séparée en plusieurs sections:
     \item Modification du \Gls{frontend}.
 \end{itemize}
 
-Les points à ne pas sous-estimer dans ces parties sont la mise en place d'un bon environnement de travail / de développement et la \Gls{ci} pour la première partie du projet. Ces deux points sont essentiels pour pouvoir développer l'application sans problème.\\
-Deux sujets sur la conception peuvent prendre du temps et sont très important, il s'agit de la conception de la base de données, car celle-ci découle sur toute la réalisation du \Gls{backend} et la conception de l'architecture de code, car si elle est significativement changée au milieu du projet, peut faire perdre énorméement de temps.\\
+Les points à ne pas sous-estimer, pour la première partie du projet, sont: la mise en place d'un bon environnement de travail / de développement et la \Gls{ci}. Ces deux points sont essentiels pour pouvoir développer l'application sans problème et sont cruciaux pour le reste du projet. \\
+Deux sujets sur la conception peuvent prendre du temps et sont très importants, il s'agit de la conception de la base de données, car celle-ci découle sur toute la réalisation du \Gls{backend} et la conception de l'architecture de code, car si elle est significativement modifiée au milieu du projet, peut faire perdre énormément de temps au développeur.\\
 Un point qui a été mal identifié de ma part lorsque j'ai réalisé la première version de ce planning,
-c'est le fait que concevoir toute une nouvelle base de données allaient presque m'obliger à
+est le fait que concevoir une nouvelle base de données allaient presque m'obliger à
 re-développer le \Gls{backend} quasiment de zéro sans pouvoir utiliser significativement le travail déjà
 présent.\\
 Cette partie était presque prévue sous le point "Séparation et refactor du code déjà écrit" mais
-elle prendra beaucoup plus de temps que prévu. Elle va s'en doute s'étendre à plus de 80 heures de
+elle prendra beaucoup plus de temps que prévu. Elle va sans doute s'étendre à plus de 80 heures de
 travail. C'est pourquoi elle a été séparée en plus petite partie. \\
 Pour finir, cette partie est cruciale pour le projet car elle correspond à la base de l'\Gls{api} et doit être solide pour pouvoir itérer dessus. \\
-Le dernier point dont j'avais sous-estimer et oublier dans ma première version du planning, était le déploiement, j'ai donc également rajouté cette partie à ma dernière version du planning.
+Le dernier point que j'avais sous-estimé et oublié dans ma première version du planning, était le déploiement. J'ai donc également rajouté cette partie à ma dernière version du planning.
 
 \subsection{Livrables}
 En ce qui concerne la préparation des livrables, il est clair que le rapport est l'un des points
 demandant le plus de temps au niveau du travail et est crucial pour la réussite du projet. Ce
-dernier se réalisant tout au long du projet, il n'a pas de date précise où il va être réaliser. On
-peut cependant prévoir plus d'effort avant le rendu intermédiaire et le rendu final.\\
+dernier se réalisant tout au long du projet, il n'a pas de date précise où il va être réalisé. Nous
+pouvons cependant prévoir plus d'effort avant le rendu intermédiaire et le rendu final.\\
 En ce qui concerne la présentation de la défense, elle est indiquée sur le planning mais sera uniquement réalisée pendant le mois d'août.\\
 La partie gestion de projet est également et logiquement réalisée tout au long du projet.
 
 \subsection{Discussion sur le planning}
-En observant le planning finale, nous remarquons, tout d'abord, que mes heures de travail ne suivent pas du tout la courbe prévue et cela était à prévoir et est totalement normale que cela soit comme ça. En effet, dans les projets de développement, il est difficile de réaliser une tâche après l'autre, car nous sommes souvent amené à réaliser plusieurs tâches à la fois.
+En observant le planning final, nous remarquons, tout d'abord, que mes heures de travail ne suivent pas du tout la courbe prévue et cela était à prévoir. En effet, dans les projets de développement, il est difficile de réaliser une tâche après l'autre, car nous sommes souvent amener à réaliser plusieurs tâches à la fois.
 
 Ensuite, nous nous rendons compte que j'ai mis beaucoup plus de temps prévu pour le écrire le rapport, ainsi que pour le déploiement. Cela se remarquera encore dans les problèmes rencontrés et expliqués plus tard dans le rapport. L'installation des technologies a également pris plus de temps que prévu avec tous les problèmes rencontrés à cause de \emph{WSL}.
 
-Au niveau des tâches ayant pris moins de temps que prévu, nous avons les différentes tâches liées au choix, mais cela peut s'expliquer par une mauvaise répartition dees heures notées entre le rapport sur ce sujet et ces choix en eux-même. \\
+Au niveau des tâches ayant pris moins de temps que prévu, nous avons les différentes tâches liées au choix, mais cela peut s'expliquer par une mauvaise répartition des heures notées entre le rapport sur ce sujet et ces choix en eux-même. \\
 La création des containeurs \Gls{docker} a également pris moins de temps que prévu car j'en ai réalisé moins que prévu. \\
-Quand à l'installation des technologies et la machine virtuelle, les heures ont dû être mal répartie avec le déploiement au niveau du suivi. \\
-J'ai gagné beaucoup de temps au niveau de la \Gls{cd} car aucune n'a été créée finalement, seul un guide a été écrit et cela a pris beaucoup moins de temps.
+Quant à l'installation des technologies et la machine virtuelle, les heures ont dû être mal réparties avec le déploiement au niveau du suivi. \\
+J'ai gagné beaucoup de temps au niveau de la \Gls{cd} car aucune n'a finalement été créée, seul un guide a été écrit et cela a pris beaucoup moins de temps.
 Nous remarquons que les routes \emph{messages} et \emph{users} ont pris moins de temps que prévu et c'est une bonne chose. \\
-Les tests unitaires m'ont également pris moins de temps que prévu et ceci car le nombre est assez limité. \\
-Finalement, nous remarquons également que je n'ai pas eu le temps de passer énormément de temps sur la configuration des webosckets côté \Gls{frontend}.
+Les tests unitaires m'ont également pris moins de temps que prévu, car leur nombre était assez limité. \\
+Finalement, nous remarquons également que je n'ai pas eu le temps de passer énormément de temps sur la configuration des \Gls{websockets} côté \Gls{frontend}.
 
-Au final, je m'en suis plus tôt bien sorti au niveau de l'estimation des heures du travail tout en maintenant et faisant évolué ce planning tout au long du projet.
+Au final, je m'en suis plutôt bien sorti au niveau de l'estimation des heures du travail tout en maintenant et faisant évoluer ce planning tout au long du projet.
 
 % cliffhanger
-Maintenant les outils de travail ont été définis, nous pouvons passer à la conception et la réalisation de la base de données, racine de tout projet avec stockage de données.
+Maintenant que les outils de travail ont été définis, nous pouvons passer à la conception et la réalisation de la base de données, racine de tout projet avec stockage de données.
 
 \chapter{Conception et Réalisation de la BD}
 
 \section{Modèle EA}
-Le modèle Entité-Associations est la première étape lors de la conception d'une base de données. Il se rapproche également d'un diagramme de classe classique utiliser pour la \emph{POO} (programmation orienté objet).\\
+Le modèle Entité-Associations est la première étape lors de la conception d'une base de données. Il se rapproche également d'un diagramme de classe classique utilisé pour la \emph{POO} (programmation orienté objet).\\
 Nous allons décrire chacune des entités et ses relations.\\
 Mais avant cela, voici quelques informations sur le schéma, une sorte de légende:\\
 Un rectangle représente une entité et possède son nom dans sa partie supérieur.\\
 Les valeurs textuelles en dessous sont les champs de l'entité. Le champ souligné représente la clé primaire de l'entité, cette dernière doit être unique.\\
-Les traits tiré entre deux entités sont des associations et peuvent se lire dans les deux sens. Les verbes écrits au dessus des traits servent à donner un sens à l'association.\\
+Les traits tirés entre deux entités sont des associations et peuvent se lire dans les deux sens. Les verbes écrits au dessus des traits servent à donner un sens à l'association.\\
 Les symboles et numéros à chaque extrémités des entités indiquent respectivement:
 \begin{itemize}
     \item 0 : zéro / aucun;
@@ -1075,7 +1061,7 @@ Par exemple, nous peuvons lire l'association \emph{user - message}, comme ceci:\
 Un utilisateur peut envoyer zéro ou plusieurs messages.\\
 Un message peut être envoyé que par un utilisateur.
 
-Finalement, quelques commentaires peuvent être ajouté avec des rectangles pliés en haut à droite et relié avec des traits pointillés.
+Finalement, quelques commentaires peuvent être ajoutés avec des rectangles pliés en haut à droite et reliés avec des traits pointillés.
 
 \begin{center}
     \begin{figure}[H]
@@ -1091,12 +1077,12 @@ Les champs contenant le mot \emph{notify} servent à stocker les préférences d
 
 Nous voyons au niveau des relations, que l'utilisateur peut envoyer et recevoir des messages.\\
 Il peut posséder également plusieurs rôles mais doit en posséder au moins un, celui par défaut qui est le rôle \emph{client}.\\
-L'utilisateur peut de toute façon faire une demande de travail (job). Cependant, seul les utilisateurs possédant le rôle \emph{validator}, en général, les professeurs pourront valider le travail.\\
-Le travail validé, un \emph{worker}, en général un technicien, pourra réaliser le travail demander et en indiquer le suivi.
+L'utilisateur peut de toute façon faire une demande de travail (job). Cependant, seuls les utilisateurs possédant le rôle \emph{validator}, en général les professeurs, pourront valider le travail.\\
+Le travail validé, un \emph{worker}, en général un technicien, pourra réaliser le travail demandé et en indiquer le suivi.
 
 \subsection{Entité jobs}
 L'entité \emph{job} représente un travail demandé par un utilisateur de l'application.\\
-Il possède un id (identifiant unique), un titre, une description du travail à réaliser, une date butoir (deadline), une évaluation que l'utilisateur / client qu'il peut attribuer au travail terminé, le nombre d'heures passées à réalisé le travail et un status d'avancement du travail mis à jour par le travailleur.\\
+Il possède un id (identifiant unique), un titre, une description du travail à réaliser, une date butoir (deadline), une évaluation que l'utilisateur / client peut attribuer au travail terminé, le nombre d'heures passées à réalisé le travail et un status d'avancement du travail mis à jour par le travailleur.\\
 Le status d'avancement d'un travail sera défini par un enum (liste exhaustive de valeurs), la voici:
 \begin{itemize}
     \item new;
@@ -1107,14 +1093,14 @@ Le status d'avancement d'un travail sera défini par un enum (liste exhaustive d
     \item completed.
 \end{itemize}
 
-Nous voyons au niveau des relations, que le travail peut posséder des messages qui lui sont liés.\\
+Nous voyons au niveau des relations que le travail peut posséder des messages qui lui sont liés.\\
 Il possède également une catégorie de travail définissant les machines qui peuvent être utilisées pour le réaliser.\\
 Le travail possédera également un utilisateur client, un validateur et un travailleur.\\
 Il doit également contenir un ou plusieurs fichiers nécessaires pour réaliser le travail demandé.\\
-Finalement, certains événements peuvent être lié au travail. Nous parlons ici d'événements permettant de préfevenir l'utilisateur via des notifications ou email.
+Finalement, certains événements peuvent être liés au travail. Nous parlons ici d'événements permettant de préfevenir l'utilisateur via des notifications ou email.
 
 \subsection{Entité roles}
-L'entité \emph{role"}représente simplement un rôle que peut avoir un utilisateur au sein de l'application. Cette entité est nécessaire car un utilisateur peut posséder plusieurs rôles et ils doivent tous être défini la même chose.\\
+L'entité \emph{role"}représente simplement un rôle que peut avoir un utilisateur au sein de l'application. Cette entité est nécessaire car un utilisateur peut posséder plusieurs rôles et ils doivent tous être définis la même chose.\\
 Seul un id (identifiant unique) et un nom du rôle est nécessaire.\\
 Voici la liste des rôles définis:
 \begin{itemize}
@@ -1133,13 +1119,13 @@ Une aggrégation a été modélisé pour cette dernière association car nous so
 \subsection{Entité job\_categories}
 L'entité \emph{job-category} représente une catégorie de travail pouvant être effecutée au Fablab, par exemple, une impression 3D ou une découpe laser.\\
 La catégorie possède un id (identifiant unique), un acronyme, une description plus précise et un nom.\\
-Elle est associé à un travail car ce dernier est obligé d'avoir une catégorie.\\
+Elle est associée à un travail car ce dernier est obligé d'avoir une catégorie.\\
 Elle possède également un fichier car ce dernier correspond à l'image affichée au niveau de l'interface graphique et la représentant. \\
-Elle possède une liste de type de fichiers acceptés pour réaliser un travail de cette catégorie et est défini par l'association \emph{job-category - file-type}. Cela permettra de facilement vérifier si un fichier donné pour un travail peut être accepté pour la catégorie de ce dernier.
+Elle possède une liste de type de fichiers acceptés pour réaliser un travail de cette catégorie et est définie par l'association \emph{job-category - file-type}. Cela permettra de vérifier si un fichier donné pour un travail peut être accepté pour la catégorie de ce dernier.
 
 \subsection{Entité file\_types}
 L'entité \emph{file-type} représente un type de fichier que peut accepter une catégorie de travail du \Gls{fablab}.\\
-Le type de fichier possède un id (identifiant unique), un nom et un \href{https://developer.mozilla.org/fr/docs/Web/HTTP/Basics_of_HTTP/MIME_Types}{mime-type} étant utiliser pour valider les fichiers télécharger.\\
+Le type de fichier possède un id (identifiant unique), un nom et un \href{https://developer.mozilla.org/fr/docs/Web/HTTP/Basics_of_HTTP/MIME_Types}{mime-type} étant utilisé pour valider les fichiers téléchargés. \\
 Comme expliqué précédement dans la catégorie, un type de fichier possède une ou plusieurs catégories qui sont acceptées.\\
 Le type de fichier peut également être associé à plusieurs fichiers.
 
@@ -1162,9 +1148,9 @@ L'événement possède un id (identifiant unique), un champ indiquant s'il faut 
 
 Le champ \emph{data} ne contiendra des données uniquement si l'événement est de type \emph{status} ou \emph{file}.
 
-Il est associé à un travail comme expliqué plus précédement.\\
-Il est également associé à un utilisateur afin de connaître quel utilisateur notifié si ceux dernier n'a pas consulté le travail lié à l'événement.\\
-Une aggrégation a été modélisée pour cette dernière association car nous souhaitons supprimé tous les événements liés à un travail, si ce dernier est supprimé.
+Il est associé à un travail comme expliqué précédement.\\
+Il est également associé à un utilisateur afin de connaître quel utilisateur notifié si ce dernier n'a pas consulté le travail lié à l'événement.\\
+Une aggrégation a été modélisée pour cette dernière association car nous souhaitons supprimer tous les événements liés à un travail, si ce dernier est supprimé.
 
 \subsection{Entité tasks-queue et failed-tasks}
 Ces entités ont été modélisées pour effectuer les tâches en arrière plan du \Gls{backend}, comme l'envoi d'email retardé. Je ne peux pas donner plus de précisions sur les champs car ils ont été générées automatiquement.
@@ -1176,7 +1162,7 @@ Le modèle logique des données n'est rien d'autre qu'une évolution du modèle 
 Les entités deviennent des tables et les associations des relations, ce qui est presque la même chose.\\
 Les tables sont au pluriel pour respecter la philosophie de \Gls{laravel} et de son \Gls{orm} \emph{Eloquent}.\\
 Les champs obtiennent des types représentant la façon dont ils seront stockés.\\
-Les clés étrangère issues des association s'ajoutent aux tables.\\
+Les clés étrangère issues des associations s'ajoutent aux tables.\\
 Les associations N à N du modèle EA voient naître une table intermédiaire. Voici celles qui ont été créées:
 \begin{itemize}
     \item file\_type\_job\_category;
@@ -1202,29 +1188,29 @@ Une clé étrangère étant le champ représantant une autre table issue d'une r
 
 \subsection{Champs spéciaux}
 Quelques champs obtiennent des valeurs précises et méritent une explication.\\
-Le champ \emph{username} de la table \emph{users} contient au maximum 17 caractères, car l'école défini ces nom d'utilisateurs en utilisant les 8 premières lettres du prénom et les 8 premières du nom avec un \emph{.} entre deux.
-Le champs \emph{email} de la table \emph{users} possèdent 255 charactères car un email peut contenir au maximum 255 charactères \cite{email-length}.
+Le champ \emph{username} de la table \emph{users} contient au maximum 17 caractères, car l'école défini ces noms d'utilisateurs en utilisant les 8 premières lettres du prénom et les 8 premières du nom avec un \emph{.} entre deux.
+Le champs \emph{email} de la table \emph{users} possèdent 255 caractères car un email peut contenir au maximum 255 caractères \cite{email-length}.
 
 Le champ \emph{status} de la table \emph{jobs} et le champ \emph{type} de la table \emph{events} est une enum comme expliqué précédement dans le modèle EA.
 
-Tous les champs \emph{created\_at}, \emph{updated\_at} et \emph{deleted\_at} sont des champs automatiquement généré par \Gls{laravel} si nous ajoutons certaines options à la table et au modèle comme nous allons le voir plus tard. Ces champs indique l’heure à laquelle la donnée à été créée / modifiée / supprimée pour la dernière fois.
+Tous les champs \emph{created\_at}, \emph{updated\_at} et \emph{deleted\_at} sont des champs automatiquement générés par \Gls{laravel} si nous ajoutons certaines options à la table et au modèle comme nous allons le voir plus tard. Ces champs indiquent l'heure à laquelle la donnée à été créée / modifiée / supprimée pour la dernière fois.
 
-Les types de champs et leur taille de la base de données ont été minutieusement choisi afin de correspondre au mieux aux besoins de l'application. \\
-Il a été décidé que seul 50 caractères suffiront pour stocker les noms et prénoms des utilisateurs. \\
+Les types de champs et leur taille dans la base de données ont été minutieusement choisi afin de correspondre au mieux aux besoins de l'application. \\
+Il a été décidé que seuls 50 caractères suffiront pour stocker les noms et prénoms des utilisateurs. \\
 Pour tous les autres champs ayant le nom \emph{name}, il a été observé quel était la longueur maximale possible avec les données qui nous étaient fournies et un supplément a été ajouté. \\
 Le champ \emph{mime\_type} a fait l'objet d'une recherche afin de valider sa longueur maximum grâce au poste \cite{mime-type-length}. \\
 De même pour le champ \emph{name} de la table \emph{file\_type} qui a été validé grâce au poste suivant \cite{extension-length}. \\
-Le dernier champ à être été validé est celui nommé \emph{hash} de la table \emph{file}, ce dernier a été validé grâce au poste \cite{hash-256-length}.
+Le dernier champ à avoir été validé, est celui nommé \emph{hash} de la table \emph{file}, ce dernier a été validé grâce au poste \cite{hash-256-length}.
 
 % cliffhanger
 Le modèle logique des données établi, il est maintenant nécessaire de l'implémenter grâce aux migrations de \Gls{laravel} et nous allons voir cela tout de suite.
 
 \section{Migrations Laravel}
 
-Les migrations du \Gls{backend} réalisées avec Laravel et l'\Gls{orm} \emph{Eloquent} se rapprochent le plus possibles du \emph{MLD} présenté précédement.
+Les migrations du \Gls{backend} réalisées avec Laravel et l'\Gls{orm} \emph{Eloquent} se rapprochent le plus possible du \emph{MLD} présenté précédement.
 
 \subsection{Types de champs}
-Voici une liste des types possibles et utilisées:
+Voici une liste des types possibles et utilisés:
 \begin{itemize}
     \item id: un entier positif incrémentable, unique, indiqué comme clé primaire et référencé via un index;
     \item string: une chaîne de caractères;
@@ -1257,12 +1243,12 @@ Cette possibilité est par exemple utilisée par le champ email.
 Les champs de type \emph{->timestamps()} sont un raccourci utilisé par \Gls{laravel} pour créer deux champs indiquant la date de création de la donnée et la date de modification. Ces champs sont gérés automatiquement par \Gls{laravel}, ce qui est bien pratique.
 
 \subsection{Indexes}
-Il est possible de créer des indexes sur certains champs afin d'améliorer les performances de la base de données lors de certaines requêtes. Ces indexes peuvent être créer grâce à l'instruction \emph{index('table-champ')}.\\
-Ces derniers sont toujours créer sur les clés primaires et doivent être créer sur les clés étrangères. D'autres champs régulièrement utilisés par des requêtes peuvent faire l'objet d'indexes.
+Il est possible de créer des indexes sur certains champs afin d'améliorer les performances de la base de données lors de certaines requêtes. Ces indexes peuvent être créés grâce à l'instruction \emph{index('table-champ')}.\\
+Ces derniers sont toujours créés sur les clés primaires et doivent être cré sur les clés étrangères. D'autres champs régulièrement utilisés par des requêtes peuvent faire l'objet d'indexes.
 
 \subsection{Clés étrangères}
 Les clés étrangères peuvent être gérées de deux façon différentes.\\
-Soit nous ajoutons un champ \emph{foreignId('table-id')} suivi d'un \emph{->constrained('table')} qui permet de faire le lien directe entre la clé primaire et la clé étrangère tout en générant un index. Mais ceci est possible uniquement si nous utilisons une clé primaire de type \emph{id()}.
+Dans le premier cas, nous ajoutons un champ \emph{foreignId('table-id')} suivi d'un \emph{->constrained('table')} qui permet de faire le lien direct entre la clé primaire et la clé étrangère tout en générant un index. Mais ceci est possible uniquement si nous utilisons une clé primaire de type \emph{id()}.
 
 Dans le deuxième cas, lorsque nous possèdons une clé primaire basée sur un autre type de champ, il faut tout d'abord créer un champ à la main avec la valeur voulue.\\
 Puis faire le lien entre la clé primaire et étrangère à la main en utilisant d'abord \emph{->foreign('table-champ')}, puis en référançant avec \emph{->references('champ')->on('table')}.\\
@@ -1295,7 +1281,7 @@ Tous les autres \emph{seeders}, donc ceux du deuxième type, sont uniquement exe
 
 \chapter{Conception et Réalisation du Backend / de l'API}
 
-La première chose à noter dans cette section, c'est que la version 8 était utilisée dans le précédent projet et cette dernière a été mise à jour pour utiliser la dernière version, la version 9.
+La première chose à noter dans cette section est que la version 8 était utilisée dans le précédent projet et cette dernière a été mise à jour pour utiliser la dernière version, la version 9.
 
 % cliffhanger
 Maintenant la base de données créée et peuplée, parlons de l'architecture de code que nous devons mettre en place pour intéragir avec ces dernières.
@@ -1314,7 +1300,7 @@ Des \emph{DTO} peuvent également être ajoutées entre la vue et les controller
 \end{center}
 
 J'ai ensuite essayé de comprendre l'architecture de code de \Gls{laravel} en me plongeant dans la documentation. \\
-Je me suis rendu compte que \Gls{laravel} proposait énormément de classes ou d'outils de code que ce que j'avais pu comprendre en premier lieu. J'ai donc réaliser un schéma de l'architecture de code que je vais utiliser pour ce projet disponible sur la figure \ref{architecture-code-finale}.
+Je me suis rendu compte que \Gls{laravel} proposait énormément de classes ou d'outils de code que ce que j'avais pu comprendre en premier lieu. J'ai donc réalisé un schéma de l'architecture de code que je vais utiliser pour ce projet disponible sur la figure \ref{architecture-code-finale}.
 
 %\figi{architecture-code-finale.drawio}{16cm}{Architecture de code Laravel finale}
 \begin{center}
@@ -1324,24 +1310,18 @@ Je me suis rendu compte que \Gls{laravel} proposait énormément de classes ou d
     \end{figure}
 \end{center}
 
-Nous allons maintenant discuté de quelques \emph{pattern} de code utilisé et fourni par \Gls{laravel}.\\
-Tout d'abord, nous pouvons observer que les authorisations peuvent être contenue dans un \emph{middleware} utilisant au final des \emph{Policy} afin de contenir la logique déterminant si l'utilisateur possède le droit d'accès à une ressource.
+Nous allons maintenant discuté de quelques \emph{pattern} de code utilisés et fournis par \Gls{laravel}.\\
+Tout d'abord, nous pouvons observer que les authorisations peuvent être contenues dans un \emph{middleware} utilisant au final des \emph{Policy} afin de contenir la logique déterminant si l'utilisateur possède le droit d'accès à une ressource.
 
-Ensuite, nous observons que les \emph{Controllers} recevoivent des \emph{Form Rquests} représentant des requêtes contenant les valeurs nécessaires pour la requête. Les valeurs à l'intérieur des requêtes seront exhaustivement définies et syntaxiquement validées. Cela permettra de travailler avec des valeurs sûrs au niveau des \emph{Controllers} et des \emph{Models}. \\
-Ces \emph{Form Rquests} peuvent être comparées à des \emph{DTO} de validation. \\
-%Par exemple, il sera possible de valider qu'un email donné soit un email syntaxiquement correct.
+Ensuite, nous observons que les \emph{Controllers} recevoivent des \emph{Form Rquests} représentant des requêtes contenant les valeurs nécessaires pour la requête. Les valeurs à l'intérieur des requêtes seront exhaustivement définies et syntaxiquement validées. Cela permettra de travailler avec des valeurs sûres au niveau des \emph{Controllers} et des \emph{Models}. Ces \emph{Form Rquests} peuvent être comparées à des \emph{DTO} de validation. \\
 
-Les \emph{Controllers} travailleront avec des \emph{Resources} (ressources) afin de retourner uniquement les valeurs voulues. Ces \emph{Resources} définissent exactement les données qui doivent être renvoyer à l'utilisateur. \\
+Les \emph{Controllers} travailleront avec des \emph{Resources} (ressources) afin de retourner uniquement les valeurs voulues. Ces \emph{Resources} définissent exactement les données qui doivent être renvoyées à l'utilisateur. \\
 Ces \emph{Resources} utilisent également des \emph{ResourcesCollection} permettant de
-définir des collections de ressources lorsqu'une route doit fournir plus qu'un seul élément. \\
-Ces \emph{Ressources} peuvent être comparées à des \emph{DTO} de sortie. \\
-%Il sera par exemple possible de définir que le mot de passe de l'utilisateur ne soit
-pas retourné à ce dernier. \\
+définir des collections de ressources lorsqu'une route doit fournir plus d'un élément.
+Ces \emph{Ressources} peuvent être comparées à des \emph{DTO} de sortie.
 
 % cliffhanger
 Avant de passer aux détails d'implémentation de cette architecture de code, il est nécessaire de définir les routes que l'\Gls{api} fournit.
-
-\section{Routes}
 
 %todo must be here
 \begin{listing}[H]
@@ -1356,7 +1336,9 @@ Avant de passer aux détails d'implémentation de cette architecture de code, il
 
 \newpage
 
-Les routes définies par l'\Gls{api} sont organisée par modèle / ressource et sont ensuite trier par action possible. \\
+\section{Routes}
+
+Les routes définies par l'\Gls{api} sont organisées par modèle / ressource et sont ensuite triées par action possible. \\
 Voici la liste des ressources sur lesquels certaines actions peuvent être exécutées:
 \begin{itemize}
     \item files;
@@ -1369,7 +1351,7 @@ Voici la liste des ressources sur lesquels certaines actions peuvent être exéc
 
 Le détail de ces routes est consultable sur les figures \ref{routes-api-1} et \ref{routes-api-2}.
 
-Nous remarquons aisément que la route principale est la route \emph{jobs} et que toutes les autres routes sont également liées à cette dernière. Nous pouvons également remarquer que la route \emph{file types} est uniquement réservé aux administrateurs.
+Nous remarquons aisément que la route principale est la route \emph{jobs} et que toutes les autres routes sont également liées à cette dernière. Nous pouvons également remarquer que la route \emph{file types} est uniquement réservée aux administrateurs.
 
 \subsection{REST}
 Les routes fournies essaient au maximum de suivre le principe \Gls{rest}. \\
@@ -1379,14 +1361,14 @@ Les routes avec la méthode \emph{PUT} à mettre à jour les données d'une entr
 Les routes avec la méthode \emph{PATCH} à mettre à jour seulement certaines données spécifiques d'une entrée. \\
 Les routes avec la méthode \emph{DELETE} à supprimer une entrée.
 
-Nous remarquons également qu'il a été choisi d'insérer l'id de l'entrée mise à jour (méthode \emph{PUT}) au niveau des données du \emph{body} de la requête et non dans la \emph{query string}. Le but étant de regrouper toutes les informnations / données à vérifier au même endroit. \\
-La majorité des routes avec la méthode \emph{PATCH} suivent le même principe. Une exception a été faite pour la route \emph{PATCH /api/jobs/\{id\}/notifications/user/\{username\}} car aucune donnée ne doit être transmise ne plus du job et de l'utilisateur concerné. Il était donc plus simple et lisible de passer les informations dans la query string.
+Nous remarquons également qu'il a été choisi d'insérer l'id de l'entrée mise à jour (méthode \emph{PUT}) au niveau des données, c'est-à-dire, au niveau du \emph{body} de la requête et non dans la \emph{query string}. Le but étant de regrouper toutes les informnations / données à vérifier au même endroit. \\
+La majorité des routes avec la méthode \emph{PATCH} suivent le même principe. Une exception a été faite pour la route \emph{PATCH /api/jobs/\{id\}/notifications/user/\{username\}}, car aucune donnée ne doit être transmise en plus du \emph{job\_id} et de l'utilisateur concerné. Il était donc plus simple et lisible de passer les informations dans la \emph{query string}.
 
 % cliffhanger
 Maintenant les routes définies et connues, il est nécessaire de parler de ce qu'il faut fournir et ce qui est nécessaire de fournir pour les utiliser. Nous allons donc voir comment l'authentification pour accéder à l'\Gls{api} a été mise en place.
 
 \section{Authentification}
-Le système d'authentification Keycloak étant celui choisi, il est maintenant nécessaire de définir son fonctionnement plus en détail.
+Le système d'authentification \emph{Keycloak} étant celui choisi, il est maintenant nécessaire de définir son fonctionnement plus en détail.
 
 \subsection{Fonctionnement de Keycloak}
 En résumé, l'outil Keycloak permet à l'école d'utiliser les utilisateurs de leur domaine et donc de leur \Gls{ldap} afin d'authentifier une personne. Tout ceci en fournissant un formulaire de connexion et renvoyant un \Gls{jwt} une fois l'authentification réussie.
@@ -1400,7 +1382,7 @@ En résumé, l'outil Keycloak permet à l'école d'utiliser les utilisateurs de 
 \end{center}
 
 En consultant la figure \ref{keycloak-flow.drawio} mettant en image notre situation et la figure \ref{keycloak-flow-lib} tirée de la librairie \href{https://github.com/robsontenorio/laravel-keycloak-guard}{laravel-keycloak-guard}, nous comprenons bien que l'utilisateur arrivant sur le site, commence par s'authentifier à l'aide de ses informations d'identification, puis récupère un \Gls{jwt} agissant comme certificat / clé d'accès afin d'effectuer des requêtes au \Gls{backend}. \\
-Ce token / jeton est ensuite ajouter dans l'entête de chaque requête vers le \Gls{backend}. \\
+Ce token / jeton est ensuite ajouté dans l'entête de chaque requête vers le \Gls{backend}. \\
 Lorsque le \Gls{backend}, reçoit une requête, il vérifie le jeton donné grâce à une signature fournie par le domaine Keycloak de la \Gls{heig-vd} et détermine si ce dernier et valable ou non.
 
 \begin{center}
@@ -1410,14 +1392,14 @@ Lorsque le \Gls{backend}, reçoit une requête, il vérifie le jeton donné grâ
     \end{figure}
 \end{center}
 
-Le fonctionnement de Keycloak expliqué, il est nécessaire d'expliquer la façon dont il a été implémenté au niveau de \Gls{backend}.
+Le fonctionnement de Keycloak expliqué, il est nécessaire d'expliquer la façon dont il a été implémenté au niveau du \Gls{backend}.
 
 \subsection{Implémentation de Keycloak côté Backend}
 Tout d'abord, nous pouvons remarqué sur les figures \ref{routes-api-1} et \ref{routes-api-2}, que l'authentification est utilisée dans le middleware \emph{auth:api}. Ce dernier étant appliqué à toutes les routes de l'\Gls{api}.
 
 Pour ensuite implémenter la logique utilisée par ce middleware, je me suis inspiré d'un packet Laravel existant, \href{https://github.com/robsontenorio/laravel-keycloak-guard}{laravel-keycloak-guard}. Je n'ai pas pu l'utiliser direcement, car il n'était pas totalement adapté à nos besoins.
 
-Pour intégrer mon adaptation de package au projet, j'ai d'abord créer un \emph{KeycloakServiceProvider} comme nous pouvons le voir à la figure \ref{keycloak-service-provider}. \\
+Pour intégrer mon adaptation de \emph{package} au projet, j'ai d'abord créé un \emph{KeycloakServiceProvider} comme nous pouvons le voir à la figure \ref{keycloak-service-provider}. \\
 Dans ce dernier, nous voyons que nous définissons la \emph{KeycloakGuard} pour l'authentification.
 
 \begin{listing}[H]
@@ -1425,10 +1407,10 @@ Dans ce dernier, nous voyons que nous définissons la \emph{KeycloakGuard} pour 
     \caption{KeycloakServiceProvider \label{keycloak-service-provider}}
 \end{listing}
 
-Ensuite, nous implémentons la \emph{KeycloakGuard} dans un fichier et une classe à part (disponible en annexe). Il est également nécessaire de définir quelques Exception liées à cette implémentation. \\
+Ensuite, nous implémentons la \emph{KeycloakGuard} dans un fichier et une classe à part (disponible en annexe). Il est également nécessaire de définir quelques \emph{Exception} liées à cette implémentation. \\
 Tous ces fichiers sont disponibles dans le dossier \emph{/app/Providers/Keycloak}.
 
-De plus, il est nécessaire d'ajouter un fichier de config afin de supporter certains paramètres à fournir dans le \emph{.env} tel que la clé publique permettant de vérifier les tokens. Ce fichier de config doit être créer dans le dossier \emph{config} et se nommer \emph{keycloak.php}. Ce dernier est défini comme sous la figure \ref{keycloak.php}.
+De plus, il est nécessaire d'ajouter un fichier de \emph{config} afin de supporter certains paramètres à fournir dans le \emph{.env}, tel que la clé publique permettant de vérifier les tokens. Ce fichier de \emph{config} doit être créé dans le dossier \emph{config} et se nommer \emph{keycloak.php}. Ce dernier est défini comme sur la figure \ref{keycloak.php}.
 
 \begin{listing}[h]
     \inputminted{php}{assets/code/keycloak.php}
@@ -1450,7 +1432,7 @@ Maintenant que le système d'authentification est défini, il est important d'ut
 \section{Autorisation d'accès aux ressources et gestion des droits}
 
 Un système de contrôle d'accès aux ressources basé sur les rôles a été mis en place ou aussi appelé \emph{RBAC (Role Based Access Control)}.
-Pour mettre ce système en place, il nous faut des rôles bien défini et c'est ce que nous allons maintenant.
+Pour mettre ce système en place, il nous faut des rôles bien définis et c'est ce que nous allons maintenant.
 
 \subsection{Rôles}
 Voici les différents rôles:
@@ -1463,7 +1445,7 @@ Voici les différents rôles:
 
 À savoir que le rôle \emph{validator} a été prévu mais non implémenté dans l'application.
 
-Par définition, les rôles worker et validator peuvent être vu comme des sortes d'interface dans le milieu de la programmation.
+Par définition, les rôles \emph{worker} et \emph{validator} peuvent être vu comme des sortes d'interfaces dans le milieu de la programmation.
 
 Nous pouvons donc représenter les rôles sous la forme d'un diagramme, comme la figure \ref{roles-diagram.drawio}
 
@@ -1475,7 +1457,7 @@ Nous pouvons donc représenter les rôles sous la forme d'un diagramme, comme la
     \end{figure}
 \end{center}
 
-Quelques précisions s'imposent, nous remarquons que le rôle \emph{client} est donné à n'importe quel utilisateur authentifier par la \Gls{heig-vd}. \\
+Quelques précisions s'imposent, nous remarquons que le rôle \emph{client} est donné à n'importe quel utilisateur authentifié par la \Gls{heig-vd}. \\
 Nous remarquons aussi que le rôle \emph{admin} possède tous les droits.
 
 Un autre point étant que les utilisateurs anonymes, n'ont accès à aucune ressource fournie par l'\Gls{api}.
@@ -1484,7 +1466,7 @@ Nous allons maintenant voir comment ces rôles sont utilisés pour gérer l'acc�
 
 \subsection{Accès par route et action}
 Nous allons maintenant voir par route, quel accès est accordé à quel rôle.
-Mais avant cela, un petit rappel sur le nom de fonctions utilisées pour les méthodes \Gls{http} de l'\Gls{api} est nécessaire et est consultable à la figure \ref{rappel-methode-api}.
+Mais avant cela, un petit rappel sur le nom des fonctions utilisées pour les méthodes \Gls{http} de l'\Gls{api} est nécessaire et est consultable à la figure \ref{rappel-methode-api}.
 
 \begin{table}[h]
     \begin{center}
@@ -1522,7 +1504,7 @@ Pour la route \emph{files}, la gestion des autorisations est disponible sur la f
     \end{center}
 \end{table}
 
-j = Pour effectuer ces actions, le client / travailleur doit faire partie du travail liée au fichier. \\
+j = Pour effectuer ces actions, le client / travailleur doit faire partie du travail lié au fichier. \\
 Pour les actions du client uniquement, il doit faire partie du travail en tant que client.
 
 \subsubsection{Route \emph{jobs}}
@@ -1645,11 +1627,11 @@ Seul les administrateurs peuvent effectuer des actions sur la route suivante \em
 Toute cette conception d'autorisation théorique définie, il est maintenant nécessaire de définir comment elle a été implémentée au niveau du code.
 
 \subsection{Mise en place}
-La mise en place du système d'autorisation est basée sur un concepte que \Gls{laravel} fourni, les \href{https://laravel.com/docs/9.x/authorization#creating-policies}{\emph{Policies}}.
+La mise en place du système d'autorisation est basée sur un concept que \Gls{laravel} fourni, les \href{https://laravel.com/docs/9.x/authorization#creating-policies}{\emph{Policies}}.
 
-Les \emph{Policies} une fois définies, elles sont utilisées et appelées dans un middleware. L'instruction \emph{can} fait appelle au middleware et à la policy correspondante afin de vérifier l'accès à la ressource. Nous voyons bien l'appel à cette fonction dans le fichier \emph{routes/api.php} (\ref{routes-api-1}, \ref{routes-api-2}). \\
-Pour chaque route disponible sur une ressource / un modèle, une fonction dans la \emph{Policy} correspondant défini l'accès à cette dernière. \\
-Dans chaque \emph{Policy}, il y également une fonction de nommée \emph{before} qui est appelée avant toute vérification. Cette fonction est utilisée afin de vérifier si l'utilisateur possède au moins le rôle \emph{client} ou s'il est \emph{admin}.
+Les \emph{Policies}, une fois définies, sont utilisées et appelées dans un middleware. L'instruction \emph{can} fait appelle au middleware et à la \emph{pPlicy} correspondante afin de vérifier l'accès à la ressource. Nous voyons bien l'appel à cette fonction dans le fichier \emph{routes/api.php} (\ref{routes-api-1}, \ref{routes-api-2}). \\
+Pour chaque route disponible sur une ressource / un modèle, une fonction dans la \emph{Policy} correspondante défini l'accès à cette dernière. \\
+Dans chaque \emph{Policy}, il y également une fonction nommée \emph{before} qui est appelée avant toute vérification. Cette fonction est utilisée afin de vérifier si l'utilisateur possède au moins le rôle \emph{client} ou s'il est \emph{admin}.
 
 La figure \ref{policy-files} est un exemple de \emph{Policy}.
 
@@ -1669,10 +1651,10 @@ Il est également nécessaire d'enregistrer chacune des \emph{Policies} dans le 
 Il est bien de définir un système de contrôle d'accès aux différentes ressources, mais il est également important de pouvoir retracer ce qu'il s'est passé sur le serveur. C'est ce que nous allons voir grâce à la politique de logging mise en place.
 
 \section{Politique de logging}
-Tout d'abord, le logging our journalisation est le fait de tracer l'exécution de certaines actions sur le seveur grâce à des messages stocké dans un fichier de log. \\
+Tout d'abord, le \emph{logging} ou journalisation est le fait de tracer l'exécution de certaines actions sur le seveur grâce à des messages stocké dans un fichier de \emph{log}. \\
 C'est un point important du développement d'application informatique car il est légalement demandé de pouvoir retracé certaines requêtes en cas d'enquête. \\
-Le logging est également très utile pour le debugging en phase de développement mais également lorsque certains problèmes apparaîssent en production. \\
-Le logging contient différent niveau de sévérité, de ce fait une politique de logging doit être définie, afin de savoir quel événement sera assigné à quel sévérité et c'est ce qui a été défini à la figure \ref{politique-log}.
+Le \emph{logging} est également très utile pour le \emph{debugging} en phase de développement mais également lorsque certains problèmes apparaîssent en production. \\
+Le \emph{logging} contient différent niveau de sévérité, de ce fait une politique de \emph{logging} doit être définie, afin de savoir quel événement sera assigné à quel sévérité et c'est ce qui a été défini à la figure \ref{politique-log}.
 
 \begin{table}[h]
     \begin{center}
@@ -1684,17 +1666,17 @@ Le logging contient différent niveau de sévérité, de ce fait une politique d
             Error         & Une erreur interne survient lors d'une requête sur le serveur                       \\
             Warning       & Un utilisateur essaie d'accéder à une ressource ou route dont il n'a pas les droits \\
             Notice        & Pas utilisé                                                                         \\
-            Info          & Lorsqu'un utilisateur accède à une route pour laquelle il a des droits              \\
-            Info          & Lorsqu'une action de n'importe quel controller est réussie                          \\
-            Info          & Lorsqu'une erreur de logique métier se produit                                      \\
-            Info          & Lorsqu'il y a un problème avec le fichier téléchargé                                \\
+            Info          & Uun utilisateur accède à une route pour laquelle il a des droits              \\
+            Info          & Une action de n'importe quel Controller est réussie                          \\
+            Info          & Une erreur de logique métier se produit                                      \\
+            Info          & Un problème avec le fichier téléchargé est reporté                               \\
             Debug         & Utilisé pour le debugging                                                           \\
         \end{tabularx}
     \end{center}
 \end{table}
 
 \subsection{Niveau de logging du serveur de production}
-Un autre point survient lorsque nous souhaitons mettre en place une politique de logging, quel sera le niveau minimum de sévérité utilisé pour la production. En effet, nous ne voulant pas forcément enregistrer la totalité des logs afin de réduire au maximum les fichiers de log et garder les informations essentiels. \\
+Un autre point survient lorsque nous souhaitons mettre en place une politique de \emph{logging}. Quel sera le niveau minimum de sévérité utilisé pour la production. En effet, nous ne voulant pas forcément enregistrer la totalité des \emph{logs} afin de réduire au maximum les fichiers de \emph{log} et garder les informations essentiels. \\
 Dans notre cas, j'ai fixé la limite de sévérité minimum à \emph{Warning} pour la production afin d'obtenir uniquement les informations utiles pour retracer les erreurs de serveur et les tentatives d'accès aux ressources non autorisées. \\
 Lors du développement, il est évident que la limite est à \emph{Debug}.
 
@@ -1702,8 +1684,8 @@ Lors du développement, il est évident que la limite est à \emph{Debug}.
 Maintenant que nous avons vu qu'il fallait tracer ce qu'il se passe sur le \Gls{backend}, il est important de connaître les messages et status que ce dernier peut nous retourner et c'est ce que nous allons voir dans la section suivante.
 
 \section{Erreurs retrounées par le Backend}
-Tout les erreurs retournées par le \Gls{backend} sont des erreurs \Gls{http} et suivent les codes défini par ce protocole. \\
-Toutes les erreurs comporte donc un \emph{Status code} et un message / des données. Ces réponses sont toutes transmises au format \Gls{json}. \\
+Toutes les erreurs retournées par le \Gls{backend} sont des erreurs \Gls{http} et suivent les codes définis par ce protocole. \\
+Toutes les réponses sont donc constituées d'un \emph{Status code} et d'un message / de données. Ces réponses sont toutes transmises au format \Gls{json}. \\
 Le tableau \ref{reponses-erreurs-backend} trace les différentes réponses que le \Gls{backend} peut retourner.
 
 \begin{table}[h]
@@ -1712,23 +1694,23 @@ Le tableau \ref{reponses-erreurs-backend} trace les différentes réponses que l
         \begin{tabularx}{1.0\textwidth} {l|l|X}
             Status code & Signification         & Événements générant la réponse                                                                   \\ \hline
             200         & Ok                    & L'action a été exécutée avec succès                                                              \\
-            400         & Bad Request           & Lorsqu'une erreur de logique métier s'est produite ou que le chemin n'existe pas                 \\
+            400         & Bad Request           & Une erreur de logique métier s'est produite ou  le chemin n'existe pas                 \\
             403         & Forbidden             & L'utilisateur n'a pas le rôle pour utiliser la route sur la ressource                            \\
-            404         & Not Found             & Lorsqu'une ressource à laquelle nous essayons d'accéder n'est pas trouvée ou n'existe pas        \\
-            422         & Unprocessable Entity  & Lorsqu'une erreur se produit à cause d'une entrée utilisateur incorrecte                         \\
-            500         & Internal Server Error & Lorsqu'une erreur que le serveur ne peut pas gérer est survenue pendant l'exécution d'une action \\
+            404         & Not Found             & Une ressource à laquelle nous essayons d'accéder n'est pas trouvée ou n'existe pas        \\
+            422         & Unprocessable Entity  & Une erreur se produit à cause d'une entrée utilisateur incorrecte                         \\
+            500         & Internal Server Error & Une erreur que le serveur ne peut pas gérer est survenue pendant l'exécution d'une action \\
         \end{tabularx}
     \end{center}
 \end{table}
 
 % cliffhanger
-Maintenant que nous avons vu toutes les réponses que le \Gls{backend} peut fournir et qu'il peut parfois renvoyé une erreur liée à une mauvaise entrée utilisateur, nous allons voir comment valider ces entrées utilisateurs et comment sont renvoyées ces erreurs dans la prochaine section.
+Maintenant que nous avons vu toutes les réponses que le \Gls{backend} peut fournir et qu'il peut parfois renvoyer une erreur liée à une mauvaise entrée utilisateur, nous allons voir comment valider ces entrées utilisateurs et comment sont renvoyées ces erreurs dans la prochaine section.
 
 \section{Validation des entrées utilisateurs}
-Pour commencer les entrées utilisateurs peuvent être contenu à 2 endroits lors d'une requête. Elles peuvent être dans la \emph{query string} ou dans le \emph{body} de la requête HTTP.
+Pour commencer les entrées utilisateurs peuvent être contenu à deux endroits lors d'une requête. Elles peuvent être dans la \emph{query string} ou dans le \emph{body} de la requête \Gls{http}.
 
 \subsection{Query string}
-Pour valider les entrées utilisateurs dans les query string, il est possible de définir des \Gls{regex} pour tous les paramètres portant le même nom des fichiers du dossier \emph{routes}.
+Pour valider les entrées utilisateurs dans les \emph{query string}, il est possible de définir des \Gls{regex} pour tous les paramètres portant le même nom, des fichiers du dossier \emph{routes}.
 Pour cela, il faut modifier le fichier \emph{RouteServiceProvider} comme indiqué sur la figure \ref{route-service-provider} afin d'ajouter toutes les entrées que nous souhaitons valider.
 
 \begin{listing}[h]
@@ -1737,14 +1719,14 @@ Pour cela, il faut modifier le fichier \emph{RouteServiceProvider} comme indiqu�
 \end{listing}
 
 \subsection{Form Request}
-Pour valider les entrées utilisateurs dans le corps de la requête, un architecture de code plus compliquée doit être mise en place. \Gls{laravel} fournit la possibilité de valider les requêtes grâce à des \href{https://laravel.com/docs/9.x/validation#form-request-validation}{\emph{Form Request}} et c'est ce que j'ai utilisé. \\
+Pour valider les entrées utilisateurs dans le corps de la requête, une architecture de code plus compliquée doit être mise en place. \Gls{laravel} fournit la possibilité de valider les requêtes grâce à des \href{https://laravel.com/docs/9.x/validation#form-request-validation}{\emph{Form Request}} et c'est ce que j'ai utilisé. \\
 Le but de ces \emph{Form Request} étant de définir une liste de règles précises pour un type de requête précis, par exemple, insérer un nouveau \emph{job}. Ces règles vont valider les entrées utilisateurs et vont ensuite nous permettre d'être sûr de travailler avec des données valides.
 
 Toutes les \emph{Form Request} sont disponibles dans le dossier \emph{/app/Http/Requests}. \\
 Sur la figure \ref{job-category-request}, nous pouvons observer un exemple de tableau de règles définies pour l'insertion ou la mise à jour d'une catégorie de travail. \\
 À savoir que toutes les règles utilisables sont disponibles sur la doc \href{https://laravel.com/docs/9.x/validation#available-validation-rules}{Laravel}
 
-\begin{listing}[H]
+\begin{listing}[h]
     \inputminted{php}{assets/code/JobCategoryRequest.php}
     \caption{JobCategoryRequest \label{job-category-request}}
 \end{listing}
@@ -1753,13 +1735,13 @@ Sur la figure \ref{job-category-request}, nous pouvons observer un exemple de ta
 
 \subsection{Regex}
 Comme vous l'avez peut-être remarqué sur la figure \ref{job-category-request}, il y a également des règles impliquant des \Gls{regex} et ces dernières sont définies ailleurs dans le code. \\
-Ces \Gls{regex} se trouvent dans la classe disponible en suivant le chemin \emph{/app/Constants/Regex.php}. Toutes ces \Gls{regex} ont été mise en place afin de valider le maximum d'entrées utilisateurs du programme et utilisées dans les \emph{Form Request}.
+Ces \Gls{regex} se trouvent dans la classe \emph{Regex}, disponible en suivant le chemin \emph{/app/Constants/Regex.php}. Toutes ces \Gls{regex} ont été mise en place afin de valider le maximum d'entrées utilisateurs du programme et utilisées dans les \emph{Form Request}.
 
 \subsection{Constantes}
 Je tiens à préciser que toutes les classes contenant des constantes utilisées dans l'application sont disponibles dans le dossier \emph{/app/Constants}.
 
 % cliffhanger
-Maintenant que nous avons vu comment valider les entrées utilisateurs, nous allons nous intéresser à des entrées utilisateurs un peu moins classique, les fichiers. Comment réussir à gérer la validation, l'upload et le download de fichiers pour l \Gls{backend}, C'est ce que nous allons voir dans la prochaine section.
+Maintenant que nous avons vu comment valider les entrées utilisateurs, nous allons nous intéresser à des entrées utilisateurs un peu moins classique, les fichiers. Comment réussir à gérer la validation, l'upload et le download de fichiers pour le \Gls{backend}, c'est ce que nous allons voir dans la prochaine section.
 
 \section{Gestion des fichiers}
 Tout d'abord, il faut savoir que toute la gestion des fichiers est réalisée dans le modèle \emph{File}, toute cette partie peut-être définie comme un \emph{File Service}.
@@ -1767,12 +1749,12 @@ Tout d'abord, il faut savoir que toute la gestion des fichiers est réalisée da
 \subsection{Validation de fichiers}
 
 Pour commencer avec la réalisation de ce \emph{service}, nous allons parcourir la validation de fichier. \\
-Il faut savoir que \Gls{laravel} fournit la possibilité de récupérer des informations sur le fichier qui est en train d'être upload, ces dernières peuvent être consultée en suivant le lien suivant: \href{https://laravel.com/docs/9.x/filesystem#other-uploaded-file-information}. \\
+Il faut savoir que \Gls{laravel} fournit la possibilité de récupérer des informations sur le fichier qui est en train d'être \emph{upload}, ces dernières peuvent être consultées en suivant le lien suivant: \href{https://laravel.com/docs/9.x/filesystem#other-uploaded-file-information}{https://laravel.com/docs/9.x/filesystem#other-uploaded-file-information}. \\
 
-Pour valider un fichier, certains conditions doivent être respectées, les voici:
+Pour valider un fichier, certaines conditions doivent être respectées, les voici:
 \begin{itemize}
     \item le fichier ne doit pas être \emph{null};
-    \item le fichier ne doit pas dépasser la taille de 10 Mo;
+    \item le fichier ne doit pas dépasser la taille de \emph{10 Mo};
     \item le fichier doit avoir une extension qui correspond au type de fichier détecté en l'inspectant;
     \item le fichier doit posséder un type contenu dans la base de données;
     \item le fichier doit posséder un type accepter par la catégorie de travail auquel le job est relié.
@@ -1785,13 +1767,13 @@ Toutes ces validations sont réalisées dans une fonction nommée \emph{is\_vali
     \caption{fonction is\_valid\_file du \emph{File Service} \label{file-validation}}
 \end{listing}
 
-Un point important concernant la validation de fichier étant le type de fichier qui est détecté par la fonction \emph{extension} de Laravel. Cette dernière inspecte le fichier et détermine son type. Cette dernière fonctionne très bien avec les types de fichiers classique, cependant, certains types de fichiers qui m'ont été demandé d'ajouter, ne sont pas du tout détecté correctement par cette dernière. \\
-De ce fait, j'ai dû trouvé une solution et la voici. J'ai créé deux listes constantes de types de fichiers non supportés par cette fonction. \\
+Un point important concernant la validation de fichier étant le type de fichier qui est détecté par la fonction \emph{extension} de Gls{Laravel}. Cette dernière inspecte le fichier et détermine son type. Cette dernière, fonctionne très bien avec les types de fichiers classiques, cependant, certains types de fichiers qui m'ont été demandés d'ajouter, ne sont pas du tout détectés correctement par cette fonction. \\
+De ce fait, j'ai dû trouvé une solution. J'ai créé deux listes constantes de types de fichiers non supportés par cette fonction. \\
 La première liste défini les types de fichiers dont j'ai pu testé l'upload et donc obtenir le type retourné par la fonction \emph{extension}. Cette liste fait également l'objet d'un tableau de correspondance qui est utilisé lorsqu'il faut vérifier le type du fichier. \\
 La seconde liste contient tous les types de fichiers que je n'ai pas pu tester et qui esquiveront donc la vérification de la fonction \emph{extension}. \\
 Une façon d'améliorer cette solution un peu "bout de bois" serait d'essayer d'utiliser la fonction \emph{mime\_content\_type} de \Gls{php}.
 
-Une autre requête m'a été demandée en fin de projet, les types de fichiers compressé devraient si possible être validé en observant également les fichiers à l'intérieur du fichier compresser et en les validant. Cette demande n'a pas pu être mise en place pour le moment, mais des essaies ont été tentés et sont disponibles en commentaires dans le code principal, ainsi que sur l'issue ouverte sur \Gls{github}.
+Une autre requête m'a été demandée en fin de projet, les types de fichiers compressés devraient, si possible, être validés en observant également les fichiers à l'intérieur du fichier compressé , tout en les validant eux aussi. Cette demande n'a pas pu être mise en place pour le moment, mais des essais ont été tentés et sont disponibles en commentaires dans le code principal, ainsi que sur l'issue ouverte sur \Gls{github}.
 
 % cliffhanger
 Une fois les fichiers validés, il faut les upload, mais où? C'est ce que nous allons voir maintenant.
@@ -2002,14 +1984,14 @@ Les modifications que j'ai apportées peuvent être séparées dans les thèmes 
 Avant toute chose je tiens à expliquer l'architecture de dossier du \Gls{frontend} qui ne suit peut-être pas totalement les standards ou peut vite changer suivant les développeurs. \\
 Voici une liste des dossiers à l'intérieur du dossier \emph{/src} et de leur utilité:
 \begin{itemize}
-    \item \emph{assets} contient toutes les images, logos, le css et fonts du porjet;
-    \item components contient tous les composants que l'application peut utiliser dans les différentes vues;
-    \item \emph{constants} contient toutes les fichiers de constantes utilisés dans le code;
-    \item containers/navs contient toutes les partie de l'application présentent sur chaque page;
+    \item \emph{assets} contient toutes les images, logos, le css et fonts du projet;
+    \item \emph{components} contient tous les composants que l'application peut utiliser dans les différentes vues;
+    \item \emph{constants} contient tous les fichiers de constantes utilisés dans le code;
+    \item containers/navs contient toutes les parties de l'application présentent sur chaque page;
     \item \emph{data} contient toutes les données statiques utilisées dans le code;
     \item \emph{layouts} contient la structure / mise en page de la page de l'application;
     \item \emph{middleware} contient le middleware permettant de mettre à jour le \Gls{jwt};
-    \item \emph{plugins} contient le plugin créer pour contenir le code de l'authentification avec Keycloak;
+    \item \emph{plugins} contient le plugin créé pour contenir le code de l'authentification avec Keycloak;
     \item \emph{store} contient tous les fichiers et modules concernant les données stockées dans le \Gls{frontend} et les appels à l'\Gls{api};
     \item \emph{utils} contient un fichier avec des méthodes utilisées par le \Gls{template} de base concernant principalement le menu;
     \item \emph{views} contient toutes les vues de l'application ainsi que les composants liés uniquement à une seul vue.
@@ -2019,25 +2001,25 @@ Voici une liste des dossiers à l'intérieur du dossier \emph{/src} et de leur u
 Nous allons maintenant parcourir chacune de ces modifications afin de rentrer dans les détails.
 
 \section{Mise à jour et nettoyage des dépendances}
-La première chose à noter est la suivante, quand j'ai repris le projet, il y avait plus de 100 dépréciations avec toutes les librairies utilisées. Il faut savoir que le \Gls{frontend} a été réalisé en se basant sur un \Gls{template} acheté et pas forcément très maintenu à jour. \\
+La première chose à noter est la suivante: quand j'ai repris le projet, il y avait plus de 100 dépréciations avec toutes les librairies utilisées. Il faut savoir que le \Gls{frontend} a été réalisé en se basant sur un \Gls{template} acheté et pas forcément maintenu à jour. \\
 Ce \Gls{template} avait le défaut d'utiliser énormément de petites librairies externes ce qui fait vite grossir la liste des dépendances et en avoir trop, ce n'est jamais bon. \\
-Heureusement, lorsque monsieur Lieberherr a adapté le \Gls{template} pour réaliser le \Gls{frontend}, il a très peu utiliser les dépendances utilisées par le \Gls{template} original.\\
-Après avoir remarqué ce point, j'ai passé passablement de temps à nettoyer les dépendances inutilisées dans le projet et à mettre à jour toutes les dépendances du projet pour finalement arrivé à une liste de dépendances raisonables et qui contient uniquement 21 vulnérabilités.
+Heureusement, lorsque monsieur Lieberherr a adapté le \Gls{template} pour réaliser le \Gls{frontend}, il a très peu utilisé les dépendances utilisées par le \Gls{template} original.\\
+Après avoir remarqué ce point, j'ai passé passablement de temps à nettoyer les dépendances inutilisées dans le projet et à mettre à jour toutes les dépendances du projet pour finalement arriver à une liste de dépendances raisonables qui contient uniquement 21 vulnérabilités.
 
 La majorité de ces vulnérabilités sont liés à la \emph{vue-cli} dont je ne peux pas mettre à jour car tout le projet a été adapté pour avec cette version de \emph{vue-cli}. \\
-Le seul moyen de supprimer toutes ces vulnérabilités restantes, serait de repartir d'un projet vierge et ajouté au fur et à mesure les éléments du \Gls{frontend} et à nouveau refaire fonctionner le tout.
+Le seul moyen de supprimer toutes ces vulnérabilités restantes serait de repartir d'un projet vierge et d'ajouter au fur et à mesure les éléments du \Gls{frontend} et à nouveau refaire fonctionner le tout.
 
-Un autre point à noter dans ces dépendances, nous remarquons que plusieurs librairies graphiques offrant souvent les même possibilités sont utilisées. Dans ce genre de cas, il serait préférable d'en choisir une seule. \\
+Un autre point à noter dans ces dépendances, nous remarquons que plusieurs librairies graphiques offrant souvent les même possibilités sont utilisées. Dans ce genre de cas, il serait préférable d'en choisir qu'une seule. \\
 Les librairies sont souvent lourdes en terme de mémoire et en utiliser plusieurs peut donc drastiquement augmenter la taille du site web et de ses pages.
 
 % cliffhanger
-Les dépendances mise à jour, il faut maintenant intégrer l'authentification au \Gls{frontend}.
+Les dépendances mises à jour, il faut maintenant intégrer l'authentification au \Gls{frontend}.
 
 \section{Authentification avec Keycloak}
 Pour commencer, je me suis inspiré d'une partie de ce \href{https://davidtruxall.com/secure-a-vue-js-app-with-keycloak/}{tutoriel} afin de mettre en place Keycloak comme un plugin. \\
 Le code du \emph{plugin Keycloak} est présent dans le dossier \emph{/src/plugins/} et se nomme \emph{keycloak.js}. \\
 L'objectif est principalement de créer un objet \emph{keycloak} global et accessible partout dans le projet afin de pouvoir facilement utiliser le jeton et les informations qu'il possède. \\
-La totalité des informations utilisées par le paquet sont enregistrées dans le fichier \emph{.env} du projet afin de protéger les secrets dans le code et adapté au mieux les informations en cas de quelconque changement.
+La totalité des informations utilisées par le paquet sont enregistrées dans le fichier \emph{.env} du projet afin de protéger les secrets dans le code et adapter au mieux les informations en cas de quelconque changement.
 
 J'ai également créé un middleware nommé \emph{keycloakUpdateToken.js} et se trouvant dans le dossier \emph{/src/middleware} permettant de mettre à jour le \Gls{jwt}. Ce dernier contient la méthode \emph{updateToken} qui va simplement mettre à jour le token en réalisant une requête au serveur d'authentification Keycloak de la \Gls{heig-vd}. \\
 Cette méthode est principalement utilisée avant d'envoyer une requête à l'\Gls{api} afin d'être sûr d'avoir un jeton valide comme on peut le voir sur la figure \ref{api-config-js}. \\
@@ -2047,7 +2029,7 @@ Cette méthode est principalement utilisée avant d'envoyer une requête à l'\G
     \caption{Fichier de configuration pour les appels à l'API \label{api-config-js}}
 \end{listing}
 
-Nous pouvons voir que le token est intégrer à chaque entête de requête du \Gls{frontend} à l'\Gls{api} et ceci grâce à la librairie \href{https://axios-http.com/fr/docs/intro}{\emph{axios}} permettant de configurer énormément de paramètres sur les requêtes \Gls{http} et des les envoyer.
+Nous pouvons voir que le token est intégré à chaque entête de requête du \Gls{frontend} à l'\Gls{api} et ceci grâce à la librairie \href{https://axios-http.com/fr/docs/intro}{\emph{axios}} permettant de configurer énormément de paramètres sur les requêtes \Gls{http} et de les envoyer.
 
 Finalement, j'ai intégrer l'objet Keycloak au fichier \emph{main.js} comme montré sur la figure \ref{main-js}.
 
@@ -2060,17 +2042,17 @@ Finalement, j'ai intégrer l'objet Keycloak au fichier \emph{main.js} comme mont
 L'authentification implémentée, nous pouvons maintenant faire des appels à l'\Gls{api} sans soucis. Réaliser des appels à l'\Gls{api} c'est bien, mais utiliser les données récupérées, c'est mieux et c'est ce que nous allons voir maintenant.
 
 \section{Adaptation du Frontend afin de correspondre à la nouvelle API}
-Cette section ne sera pas très longue à la différence du temps que j'ai pas passé à adapter le \Gls{frontend}. En effet, la conception du \Gls{backend} ayant drastiquement changé, il a fallu modifier tous les appels à l'\Gls{api} dans le \emph{store}. \\
+Cette section ne sera pas très longue en comparaison au temps passé à adapter le \Gls{frontend}. En effet, la conception du \Gls{backend} ayant drastiquement changé, il a fallu modifier tous les appels à l'\Gls{api} dans le \emph{store}. \\
 En parlant de \emph{store} utilisant la librairie \href{https://vuex.vuejs.org/}{\emph{vuex}}, lorsque j'ai récupéré le projet, tout était codé dans le même fichier, ce qui le rendait imbuvable. J'ai donc séparé le \emph{store} en différents modules. Un module par ressource (par exemple les travaux ou messages) a été mis en place. \\
 Je me suis inspiré de \href{https://vuex.vuejs.org/guide/modules.html}{la documentation officiel sur les modules} pour intégrer ce concept.
 
-Une fois les appels à l'\Gls{api} réalisés,il a fallu mettre à jour toutes les pages et vues de l'application, et pour réaliser ceci, il n'y a pas de miracle, il faut aller erreur après erreur et bug après bug. \\
-Au final chaque page a été adaptée et potentiellement repensée au niveau du code. \\
-Les plus gros changements étaient surtout présent au niveau de la gestion des notifications et de la timeline du suivi d'un travail précis. \\
-J'ai également remodulé l'architecture de fichiers afin que cela soit plus instinctif.
+Une fois les appels à l'\Gls{api} réalisés,il a fallu mettre à jour toutes les pages et vues de l'application, et pour réaliser ceci, il n'y a pas de miracle, il faut y aller erreur après erreur et bug après bug. \\
+Au final, chaque page a été adaptée et potentiellement repensée au niveau du code. \\
+Les plus gros changements étaient surtout présents au niveau de la gestion des notifications et de la timeline du suivi d'un travail précis. \\
+J'ai également remodulé l'architecture de fichiers afin que cela soit plus intuitif.
 
 % cliffhanger
-Dans la continuation des adaptations des pages, il a fallu intégrer les catégories de travaux qui auparavant stocké statiquement dans le \Gls{frontend} et nous allons voir maintenant comment elles ont intégrées en provenant du \Gls{backend}.
+Dans la continuation des adaptations des pages, il a fallu intégrer les catégories de travaux qui auparavant étaient stockées statiquement dans le \Gls{frontend} et nous allons voir maintenant comment elles ont été intégrées en provenant du \Gls{backend}.
 
 \section{Ajout des ressources liées aux catégories de travaux}
 Le premier ajout a été de rajouter un module dans le \emph{store} dédié aux catégories de travaux et d'y mettre les appels à l'\Gls{api} nécessaires. \\
@@ -2093,7 +2075,7 @@ La première chose que j'ai mise en place est la création d'un fichier de const
 
 Le routing du \Gls{frontend} a été réalisé avec la librairie \href{https://router.vuejs.org/}{\emph{vue-router}}. Le routing était déjà totalement configuré / réalisé. Les \Gls{url}s de l'application commençaient tous par \emph{/app} et j'ai donc fait en sorte de retirer cet \Gls{url} qui pourrait apparement créer des conflits avec les \Gls{websockets}.
 
-De plus j'ai changé le nom de certaines routes afin qu'elles soient plus instinctives. Le fichier contenant toute la gestion de routes est nommé \emph{router.js} et est consultable sur la figure \ref{router-js}.
+De plus, j'ai changé le nom de certaines routes afin qu'elles soient plus intuitives. Le fichier contenant toute la gestion de routes est nommé \emph{router.js} et est consultable sur la figure \ref{router-js}.
 
 \begin{listing}[h]
     \inputminted{javascript}{assets/code/router.js}
@@ -2107,8 +2089,8 @@ Pour accéder à cette dernière, il faut que l'utilisateur stocké dans le \emp
 Maintenant que le \Gls{frontend} est opérationnel, il est possible d'ajouter de nouvelles fonctionnalités, et c'est ce que nous allons voir dans la prochaine section.
 
 \section{Ajout du nombre d'heures de travail réalisées lorsqu'un travail est terminé}
-La seule fonctionnalité que j'ai ajouté au \Gls{frontend} est la suivante. Lorsque un travail indique qu'une tâche est terminée, il lui est demandé d'entrer le nombre d'heures passées sur le travail. \\
-Pour ajouter cette fonctionnalité, j'ai observé la mise à jour du statut et quand ce dernier était sélectionner à \emph{Terminé}, un champ numérique s'ajoute afin de demander le nombre d'heures passées sur le travail. Nous pouvons voir le résultat final sur la figure \ref{nb-worked-hours}.
+La seule fonctionnalité que j'ai ajouté au \Gls{frontend} est la suivante: lorsque un travail indique qu'une tâche est terminée, il lui est demandé d'entrer le nombre d'heures passées sur le travail. \\
+Pour ajouter cette fonctionnalité, j'ai observé la mise à jour du statut et quand ce dernier était sélectionné à \emph{Terminé}, un champ numérique s'ajoute afin de demander le nombre d'heures passées sur le travail. Nous pouvons voir le résultat final sur la figure \ref{nb-worked-hours}.
 
 \begin{center}
     \begin{figure}[H]
@@ -2121,11 +2103,10 @@ Pour ajouter cette fonctionnalité, j'ai observé la mise à jour du statut et q
 Maintenant que nous en avons finalement terminé avec l'implémentation du \Gls{backend} et du \Gls{frontend}, nous aimerions savoir comment tester l'application et être certain de son bon fonctionnement et c'est exactement ce que nous allons voir au prochain chapitre.
 
 \chapter{Intégration continue et tests}
-Avant de parler d'intégration continue, parlons de tests.
 
 \section{Tests}
 Dans ce chapitre, nous allons nous concentrer sur les tests réalisés et prévus pour l'application. \\
-Le premier point important étant que seul des tests automatisés ont été prévus pour le \Gls{backend}. Il a été estimé que des tests automatisés sur la partie graphique du \Gls{frontend} prendrai trop de temps et ne serait pas rentable car le \Gls{frontend} peut changer rapidement et demanderai beaucoup de temps pour également adapter les tests. \\
+Le premier point important étant que seuls des tests automatisés ont été prévus pour le \Gls{backend}. Il a été estimé que des tests automatisés sur la partie graphique du \Gls{frontend} prendraient trop de temps et ne serait pas rentable car le \Gls{frontend} peut changer rapidement et demanderaient beaucoup de temps pour également adapter les tests. \\
 Cependant, des tests du système global ont été rédigés, comme nous le verrons plus tard.
 
 \subsection{Tests automatiques}
@@ -2137,7 +2118,7 @@ Les tests automatiques réalisés peuvent être séparés en deux types:
 \end{itemize}
 
 \subsubsection{Tests unitaires}
-Les tests unitaires ont été uniquement réalisé sur les \Gls{regex}, ces derniers permettant de valider le bon fonctionnement de la validation d'entrée utilisateurs.
+Les tests unitaires ont été uniquement réalisés sur les \Gls{regex}, ces derniers permettant de valider le bon fonctionnement de la validation d'entrées utilisateurs.
 
 Nous pouvons retrouver ces tests dans le dossier \emph{/tests/Unit}.
 
@@ -2152,7 +2133,7 @@ Nous pouvons retrouver tous ces tests dans le dossier \emph{/tests/Feature}. Cha
 Comme mentionné précédemment, un protocole de tests a été rédigé. Ce dernier a pour but de tester globalement l'application, que cela soit en production ou en développement. \\
 Nous pouvons comparer ce protocole à des tests \emph{système}. \\
 Ce dernier est disponible en annexe. \\
-Ce protocole est une adaptation de celui réaliser par monsieur Lieberherr.
+Ce protocole est une adaptation de celui réalisé par monsieur Lieberherr.
 
 % cliffhanger
 Les tests réalisés, voyons maintenant comment réaliser une \Gls{ci} en les utilisant, dans la suite du chapitre.
@@ -2161,12 +2142,11 @@ Les tests réalisés, voyons maintenant comment réaliser une \Gls{ci} en les ut
 
 L'intégration continue ou \Gls{ci} a fait l'objet d'un prototype afin de tester le bon fonctionnement
 avant de l'intégrer au projet final.\\
-Ce prototype a subit plusieurs itérations, il a fallu partir d'une \Gls{ci} simple permettant de juste
+Ce prototype a subit plusieurs itérations, il a fallu partir d'une \Gls{ci} simple permettant d'
 exécuter des tests sur un base de données SQLLite sans migration. Puis il a fallu ajouter une base
-de données \Gls{mysql} pour reproduire le véritable environnement. Finalement il a fallu intégrer les
-migrations et les seeders afin de donner l'opportunité de tester au mieux l'application.\\
+de données \Gls{mysql} pour reproduire le véritable environnement. Finalement il a fallu intégrer les migrations et les seeders afin de donner l'opportunité de tester au mieux l'application.\\
 Ayant un dépôt Gitub pour le code, la \Gls{ci} a été réalisée avec \Gls{github} Actions.\\
-La \Gls{ci} est consultable sur les figures \ref{ci-1} et \ref{ci-2}
+La \Gls{ci} est consultable sur les figures \ref{ci-1} et \ref{ci-2}.
 
 \begin{listing}[h]
     \inputminted{yaml}{assets/code/ci-1.yml}
@@ -2188,19 +2168,19 @@ fonctionnement des tests. Ici nous construisons un \Gls{sgbd} \Gls{mysql}, ainsi
 
 \subsection{Étapes de configuration}
 
-À partir du mot clé \emph{steps}, une série d'étape de configuration a lieu. \\
+À partir du mot clé \emph{steps}, une série d'étapes de configuration a lieu. \\
 Chaque étape est décrite après le mot clé \emph{name}\\
 Tout d'abord, nous lançons les \Gls{github} Actions, puis nous réalisons une étape non obligatoire mais
-importante, nous vérifions si la connexion à \Gls{mysql} construit plus tôt fonctionne.\\
+importante, nous vérifions si la connexion à \Gls{mysql} construite plus tôt fonctionne.\\
 Il est notamment important d'installer tout l'environnement \Gls{php}.\\
-Il faut ensuite générer les clés pour l'appluication, puis lancer les migrations et le
+Il faut ensuite générer les clés pour l'application, puis lancer les migrations et le
 seeding.\\
 Il est ensuite important de changer les permissions pour le storage. Et finalement il est possible
 de lancer tous les tests de l'application avec \emph{phpunit}. \\
 
 \section{Code coverage}
 Comme vous le remarquez, les tests sont exécutés avec l'option \emph{--coverage clover.xml} afin de générer un rapport de code coverage. \\
-Ce rapport de code coverage est stocké dans le fichier \emph{clover.xml}. Ce fichier est ensuite utiliser afin de créer un badge de code coverage au formar \emph{svg} sous le nom \emph{badge-coverage.svg}. \\
+Ce rapport de code coverage est stocké dans le fichier \emph{clover.xml}. Ce fichier est ensuite utilisé afin de créer un badge de code coverage au formar \emph{svg} sous le nom \emph{badge-coverage.svg}. \\
 Ce badge est présent sur le \emph{README} du dépôt \Gls{github}. \\
 Et c'est ainsi que le code coverage a été ajouté au projet.
 
@@ -2209,8 +2189,6 @@ Nous avons une intégration continue mise en place pour réaliser l'application 
 Cela tombe bien, nous allons voir dans le prochain chapitre comment déployer l'application web.
 
 \chapter{Déploiement}
-Le déploiement, quelle étape importante dans un projet et souvent la plus compliquée.
-Je ne vais pas vous mentir, n'étant pas expert dans le domaine, cela n'a pas été facile.
 
 \section{Infrastructure de production}
 Avant de commencer à parler du déploiement en lui-même, il est nécessaire de vous présenter l'infrastructure de production mise en place. Cette dernière est visible à la figure \ref{prod-infra}.
@@ -2222,11 +2200,11 @@ Avant de commencer à parler du déploiement en lui-même, il est nécessaire de
     \end{figure}
 \end{center}
 
-Tout d'abord, il faut savoir que la machine de production a été fournie par la \Gls{heig-vd}. Cette dernière est donc situé à l'intérieur du réseau de l'école. La machine n'ayant pas d'ouverture directe en \Gls{ssh} ouverte avec l'extérieur, il est obligatoire d'être connecté sur le réseau de l'école physiquement ou via \Gls{vpn}.
+Tout d'abord, il faut savoir que la machine de production a été fournie par la \Gls{heig-vd}. Cette dernière est donc située à l'intérieur du réseau de l'école. La machine n'ayant pas d'ouverture directe en \Gls{ssh} ouverte avec l'extérieur, il est obligatoire d'être connecté sur le réseau de l'école physiquement ou via \Gls{vpn}.
 
 Nous pouvons ensuite constater qu'un \Gls{proxy} se situe entre le client et notre serveur. Ce \Gls{proxy} est installé par la \Gls{heig-vd} afin de permettre une entrée sur le serveur via une autre adresse \Gls{dns}, via un autre domaine. d'ouvrir les ports \Gls{http} et \Gls{https}. \\
 Ce \Gls{proxy} permet également d'encrypter le flux avec leur propre certificat. Il a pour seul rôle de rediriger le port 443 (\Gls{https}) sur le même port de la machine et pareil pour le port 80 (\Gls{http}). \\
-Ces redirections nous force donc à créer un certificat autosigné sur la machine de production afin de pouvoir tout de même accepter les connexions en \Gls{https}.
+Ces redirections nous forcent donc à créer un certificat autosigné sur la machine de production afin de pouvoir tout de même accepter les connexions en \Gls{https}.
 
 Nous remarquons également qu'un serveur \Gls{apache} a été mis en place dont nous allons voir la configuration plus tard. Ce dernier sert de serveur \Gls{http} et \Gls{https}. \\
 La machine possède également un \Gls{sgbd} tournant sur un container \Gls{docker} à l'aide d'un \emph{Docker-compose}. \\
@@ -2250,31 +2228,31 @@ Nous pouvons maintenant passer à la configuration \Gls{apache}.
 
 \section{Configuration Apache}
 Le serveur \Gls{apache} va permettre de servir notre application web. \\
-La configuration va simplement pointé sur le dossier \emph{public} du projet \Gls{laravel} et servir les pages web. Ces pages vont communiqué avec le \Gls{backend} lancer en parallèle avec la commande \emph{php artisan up}.
+La configuration va simplement pointer sur le dossier \emph{public} du projet \Gls{laravel} et servir les pages web. Ces pages vont communiqués avec le \Gls{backend} lancer en parallèle avec la commande \emph{php artisan up}.
 
 Pour entrer en détail dans la configuration \Gls{apache}, il est important de la vous la présenter avec la figure \ref{config-apache}.
 
 \begin{listing}[H]
-    \inputminted{conf}{assets/code/config-apache.conf}
+    \inputminted{text}{assets/code/config-apache.conf}
     \caption{Configuration Apache \label{config-apache}}
 \end{listing}
 
-Tout d'abord, il faut savoir que la configuration est un \emph{VirtualHost} afin de ne pas toucher aux configurations de base de \Gls{apache}. Cela permet d'avoir plusieurs configuration établies sur le serveur et d'ensuite choisir laquelle est utilisée pour le site.
+Tout d'abord, il faut savoir que la configuration est un \emph{VirtualHost} afin de ne pas toucher aux configurations de base de \Gls{apache}. Cela permet d'avoir plusieurs configurations établies sur le serveur et d'ensuite choisir laquelle est utilisée pour le site.
 
 La configuration réalisée permet de rediriger tout le flux du port 80 sur le port 443 afin de servir le site uniquement en \Gls{https}. Cette redirection peut-être observée au niveau des opérations de type \emph{Rewrite} sous le \emph{VirtualHost *:80}.
 
 Ensuite, nous constatons toutes les informations nécessaire au bon fonctionnement du serveur et indiquant où les pages web à servir se trouvent.
 
-De plus, nous remarquons qu'un \emph{reverse proxy} a été mis en place sur les entrées dédiées aux \Gls{websockets}. Ces derniers passant par le chemin \emph{/app} ou \emph{/apps} sont donc redirigé sur le serveur webosckets tournant sur le port 6000 en local que nous verrons plus tard.
+De plus, nous remarquons qu'un \emph{reverse proxy} a été mis en place sur les entrées dédiées aux \Gls{websockets}. Ces derniers passant par le chemin \emph{/app} ou \emph{/apps} sont donc redirigés sur le serveur webosckets tournant sur le port 6000 en local que nous verrons plus tard.
 
 Finalement, nous pouvons observer la configuration permettant de servir le site en  \Gls{https} grâce au certificat autosigné généré avec \href{https://www.openssl.org/}{\emph{OpenSSL}}.
 
 Le serveur \Gls{apache} configuré, nous devons maintenant ajouté les processus supervisés.
 
 \section{Processus supervisé}
-Les processus supervisé ont été réalisé avec l'outil \href{http://supervisord.org/}{\emph{Supervisor}}. Cet outil a comme avantage, par rapport au processus \emph{systemctl} classiques de Linux qu'il peut-être intégrer à un \Gls{docker} et offre également une meilleure surveillance des processus.
+Les processus supervisés ont été réalisés avec l'outil \href{http://supervisord.org/}{\emph{Supervisor}}. Cet outil a comme avantage, par rapport au processus \emph{systemctl} classique de Linux qu'il peut-être intégrer à un \Gls{docker} et offre également une meilleure surveillance des processus.
 
-Pour ajouter des processus gérer par \emph{Supervisor} (une fois installé), il suffit d'ajouter un fichier de configuration par processus sous le dossier \emph{/etc/supervisor/conf.d}. Deux fichiers de configurations ont été créés. \\
+Pour ajouter des processus gérés par \emph{Supervisor} (une fois installé), il suffit d'ajouter un fichier de configuration par processus sous le dossier \emph{/etc/supervisor/conf.d}. Deux fichiers de configuration ont été créés. \\
 Le premier, pour la queue est consulable sur la figure \ref{laravel-queue}.
 
 \begin{listing}[H]
@@ -2282,7 +2260,7 @@ Le premier, pour la queue est consulable sur la figure \ref{laravel-queue}.
     \caption{Configuration pour la queue Laravel \label{laravel-queue}}
 \end{listing}
 
-Le second, pour les \Gls{websockets} est consulable sur la figure \ref{laravel-websockets}.
+Le second, pour les \Gls{websockets}, est consulable sur la figure \ref{laravel-websockets}.
 
 \begin{listing}[H]
     \inputminted{text}{assets/code/laravel-websockets.conf}
@@ -2305,9 +2283,22 @@ Maintenant le site est déployé, prenons du recul sur le projet et établissant
 \section{Suite du projet}
 
 \subsection{Récupération des fichiers du projet}
-commit du \Gls{frontend} release ws + main -> dans rapport %todo
-commit du \Gls{backend} ws + main -> dans rapport %todo
-commit du keycloak -> dans rapport %todo
+Pour la récupération du projet, tout le code est fourni en annexe dans une archive \emph{zip}. \\
+
+Je vais cependant ajouter un lien et un identifiant de chaque \emph{commit} des différents dépôts \Gls{github}.
+
+Pour le rendu final, les derniers \emph{commit} sont sur la branche principale \emph{main} pour le \Gls{frontend} et \emph{develop} pour le\Gls{backend} et nous pouvons retrouver le code comme indiqué pour les dépôits suivants:
+\begin{itemize}
+    \item pour le \Gls{frontend}, le commit \href{https://github.com/heig-fablab/fablab-manager-frontend/commit/e4e9c1c9f4ec8f11af2f71c9ddb7bbc4c99826a6}{e4e9c1c9f4ec8f11af2f71c9ddb7bbc4c99826a6};
+    \item pour le \Gls{backend}, le commit \href{https://github.com/heig-fablab/fablab-manager/commit/3e6c1dcc56c7146fe2cb36d8307b1c28ecd3cd52}{3e6c1dcc56c7146fe2cb36d8307b1c28ecd3cd52};
+    \item pour le projet \emph{heig-keycloak-auth-token}, le commit \href{https://github.com/heig-fablab/heig-keycloak-auth-token/commit/26f2a097881420eb25e253f018d5bc25ae0f3e5d}{26f2a097881420eb25e253f018d5bc25ae0f3e5d}.
+\end{itemize}
+
+Pour la \emph{release} disponible en production, une branche spécifique a été créée et nous pouvons retrouver le code déployé comme indiqué pour les dépôts suivants:
+\begin{itemize}
+    \item pour le \Gls{frontend}, le commit \href{https://github.com/heig-fablab/fablab-manager-frontend/commit/2f444393fc3bb1e366971e6cdd3a158b59713be2}{2f444393fc3bb1e366971e6cdd3a158b59713be2};
+    \item pour le \Gls{backend}, le commit \href{https://github.com/heig-fablab/fablab-manager/commit/d3685f2e6adbbd66264ab5591b97b72e9a7b73ba}{d3685f2e6adbbd66264ab5591b97b72e9a7b73ba}.
+\end{itemize}
 
 % cliffhanger
 Le projet récupéré, regardons ce qu'il reste à corriger et améliorer sur ce dernier.
@@ -2315,10 +2306,10 @@ Le projet récupéré, regardons ce qu'il reste à corriger et améliorer sur ce
 \subsection{Erreurs restantes}
 
 \subsubsection{Websockets}
-Je vais par le plus gros morceau, la mise en place des \Gls{websockets} et de leur serveur.
+Je vais commencer par le plus gros morceau: la mise en place des \Gls{websockets} et de leur serveur.
 Comme expliqué dans la partie dédiée de l'implémentation du \Gls{backend}, ces derniers ne fonctionnent pas totalement en local, car le \Gls{frontend} ne reçoit pas les données émisent par le serveur. Cependant le \Gls{backend} arrive bien à les transmettre au serveur hébergeant les \Gls{websockets}. \\
 En production, la configuration actuelle ne fonctionne également pas pour le \Gls{backend} qui jette une exception à chaque fois qu'il tente de \Gls{broadcast} un \emph{Event}. Je suis presque sûr que cela est dû à la mauvaise configuration de mon fichier \href{https://github.com/heig-fablab/fablab-manager/blob/main/.env.prod.example}{\emph{.env} de production} disponible en annexe. \\
-Le fichier de configuration essaie actuellement de passer par l'\Gls{url} web du serveur, et devrait passer directement en local, ce qui éviterai pas mal de soucis.
+Le fichier de configuration essaie actuellement de passer par l'\Gls{url} web du serveur, et devrait passer directement en local, ce qui éviterait pas mal de soucis.
 
 En ce qui concerne le \Gls{frontend}, je n'est ai aucune idée d'où vient actuellement le problème comme je ne reçois pas d'erreur, ni de message dans les \emph{logs}.
 Je pense aussi que cela vient de ma configuration du fichier \emph{.env}, que cela soit en local ou en production.
@@ -2347,24 +2338,24 @@ La prochaine erreur restante à aborder est la queue d'emails.
 Cette dernière ne semble pas fonctionner parfaitement en production.
 En effet, quand je modifie l'entrée \emph{QUEUE\_CONNECTION} avec la valeur \emph{database} dans le fichier \emph{.env} de la production du \Gls{backend}.
 Je reçois une exception du \Gls{backend} au moment de stocker le \emph{Job} dans la base de données.
-Si cette même entrée contient la valeur \emph{sync}, cela fonctionne mais le \emph{Job} n'attends pas les 10 minutes avant d'être exécuter. \\
+Si cette même entrée contient la valeur \emph{sync}, cela fonctionne mais le \emph{Job} n'attends pas les 10 minutes avant d'être exécutée. \\
 Vu l'exception reçue, je pense qu'il y a un problème avec la migration ou le lien entre la fonction \emph{dispatch} et la base de données.
 
 Encore une fois pour résoudre ce problème, il faudrait pouvoir reproduire l'erreur en local, puis la corriger, puis déployer le tout et finalement mettre à jour le fichier \emph{.env} de la production pour que tout fonctionne.
 
 \subsubsection{Conteneur Docker de sauvegarde}
 Comme expliqué précédement, un \Gls{conteneur} \Gls{docker} a été ajouté au \emph{Docker-compose} de la base de données afin de faciliter les sauvegardes.\\
-La seule chose à dire sur ce point, c'est que je n'ai pas pu tester le bon fonctionnement du \Gls{conteneur} et cela serait à faire.
+La seule chose à dire sur ce point, est que je n'ai pas pu tester le bon fonctionnement du \Gls{conteneur} et cela serait à faire.
 
 \subsubsection{Vérification des fichiers compressés}
-Comme énoncé dans la partie correspondante, la validation et vérification des fichiers compressées fonctionnent pour le type compressé en lui-même, mais il serait préférable de valider également tous les fichiers à l'intérieur du fichier compresser. \\
+Comme énoncé dans la partie correspondante, la validation et vérification des fichiers compressés fonctionnent pour le type compressé en lui-même, mais il serait préférable de valider également tous les fichiers à l'intérieur du fichier compressé. \\
 Pour cela, j'ai trouvé deux classes \Gls{php} qui peuvent être utilisées afin de récupérer des informations sur les fichiers à l'intérieur du fichier compressé. Ces deux classes sont les suivantes:
 \begin{itemize}
     \item \href{https://www.php.net/manual/fr/class.ziparchive.php}{ZipArchive} pour les fichiers \emph{zip};
     \item \href{https://www.php.net/manual/en/class.rararchive.php}{RarArchive} pour les fichiers \emph{rar}.
 \end{itemize}
 
-Cependant, aucune classe n'existe pour les fichiers \emph{7z}, il faudrait donc les exclure des types de fichiers accepter.
+Cependant, aucune classe n'existe pour les fichiers \emph{7z}, il faudrait donc les exclure des types de fichiers acceptés.
 
 J'ai également trouvé un \href{https://stackoverflow.com/questions/25847374/ziparchive-check-file-extension}{poste \emph{stackoverflow}} étant très utile pour réaliser ce que nous souhaitons. \\
 La fonction \href{https://www.php.net/manual/fr/function.pathinfo.php}{\emph{pathinfo}} pourrait également servir.
@@ -2372,7 +2363,7 @@ La fonction \href{https://www.php.net/manual/fr/function.pathinfo.php}{\emph{pat
 Pour finir, tout ce que j'ai déjà exploré est disponible sur \href{https://github.com/heig-fablab/fablab-manager/issues/139}{une \emph{issue} dédiée}.
 
 \subsubsection{Vérification des fichiers avec le mime type de php}
-Encore une fois, comme abordé précédemment, les fichiers spéciaux utilisés pour le programme ne sont pas détecté correctement par la fonction \emph{file->extension()} fournie par \Gls{laravel}.
+Encore une fois, comme abordé précédemment, les fichiers spéciaux utilisés pour le programme ne sont pas détectés correctement par la fonction \emph{file->extension()} fournie par \Gls{laravel}.
 Pour résoudre ce problème, il serait bien de tester la fonction \href{https://www.php.net/manual/fr/function.mime-content-type.php}{\emph{mime\_content\_type} de \Gls{php}} afin d'améliorer drastiquement la qualité et la simplicité du code actuel.
 
 Pour en finir avec ces erreurs restantes, je tiens à préciser que chaque erreur liée au code possède une \emph{issue} ouverte sur le dépôt principal du projet.
@@ -2380,13 +2371,13 @@ Pour en finir avec ces erreurs restantes, je tiens à préciser que chaque erreu
 \subsection{Améliorations possibles}
 voir toutes les issues nice to have
 
-Dans cette section, je vais me contenter de lister des améliorations qui seraient intéressantes à apport au projet en général et qui sont dispensables, nous parlons ici de \emph{nice to have}.
+Dans cette section, je vais me contenter de lister des améliorations qui seraient intéressantes à apporter au projet en général et qui sont dispensables, nous parlons ici de \emph{nice to have}.
 
 Les améliorations possibles pour le \Gls{frontend} sont donc les suivantes:
 \begin{itemize}
     \item \href{https://github.com/heig-fablab/fablab-manager/issues/78}{Réaliser une meilleure gestion des erreurs retournées par le Backend} afin de les afficher / ajouter dans les \emph{toasts} d'erreurs;
     \item \href{https://github.com/heig-fablab/fablab-manager/issues/141}{Améliorer le \emph{design} d'assignation de travaux non attribués} afin de faciliter cette fonctionnalité et limiter le nombre de cliques;
-    \item \href{https://github.com/heig-fablab/fablab-manager/issues/156}{Afficher uniquement les types de fichiers accepter} lorsque l'explorateur de fichier est affiché pendant l'ajout de fichiers;
+    \item \href{https://github.com/heig-fablab/fablab-manager/issues/156}{Afficher uniquement les types de fichiers acceptés} lorsque l'explorateur de fichier est affiché pendant l'ajout de fichiers;
     \item \href{https://github.com/heig-fablab/fablab-manager/issues/122}{Ajouter la possibilité de visualiser des fichiers sur l'application} et cela pour certains types de fichiers;
     \item \href{https://github.com/heig-fablab/fablab-manager/issues/74}{Intégrer tous les messages ou valeurs textuelles en français dans le package \emph{i18n}} afin de pouvoir plus facilement intégrer de nouvelles langues.
 \end{itemize}
@@ -2413,15 +2404,15 @@ Pour commencer ce bilan final, si nous observons le tableau \ref{taches} contena
 Si l'on parcourt également le cahier des charges défini sur \href{https://gaps.heig-vd.ch/consultation/diplome/affichage.php?id=6135&mode=HTML}{\emph{gaps}}, j'ai également réussi à réaliser tous les points indiqués mis à part les \Gls{websockets} et les envois d'emails différés pour le serveur de production.\\
 Je considère également le projet actuellement déployé comme utilisable par le client et c'est un point positif.
 
-Parlant maintenant des regrets que j'ai à propos de ce projet. Le fait que je n'ai pas réussi à faire fonctionner totalement le serveur de production me frustre énormément car j'aurais aimé rendre un travail complet. \\
-Cependant cela m'a fait ouvrir les yeux sur des compétences dont je ne possède pas encore et un nouveau monde, une nouvelle dimension de l'éco-système du développement d'application dont je me dois d'explorer et maîtriser à l'avenir. \\
-Il est vrai que ma formation n'incluait que très peu de mise en production d'un application et cela ne m'a pas aider pour ce projet, mais je dois être capable d'apprendre ces choses par moi-même. Ce que je n'ai pas pu prendre le temps de faire dans ce projet car le temps ne me le permettait pas vu la charge de travail.
+Parlons maintenant des regrets que j'ai à propos de ce projet. Le fait que je n'ai pas réussi à faire fonctionner totalement le serveur de production me frustre énormément car j'aurais aimé rendre un travail complet. \\
+Cependant, cela m'a fait ouvrir les yeux sur des compétences que je ne possède pas encore et un nouveau monde, une nouvelle dimension de l'éco-système du développement d'application que je me dois d'explorer et maîtriser à l'avenir. \\
+Il est vrai que ma formation n'incluait que très peu de mise en production d'une application et cela ne m'a pas aidé pour ce projet, mais je dois être capable d'apprendre ces choses par moi-même. Ce que je n'ai pas pu prendre le temps de faire dans ce projet car le temps ne me le permettait pas vu la charge de travail.
 
-En ce qui concerne toutes les erreurs restantes et pourquoi ces dernières n'ont pas réussi à être réaliser, cela est principalement dû à un projet très conséquent et au manque de compétence dans certains domaines. Certains problèmes sont également apparu très tard dans le projet, à deux semaines de la fin, ce qui laisse très peu de temps sachant qu'il m'a fallu une semaine pour rédiger le rapport final et pauffiner les derniers détails du projet. Je pense aussi que certains problèmes n'étaient pas une priorité au niveau du cahier des charges et ont été mis de côté pour d'autres points plus importants.
+En ce qui concerne toutes les erreurs restantes et pourquoi ces dernières n'ont pas réussi à être réalisé, cela est principalement dû à un projet très conséquent et au manque de compétence dans certains domaines. Certains problèmes sont également apparus très tard dans le projet, à deux semaines de la fin, ce qui laisse très peu de temps sachant qu'il m'a fallu une semaine pour rédiger le rapport final et pauffiner les derniers détails du projet. Je pense aussi que certains problèmes n'étaient pas une priorité au niveau du cahier des charges et ont été mis de côté pour d'autres points plus importants.
 
 Malgrès ces points négatifs, je pense avoir suffisament bien documenté le projet afin qu'il soit repris en main, puis amélioré et terminé.
 
-Pour terminer bilan, je tiens à préciser que je suis tout de même heureux du travail rendu, car tout ce qui est fonctionnel est selon moi bien réaliser. Une petite déception me trotte évidemment dans la tête.
+Pour terminer bilan, je tiens à préciser que je suis tout de même heureux du travail rendu, car tout ce qui est fonctionnel est, selon moi, bien réalisé. Une petite déception me trotte évidemment dans la tête.
 
 \section{Sources d'informations}
 Lors d'un projet de développement informatique, beraucoup de recherches sont réalisées lors de la
@@ -2455,6 +2446,8 @@ Pour commencer je tiens à remercier monsieur Yves Chevallier pour son suivi san
 Je remercie également monsieur Benjamin Wolf pour m'avoir fourni la machine virtuelle de production. Mais également pour m'avoir soutenu dans la mise en place du système d'authentification \emph{Keycloak} de l'école et d'avoir toujours résolu mes quelques soucis lié à la machine de production.
 
 Je remercie aussi mes amis et collègues, Nicolas Crausaz, Maxime Scharwath et Loïc Dessaules pour leurs précieux conseils concernant le \Gls{frontend} et \Gls{apache} pour les deux premiers et le \Gls{backend} pour le dernier.
+
+Je remercie une ami de confiance, Alexandra Pugin pour m'avoir aidé à corriger mon rapport.
 
 Finalement, je remercie monsieur Tristant Lieberherr pour avoir passé du temps avec moi en début de projet afin de me mettre sur le droit chemin et m'avoir expliquer ce qu'il a réaliser et tenter de le faire fonctionner sur ma machine.
 
